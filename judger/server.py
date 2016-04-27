@@ -2,10 +2,10 @@ import urllib2
 import json
 import time
 import random
-from judger import runJudger
+from RunJudge import RunJudge
 
 baseUrl = "http://localhost:5000"
-taskUrl = baseUrl + "/api/judgea"
+taskUrl = baseUrl + "/api/judge"
 sleepTimeLowBound = 500 # ms
 sleepTimeHighBound = 5000 # ms
 
@@ -16,13 +16,14 @@ while True:
     taskRequestResponse = urllib2.urlopen(taskUrl)
     taskInfo = json.loads(taskRequestResponse.read())
     #print(taskInfo)
-    if taskInfo['status']['code'] == 1:
+    if taskInfo['status']['code'] == 0:
         rejudgeFlag = True
         while rejudgeFlag:
-            flag = False
-            judgeResult = runJudger(taskInfo['data'])
+            rejudgeFlag = False
+            judgeResult = RunJudge.judge(taskInfo['data']['submission'])
             req = urllib2.Request(taskUrl, judgeResult, {'Content-Type': 'application/json'})
             judgeResponse = urllib2.urlopen(req)
             rejudgeInfo = json.loads(judgeResponse.read())
             if rejudgeInfo['status']['code'] == 1:
                 rejudgeFlag = True
+              #  rejudgeFlag = False # for test
