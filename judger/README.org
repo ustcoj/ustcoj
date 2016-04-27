@@ -1,0 +1,11 @@
+* Files
+| Name           | Description                           |
+| README.org     | this file                             |
+| compilers.py   | all the parameter for compile and run |
+| server.py      | GET code, POST result                 |
+| JudgeClient.py | judge client class                    |
+| Runjudge.py    | run judge client, convey json         |
+
+* Add more languages
+  - All you have to do is fill the parameters in compilers following the examples
+  - If you need more environment variants, please /os.environ()/ to specify
