@@ -1,1 +1,1 @@
-Learning aweson leader Mao Zedong
+Learning awesome leader Mao Zedong
