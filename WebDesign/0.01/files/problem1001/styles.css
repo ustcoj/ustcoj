@@ -540,6 +540,11 @@
   top:11px;
   width:296px;
   word-wrap:break-word;
+  font-family: "pt-sans",sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 2px
+  
 }
 #u248_ann {
   position:absolute;
