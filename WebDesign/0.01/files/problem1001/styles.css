@@ -912,6 +912,7 @@
   font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 700;
   font-weight:700;
   font-style:normal;
+  letter-spacing: 130%;
 }
 #u272 {
   position:absolute;
@@ -967,6 +968,7 @@
   top:0px;
   width:899px;
   word-wrap:break-word;
+  letter-spacing: 130%;
 }
 #u276_img {
   position:absolute;
@@ -1198,6 +1200,7 @@
   top:4px;
   width:446px;
   word-wrap:break-word;
+  font-family: monospace;
 }
 #u292_img {
   position:absolute;
@@ -1224,6 +1227,8 @@
   top:4px;
   width:445px;
   word-wrap:break-word;
+  font-family: monospace;
+}
 }
 #u294 {
   position:absolute;
