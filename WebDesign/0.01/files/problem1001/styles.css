@@ -340,7 +340,7 @@
   top:0px;
   width:100px;
   height:50px;
-  font-family:'Comic Sans MS Normal', 'Comic Sans MS';
+  font-family:"pt-sans";
   font-weight:400;
   font-style:normal;
   font-size:16px;
@@ -504,7 +504,7 @@
   top:0px;
   width:100px;
   height:50px;
-  font-family:'Comic Sans MS Normal', 'Comic Sans MS';
+  font-family:"pt-sans";
   font-weight:400;
   font-style:normal;
   font-size:16px;
@@ -529,7 +529,7 @@
   top:0px;
   width:300px;
   height:50px;
-  font-family:'Comic Sans MS Normal', 'Comic Sans MS';
+  font-family:"pt-sans";
   font-weight:400;
   font-style:normal;
   font-size:20px;
@@ -714,7 +714,7 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'宋体 Regular', '宋体';
+  font-family:"open-sans";
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -726,7 +726,7 @@
   top:277px;
   width:899px;
   height:96px;
-  font-family:'宋体 Regular', '宋体';
+  font-family:"open-sans";
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -738,7 +738,6 @@
   top:0px;
   width:899px;
   word-wrap:break-word;
-  font-family: "soleil";
 }
 #u264_img {
   position:absolute;
@@ -753,7 +752,7 @@
   top:256px;
   width:899px;
   height:1px;
-  font-family:'宋体 Regular', '宋体';
+  font-family:"open-sans";
   font-weight:400;
   font-style:normal;
   font-size:14px;
@@ -787,7 +786,7 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'Comic Sans MS Normal', 'Comic Sans MS';
+  font-family:"open-sans";
   font-weight:400;
   font-style:normal;
   font-size:28px;
@@ -798,7 +797,7 @@
   top:113px;
   width:163px;
   height:39px;
-  font-family:'Comic Sans MS Normal', 'Comic Sans MS';
+  font-family:"open-sans";
   font-weight:400;
   font-style:normal;
   font-size:28px;
@@ -830,7 +829,10 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'宋体 Bold', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 700;
+  font-family: "pt-sans",sans-serif;
+  font-style: normal;
+  font-weight: 700;
   font-weight:700;
   font-style:normal;
 }
@@ -840,7 +842,7 @@
   top:383px;
   width:51px;
   height:21px;
-  font-family:'宋体 Bold', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 700;
   font-weight:700;
   font-style:normal;
 }
@@ -864,7 +866,7 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'宋体 Regular', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 400;
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -876,7 +878,7 @@
   top:415px;
   width:899px;
   height:22px;
-  font-family:'宋体 Regular', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 400;
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -902,7 +904,7 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'宋体 Bold', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 700;
   font-weight:700;
   font-style:normal;
 }
@@ -912,7 +914,7 @@
   top:447px;
   width:61px;
   height:21px;
-  font-family:'宋体 Bold', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 700;
   font-weight:700;
   font-style:normal;
 }
@@ -936,7 +938,7 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'宋体 Regular', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 400;
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -948,7 +950,7 @@
   top:479px;
   width:899px;
   height:88px;
-  font-family:'宋体 Regular', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 400;
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -974,7 +976,7 @@
   top:599px;
   width:899px;
   height:1px;
-  font-family:'宋体 Regular', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 400;
   font-weight:400;
   font-style:normal;
   font-size:14px;
@@ -1008,7 +1010,7 @@
   top:0px;
   width:450px;
   height:29px;
-  font-family:'宋体 Regular', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 400;
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1034,7 +1036,7 @@
   top:0px;
   width:449px;
   height:29px;
-  font-family:'宋体 Regular', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 400;
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1060,7 +1062,7 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'宋体 Bold', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 700;
   font-weight:700;
   font-style:normal;
   text-align:center;
@@ -1071,7 +1073,7 @@
   top:610px;
   width:301px;
   height:21px;
-  font-family:'宋体 Bold', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 700;
   font-weight:700;
   font-style:normal;
   text-align:center;
@@ -1096,7 +1098,7 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'宋体 Bold', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 700;
   font-weight:700;
   font-style:normal;
   text-align:center;
@@ -1107,7 +1109,7 @@
   top:610px;
   width:298px;
   height:21px;
-  font-family:'宋体 Bold', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 700;
   font-weight:700;
   font-style:normal;
   text-align:center;
@@ -1132,7 +1134,7 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'宋体 Regular', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 400;
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1145,7 +1147,7 @@
   top:156px;
   width:300px;
   height:132px;
-  font-family:'宋体 Regular', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 400;
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1179,7 +1181,7 @@
   top:0px;
   width:450px;
   height:29px;
-  font-family:'宋体 Regular', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 400;
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1205,7 +1207,7 @@
   top:0px;
   width:449px;
   height:29px;
-  font-family:'宋体 Regular', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 400;
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1238,7 +1240,7 @@
   top:0px;
   width:450px;
   height:29px;
-  font-family:'宋体 Regular', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 400;
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1264,7 +1266,7 @@
   top:0px;
   width:449px;
   height:29px;
-  font-family:'宋体 Regular', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 400;
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1290,7 +1292,7 @@
   top:80px;
   width:200px;
   height:35px;
-  font-family:'宋体 Bold', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 700;
   font-weight:700;
   font-style:normal;
   font-size:16px;
@@ -1323,7 +1325,7 @@
   top:125px;
   width:41px;
   height:25px;
-  font-family:'宋体 Regular', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 400;
   font-weight:400;
   font-style:normal;
 }
@@ -1347,7 +1349,7 @@
   top:155px;
   width:140px;
   height:25px;
-  font-family:'宋体 Regular', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 400;
   font-weight:400;
   font-style:normal;
 }
@@ -1371,7 +1373,7 @@
   top:256px;
   width:199px;
   height:35px;
-  font-family:'宋体 Bold', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 700;
   font-weight:700;
   font-style:normal;
   font-size:16px;
@@ -1397,7 +1399,7 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'宋体 Regular', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 400;
   font-weight:400;
   font-style:normal;
   color:#1E1E1E;
@@ -1408,7 +1410,7 @@
   top:291px;
   width:200px;
   height:35px;
-  font-family:'宋体 Regular', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 400;
   font-weight:400;
   font-style:normal;
   color:#1E1E1E;
@@ -1433,7 +1435,7 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'宋体 Regular', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 400;
   font-weight:400;
   font-style:normal;
   color:#1E1E1E;
@@ -1444,7 +1446,7 @@
   top:326px;
   width:200px;
   height:34px;
-  font-family:'宋体 Regular', '宋体';
+  font-family: "pt-sans",sans-serif; font-style: normal; font-weight: 400;
   font-weight:400;
   font-style:normal;
   color:#1E1E1E;
