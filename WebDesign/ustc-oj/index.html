@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="ustc-oj" ng-controller="indexCtrl">
+<head>
+    <meta charset="UTF-8">
+    <title>USTC-OJ</title>
+    <script src="https://use.typekit.net/ejt7hhx.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link rel="stylesheet" href="ustc-oj.css">
+</head>
+<body>
+    <!-- 奇葩的ng-include '' -->
+    <div ng-include="'navbar.html'"></div>
+
+    <!--<div ng-include="'problems.html'"></div>-->
+
+    <div ng-include="'showProb.html'"></div>
+
+    <!-- 1.11.3 -->
+    <script src="jquery.min.js"></script>
+    <!-- 1.5.0 -->
+    <script src="angular.min.js"></script>
+    <script src="ustc-oj.js"></script>
+</body>
+</html>
