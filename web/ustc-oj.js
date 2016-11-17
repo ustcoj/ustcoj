@@ -22,17 +22,17 @@ angular.module("ustc-oj").controller("oneProbCtrl",  ["$scope", function($scope)
 
 
 /*
-    taks1: angular作用域与数据传输问题
+    taks1: angular浣滅敤鍩熶笌鏁版嵁浼犺緭闂
 
-    task2: problemList展示，problem展示
+    task2: problemList灞曠ず锛宲roblem灞曠ず
 
-    task3: submit提交设计
-        task2.1: submit提交画图
-        task2.2: submit提交展示
+    task3: submit鎻愪氦璁捐
+        task2.1: submit鎻愪氦鐢诲浘
+        task2.2: submit鎻愪氦灞曠ず
 
     task4: register && login
-        task4.1: CSS实现
+        task4.1: CSS瀹炵幇
         task4.2: register && login JS
 
-    task5: 背景图片选取
+    task5: 鑳屾櫙鍥剧墖閫夊彇
  */
