@@ -12,7 +12,16 @@ angular.module("ustc-oj").controller("navbarCtrl", ["$scope", function($scope){
 
 }]);
 
-angular.module("ustc-oj").controller("probCtrl", ["$scope", function($scope){
+angular.module("ustc-oj").controller("probCtrl", ["$scope", "$http", function($scope, $http){
+
+        $http.get("http://ustcoj.applinzi.com/api/problem", {params: {
+            page: 1,
+            per_page: 5
+        }})
+            .then(function(response) {
+                alert(response.status);
+                $scope.myWelcome = response.data;
+            });
 
 }]);
 
