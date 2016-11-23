@@ -11,8 +11,8 @@ body{
 
 /* navbar */
 
-.navbar{
-    position: absolute;
+.fixed-navbar{
+    position: fixed;
     top: 0px;
     left: 0px;
     height: 50px;
@@ -21,12 +21,12 @@ body{
     box-shadow: 0px 2px 10px #a5a5a5;
 }
 
-.navbar-container{
+.fixed-navbar-container{
     width: 1200px;
     margin: 0 auto;
 }
 
-.navbar button{
+.fixed-navbar button{
     height: 50px;
     width: 100px;
     float: left;
@@ -36,7 +36,7 @@ body{
     font-family: "PT Sans", sans-serif;
 }
 
-.navbar-title{
+.fixed-navbar-title{
     padding-top: 8px;
     margin-left: 450px;
     width: 300px;
@@ -45,12 +45,12 @@ body{
     font-family: "PT Sans", sans-serif;
 }
 
-.navbar-user{
+.fixed-navbar-user{
     float: right;
     padding-top: 7px;
 }
 
-.navbar-user img{
+.fixed-navbar-user img{
     width: 36px;
     height: 36px;
 }
@@ -131,28 +131,41 @@ body{
     margin: 80px auto 0px;
     color: #333333;
     font-size: 18px;
+    line-height: 1.5;
 }
 
 .prob-content{
     margin-left: 20px;
-    width: 880px;
+    width: 800px;
     background-color: white;
     padding: 40px;
     box-shadow: 2px 2px 10px #a5a5a5;
 }
 
-.prob-head{
+.prob-title{
     text-align: center;
     margin-bottom: 18px;
 }
 
-.prob-head h2{
+.prob-title h2{
     padding-bottom: 5px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.prob-title-inf {
+    margin-bottom: 7px;
+    margin-top: 7px;
+}
+
+.prob-title-inf p{
+    font-size: 14px;
+    color: #6B6B6B;
     font-family: "Open Sans", sans-serif;
 }
 
 .prob-desc p{
     margin-bottom: 18px;
+    line-height: 1.5;
 }
 
 .prob-desc h4{
