@@ -1,12 +1,20 @@
 <!--navbar是啥盒子-->
 <div ng-controller="navbarCtrl" class="fixed-navbar">
     <div class="fixed-navbar-container">
-        <button>Problem</button>
-        <button>Status</button>
-        <!-- float顺序问题 -->
-        <div class="fixed-navbar-user">
-            <img src="user_head.png">
+
+        <div class="fixed-navbar-left-button">
+            <button>Problem</button>
+            <button>Status</button>
         </div>
+        <!-- float顺序问题 -->
+
+
+        <div class="fixed-navbar-right-button">
+            <div class="fixed-navbar-user">
+                <img src="user_head.png">
+            </div>
+        </div>
+
         <div class="fixed-navbar-title">USTC ONLINE JUDGE</div>
     </div>
 </div>
