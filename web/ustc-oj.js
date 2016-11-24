@@ -6,6 +6,8 @@ angular.module("ustc-oj", []);
 
 angular.module("ustc-oj").controller("indexCtrl", ["$scope", function($scope){
 
+    $scope.tabShow = "login";
+
 }]);
 
 angular.module("ustc-oj").controller("navbarCtrl", ["$scope", function($scope){
