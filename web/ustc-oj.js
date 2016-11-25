@@ -38,7 +38,7 @@ app.controller("problemListCtrl", function($scope, $http, $rootScope){
             per_page: 5
         }})
             .then(function(response) {
-                alert(response.status);
+                //alert(response.status);
                 $scope.myWelcome = response.data;
             });
 
@@ -49,15 +49,22 @@ app.controller("oneProbCtrl", function($scope){
 });
 
 app.controller("submitCtrl", function ($scope, $http, $rootScope) {
-    $scope.submitSource = "";
-    $scope.submitID = 1000;
-    $scope.language = "C++11"
+    $scope.submitSource = "ttt";
+    $scope.submitID = 1;
+    $scope.submitLang = "C++11"
     $scope.submitFire = function (source, lang, id) {
-        $http.post($rootScope.apiHost + "/api/submission", {params: {
+        var data = $.param({
             code: source,
             compiler: lang,
             problem_id: id
-        }});
+        });
+
+        var config = {
+            headers : {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+            }
+        }
+        $http.post($rootScope.apiHost + "/api/submission",data, config);
     }
 })
 
