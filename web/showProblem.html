@@ -26,38 +26,16 @@
     <div class="prob-content">
 
         <div class="prob-title">
-            <h2>Problem A + B</h2>
+            <h2>{{problemData.data.problem.problem_title}}</h2>
             <div class="prob-title-inf">
-                <p>time limit: 1s</p>
-                <p>memory limit: 512MB</p>
+                <p>Time limit: {{problemData.data.problem.time_limit}}ms</p>
+                <p>Memory limit: {{problemData.data.problem.memory_limit}}KiB</p>
                 <p>Standard I/O</p>
             </div>
         </div>
 
         <div class="prob-desc">
-            <p>
-                The formula to calculate the area of a circumference is defined as A = pi . R2. Considering to this problem that pi = 3.14159:
-                <br/>
-                <br/>
-                Calculate the area using the formula given in the problem description.
-            </p>
-            <h4> Input </h4>
-            <p class="prob-indesc">
-                The input contains a value of floating point (double precision), that is the variable R.
-            </p>
-            <h4> Output </h4>
-            <p class="prob-outdesc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.
-            </p>
-            <p class="prob-outdesc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.
-            </p>
-            <p class="prob-outdesc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.
-            </p>
-            <p class="prob-outdesc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.
-            </p>
+            <span ng-bind-html="problemData.data.problem.description"></span>
         </div>
 
         <ul class="prob-sample">
