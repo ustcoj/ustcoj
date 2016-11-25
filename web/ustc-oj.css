@@ -33,11 +33,11 @@ body{
     margin: 0 auto;
 }
 
-.fixed-navbar-left-button {
-    margin-left: 30px;
+.fixed-navbar-left {
+    /*margin-left: 30px;*/
 }
 
-.fixed-navbar-left-button button{
+.fixed-navbar-left button{
     line-height: 50px;
     width: 100px;
     float: left;
@@ -46,12 +46,27 @@ body{
     background-color: transparent;
 
 }
-.fixed-navbar-right-button {
+.fixed-navbar-left input{
+    line-height: 50px;
+    float: left;
+    width: 60px;
+    border: none;
+    border-right: 10px;
+    font-size: 10px;
+    background-color: transparent;
+    color: grey;
+}
+
+.fixed-navbar-left input :hover{
+    color: #333333;
+}
+
+.fixed-navbar-right {
     margin-right: 30px;
     float: right;
 }
 
-.fixed-navbar-right-button button{
+.fixed-navbar-right button{
     line-height: 50px;
     width: 100px;
     /*float: right;*/
@@ -65,13 +80,15 @@ body{
     /*padding-top: 8px;
     margin-left: 450px;
     width: 300px;*/
+    margin-left: 480px;
+    position: fixed;
     line-height: 50px;
     text-align: center;
     font-size: 20px;
     font-weight: bold;
 }
 
-.fixed-navbar-right-button .fixed-navbar-user{
+.fixed-navbar-right .fixed-navbar-user{
     float: right;
     padding-top: 7px;
 }
@@ -193,7 +210,7 @@ body{
     font-family: "Open Sans", sans-serif;
 }
 
-.prob-desc p{
+.prob-desc {
     font-size: 16px;
     margin-bottom: 18px;
     margin-top: 8px;
@@ -215,6 +232,7 @@ body{
 
 .prob-sample{
     padding: 0px 2px 0px 2px;
+    font-family: monospace;
 }
 
 .prob-sample li div{

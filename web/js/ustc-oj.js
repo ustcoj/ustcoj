@@ -6,7 +6,7 @@ var app = angular.module("ustc-oj", []);
 
 app.run(function ($rootScope) {
     $rootScope.tabShow = "showProblem";
-    $rootScope.probNumber = 1001;
+    $rootScope.probNumber = 1050;
     $rootScope.apiHost = "http://ustcoj.applinzi.com";
 })
 

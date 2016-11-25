@@ -2,20 +2,20 @@
 <!--navbar是啥盒子-->
 <div ng-controller="navbarCtrl" class="fixed-navbar">
     <div class="fixed-navbar-container">
-
-        <div class="fixed-navbar-left-button">
+        <div class="fixed-navbar-left">
             <div ng-mouseenter="searchBox=true" ng-mouseleave="searchBox=false">
                 <button id="searchIcon" ng-click="searchFire(searchContent)">PlaceH</button>
                 <input ng-show="searchBox" ng-model="searchContent" onkeydown = "if (event.keyCode == 13)
                         document.getElementById('searchIcon').click()" />
             </div>
+
             <button ng-click="changeTab('problemList')">Problem</button>
             <button ng-click="changeTab('submit')">Submit</button>
         </div>
         <!-- float顺序问题 -->
 
 
-        <div class="fixed-navbar-right-button">
+        <div class="fixed-navbar-right">
             <div class="fixed-navbar-user">
                 <img src="user_head.png">
             </div>
