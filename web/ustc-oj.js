@@ -2,21 +2,38 @@
  * Created by LY on 2016/5/11.
  */
 
-angular.module("ustc-oj", []);
+var app = angular.module("ustc-oj", []);
 
-angular.module("ustc-oj").controller("indexCtrl", ["$scope", function($scope){
+app.run(function ($rootScope) {
+    $rootScope.tabShow = "login";
+    $rootScope.apiHost = "http://ustcoj.applinzi.com";
+})
 
-    $scope.tabShow = "login";
+app.controller("indexCtrl", function($scope){
 
-}]);
+});
 
-angular.module("ustc-oj").controller("navbarCtrl", ["$scope", function($scope){
+app.controller("navbarCtrl", function($scope, $rootScope){
 
-}]);
+    $scope.changeTab = function(toTab) {
+        $rootScope.tabShow = toTab;
+    };
 
-angular.module("ustc-oj").controller("probCtrl", ["$scope", "$http", function($scope, $http){
+});
 
-        $http.get("http://ustcoj.applinzi.com/api/problem", {params: {
+app.controller("loginCtrl", function ($scope, $http, $rootScope) {
+    $scope.registerFire = function (username, pass, passagain) {
+        $http.post($rootScope.apiHost + "/api/register", {params: {
+            code: source,
+            compiler: lang,
+            problem_id: id
+        }});
+    }
+})
+
+app.controller("problemListCtrl", function($scope, $http, $rootScope){
+
+        $http.get($rootScope.apiHost + "/api/problem", {params: {
             page: 1,
             per_page: 5
         }})
@@ -25,11 +42,24 @@ angular.module("ustc-oj").controller("probCtrl", ["$scope", "$http", function($s
                 $scope.myWelcome = response.data;
             });
 
-}]);
+});
 
-angular.module("ustc-oj").controller("oneProbCtrl",  ["$scope", function($scope){
+app.controller("oneProbCtrl", function($scope){
 
-}]);
+});
+
+app.controller("submitCtrl", function ($scope, $http, $rootScope) {
+    $scope.submitSource = "";
+    $scope.submitID = 1000;
+    $scope.language = "C++11"
+    $scope.submitFire = function (source, lang, id) {
+        $http.post($rootScope.apiHost + "/api/submission", {params: {
+            code: source,
+            compiler: lang,
+            problem_id: id
+        }});
+    }
+})
 
 
 /*
