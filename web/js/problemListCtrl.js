@@ -9,4 +9,8 @@ app.controller("problemListCtrl", function($scope, $http, $rootScope){
             $scope.problemList = response.data;
         });
 
+    $scope.show_prob = function($prob_id){
+    	$rootScope.$broadcast('problemNumberChanged', $prob_id);
+		$rootScope.tabShow = "showProblem";
+    }
 });

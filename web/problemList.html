@@ -4,7 +4,7 @@
     <p>Problem List</p>
     <div class="prob_list_content">
 	    <div ng-repeat="x in problemList.data.problem_list">
-	        <div class="prob_item">
+	        <div class="prob_item" ng-click="show_prob(x.problem_id)">
 	        	<span class="prob_id">
 	        		{{x.problem_id}}
 	        	</span>
