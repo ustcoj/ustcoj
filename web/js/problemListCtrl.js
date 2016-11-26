@@ -6,7 +6,7 @@ app.controller("problemListCtrl", function($scope, $http, $rootScope){
     }})
         .then(function(response) {
             //alert(response.status);
-            $scope.myWelcome = response.data;
+            $scope.problemList = response.data;
         });
 
 });

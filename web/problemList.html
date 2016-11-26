@@ -1,9 +1,24 @@
 
-<div ng-controller="problemListCtrl">
+<div ng-controller="problemListCtrl" class="bigContainer">
 
-    <p>~~~</p>
-    <div ng-repeat="x in myWelcome.data.problems">
-        <p>{{x.problem_title}} !!!</p>
+    <p>Problem List</p>
+    <div class="prob_list_content">
+	    <div ng-repeat="x in problemList.data.problem_list">
+	        <div class="prob_item">
+	        	<span class="prob_id">
+	        		{{x.problem_id}}
+	        	</span>
+	        	<span class="prob_title">
+	        		{{x.problem_title}}
+	        	</span>
+	        	<span class="prob_solved_cnt">
+	        		{{x.solved_cnt}}
+	        	</span>
+	        	<span class="prob_trying_cnt">
+	        		{{x.trying_cnt}}
+	        	</span>
+	        </div>
+	    </div>
     </div>
 
 </div>
