@@ -3,14 +3,15 @@
 <div ng-controller="navbarCtrl" class="fixed-navbar">
     <div class="fixed-navbar-container">
         <div class="fixed-navbar-left">
-            <div ng-mouseenter="searchBox=true" ng-mouseleave="searchBox=false">
+            <div ng-mouseenter="searchBox=true" ng-mouseleave="searchBox=false" id="searchArea">
                 <button id="searchIcon" ng-click="searchFire(searchContent)">PlaceH</button>
                 <input placeholder="ID/Search" ng-model="searchContent" onkeydown = "if (event.keyCode == 13)
                         document.getElementById('searchIcon').click()" /> <!--ng-show="searchBox"-->
             </div>
-
-            <button ng-click="changeTab('problemList')">Problem</button>
-            <button ng-click="changeTab('submit')">Submit</button>
+            <ul>
+                <li><a href="#/problems">Problem</a></li>
+                <li><a href="#/submit">Submit</a></li>
+            </ul>
         </div>
         <!-- float顺序问题 -->
 

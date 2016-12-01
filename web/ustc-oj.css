@@ -33,19 +33,33 @@ body{
     margin: 0 auto;
 }
 
-.fixed-navbar-left {
-    /*margin-left: 30px;*/
-}
 
-.fixed-navbar-left button{
+.fixed-navbar-left {
+
     line-height: 50px;
-    width: 100px;
+    display: block;
     float: left;
     border: none;
     font-size: 16px;
     background-color: transparent;
 
 }
+
+.fixed-navbar-left #searchArea {
+    float: left;
+}
+
+.fixed-navbar-left ul {
+    list-style: none;
+    overflow: hidden;
+}
+
+.fixed-navbar-left li{
+    display: block;
+    float: left;
+    width: 100px;
+}
+
 .fixed-navbar-left input{
     line-height: 50px;
     float: left;

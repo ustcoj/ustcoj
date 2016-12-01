@@ -15,6 +15,8 @@
     <!-- 奇葩的ng-include '' -->
     <div ng-include="'navbar.html'"></div>
 
+    <!--
+
     <div class="contentMain">
 
         <div ng-show="tabShow=='showProblem'" ng-include="'showProblem.html'"></div>
@@ -26,6 +28,7 @@
         <div ng-show="tabShow=='submit'" ng-include="'submit.html'"></div>
 
     </div>
+    -->
 
 
 
@@ -33,6 +36,7 @@
     <script src="jquery.min.js"></script>
     <!-- 1.5.0 -->
     <script src="angular.min.js" charset="utf-8"></script>
+    <script src="angular-route.js" charset="utf-8"></script>
     <script src="js/ustc-oj.js" charset="utf-8"></script>
     <script src="js/indexCtrl.js" charset="utf-8"></script>
     <script src="js/loginCtrl.js" charset="utf-8"></script>
@@ -40,5 +44,21 @@
     <script src="js/problemListCtrl.js" charset="utf-8"></script>
     <script src="js/showProblemCtrl.js" charset="utf-8"></script>
     <script src="js/submitCtrl.js" charset="utf-8"></script>
+
+
+    <div ng-view></div>
+
+    <script>
+        app.config(['$routeProvider', function($routeProvider){
+                $routeProvider
+                    .when('/',{templateUrl:'login.html'})
+                    .when('/problems',{templateUrl:'problemList.html'})
+                    .when('/submit',{templateUrl:'submit.html'})
+                    .otherwise({redirectTo:'/'});
+            }]);
+    </script>
+
+
+
 </body>
 </html>
