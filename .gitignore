@@ -1,0 +1,16 @@
+#Compiled Obiect Files:
+*.o
+
+#Executables
+*.out
+
+#Backups
+*~
+
+#DS_Store
+.DS_Store
+web/.idea
+
+#Workspace
+MP1/wspace
+
