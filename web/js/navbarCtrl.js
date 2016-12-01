@@ -1,7 +1,7 @@
 app.controller("navbarCtrl", function($scope, $rootScope){
 
     defaultSearchContent = "ID/Search";
-    $scope.searchContent = defaultSearchContent;
+    $scope.searchContent = "";
 
     $scope.changeTab = function(toTab) {
         $rootScope.tabShow = toTab;
