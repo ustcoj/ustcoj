@@ -1,19 +1,23 @@
-app.controller("navbarCtrl", function($scope, $rootScope){
+app.controller("navbarCtrl", function($scope, $rootScope, $window, $log){
 
     defaultSearchContent = "ID/Search";
     $scope.searchContent = "";
 
+    /*
     $scope.changeTab = function(toTab) {
         $rootScope.tabShow = toTab;
     };
+    */
 
     $scope.searchFire = function(content) {
-        if (content != defaultSearchContent) {
-            if (angular.isNumber(content) && Number(content) >= 1000 && Number(content) <= 9999) {
-                $rootScope.$broadcast('problemNumberChanged', Number(content));
-                $scope.changeTab("showProblem");
-            }
+        if (Number(content).toString() == content && Number(content) >= 1000 && Number(content) <= 1500) {
+            /*
+            $rootScope.$broadcast('problemNumberChanged', Number(content));
+            $scope.changeTab("showProblem");
+            */
+            $window.location.href = '#/problems/' + content;
         }
+        $log.log("!!!!");
     };
 
 });

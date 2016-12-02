@@ -53,6 +53,12 @@
                 $routeProvider
                     .when('/',{templateUrl:'login.html'})
                     .when('/problems',{templateUrl:'problemList.html'})
+                    .when('/problems/:problem_ID',{
+                        templateUrl:'showProblem.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
                     .when('/submit',{templateUrl:'submit.html'})
                     .otherwise({redirectTo:'/'});
             }]);
