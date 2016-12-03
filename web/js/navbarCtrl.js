@@ -17,7 +17,7 @@ app.controller("navbarCtrl", function($scope, $rootScope, $window, $log){
             */
             $window.location.href = '#/problems/' + content;
         }
-        $log.log("!!!!");
+        /*$log.log("!!!!");*/
     };
 
 });

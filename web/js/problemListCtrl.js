@@ -1,4 +1,4 @@
-app.controller("problemListCtrl", function($scope, $http, $rootScope){
+app.controller("problemListCtrl", function($scope, $http, $rootScope, $window){
 
     $http.get($rootScope.apiHost + "/api/problem", {params: {
         page: 1,
@@ -9,8 +9,11 @@ app.controller("problemListCtrl", function($scope, $http, $rootScope){
             $scope.problemList = response.data;
         });
 
-    $scope.show_prob = function($prob_id){
+    $scope.show_prob = function(prob_id){
+        /*
     	$rootScope.$broadcast('problemNumberChanged', $prob_id);
 		$rootScope.tabShow = "showProblem";
+		*/
+        $window.location.href = '#/problems/' + prob_id;
     }
 });

@@ -44,7 +44,8 @@
                         controllerAs: 'ctrl'
                     })
                     .when('/submit',{templateUrl:'submit.html'})
-                    .otherwise({redirectTo:'/'});
+                    .when('/status',{templateUrl:'status.html'})
+                    .otherwise({redirectTo:'/login.html'});
             }]);
     </script>
 
