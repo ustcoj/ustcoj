@@ -4,7 +4,14 @@
     <div class="fixed-navbar-container">
         <div class="fixed-navbar-left">
             <div ng-mouseenter="searchBox=true" ng-mouseleave="searchBox=false" id="searchArea">
-                <button id="searchIcon" ng-click="searchFire(searchContent)">PlaceH</button>
+                <button id="searchIcon" ng-click="searchFire(searchContent)">
+                    <svg width="20px" height="24px" viewBox="36 15 20 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+                        <desc>Created with Sketch.</desc>
+                        <defs></defs>
+                        <path d="M48.8277436,30.9032413 C47.5625726,31.6507808 46.0878414,32.0795812 44.5132695,32.0795812 C39.8115206,32.0795812 36,28.2561867 36,23.5397906 C36,18.8233945 39.8115206,15 44.5132695,15 C49.2150185,15 53.026539,18.8233945 53.026539,23.5397906 C53.026539,25.8519418 52.1105081,27.9494759 50.6226318,29.4871351 L55.6666879,36.6907937 L53.7969475,38 L48.8277436,30.9032413 Z M44.6210324,29.9176089 C48.0729494,29.9176089 50.8712809,27.1105598 50.8712809,23.6478892 C50.8712809,20.1852187 48.0729494,17.3781695 44.6210324,17.3781695 C41.1691155,17.3781695 38.3707839,20.1852187 38.3707839,23.6478892 C38.3707839,27.1105598 41.1691155,29.9176089 44.6210324,29.9176089 Z" id="Combined-Shape" stroke="none" fill="#5E5E5E" fill-rule="evenodd"></path>
+                    </svg>
+                </button>
                 <input placeholder="ID/Search" ng-model="searchContent" onkeydown = "if (event.keyCode == 13)
                         document.getElementById('searchIcon').click()" /> <!--ng-show="searchBox"-->
             </div>
