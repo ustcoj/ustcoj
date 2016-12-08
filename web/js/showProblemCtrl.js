@@ -19,8 +19,9 @@ app.controller("showProblemCtrl", function($scope, $http, $rootScope, $sce, $rou
     */
     $scope.finishLoading = false;
     $scope.titleChanged = false;
-    $scope.titleObj = document.getElementsByClassName('fixed-navbar-title')[0];
-    $scope.descObj = document.getElementsByClassName('prob-desc')[0];
+    $scope.onChangeTitleAction = false;
+    $scope.titleObj = $(".fixed-navbar-title")[0];
+    $scope.descObj = $(".prob-desc")[0];
 
     $http.get($rootScope.apiHost + "/api/problem/" + $routeParams.problem_ID)
         .then(function(response) {
@@ -38,28 +39,36 @@ app.controller("showProblemCtrl", function($scope, $http, $rootScope, $sce, $rou
         });
 
     window.onscroll = function (e){
-        var prob_desc_div_top = $scope.descObj.getBoundingClientRect().top;
-        if (prob_desc_div_top < 0){
-            ChangeTitle();
-        }
-        else{
-            if ($scope.titleChanged){
-                RecoverTitle();
+        if (!$scope.onChangeTitleAction){
+            var prob_desc_div_top = $scope.descObj.getBoundingClientRect().top;
+            if (prob_desc_div_top < 0){
+                ChangeTitle();
+            }
+            else{
+                if ($scope.titleChanged){
+                    RecoverTitle();
+                }
             }
         }
     }
 
     function ChangeTitle()
     {
-        $scope.titleChanged = true;
-        $scope.titleObj.innerHTML = $scope.problemData.data.problem.problem_title;
+        if (!$scope.titleChanged){
+            $scope.onChangeTitleAction = true;
+            $scope.titleChanged = true;
+            $($scope.titleObj).fadeOut("fast", function(){$(this).html($scope.problemData.data.problem.problem_title).fadeIn();});
+            $scope.onChangeTitleAction = false;
+        }
     }
 
     function RecoverTitle()
     {
         if ($scope.titleChanged){
+            $scope.onChangeTitleAction = true;
             $scope.titleChanged = false;
-            $scope.titleObj.innerHTML = '<img src="USTCOJ.svg" height="42px" alt="USTC ONLINE JUDGE" style="margin-top: 5px">';
+            $($scope.titleObj).fadeOut("fast", function(){$(this).html('<img src="USTCOJ.svg" height="42px" alt="USTC ONLINE JUDGE" style="margin-top: 5px">').fadeIn();});
+            $scope.onChangeTitleAction = false;
         }
     }
 });
