@@ -25,7 +25,7 @@
     </div>
 
 
-    <div class="prob-content">
+    <div class="prob-content" ng-show="finishLoading">
 
         <div class="prob-title">
             <h2>{{problemData.data.problem.problem_title}}</h2>
@@ -52,7 +52,7 @@
                 <div ng-bind-html="problemData.data.problem.output"></div>
             </div>
 
-
+            <!--
             <ul class="prob-sample">
                 <li>
                     <div class="prob-sample-head">Input Samples</div>
@@ -71,9 +71,20 @@
                     <div class="prob-sample-output">A=666.00</div>
                 </li>
             </ul>
+            -->
+
+            <div class="prob-hint" ng-show="problemData.data.problem.hint">
+                <h4>Hint</h4>
+                <div ng-bind-html="problemData.data.problem.hint" style="color: #6B6B6B"></div>
+            </div>
+
         </div>
 
 
+    </div>
+
+    <div class="prob-content" ng-show="!finishLoading">
+        PlaceHolder
     </div>
 
 </div>

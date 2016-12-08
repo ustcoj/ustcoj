@@ -32,25 +32,31 @@
     font-family: "Open Sans", sans-serif;
 }
 
+.prob-inner-content div {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.prob-inner-content div div {
+    font-size: 16px;
+    margin-bottom: 16px;
+    margin-top: 8px;
+    line-height: 1.7;
+}
+/*
 .prob-desc {
     font-size: 16px;
     margin-bottom: 18px;
     margin-top: 8px;
     line-height: 1.7;
 }
-
-.prob-desc p{
-    font-size: 16px;
-    margin-bottom: 18px;
-    margin-top: 8px;
-    line-height: 1.7;
+*/
+.prob-desc br{
+    display: block; /* makes it have a width */
+    content: ""; /* clears default height */
+    margin-top: 18px;
 }
 
-.prob-desc h4{
-    /*margin-bottom: 10px;*/
-
-    margin-top: 25px;
-}
 
 
 .prob-sample li{

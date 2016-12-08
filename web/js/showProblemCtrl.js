@@ -17,10 +17,12 @@ app.controller("showProblemCtrl", function($scope, $http, $rootScope, $sce, $rou
         $scope.update();
     });
     */
+    $scope.finishLoading = false;
 
     $http.get($rootScope.apiHost + "/api/problem/" + $routeParams.problem_ID)
         .then(function(response) {
             //alert(response.status);
+            $scope.finishLoading = true;
             $scope.problemData = response.data;
             $scope.problemData.data.problem.description =
                 $sce.trustAsHtml($scope.problemData.data.problem.description);
@@ -28,6 +30,8 @@ app.controller("showProblemCtrl", function($scope, $http, $rootScope, $sce, $rou
                 $sce.trustAsHtml($scope.problemData.data.problem.input_description);
             $scope.problemData.data.problem.output =
                 $sce.trustAsHtml($scope.problemData.data.problem.output_description);
+            $scope.problemData.data.problem.hint =
+                $sce.trustAsHtml($scope.problemData.data.problem.hint);
         });
 
 });
