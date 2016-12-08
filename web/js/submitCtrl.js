@@ -1,7 +1,9 @@
-app.controller("submitCtrl", function ($scope, $http, $rootScope) {
+app.controller("submitCtrl", function ($scope, $http, $rootScope, $window) {
     $scope.submitSource = "ttt";
     $scope.submitID = 1;
-    $scope.submitLang = "C++11"
+    $scope.submitLang = "C++11";
+    $scope.submitStatus = false;
+    $scope.submitMsg = "fsdf";
     $scope.submitFire = function (source, lang, id) {
         var data = $.param({
             code: source,
@@ -14,7 +16,17 @@ app.controller("submitCtrl", function ($scope, $http, $rootScope) {
                 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
             }
         }
-        $http.post($rootScope.apiHost + "/api/submission",data, config);
+        $http.post($rootScope.apiHost + "/api/submission",data, config).then(function (response) {
+            if (response.data.status.code === 1){
+                $scope.submitStatus = true;
+                $scope.submitMsg = response.data.status.message;
+            } else {
+                $window.location.href = '#/status/';
+            }
+
+
+        });
+
     }
 })
 
