@@ -1,31 +1,59 @@
 
-<div class="bigContainer" ng-controller="submitCtrl">
+<div ng-controller="submitCtrl" class="bigContainer">
 
-    <h2>Submit</h2>
 
-    <div class="submitList">
-        <table>
-            <tr>
-                <td>ID</td>
-                <td>
-                    <input ng-model="submitID" />
-                </td>
-            </tr>
-            <tr>
-                <td>Title</td>
-                <td>{{submitTitle}}</td>
-            </tr>
-            <tr>
-                <td>Lang</td>
-                <td ng-bind="submitLang">
-                </td>
-            </tr>
-        </table>
+    <div class="rightbar">
+        <div class="rightbar-item">
+            <div class="rightbar-head">
+                Problem Tag
+            </div>
+            <div>
+                <span class="rightbar-tag">dfs</span>
+            </div>
+            <div>
+                <span class="rightbar-tag">dynamic programming</span>
+            </div>
+            <div></div>
+        </div>
+        <div class="rightbar-item">
+            <div class="rightbar-prob">
+                1001
+            </div>
+            <div>Submit</div>
+            <div>Status</div>
+        </div>
     </div>
 
-    <textarea ng-bind="submitSource"></textarea>
-    <button ng-click="submitFire(submitSource, submitLang, submitID)">
-        Submit
-    </button>
+
+    <div class="big-content">
+
+        <h2>Submit</h2>
+
+        <div class="submitList">
+            <table>
+                <tr>
+                    <td>ID</td>
+                    <td>
+                        <input ng-model="submitID" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Title</td>
+                    <td>{{submitTitle}}</td>
+                </tr>
+                <tr>
+                    <td>Lang</td>
+                    <td ng-bind="submitLang">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <textarea ng-bind="submitSource"></textarea>
+        <button ng-click="submitFire(submitSource, submitLang, submitID)">
+            Submit
+        </button>
+
+    </div>
 
 </div>

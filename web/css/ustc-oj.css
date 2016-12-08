@@ -30,7 +30,7 @@ body{
     padding: 40px;
     padding-bottom: 80px;
     margin-bottom: 40px;
-    box-shadow: 2px 2px 10px #a5a5a5;
+    /*box-shadow: 2px 2px 10px #a5a5a5;*/
 }
 
 .rightbar{
@@ -41,7 +41,7 @@ body{
 .rightbar-item{
     width: 200px;
     background-color: white;
-    box-shadow: 2px 2px 10px #a5a5a5;
+    /*box-shadow: 2px 2px 10px #a5a5a5;*/
     margin-bottom: 35px;
 }
 

@@ -1,25 +1,52 @@
 
 <div ng-controller="problemListCtrl" class="bigContainer">
 
-    <p>Problem List</p>
-    <div class="prob_list_content">
-	    <div ng-repeat="x in problemList.data.problem_list">
-	        <div class="prob_item" ng-click="show_prob(x.problem_id)">
+
+	<div class="rightbar">
+		<div class="rightbar-item">
+			<div class="rightbar-head">
+				Problem Tag
+			</div>
+			<div>
+				<span class="rightbar-tag">dfs</span>
+			</div>
+			<div>
+				<span class="rightbar-tag">dynamic programming</span>
+			</div>
+			<div></div>
+		</div>
+		<div class="rightbar-item">
+			<div class="rightbar-prob">
+				1001
+			</div>
+			<div>Submit</div>
+			<div>Status</div>
+		</div>
+	</div>
+
+
+	<div class="big-content">
+
+		<h2>Problem List</h2>
+		<div class="prob_list_content">
+			<div ng-repeat="x in problemList.data.problem_list">
+				<div class="prob_item" ng-click="show_prob(x.problem_id)">
 	        	<span class="prob_id">
 	        		{{x.problem_id}}
 	        	</span>
-	        	<span class="prob_title">
+					<span class="prob_title">
 	        		{{x.problem_title}}
 	        	</span>
-	        	<span class="prob_solved_cnt">
+					<span class="prob_solved_cnt">
 	        		{{x.solved_cnt}}
 	        	</span>
-	        	<span class="prob_trying_cnt">
+					<span class="prob_trying_cnt">
 	        		{{x.trying_cnt}}
 	        	</span>
-	        </div>
-	    </div>
-    </div>
+				</div>
+			</div>
+		</div>
+
+	</div>
 
 </div>
-
