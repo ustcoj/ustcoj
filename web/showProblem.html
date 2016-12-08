@@ -1,5 +1,7 @@
 
 <div ng-controller="showProblemCtrl" class="bigContainer">
+
+
     <div class="prob-rightbar">
         <div class="prob-rightbar-item">
             <div class="prob-right-head">
@@ -34,28 +36,43 @@
             </div>
         </div>
 
-        <div class="prob-desc">
-            <span ng-bind-html="problemData.data.problem.description"></span>
+        <div class="prob-inner-content">
+            <div class="prob-desc">
+                <div ng-bind-html="problemData.data.problem.description"></div>
+            </div>
+
+            <div class="prob-input">
+                <h4 ng-show="problemData.data.problem.output">Input Description</h4>
+                <h4 ng-show="!problemData.data.problem.output">I/O Description</h4>
+                <div ng-bind-html="problemData.data.problem.input"></div>
+            </div>
+
+            <div class="prob-output" ng-show="problemData.data.problem.output">
+                <h4>Output Description</h4>
+                <div ng-bind-html="problemData.data.problem.output"></div>
+            </div>
+
+
+            <ul class="prob-sample">
+                <li>
+                    <div class="prob-sample-head">Input Samples</div>
+                    <div class="prob-sample-head">Output Samples</div>
+                </li>
+                <li>
+                    <div class="prob-sample-input">2.00</div>
+                    <div class="prob-sample-output">A=111.00</div>
+                </li>
+                <li>
+                    <div class="prob-sample-input">3.00</div>
+                    <div class="prob-sample-output">A=233.00</div>
+                </li>
+                <li>
+                    <div class="prob-sample-input">4.00</div>
+                    <div class="prob-sample-output">A=666.00</div>
+                </li>
+            </ul>
         </div>
 
-        <ul class="prob-sample">
-            <li>
-                <div class="prob-sample-head">Input Samples</div>
-                <div class="prob-sample-head">Output Samples</div>
-            </li>
-            <li>
-                <div class="prob-sample-input">2.00</div>
-                <div class="prob-sample-output">A=111.00</div>
-            </li>
-            <li>
-                <div class="prob-sample-input">3.00</div>
-                <div class="prob-sample-output">A=233.00</div>
-            </li>
-            <li>
-                <div class="prob-sample-input">4.00</div>
-                <div class="prob-sample-output">A=666.00</div>
-            </li>
-        </ul>
 
     </div>
 

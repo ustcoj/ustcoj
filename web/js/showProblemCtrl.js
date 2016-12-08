@@ -22,7 +22,12 @@ app.controller("showProblemCtrl", function($scope, $http, $rootScope, $sce, $rou
         .then(function(response) {
             //alert(response.status);
             $scope.problemData = response.data;
-            $scope.problemData.data.problem.description = $sce.trustAsHtml($scope.problemData.data.problem.description);
+            $scope.problemData.data.problem.description =
+                $sce.trustAsHtml($scope.problemData.data.problem.description);
+            $scope.problemData.data.problem.input =
+                $sce.trustAsHtml($scope.problemData.data.problem.input_description);
+            $scope.problemData.data.problem.output =
+                $sce.trustAsHtml($scope.problemData.data.problem.output_description);
         });
 
 });
