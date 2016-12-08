@@ -41,10 +41,14 @@
     margin-top: 18px;
 }
 
-.prob-desc b{
+.prob-desc b {
     color: #faa634;
 }
 
+.prob-desc table {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
 
 .prob-sample li{
     list-style: none;
