@@ -7,7 +7,7 @@ body{
     /*background-image: url("../background2.png");*/
     /*background-repeat: repeat;*/
     background-color: #fffaf0;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif
 }
 
 .contentMain {
