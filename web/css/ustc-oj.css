@@ -21,3 +21,57 @@ body{
     font-size: 18px;
     line-height: 1.5;
 }
+
+
+.big-content{
+    margin-left: 20px;
+    width: 780px;
+    background-color: white;
+    padding: 40px;
+    padding-bottom: 80px;
+    margin-bottom: 40px;
+    box-shadow: 2px 2px 10px #a5a5a5;
+}
+
+.rightbar{
+    float: right;
+    width: 200px;
+}
+
+.rightbar-item{
+    width: 200px;
+    background-color: white;
+    box-shadow: 2px 2px 10px #a5a5a5;
+    margin-bottom: 35px;
+}
+
+.rightbar-item div{
+    height: 35px;
+    font-size: 14px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.rightbar-item .rightbar-head{
+    font-size: 14px;
+    background-color: #efefef;
+    font-weight: bold;
+}
+
+.rightbar-item .rightbar-prob{
+    font-size: 14px;
+    background-color: #faa634;;
+    color: white;
+}
+
+.rightbar-item .rightbar-tag{
+    padding: 2px 10px 2px 10px;
+    margin: 8px 20px 8px 20px;
+    background-color: #efefef;
+    border-radius: 20px;
+    height: 25px;
+    line-height: 25px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
