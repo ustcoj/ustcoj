@@ -1,0 +1,64 @@
+.list-container{
+    width: 930px;
+    margin-left: 350px;
+    margin-top: 90px;
+    font-size: 13px;
+    font-family: "PT Sans", sans-serif;
+}
+
+.list-container li{
+    list-style: none;
+    height: 30px;
+    /* ���־��� */
+    line-height: 30px;
+}
+
+.list-container span{
+    display: inline-block;
+    float: left;
+}
+
+.li-darkgrey{
+    background-color: #d6d6d6;
+}
+
+.li-grey{
+    background-color: #f3f3f3;
+}
+
+.li-white{
+    background-color: white;
+}
+
+.list-container .li-page{
+    background-color: #f3f3f3;
+    height: 40px;
+}
+
+.li-page div{
+    /* ��ʱ��40 * 4 */
+    width: 160px;
+    margin: 0 auto;
+}
+
+.li-page span{
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.prob-number{
+    width: 120px;
+}
+
+.prob-name{
+    width: 557px;
+}
+
+.prob-solve{
+    width: 170px;
+}
+
+.prob-level{
+    width: 83px;
+}
