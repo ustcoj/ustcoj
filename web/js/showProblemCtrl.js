@@ -57,7 +57,7 @@ app.controller("showProblemCtrl", function($scope, $http, $rootScope, $sce, $rou
         if (!$scope.titleChanged){
             $scope.onChangeTitleAction = true;
             $scope.titleChanged = true;
-            $($scope.titleObj).fadeOut("fast", function(){$(this).html($scope.problemData.data.problem.problem_title).fadeIn();});
+            $($scope.titleObj).fadeOut(50, function(){$(this).html($scope.problemData.data.problem.problem_title).fadeIn();});
             $scope.onChangeTitleAction = false;
         }
     }
@@ -67,7 +67,7 @@ app.controller("showProblemCtrl", function($scope, $http, $rootScope, $sce, $rou
         if ($scope.titleChanged){
             $scope.onChangeTitleAction = true;
             $scope.titleChanged = false;
-            $($scope.titleObj).fadeOut("fast", function(){$(this).html('<img src="USTCOJ.svg" height="42px" alt="USTC ONLINE JUDGE" style="margin-top: 5px">').fadeIn();});
+            $($scope.titleObj).fadeOut(50, function(){$(this).html('<img src="USTCOJ.svg" height="42px" alt="USTC ONLINE JUDGE" style="margin-top: 5px">').fadeIn();});
             $scope.onChangeTitleAction = false;
         }
     }
