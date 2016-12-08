@@ -1,0 +1,82 @@
+
+<div ng-controller="statusCtrl" class="bigContainer">
+
+
+    <div class="rightbar">
+        <div class="rightbar-item">
+            <div class="rightbar-head">
+                Problem Tag
+            </div>
+            <div>
+                <span class="rightbar-tag">dfs</span>
+            </div>
+            <div>
+                <span class="rightbar-tag">dynamic programming</span>
+            </div>
+            <div></div>
+        </div>
+        <div class="rightbar-item">
+            <div class="rightbar-prob">
+                1001
+            </div>
+            <div>Submit</div>
+            <div>Status</div>
+        </div>
+    </div>
+
+
+    <div class="big-content">
+
+        <h2>Status</h2>
+        <div class="status_content">
+
+            <table style="width:100%">
+
+                <tr>
+                    <th>Submission</th>
+                    <th>Time</th>
+                    <th>Title</th>
+                    <th>User</th>
+                    <th>Status</th>
+                    <th>Run Time</th>
+                    <th>Length</th>
+                    <th>Memory</th>
+                </tr>
+
+                <tr ng-repeat="x in statusList.data.submission_list" class="submission_item">
+
+
+                    <td>
+                        {{x.submission_id}}
+                    </td>
+                    <td>
+                        {{x.push_time}}
+                    </td>
+                    <td class="prob_title">
+                        {{x.problem.problem_title}}
+                    </td>
+                    <td>
+                        {{x.user_id}}
+                    </td>
+                    <td>
+                        {{x.status}}
+                    </td>
+                    <td>
+                        {{x.time}}
+                    </td>
+                    <td>
+                        {{x.code_size}}
+                    </td>
+                    <td>
+                        {{x.memory}}
+                    </td>
+
+
+                </tr>
+
+            </table>
+        </div>
+
+    </div>
+
+</div>

@@ -2,7 +2,7 @@ app.controller("problemListCtrl", function($scope, $http, $rootScope, $window){
 
     $http.get($rootScope.apiHost + "/api/problem", {params: {
         page: 1,
-        per_page: 5
+        per_page: 10
     }})
         .then(function(response) {
             //alert(response.status);
