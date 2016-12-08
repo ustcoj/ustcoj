@@ -29,22 +29,46 @@
 
 		<h2>Problem List</h2>
 		<div class="prob_list_content">
-			<div ng-repeat="x in problemList.data.problem_list">
-				<div class="prob_item" ng-click="show_prob(x.problem_id)">
-	        	<span class="prob_id">
-	        		{{x.problem_id}}
-	        	</span>
-					<span class="prob_title">
-	        		{{x.problem_title}}
-	        	</span>
-					<span class="prob_solved_cnt">
-	        		{{x.solved_cnt}}
-	        	</span>
-					<span class="prob_trying_cnt">
-	        		{{x.trying_cnt}}
-	        	</span>
-				</div>
-			</div>
+
+			<table style="width:100%">
+
+				<tr>
+					<th>ID</th>
+					<th>Title</th>
+					<th></th>
+					<th></th>
+					<th>Status</th>
+				</tr>
+
+				<tr ng-repeat="x in problemList.data.problem_list" class="prob_item" ng-click="show_prob(x.problem_id)">
+
+
+							<td class="prob_id">
+								{{x.problem_id}}
+							</td>
+							<td class="prob_title">
+								{{x.problem_title}}
+							</td>
+							<td>
+
+							</td>
+							<td>
+
+							</td>
+							<td class="prob_status">
+								<span class="prob-solve-cnt">
+									{{x.solved_cnt}}
+								</span>
+								 /
+								<span class="prob-trying-cnt">
+									{{x.trying_cnt}}
+								</span>
+							</td>
+
+
+				</tr>
+
+			</table>
 		</div>
 
 	</div>

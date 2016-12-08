@@ -6,7 +6,7 @@
 }
 
 .prob-title h2{
-    font-size: 28px;
+    font-size: 34px;
     padding-bottom: 5px;
     font-weight: 600;
     font-family: "Open Sans", sans-serif;
@@ -29,19 +29,12 @@
 }
 
 .prob-inner-content div div {
-    font-size: 16px;
+    font-size: 15px;
     margin-bottom: 16px;
     margin-top: 8px;
     line-height: 1.7;
 }
-/*
-.prob-desc {
-    font-size: 16px;
-    margin-bottom: 18px;
-    margin-top: 8px;
-    line-height: 1.7;
-}
-*/
+
 .prob-desc br{
     display: block; /* makes it have a width */
     content: ""; /* clears default height */

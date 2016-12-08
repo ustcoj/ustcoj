@@ -1,3 +1,4 @@
+/*
 .list-container{
     width: 930px;
     margin-left: 350px;
@@ -9,7 +10,6 @@
 .list-container li{
     list-style: none;
     height: 30px;
-    /* ���־��� */
     line-height: 30px;
 }
 
@@ -36,12 +36,12 @@
 }
 
 .li-page div{
-    /* ��ʱ��40 * 4 */
+
     width: 160px;
     margin: 0 auto;
 }
 
-.li-page span{
+.li-page .span{
     width: 40px;
     text-align: center;
     line-height: 40px;
@@ -62,3 +62,4 @@
 .prob-level{
     width: 83px;
 }
+*/

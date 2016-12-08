@@ -4,8 +4,9 @@
 }
 
 body{
-    background-image: url("../background2.png");
+    /*background-image: url("../background2.png");*/
     /*background-repeat: repeat;*/
+    background-color: #fffaf0;
     font-family: "Open Sans", sans-serif;
 }
 
@@ -26,7 +27,7 @@ body{
 .big-content{
     margin-left: 20px;
     width: 780px;
-    background-color: white;
+    background-color: transparent;
     padding: 40px;
     padding-bottom: 80px;
     margin-bottom: 40px;
@@ -40,7 +41,7 @@ body{
 
 .rightbar-item{
     width: 200px;
-    background-color: white;
+    background-color: transparent;
     /*box-shadow: 2px 2px 10px #a5a5a5;*/
     margin-bottom: 35px;
 }
