@@ -18,6 +18,9 @@ app.controller("showProblemCtrl", function($scope, $http, $rootScope, $sce, $rou
     });
     */
     $scope.finishLoading = false;
+    $scope.titleChanged = false;
+    $scope.titleObj = document.getElementsByClassName('fixed-navbar-title')[0];
+    $scope.descObj = document.getElementsByClassName('prob-desc')[0];
 
     $http.get($rootScope.apiHost + "/api/problem/" + $routeParams.problem_ID)
         .then(function(response) {
@@ -34,4 +37,29 @@ app.controller("showProblemCtrl", function($scope, $http, $rootScope, $sce, $rou
                 $sce.trustAsHtml($scope.problemData.data.problem.hint);
         });
 
+    window.onscroll = function (e){
+        var prob_desc_div_top = $scope.descObj.getBoundingClientRect().top;
+        if (prob_desc_div_top < 0){
+            ChangeTitle();
+        }
+        else{
+            if ($scope.titleChanged){
+                RecoverTitle();
+            }
+        }
+    }
+
+    function ChangeTitle()
+    {
+        $scope.titleChanged = true;
+        $scope.titleObj.innerHTML = $scope.problemData.data.problem.problem_title;
+    }
+
+    function RecoverTitle()
+    {
+        if ($scope.titleChanged){
+            $scope.titleChanged = false;
+            $scope.titleObj.innerHTML = '<img src="USTCOJ.svg" height="42px" alt="USTC ONLINE JUDGE" style="margin-top: 5px">';
+        }
+    }
 });
