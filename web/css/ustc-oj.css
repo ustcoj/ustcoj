@@ -41,12 +41,15 @@ body{
 .rightbar{
     float: right;
     width: 200px;
+    margin-top: 100px;
 }
 
 .rightbar-item {
     width: 200px;
     background-color: transparent;
     /*box-shadow: 2px 2px 10px #a5a5a5;*/
+    border-left: 2px dotted #faa634;
+    padding-left: 10px;
     margin-bottom: 35px;
 }
 
