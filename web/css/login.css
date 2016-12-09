@@ -1,0 +1,32 @@
+.indexMain {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.loginContainer {
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+    /*vertical-align: middle;*/
+}
+
+.loginContainer label {
+    color: #797979;
+    font-size: 18px;
+}
+
+.loginContainer input {
+    font-size: 24px;
+    width: 300px;
+    height: 50px;
+    border-radius: 3px;
+    border-width: 0px;
+    /*box-shadow: 1px 1px 1px #797979;*/
+}
+
+.loginContainer button {
+    font-size: 24px;
+}
+

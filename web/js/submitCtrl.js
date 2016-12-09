@@ -1,7 +1,7 @@
 app.controller("submitCtrl", function ($scope, $http, $rootScope, $window) {
     $scope.submitSource = "ttt";
     $scope.submitID = 1;
-    $scope.submitLang = "C++11";
+    $scope.submitLang = "cpp";
     $scope.submitStatus = false;
     $scope.submitMsg = "fsdf";
     $scope.submitFire = function (source, lang, id) {
