@@ -21,7 +21,7 @@ app.controller("showProblemCtrl", function($scope, $http, $rootScope, $sce, $rou
     $scope.titleChanged = false;
     $scope.onChangeTitleAction = false;
     $scope.titleObj = $(".fixed-navbar-title")[0];
-    $scope.descObj = $(".prob-desc")[0];
+    $scope.descObj = $(".prob-title-inf")[0];
 
     $http.get($rootScope.apiHost + "/api/problem/" + $routeParams.problem_ID)
         .then(function(response) {
