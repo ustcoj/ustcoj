@@ -44,8 +44,10 @@
     margin-top: 18px;
 }
 
-.prob-desc b {
+.prob-desc a {
     color: #faa634;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .prob-desc table {

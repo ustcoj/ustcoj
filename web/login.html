@@ -2,39 +2,26 @@
 
     <div ng-controller="loginCtrl" class="loginContainer">
 
-        <button onclick="tologin()">Log in</button>
-        <button onclick="tosignup()">Sign up</button>
+        <button ng-click="toLogin()">Log in</button>
+        <button ng-click="toSignUp()">Sign up</button>
 
-            <div id="login">
+        <div id="login">
 
-                <p>
-                    <label for="username">Email or Username</label><br>
-                    <input type="text" id="username">
-                </p>
-                <p>
-                    <label for="password">Password</label><br>
-                    <input type="password" id="password">
-                </p>
+            <p>
+                <input ng-model="indexUsername" placeholder="Email or Username" type="text" id="username">
+            </p>
+            <p>
+                <input ng-model="indexPassword" placeholder="Password" type="password" id="password">
+            </p>
+            <p ng-show="signUpMode">
+                <input ng-model="indexPasswordAgain" placeholder="PasswordAgain" type="password" id="passwordAgain">
+            </p>
 
+        </div>
 
-            </div>
+        <button ng-click="registerFire()" ng-show="signUpMode">Go</button>
+        <button ng-click="loginFire()" ng-show="!signUpMode">Goo</button>
 
-            <div id="signup">
-                <p>
-                    <label for="signupusername">Email or Username</label><br>
-                    <input type="text" id="signupusername">
-                </p>
-                <p>
-                    <label for="signuppassword">Password</label><br>
-                    <input type="password" id="signuppassword">
-                </p>
-                <p>
-                    <label for="signuppasswordagain">Password Again</label><br>
-                    <input type="password" id="signuppasswordagain">
-                </p>
-
-
-            </div>
 
     </div>
 
