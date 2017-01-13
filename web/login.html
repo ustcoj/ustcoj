@@ -5,7 +5,7 @@
         <button ng-click="toLogin()">Log in</button>
         <button ng-click="toSignUp()">Sign up</button>
 
-        <div id="login">
+        <div class="inputWrapper">
 
             <p>
                 <input ng-model="indexUsername" placeholder="Email or Username" type="text" id="username">
@@ -19,8 +19,8 @@
 
         </div>
 
-        <button ng-click="registerFire()" ng-show="signUpMode">Go</button>
-        <button ng-click="loginFire()" ng-show="!signUpMode">Goo</button>
+        <button ng-click="registerFire(indexUsername, indexPassword, indexPasswordAgain)" ng-show="signUpMode">Go</button>
+        <button ng-click="loginFire(indexUsername, indexPassword)" ng-show="!signUpMode">Goo</button>
 
 
     </div>

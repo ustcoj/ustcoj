@@ -1,25 +1,30 @@
-app.controller("loginCtrl", function ($scope, $http, $rootScope) {
+app.controller("loginCtrl", function ($scope, $http, $rootScope, userService) {
     $scope.registerFire = function (username, pass, passagain) {
-        $http.post($rootScope.apiHost + "/api/register", {params: {
-            code: source,
-            compiler: lang,
-            problem_id: id
-        }});
+
+        if (pass == passagain) {
+
+
+        }
+        else {
+
+        }
+
     };
-    $scope.loginFire = function (username, pass, passagain) {
-        $http.post($rootScope.apiHost + "/api/register", {params: {
-            code: source,
-            compiler: lang,
-            problem_id: id
-        }});
+    $scope.loginFire = function (username, pass) {
+
+        login(username, pass);
+
     };
     $scope.signUpMode = false;
 
     $scope.toLogin = function () {
         $scope.signUpMode = false;
-    }
+    };
 
     $scope.toSignUp = function () {
         $scope.signUpMode = true;
-    }
+    };
+
+
+
 });

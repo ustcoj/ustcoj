@@ -15,8 +15,8 @@ app.controller("submitCtrl", function ($scope, $http, $rootScope, $window) {
             headers : {
                 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
             }
-        }
-        $http.post($rootScope.apiHost + "/api/submission",data, config).then(function (response) {
+        };
+        $http.post($rootScope.apiHost + "/api/submission", data, config).then(function (response) {
             if (response.data.status.code === 1){
                 $scope.submitStatus = true;
                 $scope.submitMsg = response.data.status.message;
@@ -28,5 +28,5 @@ app.controller("submitCtrl", function ($scope, $http, $rootScope, $window) {
         });
 
     }
-})
+});
 

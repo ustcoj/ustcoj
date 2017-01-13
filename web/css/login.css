@@ -11,6 +11,13 @@
     transform: translateX(-50%) translateY(-50%);
     /*min-height: 53px;*/
     /*vertical-align: middle;*/
+    /*background-color: white;*/
+}
+
+.inputWrapper {
+    border-radius: 10px;
+    border: 2px solid #faa634;
+    display: block;
 }
 
 .loginContainer label {
