@@ -2,10 +2,14 @@
 
     <div ng-controller="loginCtrl" class="loginContainer">
 
-        <button ng-click="toLogin()">Log in</button>
-        <button ng-click="toSignUp()">Sign up</button>
+        <div class="loginSwitch">
+            <button ng-click="toLogin(); wrapperStyle={'border-color': '#faa634'}">Log in</button>
+            <button id="signUpButton" ng-click="toSignUp(); wrapperStyle={'border-color': '#67C761'}">Sign up</button>
+        </div>
 
-        <div class="inputWrapper">
+
+
+        <div class="inputWrapper" ng-style="wrapperStyle">
 
             <p>
                 <input ng-model="indexUsername" placeholder="Email or Username" type="text" id="username">
@@ -19,8 +23,43 @@
 
         </div>
 
+        <!--
+
         <button ng-click="registerFire(indexUsername, indexPassword, indexPasswordAgain)" ng-show="signUpMode">Go</button>
         <button ng-click="loginFire(indexUsername, indexPassword)" ng-show="!signUpMode">Goo</button>
+        -->
+        <div class="loginClick">
+            <svg ng-show="signUpMode" ng-click="registerFire(indexUsername, indexPassword, indexPasswordAgain)" width="64px" height="64px" viewBox="480 468 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+                <desc>Created with Sketch.</desc>
+                <defs>
+                    <circle id="path-1" cx="32" cy="32" r="32"></circle>
+                    <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="64" height="64" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                </defs>
+
+                <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(480.000000, 468.000000)">
+                    <use id="Oval" stroke="#67C761" mask="url(#mask-2)" stroke-width="6" fill="#F0FFEF" xlink:href="#path-1"></use>
+                    <circle id="Oval-2" fill="#67C761" cx="32.5" cy="32.5" r="12.5"></circle>
+                </g>
+            </svg>
+
+            <svg ng-show="!signUpMode" ng-click="loginFire(indexUsername, indexPassword)" width="64px" height="64px" viewBox="480 468 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+                <desc>Created with Sketch.</desc>
+                <defs>
+                    <circle id="path-1" cx="32" cy="32" r="32"></circle>
+                    <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="64" height="64" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                </defs>
+                <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(480.000000, 468.000000)">
+                    <use id="Oval" stroke="#FAA634" mask="url(#mask-2)" stroke-width="6" fill="#FFFAF0" xlink:href="#path-1"></use>
+                    <circle id="Oval-2" fill="#FAA634" cx="32.5" cy="32.5" r="12.5"></circle>
+                </g>
+            </svg>
+        </div>
 
 
     </div>

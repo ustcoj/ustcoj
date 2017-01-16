@@ -83,6 +83,7 @@
 }
 
 .fixed-navbar-left input{
+    outline: none;
     line-height: 53px;
     float: left;
     width: 60px;
