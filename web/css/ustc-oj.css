@@ -28,7 +28,7 @@ body{
 }
 
 
-.big-content{
+.bigContent{
     margin-left: 20px;
     width: 780px;
     background-color: transparent;
@@ -38,13 +38,17 @@ body{
     /*box-shadow: 2px 2px 10px #a5a5a5;*/
 }
 
+.bigContent h2 {
+    margin-bottom: 20px;
+}
+
 .rightbar{
     float: right;
     width: 200px;
     margin-top: 100px;
 }
 
-.rightbar-item {
+.rightbarItem {
     width: 200px;
     background-color: transparent;
     /*box-shadow: 2px 2px 10px #a5a5a5;*/
@@ -53,27 +57,27 @@ body{
     margin-bottom: 35px;
 }
 
-.rightbar-item div{
+.rightbarItem div{
     height: 35px;
     font-size: 16px;
     line-height: 35px;
     /*text-align: center;*/
 }
 
-.rightbar-item .rightbar-head{
+.rightbarItem .rightbarHead{
     font-size: 16px;
     /*background-color: #efefef;*/
     font-weight: bold;
 }
 
-.rightbar-item .rightbar-prob{
+.rightbarItem .rightbarProb{
     font-size: 14px;
     /*background-color: #faa634;;*/
     color: #faa634;
     font-weight: bold;
 }
 
-.rightbar-item .rightbar-tag{
+.rightbarItem .rightbarTag{
     /*
     padding: 2px 10px 2px 10px;
     margin: 8px 20px 8px 20px;

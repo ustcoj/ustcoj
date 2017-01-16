@@ -5,7 +5,7 @@ app.controller("statusCtrl", function($scope, $http, $rootScope, $window){
 
     $http.get($rootScope.apiHost + "/api/submission", {params: {
         page: 1,
-        per_page: 5
+        per_page: 50
     }})
         .then(function(response) {
             //alert(response.status);

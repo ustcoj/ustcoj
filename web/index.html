@@ -51,6 +51,13 @@
                         }],
                         controllerAs: 'ctrl'
                     })
+                    .when('/contests',{templateUrl:'contestList.html'})
+                    .when('/contests/:contest_ID',{
+                        templateUrl:'showContest.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
                     .when('/submit',{templateUrl:'submit.html'})
                     .when('/status',{templateUrl:'status.html'})
                     .otherwise({redirectTo:'/'});

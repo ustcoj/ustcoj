@@ -2,45 +2,22 @@
 <div ng-controller="statusCtrl" class="bigContainer">
 
 
-    <div class="rightbar">
-        <div class="rightbar-item">
-            <div class="rightbar-head">
-                Problem Tag
-            </div>
-            <div>
-                <span class="rightbar-tag">dfs</span>
-            </div>
-            <div>
-                <span class="rightbar-tag">dynamic programming</span>
-            </div>
-            <div></div>
-        </div>
-        <div class="rightbar-item">
-            <div class="rightbar-prob">
-                1001
-            </div>
-            <div>Submit</div>
-            <div>Status</div>
-        </div>
-    </div>
-
-
-    <div class="big-content">
+    <div class="bigContent">
 
         <h2>Status</h2>
-        <div class="status_content">
+        <div class="statusContent">
 
             <table style="width:100%">
 
                 <tr>
-                    <th>Submission</th>
+                    <th>ID</th>
                     <th>Time</th>
                     <th>Title</th>
                     <th>User</th>
                     <th>Status</th>
-                    <th>Run Time</th>
-                    <th>Length</th>
-                    <th>Memory</th>
+                    <th>Time</th>
+                    <th>Len</th>
+                    <th>Mem</th>
                 </tr>
 
                 <tr ng-repeat="x in statusList.data.submission_list" class="submission_item">
