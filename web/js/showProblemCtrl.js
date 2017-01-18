@@ -22,21 +22,41 @@ app.controller("showProblemCtrl", function($scope, $http, $rootScope, $sce, $rou
     $scope.onChangeTitleAction = false;
     $scope.titleObj = $(".fixed-navbar-title")[0];
     $scope.descObj = $(".prob-title-inf")[0];
+    $scope.isContest = false;
 
-    $http.get($rootScope.apiHost + "/api/problem/" + $routeParams.problem_ID)
-        .then(function(response) {
-            //alert(response.status);
-            $scope.finishLoading = true;
-            $scope.problemData = response.data;
-            $scope.problemData.data.problem.description =
-                $sce.trustAsHtml($scope.problemData.data.problem.description);
-            $scope.problemData.data.problem.input =
-                $sce.trustAsHtml($scope.problemData.data.problem.input_description);
-            $scope.problemData.data.problem.output =
-                $sce.trustAsHtml($scope.problemData.data.problem.output_description);
-            $scope.problemData.data.problem.hint =
-                $sce.trustAsHtml($scope.problemData.data.problem.hint);
-        });
+
+    if ($routeParams.contest_ID == null) {
+        if ($routeParams.problem_ID == null) {
+            // TODO: show some error message
+        }
+        else {
+            $http.get($rootScope.apiHost + "/api/problem/" + $routeParams.problem_ID)
+                .then(function(response) {
+                    //alert(response.status);
+                    $scope.finishLoading = true;
+                    $scope.problemData = response.data;
+                    $scope.problemData.data.problem.description =
+                        $sce.trustAsHtml($scope.problemData.data.problem.description);
+                    $scope.problemData.data.problem.input =
+                        $sce.trustAsHtml($scope.problemData.data.problem.input_description);
+                    $scope.problemData.data.problem.output =
+                        $sce.trustAsHtml($scope.problemData.data.problem.output_description);
+                    $scope.problemData.data.problem.hint =
+                        $sce.trustAsHtml($scope.problemData.data.problem.hint);
+                });
+        }
+    }
+    else {
+        $scope.isContest = true;
+        if ($routeParams.problem_SEQ == null) {
+            // TODO: show some error message
+        }
+        else {
+
+        }
+    }
+
+
 
     window.onscroll = function (e){
         if (!$scope.onChangeTitleAction){
@@ -50,7 +70,7 @@ app.controller("showProblemCtrl", function($scope, $http, $rootScope, $sce, $rou
                 }
             }
         }
-    }
+    };
 
     function ChangeTitle()
     {

@@ -52,8 +52,14 @@
                         controllerAs: 'ctrl'
                     })
                     .when('/contests',{templateUrl:'contestList.html'})
-                    .when('/contests/:contest_ID',{
+                    .when('/contests/:contest_ID/',{
                         templateUrl:'showContest.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
+                    .when('/contests/:contest_ID/:problem_SEQ',{
+                        templateUrl:'showProblem.html',
                         controller: ['$routeParams', function($routeParams) {
                         }],
                         controllerAs: 'ctrl'

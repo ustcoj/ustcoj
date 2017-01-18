@@ -8,14 +8,16 @@
         <div class="submitList">
             <table>
                 <tr>
-                    <td>ID</td>
-                    <td>
+                    <td ng-show="!isContest">ID</td>
+                    <td ng-show="isContest">Contest</td>
+                    <td ng-show="!isContest">
                         <input ng-model="submitID" />
                     </td>
+                    <td id="contestName" ng-show="isContest">{{contestName}}</td>
                 </tr>
                 <tr>
                     <td>Title</td>
-                    <td>{{submitTitle}}</td>
+                    <td ng-show="!isContest">{{submitTitle}}</td>
                 </tr>
                 <tr>
                     <td>Lang</td>
