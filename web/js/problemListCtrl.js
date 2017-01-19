@@ -10,7 +10,7 @@ app.controller("problemListCtrl", function($scope, $http, $rootScope, $window, p
             $scope.problemList = response.data;
         });
     */
-    problemService.getProblemList($scope.problemList, 1, 10);
+    problemService.getProblemList(function(data){$scope.problemList = data}, 1, 10);
 
     $scope.show_prob = function(prob_id){
         /*

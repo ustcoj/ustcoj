@@ -113,7 +113,7 @@ app.service('problemService', function($rootScope, userService, networkService) 
 
     };
 
-    this.getProblemList = function(target, _page, _per_page) {
+    this.getProblemList = function(show_problem, _page, _per_page) {
 
         param = {
             page: _page,
@@ -122,7 +122,7 @@ app.service('problemService', function($rootScope, userService, networkService) 
         networkService.handleRepData('get', $rootScope.problemListUrl, null, {params: param}, {})
             .then(function (response) {
                 console.log(response);
-                target = response.data;
+                show_problem(response.data);
             });
 
     };
