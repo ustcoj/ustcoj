@@ -12,11 +12,11 @@ app.controller("problemListCtrl", function($scope, $http, $rootScope, $window, p
     */
     problemService.getProblemList(function(data){$scope.problemList = data}, 1, 10);
 
-    $scope.show_prob = function(prob_id){
+    $scope.showProblem = function(problemId){
         /*
     	$rootScope.$broadcast('problemNumberChanged', $prob_id);
 		$rootScope.tabShow = "showProblem";
 		*/
-        $window.location.href = '#/problems/' + prob_id;
+        $window.location.href = '#/problems/' + problemId;
     }
 });

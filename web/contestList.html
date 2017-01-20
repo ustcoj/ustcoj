@@ -35,34 +35,28 @@
                 <tr>
                     <th>ID</th>
                     <th>Title</th>
-                    <th></th>
-                    <th></th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
                     <th>Status</th>
                 </tr>
 
-                <tr ng-repeat="x in contestList.data.problem_list" class="prob_item" ng-click="show_prob(x.problem_id)">
+                <tr ng-repeat="x in contestList.contest_list" class="contestListItem" ng-click="showContest(x.contest_id)">
 
 
-                    <td class="prob_id">
-                        {{x.problem_id}}
-                    </td>
-                    <td class="prob_title">
-                        {{x.problem_title}}
+                    <td>
+                        {{x.contest_id}}
                     </td>
                     <td>
-
+                        {{x.contest_title}}
                     </td>
                     <td>
-
+                        {{x.start_time}}
                     </td>
-                    <td class="prob_status">
-								<span class="prob-solve-cnt">
-									{{x.solved_cnt}}
-								</span>
-                        /
-                        <span class="prob-trying-cnt">
-									{{x.trying_cnt}}
-								</span>
+                    <td>
+                        {{x.end_time}}
+                    </td>
+                    <td>
+                        {{}}
                     </td>
 
 

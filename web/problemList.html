@@ -40,13 +40,13 @@
 					<th>Status</th>
 				</tr>
 
-				<tr ng-repeat="x in problemList.problem_list" class="prob_item" ng-click="show_prob(x.problem_id)">
+				<tr ng-repeat="x in problemList.problem_list" class="problemListItem" ng-click="showProblem(x.problem_id)">
 
 
-							<td class="prob_id">
+							<td>
 								{{x.problem_id}}
 							</td>
-							<td class="prob_title">
+							<td>
 								{{x.problem_title}}
 							</td>
 							<td>
@@ -55,12 +55,12 @@
 							<td>
 
 							</td>
-							<td class="prob_status">
-								<span class="prob-solve-cnt">
+							<td>
+								<spa>
 									{{x.solved_cnt}}
 								</span>
 								 /
-								<span class="prob-trying-cnt">
+								<span>
 									{{x.trying_cnt}}
 								</span>
 							</td>

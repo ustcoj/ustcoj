@@ -9,6 +9,9 @@ app.run(function ($rootScope) {
     $rootScope.loginUrl = "/api/login";
     $rootScope.registerUrl = "/api/login";
     $rootScope.problemListUrl = "/api/problem"
+    $rootScope.contestListUrl = "/api/contest"
+    $rootScope.problemUrl = "/api/problem"
+    $rootScope.contestUrl = "/api/contest"
 });
 
 app.service('networkService', function($rootScope, $http, $q, userService, $filter) {
@@ -19,12 +22,13 @@ app.service('networkService', function($rootScope, $http, $q, userService, $filt
     };
 
     refreshHeader = function (header, url, contest='none') {
-        time = $filter('date')('yyyyMMddHHmmss');
+        time = $filter('date')(new Date(), 'yyyyMMddHHmmss');
         userid = userService.getUserid().toString();
         token = userService.getToken();
         header['Time'] = time;
         header['Userid'] = userid;
         tmp = url + time + userid + token;
+        console.log(tmp);
         header['Sign'] = window.btoa(tmp);
         header['Contestid'] = contest;
     };
@@ -85,26 +89,12 @@ app.service('networkService', function($rootScope, $http, $q, userService, $filt
         return resp;
 
     };
-
-    this.get = function (url, data, extraHeader = {}) {
-
-        header = extraHeader;
-        addDefaultHeader(header);
-        refreshHeader(header, url);
-        realUrl = $rootScope.apiHost + url;
-        config = {params:data, headers: header};
-
-        //resp = $http.get(realUrl, dataToSend, {headers: header});
-        resp = handleRepData('get', realUrl, config);
-        console.log(resp);
-        return resp;
-    };
     */
 });
 
 app.service('problemService', function($rootScope, userService, networkService) {
 
-    this.getProblemDetail = function(problemId, contestId="none") {
+    this.getProblemInfo = function(problemId, contestId="none") {
 
         param = {
             page: 1,
@@ -113,7 +103,7 @@ app.service('problemService', function($rootScope, userService, networkService) 
 
     };
 
-    this.getProblemList = function(show_problem, _page, _per_page) {
+    this.getProblemList = function(show_problemList, _page, _per_page) {
 
         param = {
             page: _page,
@@ -122,8 +112,26 @@ app.service('problemService', function($rootScope, userService, networkService) 
         networkService.handleRepData('get', $rootScope.problemListUrl, null, {params: param}, {})
             .then(function (response) {
                 console.log(response);
-                show_problem(response.data);
+                show_problemList(response.data);
             });
+
+    };
+
+    this.getContestList = function(show_contestList, _page, _per_page) {
+
+        param = {
+            page: _page,
+            per_page: _per_page
+        };
+        networkService.handleRepData('get', $rootScope.contestListUrl, null, {params: param}, {})
+            .then(function (response) {
+                console.log(response);
+                show_contestList(response.data);
+            });
+
+    };
+
+    this.getContestInfo = function(show_contestInfo, _contestid) {
 
     };
 
