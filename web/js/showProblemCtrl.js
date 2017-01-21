@@ -28,6 +28,7 @@ app.controller("showProblemCtrl", function($scope, $http, $rootScope, $sce, $rou
     if ($routeParams.contest_ID == null) {
         if ($routeParams.problem_ID == null) {
             // TODO: show some error message
+
         }
         else {
             $http.get($rootScope.apiHost + "/api/problem/" + $routeParams.problem_ID)

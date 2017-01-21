@@ -56,19 +56,31 @@
                         controllerAs: 'ctrl'
                     })
                     .when('/contests',{templateUrl:'contestList.html'})
-                    .when('/contests/:contest_ID/',{
+                    .when('/contests/:contest_ID',{
                         templateUrl:'showContest.html',
                         controller: ['$routeParams', function($routeParams) {
                         }],
                         controllerAs: 'ctrl'
                     })
-                    .when('/contests/:contest_ID/:problem_SEQ',{
+                    .when('/contests/:contest_ID/problems/:problem_SEQ',{
                         templateUrl:'showProblem.html',
                         controller: ['$routeParams', function($routeParams) {
                         }],
                         controllerAs: 'ctrl'
                     })
+                    .when('/contests/:contest_ID/submit/:problem_SEQ',{
+                        templateUrl:'submit.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
                     .when('/submit',{templateUrl:'submit.html'})
+                    .when('/submit/:problem_ID',{
+                        templateUrl:'submit.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
                     .when('/status',{templateUrl:'status.html'})
                     .otherwise({redirectTo:'/'});
             }]);

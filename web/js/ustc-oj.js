@@ -21,7 +21,7 @@ app.service('networkService', function($rootScope, $http, $q, userService, $filt
         return header;
     };
 
-    refreshHeader = function (header, url, contest='none') {
+    refreshHeader = function (header, url) {
         time = $filter('date')(new Date(), 'yyyyMMddHHmmss');
         userid = userService.getUserid().toString();
         token = userService.getToken();
@@ -30,15 +30,18 @@ app.service('networkService', function($rootScope, $http, $q, userService, $filt
         tmp = url + time + userid + token;
         console.log(tmp);
         header['Sign'] = window.btoa(tmp);
-        header['Contestid'] = contest;
     };
 
     this.handleRepData = function(method, url, data, config, extraHeader) {
         var promise;
         var defer = $q.defer();
+        if (config == null) {
+            config = {}
+        }
         switch (method) {
             case 'get':
                 header = extraHeader;
+                console.log(header);
                 addDefaultHeader(header);
                 refreshHeader(header, url);
 
@@ -63,12 +66,12 @@ app.service('networkService', function($rootScope, $http, $q, userService, $filt
             if (rep.data.status.code === 0) {
                 defer.resolve(rep.data);
             } else {
-                var errorMsg = rep.data.status.message || '哦，出错啦！但是后端没有给任何信息。';
-                // 弹出错误信息，或者重定向到404页面
+                var errorMsg = rep.data.status.message || 'Unknown error.';
                 alert(errorMsg);
+                // TODO: redirect to error page
             }
         }, function() {
-            defer.reject('出错了');
+            defer.reject('HTTP request failed. Please try again.');
         });
 
         return defer.promise;
@@ -132,6 +135,14 @@ app.service('problemService', function($rootScope, userService, networkService) 
     };
 
     this.getContestInfo = function(show_contestInfo, _contestid) {
+
+        networkService.handleRepData('get', $rootScope.contestListUrl + '/' + _contestid, null, null, {
+            Contestid: _contestid
+        })
+            .then(function (response) {
+                console.log(response);
+                show_contestInfo(response.data);
+            });
 
     };
 
