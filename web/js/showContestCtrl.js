@@ -7,12 +7,12 @@ app.controller("showContestCtrl", function($scope, $http, $rootScope, $window, $
         $scope.finishLoading = true;
     }, $routeParams.contest_ID);
 
-    $scope.showContestProblem = function(problemId){
+    $scope.showContestProblem = function(problemSeq){
         /*
          $rootScope.$broadcast('problemNumberChanged', $prob_id);
          $rootScope.tabShow = "showProblem";
          */
-        $window.location.href = '#/contests/' + $routeParams.contest_ID + '/problems/' + problemId;
+        $window.location.href = '#/contests/' + $routeParams.contest_ID + '/problems/' + problemSeq;
     }
 
 });

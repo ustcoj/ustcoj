@@ -1,22 +1,5 @@
-app.controller("showProblemCtrl", function($scope, $http, $rootScope, $sce, $routeParams){
+app.controller("showProblemCtrl", function($scope, $http, $rootScope, $routeParams, problemService){
 
-    /*
-    $scope.update = function(){
-    	$http.get($rootScope.apiHost + "/api/problem/" + $rootScope.probNumber)
-        .then(function(response) {
-            //alert(response.status);
-            $scope.problemData = response.data;
-            $scope.problemData.data.problem.description = $sce.trustAsHtml($scope.problemData.data.problem.description);
-        });
-    };
-
-    $scope.update();
-
-    $rootScope.$on('problemNumberChanged', function(event, data){
-    	$rootScope.probNumber = data;
-        $scope.update();
-    });
-    */
     $scope.finishLoading = false;
     $scope.titleChanged = false;
     $scope.onChangeTitleAction = false;
@@ -24,6 +7,7 @@ app.controller("showProblemCtrl", function($scope, $http, $rootScope, $sce, $rou
     $scope.descObj = $(".prob-title-inf")[0];
     $scope.isContest = false;
 
+    console.log($routeParams);
 
     if ($routeParams.contest_ID == null) {
         if ($routeParams.problem_ID == null) {
@@ -31,24 +15,20 @@ app.controller("showProblemCtrl", function($scope, $http, $rootScope, $sce, $rou
 
         }
         else {
-            $http.get($rootScope.apiHost + "/api/problem/" + $routeParams.problem_ID)
-                .then(function(response) {
-                    //alert(response.status);
-                    $scope.finishLoading = true;
-                    $scope.problemData = response.data;
-                    $scope.problemData.data.problem.description =
-                        $sce.trustAsHtml($scope.problemData.data.problem.description);
-                    $scope.problemData.data.problem.input =
-                        $sce.trustAsHtml($scope.problemData.data.problem.input_description);
-                    $scope.problemData.data.problem.output =
-                        $sce.trustAsHtml($scope.problemData.data.problem.output_description);
-                    $scope.problemData.data.problem.hint =
-                        $sce.trustAsHtml($scope.problemData.data.problem.hint);
-                });
+            problemService.getProblemData(function(data){
+                $scope.problemData = data;
+                //console.log(data);
+                $scope.finishLoading = true;
+            }, $routeParams.problem_ID);
         }
     }
     else {
         $scope.isContest = true;
+
+        problemService.getContestInfo(function(data){
+            $scope.contestInfo = data;
+        }, $routeParams.contest_ID);
+
         if ($routeParams.problem_SEQ == null) {
             // TODO: show some error message
         }
@@ -56,8 +36,6 @@ app.controller("showProblemCtrl", function($scope, $http, $rootScope, $sce, $rou
 
         }
     }
-
-
 
     window.onscroll = function (e){
         if (!$scope.onChangeTitleAction){

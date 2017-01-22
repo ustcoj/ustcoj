@@ -40,11 +40,11 @@
                     <th></th>
                 </tr>
 
-                <tr ng-repeat="x in contestInfo.problem_list" class="contestListItem" ng-click="showContestProblem(x.problem_id)">
+                <tr ng-repeat="x in contestInfo.problem_list" class="contestListItem" ng-click="showContestProblem($index + 1)">
 
 
                     <td>
-                        {{x.problem_id}}
+                        {{$index + 1}}
                     </td>
                     <td>
                         {{x.problem_title}}

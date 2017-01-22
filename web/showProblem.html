@@ -28,28 +28,28 @@
     <div class="bigContent" ng-show="finishLoading">
 
         <div class="prob-title">
-            <h2>{{problemData.data.problem.problem_title}}</h2>
+            <h2>{{problemData.problem.problem_title}}</h2>
             <div class="prob-title-inf">
-                <p>Time limit: {{problemData.data.problem.time_limit}} ms</p>
-                <p>Memory limit: {{problemData.data.problem.memory_limit}} KiB</p>
+                <p>Time limit: {{problemData.problem.time_limit}} ms</p>
+                <p>Memory limit: {{problemData.problem.memory_limit}} KiB</p>
                 <p>Standard I/O</p>
             </div>
         </div>
 
         <div class="prob-inner-content">
             <div class="prob-desc">
-                <div ng-bind-html="problemData.data.problem.description"></div>
+                <div ng-bind-html="problemData.problem.description"></div>
             </div>
 
             <div class="prob-input">
-                <h4 ng-show="problemData.data.problem.output">Input Description</h4>
-                <h4 ng-show="!problemData.data.problem.output">I/O Description</h4>
-                <div ng-bind-html="problemData.data.problem.input"></div>
+                <h4 ng-show="problemData.problem.output">Input Description</h4>
+                <h4 ng-show="!problemData.problem.output">I/O Description</h4>
+                <div ng-bind-html="problemData.problem.input"></div>
             </div>
 
-            <div class="prob-output" ng-show="problemData.data.problem.output">
+            <div class="prob-output" ng-show="problemData.problem.output">
                 <h4>Output Description</h4>
-                <div ng-bind-html="problemData.data.problem.output"></div>
+                <div ng-bind-html="problemData.problem.output"></div>
             </div>
 
             <!--
@@ -73,9 +73,9 @@
             </ul>
             -->
 
-            <div class="prob-hint" ng-show="problemData.data.problem.hint">
+            <div class="prob-hint" ng-show="problemData.problem.hint">
                 <h4>Hint</h4>
-                <div ng-bind-html="problemData.data.problem.hint" style="color: #6B6B6B"></div>
+                <div ng-bind-html="problemData.problem.hint" style="color: #6B6B6B"></div>
             </div>
 
         </div>

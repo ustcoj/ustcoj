@@ -8,9 +8,10 @@ app.run(function ($rootScope) {
     $rootScope.apiHost = "http://ustcoj.applinzi.com";
     $rootScope.loginUrl = "/api/login";
     $rootScope.registerUrl = "/api/login";
-    $rootScope.problemListUrl = "/api/problem"
-    $rootScope.contestListUrl = "/api/contest"
-    $rootScope.problemUrl = "/api/problem"
+    $rootScope.problemListUrl = "/api/problem";
+    $rootScope.problemUrl = "/api/problem";
+    $rootScope.contestListUrl = "/api/contest";
+    $rootScope.problemUrl = "/api/problem";
     $rootScope.contestUrl = "/api/contest"
 });
 
@@ -95,14 +96,29 @@ app.service('networkService', function($rootScope, $http, $q, userService, $filt
     */
 });
 
-app.service('problemService', function($rootScope, userService, networkService) {
+app.service('problemService', function($rootScope, $sce, userService, networkService) {
 
-    this.getProblemInfo = function(problemId, contestId="none") {
+    this.getProblemData = function(show_problemData, problemId, contestId="none") {
 
-        param = {
-            page: 1,
-            per_page: 1
-        }
+        networkService.handleRepData('get', $rootScope.problemUrl + '/' + problemId, null, null, {})
+            .then(function (response) {
+                console.log(response);
+                show_problemData(resolveProblemData(response.data));
+            });
+
+    };
+
+    resolveProblemData = function (data) {
+
+        data.problem.description =
+            $sce.trustAsHtml(data.problem.description);
+        data.problem.input =
+            $sce.trustAsHtml(data.problem.input_description);
+        data.problem.output =
+            $sce.trustAsHtml(data.problem.output_description);
+        data.problem.hint =
+            $sce.trustAsHtml(data.problem.hint);
+        return data;
 
     };
 
