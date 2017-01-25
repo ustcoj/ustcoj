@@ -101,16 +101,32 @@
 .fixed-navbar-right {
     margin-right: 30px;
     float: right;
+    line-height: 53px;
+    display: block;
+    border: none;
+    font-size: 16px;
+    background-color: transparent;
 }
 
 .fixed-navbar-right button{
     line-height: 53px;
     width: 100px;
-    /*float: right;*/
+    float: right;
     border: none;
     font-size: 16px;
     background-color: #f5f5f5;
 
+}
+
+.fixed-navbar-right ul {
+    list-style: none;
+    overflow: hidden;
+}
+
+.fixed-navbar-right li{
+    display: block;
+    float: right;
+    width: 100px;
 }
 
 .fixed-navbar-title{
