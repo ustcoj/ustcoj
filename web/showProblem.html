@@ -41,47 +41,35 @@
                 <div ng-bind-html="problemData.problem.description"></div>
             </div>
 
-            <div class="prob-input">
+            <div class="prob-desc">
                 <h4 ng-show="problemData.problem.output">Input Description</h4>
                 <h4 ng-show="!problemData.problem.output">I/O Description</h4>
                 <div ng-bind-html="problemData.problem.input"></div>
             </div>
 
-            <div class="prob-output" ng-show="problemData.problem.output">
+            <div class="prob-desc" ng-show="problemData.problem.output">
                 <h4>Output Description</h4>
                 <div ng-bind-html="problemData.problem.output"></div>
             </div>
 
+            <div class="prob-sample">
+                <h4>Samples</h4>
+                <!-- TODO: Sample/Samples --->
+                <div class="sample-wrapper" ng-repeat="s in problemData.problem.input_sample">
+                    <div class="prob-sample-heads">
+                        <p class="prob-sample-input-head">INPUT {{$index + 1}}</p>
+                        <p class="prob-sample-output-head">OUTPUT {{$index + 1}}</p>
+                    </div>
+                    <p class="prob-sample-input" ng-bind-html="s"></p>
+                    <p class="prob-sample-output" ng-bind-html="problemData.problem.output_sample[$index]"></p>
+                </div>
 
-            <ul class="prob-sample">
-                <li>
-                    <div class="prob-sample-head">Input Samples</div>
-                    <div class="prob-sample-head">Output Samples</div>
-                </li>
-                <!--
-                <li>
-                    <div class="prob-sample-input">2.00</div>
-                    <div class="prob-sample-output">A=111.00</div>
-                </li>
-                <li>
-                    <div class="prob-sample-input">3.00</div>
-                    <div class="prob-sample-output">A=233.00</div>
-                </li>
-                <li>
-                    <div class="prob-sample-input">4.00</div>
-                    <div class="prob-sample-output">A=666.00</div>
-                </li>
-                -->
-                <li ng-repeat="s in problemData.problem.input_sample">
-                    <div class="prob-sample-input">{{s}}</div>
-                    <div class="prob-sample-output">{{problemData.problem.output_sample[$index]}}</div>
-                </li>
-            </ul>
+            </div>
 
 
-            <div class="prob-hint" ng-show="problemData.problem.hint">
+            <div class="prob-desc" ng-show="problemData.problem.hint">
                 <h4>Hint</h4>
-                <div ng-bind-html="problemData.problem.hint" style="color: #6B6B6B"></div>
+                <div class="prob-hint" ng-bind-html="problemData.problem.hint" style="color: #6B6B6B"></div>
             </div>
 
         </div>
