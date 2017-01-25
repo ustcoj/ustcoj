@@ -56,7 +56,8 @@ app.controller("showProblemCtrl", function($scope, $http, $rootScope, $routePara
         if (!$scope.titleChanged){
             $scope.onChangeTitleAction = true;
             $scope.titleChanged = true;
-            $($scope.titleObj).fadeOut(50, function(){$(this).html($scope.problemData.data.problem.problem_title).fadeIn();});
+            console.log($scope.problemData);
+            $($scope.titleObj).fadeOut(50, function(){$(this).html($scope.problemData.problem.problem_title).fadeIn();});
             $scope.onChangeTitleAction = false;
         }
     }
