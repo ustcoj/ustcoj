@@ -12,7 +12,7 @@ app.controller("showContestCtrl", function($scope, $http, $rootScope, $window, $
          $rootScope.$broadcast('problemNumberChanged', $prob_id);
          $rootScope.tabShow = "showProblem";
          */
-        $window.location.href = '#/contests/' + $routeParams.contest_ID + '/problems/' + problemSeq;
+        $window.location.href = '#/contests/' + $routeParams.contest_ID + '/problem/' + problemSeq;
     }
 
 });

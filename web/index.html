@@ -62,7 +62,7 @@
                         }],
                         controllerAs: 'ctrl'
                     })
-                    .when('/contests/:contest_ID/problems/:problem_SEQ',{
+                    .when('/contests/:contest_ID/problem/:problem_SEQ',{
                         templateUrl:'showProblem.html',
                         controller: ['$routeParams', function($routeParams) {
                         }],
@@ -82,6 +82,12 @@
                         controllerAs: 'ctrl'
                     })
                     .when('/status',{templateUrl:'status.html'})
+                    .when('/edit/:problem_ID',{
+                        templateUrl:'edit.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
                     .otherwise({redirectTo:'/'});
             }]);
     </script>
