@@ -20,4 +20,8 @@ app.controller("navbarCtrl", function($scope, $rootScope, $window, $log){
         /*$log.log("!!!!");*/
     };
 
+    $scope.jumpToProfile = function() {
+        $window.location.href = '#/profile'
+    };
+
 });

@@ -28,7 +28,7 @@ app.service('networkService', function($rootScope, $http, $q, userService, $filt
         token = userService.getToken();
         header['Time'] = time;
         header['Userid'] = userid;
-        tmp = url + time + userid + token;
+        tmp = url + time + userid + token.toString();
         console.log(tmp);
         header['Sign'] = window.btoa(tmp);
     };
@@ -53,7 +53,16 @@ app.service('networkService', function($rootScope, $http, $q, userService, $filt
                 promise = $http.get(realUrl, realConfig);
                 break;
             case 'post':
-                promise = $http.post(url, data, config);
+                header = extraHeader;
+                dataTosend = $.param(data);
+                //console.log(header);
+                addDefaultHeader(header);
+                refreshHeader(header, url);
+                realUrl = $rootScope.apiHost + url;
+                realConfig = config;
+                realConfig.headers = header;
+                console.log(realConfig);
+                promise = $http.post(url, dataTosend, realConfig);
                 break;
             case 'put':
                 promise = $http.put(url, data, config);
@@ -78,22 +87,6 @@ app.service('networkService', function($rootScope, $http, $q, userService, $filt
         return defer.promise;
     };
 
-    /*
-    this.post = function(url, data, extraHeader) {
-
-        realUrl = $rootScope.apiHost + url;
-        dataToSend = $.param(data);
-        header = extraHeader;
-        addDefaultHeader(header);
-        refreshHeader(header, url);
-
-        //resp = $http.post(realUrl, dataToSend, {headers: header});
-        resp = handleRepData('post', realUrl, dataToSend, {headers: header});
-
-        return resp;
-
-    };
-    */
 });
 
 app.service('problemService', function($rootScope, $sce, userService, networkService) {
@@ -170,8 +163,13 @@ app.service('problemService', function($rootScope, $sce, userService, networkSer
 
 });
 
-app.service('userService', function($rootScope, $cookies, $http) {
+app.service('userService', function($rootScope, $cookies, $http, $window) {
 
+    var tempConfig = {
+        headers : {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+        }
+    };
 
     this.login = function (username, password) {
 
@@ -181,8 +179,18 @@ app.service('userService', function($rootScope, $cookies, $http) {
         };
         console.log(data);
 
-        //response = networkService.post($rootScope.loginUrl, data);
-        $cookies.put("userId", response.data.user_id);
+        response = $http.post($rootScope.apiHost + $rootScope.loginUrl, $.param(data), tempConfig)
+            .then(function (response) {
+                if (response.data.status.code === 0) {
+                    $cookies.put("userId", response.data.data.user.user_id);
+                    $cookies.put("token", response.data.data.token);
+                    $cookies.put("username", response.data.data.user.username);
+                    $window.location.href = '#/problems';
+                }
+                else {
+                    alert(response.data.status.message);
+                }
+        });
 
     };
 
@@ -194,16 +202,19 @@ app.service('userService', function($rootScope, $cookies, $http) {
         };
 
         //response = networkService.post($rootScope.registerUrl, data);
-
+        response = $http.post($rootScope.registerUrl, $.param(data), tempConfig)
+            .then(function (response) {
+                $cookies.put("userId", response.data.user_id);
+            });
     };
 
     this.getToken = function () {
-        //if ($cookies.get())
-        return "111";
+        console.log($cookies.get("token"));
+        return $cookies.get("token");
     };
 
     this.getUserid = function() {
-        return 1;
+        return $cookies.get("userId");
     };
 
     var MD5 = function (s) {

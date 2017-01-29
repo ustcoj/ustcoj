@@ -3,7 +3,7 @@ app.controller("loginCtrl", function ($scope, $http, $rootScope, userService) {
 
         if (pass == passagain) {
 
-
+            userService.register(username, pass);
         }
         else {
 
@@ -12,7 +12,7 @@ app.controller("loginCtrl", function ($scope, $http, $rootScope, userService) {
     };
     $scope.loginFire = function (username, pass) {
 
-        login(username, pass);
+        userService.login(username, pass);
 
     };
     $scope.signUpMode = false;

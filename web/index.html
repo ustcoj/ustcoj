@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/submit.css">
     <link rel="stylesheet" href="css/status.css">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/edit.css">
     <link rel="stylesheet" href="css/showContest.css">
     <link rel="stylesheet" href="css/contestList.css">
 </head>
@@ -38,6 +39,7 @@
     <script src="js/showProblemCtrl.js" charset="utf-8"></script>
     <script src="js/submitCtrl.js" charset="utf-8"></script>
     <script src="js/statusCtrl.js" charset="utf-8"></script>
+    <script src="js/editCtrl.js" charset="utf-8"></script>
     <script src="js/showContestCtrl.js" charset="utf-8"></script>
     <script src="js/contestListCtrl.js" charset="utf-8"></script>
 
@@ -88,6 +90,7 @@
                         }],
                         controllerAs: 'ctrl'
                     })
+                    .when('/profile',{templateUrl:'profile.html'})
                     .otherwise({redirectTo:'/'});
             }]);
     </script>
