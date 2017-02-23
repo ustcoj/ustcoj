@@ -1,5 +1,7 @@
-<link rel="stylesheet" href="editormd.min.css" />
-<script src="editormd.min.js" charset="utf-8"></script>
+<link rel="stylesheet" href="editor/editormd.min.css" />
+<script src="editor/editormd.min.js" charset="utf-8"></script>
+<script src="js/editCtrl.js" charset="utf-8"></script>
+<link rel="stylesheet" href="css/edit.css">
 <script type="text/javascript">
     $(function() {
         var editor = editormd("editormd", {
@@ -31,11 +33,38 @@
 
     <div class="editTitle">
         <h2>Description</h2>
-        <div id="editormd">
-            <textarea style="display: none" >sdfsdfsfsd</textarea>
+        <div id="editormd-title" class="editormd-window-title">
+            <textarea style="display: none" ng-bind="problemData.problem.description">Loading...</textarea>
 
         </div>
     </div>
+
+    <div class="editTitle">
+        <h2>Input Description</h2>
+        <div id="editormd-input-description" class="editormd-window-input-description">
+            <textarea style="display: none" ng-bind="problemData.problem.input_description">Loading...</textarea>
+
+        </div>
+    </div>
+
+    <div class="editTitle">
+        <h2>Output Description</h2>
+        <div id="editormd-output-description" class="editormd-window-output-description">
+            <textarea style="display: none" ng-bind="problemData.problem.output_description">Loading...</textarea>
+
+        </div>
+    </div>
+
+    <div class="editTitle">
+        <h2>Hint</h2>
+        <div id="editormd-hint" class="editormd-window-hint">
+            <textarea style="display: none" ng-bind="problemData.problem.hint">Loading...</textarea>
+
+        </div>
+    </div>
+
+
+
 
     <!--
     <div class="prob-desc">

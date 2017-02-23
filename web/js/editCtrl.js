@@ -24,7 +24,8 @@ app.controller("editCtrl", function ($routeParams, $scope, $http, $rootScope, $w
         }, $scope.problemId);
     }
 
-
-
 });
+
+var editormdTitle, editormdInputDescription, editormdOutputDescription, editormdHint;
+
 
