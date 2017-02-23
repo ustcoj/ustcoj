@@ -30,7 +30,7 @@ var editormdTitle, editormdInputDescription, editormdOutputDescription, editormd
 
 $(function() {
     var editor = editormd("editormd", {
-        path : "./lib/" // Autoload modules mode, codemirror, marked... dependents libs path
+        path : "./editormd/lib/" // Autoload modules mode, codemirror, marked... dependents libs path
     });
 
     /*
