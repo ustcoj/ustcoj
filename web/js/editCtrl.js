@@ -28,4 +28,16 @@ app.controller("editCtrl", function ($routeParams, $scope, $http, $rootScope, $w
 
 var editormdTitle, editormdInputDescription, editormdOutputDescription, editormdHint;
 
+$(function() {
+    var editor = editormd("editormd", {
+        path : "./lib/" // Autoload modules mode, codemirror, marked... dependents libs path
+    });
 
+    /*
+     // or
+     var editor = editormd({
+     id   : "editormd",
+     path : "../lib/"
+     });
+     */
+});

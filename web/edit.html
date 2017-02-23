@@ -2,21 +2,6 @@
 <script src="editor/editormd.min.js" charset="utf-8"></script>
 <script src="js/editCtrl.js" charset="utf-8"></script>
 <link rel="stylesheet" href="css/edit.css">
-<script type="text/javascript">
-    $(function() {
-        var editor = editormd("editormd", {
-            path : "./lib/" // Autoload modules mode, codemirror, marked... dependents libs path
-        });
-
-        /*
-         // or
-         var editor = editormd({
-         id   : "editormd",
-         path : "../lib/"
-         });
-         */
-    });
-</script>
 
 <div ng-controller="editCtrl" class="bigContainer">
 
