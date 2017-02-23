@@ -1,3 +1,21 @@
+<link rel="stylesheet" href="editormd.min.css" />
+<script src="editormd.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+    $(function() {
+        var editor = editormd("editormd", {
+            path : "./lib/" // Autoload modules mode, codemirror, marked... dependents libs path
+        });
+
+        /*
+         // or
+         var editor = editormd({
+         id   : "editormd",
+         path : "../lib/"
+         });
+         */
+    });
+</script>
+
 <div ng-controller="editCtrl" class="bigContainer">
 
     <div class="editTitle">
@@ -13,7 +31,10 @@
 
     <div class="editTitle">
         <h2>Description</h2>
-        <textarea ng-model="problemEdit.description"></textarea>
+        <div id="editormd">
+            <textarea style="display: none" >sdfsdfsfsd</textarea>
+
+        </div>
     </div>
 
     <!--

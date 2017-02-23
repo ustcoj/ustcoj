@@ -10,6 +10,8 @@ app.controller("editCtrl", function ($routeParams, $scope, $http, $rootScope, $w
     $scope.problemEdit = null;
     $scope.finishLoading = false;
 
+    console.log($routeParams);
+
     if ($routeParams.problem_ID == null) {
 
     }

@@ -28,7 +28,7 @@ app.service('networkService', function($rootScope, $http, $q, userService, $filt
         token = userService.getToken();
         header['Time'] = time;
         header['Userid'] = userid;
-        tmp = url + time + userid + token.toString();
+        tmp = url + time + userid + token;
         console.log(tmp);
         header['Sign'] = window.btoa(tmp);
     };
@@ -42,7 +42,7 @@ app.service('networkService', function($rootScope, $http, $q, userService, $filt
         switch (method) {
             case 'get':
                 header = extraHeader;
-                console.log(header);
+                //console.log(header);
                 addDefaultHeader(header);
                 refreshHeader(header, url);
 
@@ -214,7 +214,13 @@ app.service('userService', function($rootScope, $cookies, $http, $window) {
     };
 
     this.getUserid = function() {
-        return $cookies.get("userId");
+        tmpId = $cookies.get("userId");
+        if (tmpId) {
+            return tmpId;
+        }
+        else {
+            return -1;
+        }
     };
 
     var MD5 = function (s) {

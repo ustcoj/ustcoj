@@ -3,12 +3,6 @@ app.controller("navbarCtrl", function($scope, $rootScope, $window, $log){
     defaultSearchContent = "ID/Search";
     $scope.searchContent = "";
 
-    /*
-    $scope.changeTab = function(toTab) {
-        $rootScope.tabShow = toTab;
-    };
-    */
-
     $scope.searchFire = function(content) {
         if (Number(content).toString() == content && Number(content) >= 1000 && Number(content) <= 1500) {
             /*
