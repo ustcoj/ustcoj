@@ -1,4 +1,3 @@
-
 <div ng-controller="showProblemCtrl" class="bigContainer">
 
 
@@ -37,19 +36,23 @@
         </div>
 
         <div class="prob-inner-content">
-            <div class="prob-desc markdown-preview">
-                <div ng-bind-html="problemData.problem.description"></div>
+            <div class="prob-desc">
+            <div id="editormd-view-desc">
+                <textarea style="display:none;"></textarea>
             </div>
-
             <div class="prob-desc">
                 <h4 ng-show="problemData.problem.output">Input Description</h4>
                 <h4 ng-show="!problemData.problem.output">I/O Description</h4>
-                <div class="markdown-preview" ng-bind-html="problemData.problem.input"></div>
+                <div id="editormd-view-input-desc">
+                    <textarea style="display:none;"></textarea>
+                </div>
             </div>
 
             <div class="prob-desc" ng-show="problemData.problem.output">
                 <h4>Output Description</h4>
-                <div class="markdown-preview" ng-bind-html="problemData.problem.output"></div>
+                <div id="editormd-view-output-desc">
+                    <textarea style="display:none;"></textarea>
+                </div>
             </div>
 
             <div class="prob-desc" id="sample">
@@ -69,7 +72,9 @@
 
             <div class="prob-desc" ng-show="problemData.problem.hint">
                 <h4>Hint</h4>
-                <div class="markdown-preview" class="prob-hint" ng-bind-html="problemData.problem.hint" style="color: #6B6B6B"></div>
+                <div id="editormd-view-hint" style="color: #6B6B6B">
+                    <textarea style="display:none;"></textarea>
+                </div>
             </div>
 
         </div>
@@ -78,7 +83,39 @@
     </div>
 
     <div class="big-content" ng-show="!finishLoading">
-        PlaceHolder
+        Loading...
     </div>
 
 </div>
+<link rel="stylesheet" href="./editormd/css/editormd.preview.css" />
+<script src="jquery.min.js"></script>
+<script src="./editormd/lib/marked.min.js"></script>
+<script src="./editormd/lib/prettify.min.js"></script>
+        
+<script src="./editormd/lib/raphael.min.js"></script>
+<script src="./editormd/lib/underscore.min.js"></script>
+<script src="./editormd/lib/sequence-diagram.min.js"></script>
+<script src="./editormd/lib/flowchart.min.js"></script>
+<script src="./editormd/lib/jquery.flowchart.min.js"></script>
+
+<script src="./editormd/editormd.min.js"></script>
+<script type="text/javascript">
+function renderData(elem_id, data){
+    return editormd.markdownToHTML(elem_id, {
+        markdown        : data,
+        htmlDecode      : "style,script,iframe",  // you can filter tags decode
+        markdownSourceCode : true,
+        emoji           : true,
+        taskList        : true,
+        tex             : true,
+        flowChart       : true,
+        sequenceDiagram : true,
+    });
+}
+startRender = (function(data){
+    renderData("editormd-view-desc", data.description);
+    renderData("editormd-view-input-desc", data.input_description);
+    renderData("editormd-view-output-desc", data.output_description);
+    renderData("editormd-view-hint", data.hint);
+});
+</script>

@@ -17,8 +17,8 @@ app.controller("showProblemCtrl", function($scope, $http, $rootScope, $routePara
         else {
             problemService.getProblemData(function(data){
                 $scope.problemData = data;
-                //console.log(data);
                 $scope.finishLoading = true;
+                startRender($scope.problemData.problem);
             }, $routeParams.problem_ID);
         }
     }
