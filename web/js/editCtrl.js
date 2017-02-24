@@ -21,23 +21,10 @@ app.controller("editCtrl", function ($routeParams, $scope, $http, $rootScope, $w
             $scope.problemData = data;
             $scope.problemEdit = data.problem;
             $scope.finishLoading = true;
+            startRender();
         }, $scope.problemId);
     }
 
 });
 
-var editormdTitle, editormdInputDescription, editormdOutputDescription, editormdHint;
 
-$(function() {
-    var editor = editormd("editormd", {
-        path : "./editormd/lib/" // Autoload modules mode, codemirror, marked... dependents libs path
-    });
-
-    /*
-     // or
-     var editor = editormd({
-     id   : "editormd",
-     path : "../lib/"
-     });
-     */
-});

@@ -1,4 +1,4 @@
-app.controller("submitCtrl", function ($routeParams, $scope, $http, $rootScope, $window, networkService) {
+app.controller("submitCtrl", function ($routeParams, $scope, $http, $rootScope, $window, problemService) {
     $scope.submitSource = "ttt";
     $scope.submitID = 1;
     $scope.submitLang = "cpp";
@@ -18,13 +18,13 @@ app.controller("submitCtrl", function ($routeParams, $scope, $http, $rootScope, 
     }
 
     $scope.submitFire = function (source, lang, id) {
-        var data = $.param({
+        var submissionData = {
             code: source,
             compiler: lang,
             problem_id: id
-        });
-
-        $http.post($rootScope.apiHost + "/api/submission", data, config).then(function (response) {
+        };
+        /*
+        $http.post($rootScope.apiHost + $rootScope.submitUrl, data, config).then(function (response) {
             if (response.data.status.code === 1){
                 $scope.submitStatus = true;
                 $scope.submitMsg = response.data.status.message;
@@ -34,7 +34,10 @@ app.controller("submitCtrl", function ($routeParams, $scope, $http, $rootScope, 
 
 
         });
-
+        */
+        problemService.submitCode(function(response) {
+            $window.location.href = '#/status/';
+        }, submissionData, $scope.ContestId);
     }
 });
 

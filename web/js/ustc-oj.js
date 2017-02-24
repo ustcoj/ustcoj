@@ -12,7 +12,8 @@ app.run(function ($rootScope) {
     $rootScope.problemUrl = "/api/problem";
     $rootScope.contestListUrl = "/api/contest";
     $rootScope.problemUrl = "/api/problem";
-    $rootScope.contestUrl = "/api/contest"
+    $rootScope.contestUrl = "/api/contest";
+    $rootScope.submitUrl = "/api/submission"
 });
 
 app.service('networkService', function($rootScope, $http, $q, userService, $filter) {
@@ -62,7 +63,7 @@ app.service('networkService', function($rootScope, $http, $q, userService, $filt
                 realConfig = config;
                 realConfig.headers = header;
                 console.log(realConfig);
-                promise = $http.post(url, dataTosend, realConfig);
+                promise = $http.post(realUrl, dataTosend, realConfig);
                 break;
             case 'put':
                 promise = $http.put(url, data, config);
@@ -101,8 +102,11 @@ app.service('problemService', function($rootScope, $sce, userService, networkSer
 
     };
 
-    resolveProblemData = function (data) {
+    languageList = ["C", "C++"];
+    resultList = ["Accepted", ]
 
+    resolveProblemData = function (data) {
+        /*
         data.problem.description =
             $sce.trustAsHtml(data.problem.description);
         data.problem.input =
@@ -111,6 +115,7 @@ app.service('problemService', function($rootScope, $sce, userService, networkSer
             $sce.trustAsHtml(data.problem.output_description);
         data.problem.hint =
             $sce.trustAsHtml(data.problem.hint);
+        */
         //str = str.replace(/(?:\r\n|\r|\n)/g, '<br />');
         var len = data.problem.input_sample.length;
         for (i = 0; i < len; i++) {
@@ -154,10 +159,22 @@ app.service('problemService', function($rootScope, $sce, userService, networkSer
         networkService.handleRepData('get', $rootScope.contestListUrl + '/' + _contestid, null, null, {
             Contestid: _contestid
         })
-            .then(function (response) {
-                console.log(response);
-                show_contestInfo(response.data);
-            });
+        .then(function (response) {
+            console.log(response);
+            show_contestInfo(response.data);
+        });
+
+    };
+
+    this.submitCode = function(submit_complete, _submission_data, _contestid) {
+
+        networkService.handleRepData('post', $rootScope.submitUrl, _submission_data, {}, {
+            Contestid: _contestid
+        })
+        .then(function (response) {
+            console.log(response);
+            submit_complete(response.data);
+        });
 
     };
 

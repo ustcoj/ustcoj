@@ -3,13 +3,13 @@
 }
 
 .editormd-window-input-description {
-    min-height: 500px;
+    min-height: 300px;
 }
 
 .editormd-window-output-description {
-    min-height: 500px;
+    min-height: 300px;
 }
 
 .editormd-window-title-hint {
-    min-height: 500px;
+    min-height: 300px;
 }

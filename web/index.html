@@ -43,6 +43,8 @@
     <script src="js/showContestCtrl.js" charset="utf-8"></script>
     <script src="js/contestListCtrl.js" charset="utf-8"></script>
 
+    <script src="js/editCtrl.js" charset="utf-8"></script>
+
 
     <div ng-view></div>
 
@@ -84,6 +86,12 @@
                         controllerAs: 'ctrl'
                     })
                     .when('/status',{templateUrl:'status.html'})
+                    .when('/status/:submission_ID',{
+                        templateUrl:'showSubmission.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
                     .when('/edit/:problem_ID',{
                         templateUrl:'edit.html',
                         controller: ['$routeParams', function($routeParams) {
