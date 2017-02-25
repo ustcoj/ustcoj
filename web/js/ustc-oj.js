@@ -13,7 +13,8 @@ app.run(function ($rootScope) {
     $rootScope.contestListUrl = "/api/contest";
     $rootScope.problemUrl = "/api/problem";
     $rootScope.contestUrl = "/api/contest";
-    $rootScope.submitUrl = "/api/submission"
+    $rootScope.submitUrl = "/api/submission";
+    $rootScope.statusUrl = "/api/status";
 });
 
 app.service('networkService', function($rootScope, $http, $q, userService, $filter) {
@@ -102,8 +103,9 @@ app.service('problemService', function($rootScope, $sce, userService, networkSer
 
     };
 
-    languageList = ["C", "C++"];
-    resultList = ["Accepted", ]
+    this.languageList = ["C", "C++"];
+    this.resultList = ["Accepted", "Runtime Error", "Time Limit Exceeded", "Memory Limit Exceeded",
+        "Compile Error", "Format Error", "Wrong Answer", "System Error", "Pending"];
 
     resolveProblemData = function (data) {
         /*
@@ -177,6 +179,17 @@ app.service('problemService', function($rootScope, $sce, userService, networkSer
         });
 
     };
+    /*
+    this.getSubmissonInfo = function(show_submissionInfo, _submissoinid) {
+        networkService.handleRepData('get', $rootScope.statusUrl + '/' + _submissoinid, null, null, {
+            Contestid: _contestid
+        })
+            .then(function (response) {
+                console.log(response);
+                show_contestInfo(response.data);
+            });
+    }
+    */
 
 });
 
@@ -448,17 +461,3 @@ app.service('userService', function($rootScope, $cookies, $http, $window) {
 
 
 });
-
-app.directive('onFinishRenderFilters', function ($timeout) {
-    return {
-        restrict: 'A',
-        link: function(scope, element, attr) {
-            if (scope.$last === true) {
-                $timeout(function() {
-                    scope.$emit('ngRepeatFinished');
-                });
-            }
-        }
-    };
-});
-

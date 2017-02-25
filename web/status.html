@@ -15,9 +15,9 @@
                     <th>Title</th>
                     <th>User</th>
                     <th>Status</th>
-                    <th>Time</th>
-                    <th>Len</th>
-                    <th>Mem</th>
+                    <th>Run Time</th>
+                    <th>Language</th>
+                    <th>Memory</th>
                 </tr>
 
                 <tr ng-repeat="x in statusList.data.submission_list" class="submission_item">
@@ -36,16 +36,16 @@
                         {{x.user_id}}
                     </td>
                     <td>
-                        {{x.status}}
+                        {{getResult(x.result)}}
                     </td>
                     <td>
-                        {{x.time}}
+                        {{x.info.data[0].cpu_time}}
                     </td>
                     <td>
-                        {{x.code_size}}
+                        {{getLanguage(x.language)}}
                     </td>
                     <td>
-                        {{x.memory}}
+                        {{x.info.data[0].memory}}
                     </td>
 
 
