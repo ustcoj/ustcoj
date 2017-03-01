@@ -149,6 +149,12 @@
     */
 }
 
+.fixed-navbar-title #public-version{
+    font-weight: lighter;
+    color: #aaaaaa;
+    font-size: 10px;
+}
+
 .fixed-navbar-right .fixed-navbar-user{
     float: right;
     padding-top: 7px;

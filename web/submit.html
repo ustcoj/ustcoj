@@ -3,25 +3,34 @@
 
     <div class="bigContent">
 
-        <h2>Submit</h2>
+        <h2>SUBMIT</h2>
 
-        <div class="submitList">
+        <div class="submit-list">
             <table>
+                <colgroup class="submit-inf">
+                    <col style="width: 90px">
+                    <col style="width: 200px">
+                </colgroup>
                 <tr>
-                    <td ng-show="!isContest">ID</td>
-                    <td ng-show="isContest">Contest</td>
-                    <td ng-show="!isContest">
-                        <input ng-model="submitID" />
+                    <td ng-if="!isContest" style="letter-spacing: 1px;padding-left: 1px">ID</td>
+                    <td ng-if="isContest">Contest</td>
+                    <td ng-if="!isContest">
+                        <input placeholder="0000" ng-model="submitID" id="submit-id-input" style="width: 90px"/>
                     </td>
-                    <td id="contestName" ng-show="isContest">{{contestName}}</td>
+                    <td id="contestName" ng-if="isContest">{{contestName}}</td>
                 </tr>
                 <tr>
                     <td>Title</td>
-                    <td ng-show="!isContest">{{submitTitle}}</td>
+                    <td ng-if="!isContest">{{submitTitle}}</td>
                 </tr>
                 <tr>
                     <td>Lang</td>
                     <td ng-bind="submitLang">
+                        <select>
+                            <option>C</option>
+                            <option>C++</option>
+                            <option>Python</option>
+                        </select>
                     </td>
                 </tr>
             </table>

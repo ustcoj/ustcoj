@@ -1,6 +1,6 @@
 app.controller("submitCtrl", function ($routeParams, $scope, $http, $rootScope, $window, problemService) {
     $scope.submitSource = "ttt";
-    $scope.submitID = 1;
+    $scope.submitID = null;
     $scope.submitLang = "cpp";
     $scope.submitStatus = false;
     $scope.submitMsg = "";
