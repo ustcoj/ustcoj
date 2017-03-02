@@ -15,6 +15,7 @@ app.run(function ($rootScope) {
     $rootScope.contestUrl = "/api/contest";
     $rootScope.submitUrl = "/api/submission";
     $rootScope.statusUrl = "/api/status";
+    $rootScope.problemTitleUrl = "/title";
 });
 
 app.service('networkService', function($rootScope, $http, $q, userService, $filter) {
@@ -103,9 +104,15 @@ app.service('problemService', function($rootScope, $sce, userService, networkSer
 
     };
 
-    this.languageList = ["C", "C++"];
+    this.languageList = ["C", "C++", "Python"];
     this.resultList = ["Accepted", "Runtime Error", "Time Limit Exceeded", "Memory Limit Exceeded",
         "Compile Error", "Format Error", "Wrong Answer", "System Error", "Pending"];
+    this.checkValidProblemId = function(content) {
+        if (Number(content).toString() == content && Number(content) >= 1000 && Number(content) <= 9999) {
+            return true;
+        }
+        else return false;
+    };
 
     resolveProblemData = function (data) {
         /*
@@ -138,6 +145,18 @@ app.service('problemService', function($rootScope, $sce, userService, networkSer
             .then(function (response) {
                 console.log(response);
                 show_problemList(response.data);
+            });
+
+    };
+
+    this.getProblemTitle = function(show_problemTitle, _problem_id) {
+
+        networkService.handleRepData('get', $rootScope.problemUrl + '/' + _problem_id + $scope.problemTitleUrl
+            , null, {}, {})
+            .then(function (response) {
+                console.log(response);
+
+                show_problemTitle(response.data);
             });
 
     };

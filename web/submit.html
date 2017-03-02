@@ -8,42 +8,63 @@
         <div class="submit-list">
             <table>
                 <colgroup class="submit-inf">
-                    <col style="width: 90px">
+                    <col style="width: 150px">
                     <col style="width: 200px">
                 </colgroup>
                 <tr>
-                    <td ng-if="!isContest" style="letter-spacing: 1px;padding-left: 1px">ID</td>
+                    <td ng-if="!isContest">Prob ID</td>
                     <td ng-if="isContest">Contest</td>
                     <td ng-if="!isContest">
-                        <input placeholder="0000" ng-model="submitID" id="submit-id-input" style="width: 90px"/>
+                        <input ng-model="submitId"
+                               id="submit-id-input"
+                               style="width: 90px"
+                               ng-change="getProblemTitle()"
+                        />
                     </td>
                     <td id="contestName" ng-if="isContest">{{contestName}}</td>
                 </tr>
                 <tr>
-                    <td>Title</td>
+                    <td>Prob Title</td>
                     <td ng-if="!isContest">{{submitTitle}}</td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td>Lang</td>
-                    <td ng-bind="submitLang">
-                        <select>
-                            <option>C</option>
-                            <option>C++</option>
-                            <option>Python</option>
+                    <td>Language</td>
+                    <td style="width: 90px">
+                        <select ng-model="submitLang" id="submit-language-select">
+                            <!--
+                            <option value="0">C</option>
+                            <option value="1">C++</option>
+                            <option value="2">Python</option>
+                            -->
+                            <option ng-repeat="x in languageList" value="{{$index}}">{{x}}</option>
                         </select>
+                    </td>
+                </tr>
+                <tr ng-if="!isContest">
+                    <td>Public</td>
+                    <td>
+                        <label>
+                            <input type="radio" ng-model="submitPublic" value="1">
+                            Yes
+                        </label>
+
+                        <label>
+                            <input type="radio" ng-model="submitPublic" value="0">
+                            No
+                        </label>
                     </td>
                 </tr>
             </table>
         </div>
 
-        <textarea ng-model="submitSource"></textarea>
-        <button ng-click="submitFire(submitSource, submitLang, submitID)">
+        <div class ="submitArea">
+            <textarea ng-model="submitSource"></textarea>
+        </div>
+        <button ng-click="submitFire(submitSource, submitLang, submitId)">
             Submit
         </button>
 
-        <p ng-show="submitStatus">
-            {{submitMsg}}
-        </p>
 
     </div>
 

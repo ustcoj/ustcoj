@@ -1,10 +1,10 @@
-app.controller("navbarCtrl", function($scope, $rootScope, $window, $log){
+app.controller("navbarCtrl", function($scope, $rootScope, $window, $log, problemService){
 
     defaultSearchContent = "ID/Search";
     $scope.searchContent = "";
 
     $scope.searchFire = function(content) {
-        if (Number(content).toString() == content && Number(content) >= 1000 && Number(content) <= 1500) {
+        if (problemService.checkValidProblemId(content)) {
             /*
             $rootScope.$broadcast('problemNumberChanged', Number(content));
             $scope.changeTab("showProblem");

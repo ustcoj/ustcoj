@@ -1,6 +1,8 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: "Open Sans", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif
+
 }
 
 body{
@@ -11,8 +13,7 @@ body{
     display: block;
     */
     /*background-color: #fffaf0;*/
-    font-family: "Open Sans", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif
-}
+    }
 
 .contentMain {
     /*position: inherit;*/
@@ -40,6 +41,8 @@ body{
 
 .bigContent h2 {
     margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .rightbar{

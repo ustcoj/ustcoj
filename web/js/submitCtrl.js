@@ -1,43 +1,17 @@
-app.controller("submitCtrl", function ($routeParams, $scope, $http, $rootScope, $window, problemService) {
-    $scope.submitSource = "ttt";
-    $scope.submitID = null;
-    $scope.submitLang = "cpp";
-    $scope.submitStatus = false;
-    $scope.submitMsg = "";
-    $scope.isContest = false;
-    $scope.ContestId = 0;
-    $scope.nowContestProblem = null;
-
-    if ($routeParams.contest_ID == null) {
-
-    }
-    else {
-        $scope.isContest = true;
-        $scope.ContestId = $routeParams.contest_ID;
-        $scope.nowContestProblem = $routeParams.prolem_SEQ;
-    }
-
-    $scope.submitFire = function (source, lang, id) {
-        var submissionData = {
-            code: source,
-            compiler: lang,
-            problem_id: id
-        };
-        /*
-        $http.post($rootScope.apiHost + $rootScope.submitUrl, data, config).then(function (response) {
-            if (response.data.status.code === 1){
-                $scope.submitStatus = true;
-                $scope.submitMsg = response.data.status.message;
-            } else {
-                $window.location.href = '#/status/';
-            }
+app.controller("showSubmissionCtrl", function ($routeParams, $scope, $http, $rootScope, $window, problemService) {
 
 
-        });
-        */
-        problemService.submitCode(function(response) {
-            $window.location.href = '#/status/';
-        }, submissionData, $scope.ContestId);
-    }
+    $scope.getProblemTitle = function() {
+        $scope.isIdValid = false;
+        $scope.submitTile = "????";
+        if (problemService.checkValidProblemId(submitId)) {
+            problemService.getProblemTitle(function(result) {
+                if (result.isValid) {
+                    $scope.submitTitle = result.title;
+                }
+
+            })
+        }
+    };
 });
 
