@@ -44,17 +44,15 @@
 
 			<div class="problem-bar-container" ng-repeat="x in problemList.problem_list">
 
-					<div class="problem-bar-container-column problem-bar-container-id ">
-						<p>{{x.problem_id}}</p>
-					</div>
+					<div class="problem-bar-container-column problem-bar-container-id ">{{x.problem_id}}</div>
 					<div class="problem-bar-container-title problem-bar-container-column">{{x.problem_title}}</div>
 					<div class="problem-bar-container-count problem-bar-container-column">
 						<span class="problem-bar-container-count-number">{{x.solved_cnt}}</span>
 						<span>/</span>
-						<span class="problem-bar-container-count-number">555</span>
+						<span class="problem-bar-container-count-number">{{x.trying_cnt}}</span>
 					</div>
 					<div class="problem-bar-container-icon problem-bar-container-column">
-						O
+						o︎
 					</div>
 			</div>
 

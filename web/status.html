@@ -20,67 +20,17 @@
             </div>
 
             <div ng-repeat="x in statusList.data.submission_list" class="problem-bar-container status-bar-container">
-                <div class="problem-bar-container-column">
-                    {{x.submission_id}}
-                </div>
-                <div class="problem-bar-container-column">
-                    {{x.push_time}}
-                </div>
-                <div class="problem-bar-container-column">
-                    {{x.problem.problem_title}}
-                </div>
-                <div class="problem-bar-container-column">
-                    {{x.user_id}}
-                </div>
-                <div class="problem-bar-container-column">
-                    {{getResult(x.result)}}
-                </div>
-                <div class="problem-bar-container-column">
-                    {{x.info.data[0].cpu_time}}
-                </div>
-                <div class="problem-bar-container-column">
-                    {{getLanguage(x.language)}}
-                </div>
-                <div class="problem-bar-container-column">
-                    {{x.info.data[0].memory}}
-                </div>
+                <div class="problem-bar-container-column">{{x.submission_id}}</div>
+                <div class="problem-bar-container-column">{{x.push_time}}</div>
+                <div class="problem-bar-container-column">{{x.problem.problem_title}}</div>
+                <div class="problem-bar-container-column">{{x.user_id}}</div>
+                <div class="problem-bar-container-column">{{getResult(x.result)}}</div>
+                <div class="problem-bar-container-column">{{getMaxTime(x)}}</div>
+                <div class="problem-bar-container-column">{{getLanguage(x.language)}}</div>
+                <div class="problem-bar-container-column">{{getMaxMem(x)}}</div>
 
             </div>
 
-            <!--<table style="width:100%">-->
-
-                <!--<tr ng-repeat="x in statusList.data.submission_list" class="submission_item">-->
-
-
-                    <!--<td>-->
-                        <!--{{x.submission_id}}-->
-                    <!--</td>-->
-                    <!--<td>-->
-                        <!--{{x.push_time}}-->
-                    <!--</td>-->
-                    <!--<td class="prob_title">-->
-                        <!--{{x.problem.problem_title}}-->
-                    <!--</td>-->
-                    <!--<td>-->
-                        <!--{{x.user_id}}-->
-                    <!--</td>-->
-                    <!--<td>-->
-                        <!--{{getResult(x.result)}}-->
-                    <!--</td>-->
-                    <!--<td>-->
-                        <!--{{x.info.data[0].cpu_time}}-->
-                    <!--</td>-->
-                    <!--<td>-->
-                        <!--{{getLanguage(x.language)}}-->
-                    <!--</td>-->
-                    <!--<td>-->
-                        <!--{{x.info.data[0].memory}}-->
-                    <!--</td>-->
-
-
-                <!--</tr>-->
-
-            </table>
         </div>
 
     </div>

@@ -25,13 +25,27 @@ angular
         return problemService.languageList[_languageid];
     };
 
-    /*
-    $scope.show_prob = function(prob_id){
-        /*
-         $rootScope.$broadcast('problemNumberChanged', $prob_id);
-         $rootScope.tabShow = "showProblem";
+    $scope.getMaxTime = function(_data) {
+        if (_data.info.data[0].result == undefined) {
+            return "-";
+        }
+        var ret = 0;
+        for (var t in _data.info.data) {
+            if (_data.info.data[t].cpu_time > ret)
+                ret = _data.info.data[t].cpu_time;
+        }
+        return ret;
+    };
 
-        $window.location.href = '#/problems/' + prob_id;
+    $scope.getMaxMem = function(_data) {
+        if (_data.info.data[0].result == undefined) {
+            return "-";
+        }
+        var ret = 0;
+        for (var t in _data.info.data) {
+            if (_data.info.data[t].memory > ret)
+                ret = _data.info.data[t].memory;
+        }
+        return ret;
     }
-    */
 });
