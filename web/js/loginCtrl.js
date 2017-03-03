@@ -1,4 +1,6 @@
-app.controller("loginCtrl", function ($scope, $http, $rootScope, userService) {
+angular
+    .module('ustc-oj')
+    .controller("loginCtrl", function ($scope, $http, $rootScope, userService) {
     $scope.registerFire = function (username, pass, passagain) {
 
         if (pass == passagain) {

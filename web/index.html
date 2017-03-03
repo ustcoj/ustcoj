@@ -12,10 +12,8 @@
     <link rel="stylesheet" href="css/ustc-oj.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/problemList.css">
     <link rel="stylesheet" href="css/showProblem.css">
     <link rel="stylesheet" href="css/submit.css">
-    <link rel="stylesheet" href="css/status.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/showContest.css">
     <link rel="stylesheet" href="css/contestList.css">
@@ -36,20 +34,22 @@
     <script src="js/indexCtrl.js" charset="utf-8"></script>
     <script src="js/loginCtrl.js" charset="utf-8"></script>
     <script src="js/navbarCtrl.js" charset="utf-8"></script>
-    <script src="js/problemListCtrl.js" charset="utf-8"></script>
     <script src="js/showProblemCtrl.js" charset="utf-8"></script>
     <script src="js/submitCtrl.js" charset="utf-8"></script>
     <script src="js/statusCtrl.js" charset="utf-8"></script>
     <script src="js/showContestCtrl.js" charset="utf-8"></script>
     <script src="js/contestListCtrl.js" charset="utf-8"></script>
-
+    <script src="js/problemListCtrl.js" charset="utf-8"></script>
     <script src="js/editCtrl.js" charset="utf-8"></script>
+    <script src="js/showSubmissionCtrl.js" charset="utf-8"></script>
 
 
     <div ng-view></div>
 
     <script>
-        app.config(['$routeProvider', function($routeProvider){
+        angular
+            .module('ustc-oj')
+            .config(['$routeProvider', function($routeProvider){
                 $routeProvider
                     .when('/',{templateUrl:'login.html'})
                     .when('/problems',{templateUrl:'problemList.html'})

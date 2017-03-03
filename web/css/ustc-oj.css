@@ -1,7 +1,8 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: "Open Sans", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif
+    font-family: "Open Sans", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    /*box-sizing: border-box;*/
 
 }
 
@@ -20,7 +21,7 @@ body{
 }
 
 
-.bigContainer{
+.bigContainer {
     width: 1100px;
     margin: 80px auto 0px;
     color: #333333;
@@ -29,7 +30,7 @@ body{
 }
 
 
-.bigContent{
+.bigContent,.biggerContent{
     margin-left: 20px;
     width: 780px;
     background-color: transparent;
@@ -37,6 +38,10 @@ body{
     padding-bottom: 80px;
     margin-bottom: 40px;
     /*box-shadow: 2px 2px 10px #a5a5a5;*/
+}
+
+.biggerContent {
+    width: 1000px;
 }
 
 .bigContent h2 {

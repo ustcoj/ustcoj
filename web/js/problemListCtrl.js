@@ -1,4 +1,6 @@
-app.controller("problemListCtrl", function($scope, $http, $rootScope, $window, problemService){
+angular
+    .module('ustc-oj')
+    .controller("problemListCtrl", function($scope, $http, $rootScope, $window, problemService){
 
     /*
     $http.get($rootScope.apiHost + "/api/problem", {params: {

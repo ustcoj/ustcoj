@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="css/problemList.css">
+<link rel="stylesheet" href="css/bar.css">
 
 <div ng-controller="problemListCtrl" class="bigContainer">
 
@@ -30,47 +32,35 @@
 		<h2>Problem List</h2>
 		<div class="problemListContent">
 
-			<table align="left" style="width:100%">
+			<div class="problem-bar-container problem-container">
+				<div class="problem-bar-container-column problem-bar-container-id">ID</div>
+				<div class="problem-bar-container-column problem-bar-container-title">Title</div>
+				<div class="problem-bar-container-column problem-bar-container-count">
+					<span class="problem-bar-container-count-number">Solved</span>
+					<span class="problem-container-count-slash">/</span>
+					<span class="problem-bar-container-count-number">Tried</span>
+				</div>
+			</div>
 
-				<tr>
-					<th>ID</th>
-					<th>Title</th>
-					<th></th>
-					<th></th>
-					<th>Status</th>
-				</tr>
+			<div class="problem-bar-container" ng-repeat="x in problemList.problem_list">
 
-				<tr ng-repeat="x in problemList.problem_list" class="problemListItem" ng-click="showProblem(x.problem_id)">
+					<div class="problem-bar-container-column problem-bar-container-id ">
+						<p>{{x.problem_id}}</p>
+					</div>
+					<div class="problem-bar-container-title problem-bar-container-column">{{x.problem_title}}</div>
+					<div class="problem-bar-container-count problem-bar-container-column">
+						<span class="problem-bar-container-count-number">{{x.solved_cnt}}</span>
+						<span>/</span>
+						<span class="problem-bar-container-count-number">555</span>
+					</div>
+					<div class="problem-bar-container-icon problem-bar-container-column">
+						O
+					</div>
+			</div>
 
-
-							<td>
-								{{x.problem_id}}
-							</td>
-							<td>
-								{{x.problem_title}}
-							</td>
-							<td>
-
-							</td>
-							<td>
-
-							</td>
-							<td>
-								<spa>
-									{{x.solved_cnt}}
-								</span>
-								 /
-								<span>
-									{{x.trying_cnt}}
-								</span>
-							</td>
-
-
-				</tr>
-
-			</table>
 		</div>
 
 	</div>
 
 </div>
+

@@ -1,4 +1,6 @@
-app.controller("showContestCtrl", function($scope, $http, $rootScope, $window, $routeParams, problemService){
+angular
+    .module('ustc-oj')
+    .controller("showContestCtrl", function($scope, $http, $rootScope, $window, $routeParams, problemService){
 
     $scope.finishLoading = false;
 

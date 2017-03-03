@@ -1,5 +1,17 @@
-.statusContent th {
-    font-weight: bold;
-    color: #faa634;
-    text-align: left;
+
+.statusContent {
+    font-size: 14px;
+}
+
+.status-bar-container {
+    padding: 6px;
+    height: 24px;
+}
+
+.statusContent .problem-bar-container-column {
+    padding: 4px 20px;
+}
+
+.statusContent .problem-bar-container {
+    margin-top: 10px;
 }

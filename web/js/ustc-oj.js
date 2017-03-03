@@ -1,8 +1,10 @@
 // Directed by Li Ding
 
-var app = angular.module("ustc-oj", ['ngRoute', 'ngCookies']);
+angular.module("ustc-oj", ['ngRoute', 'ngCookies']);
 
-app.run(function ($rootScope) {
+angular
+    .module('ustc-oj')
+    .run(function ($rootScope) {
     $rootScope.tabShow = "showProblem";
     //$rootScope.apiHost = "http://106.14.46.189";
     $rootScope.apiHost = "http://ustcoj.applinzi.com";
@@ -18,7 +20,9 @@ app.run(function ($rootScope) {
     $rootScope.problemTitleUrl = "/title/";
 });
 
-app.service('networkService', function($rootScope, $http, $q, userService, $filter) {
+angular
+    .module('ustc-oj')
+    .service('networkService', function($rootScope, $http, $q, userService, $filter) {
 
     addDefaultHeader = function(header) {
         header['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8;';
@@ -95,7 +99,9 @@ app.service('networkService', function($rootScope, $http, $q, userService, $filt
 
 });
 
-app.service('problemService', function($rootScope, $sce, userService, networkService) {
+angular
+    .module('ustc-oj')
+    .service('problemService', function($rootScope, $sce, userService, networkService) {
 
     this.getProblemData = function(show_problemData, problemId, contestId="none") {
 
@@ -236,7 +242,9 @@ app.service('problemService', function($rootScope, $sce, userService, networkSer
 
 });
 
-app.service('userService', function($rootScope, $cookies, $http, $window) {
+angular
+    .module('ustc-oj')
+    .service('userService', function($rootScope, $cookies, $http, $window) {
 
     var tempConfig = {
         headers : {

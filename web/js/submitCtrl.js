@@ -1,4 +1,6 @@
-app.controller("submitCtrl", function ($routeParams, $scope, $http, $rootScope, $window, problemService) {
+angular
+    .module('ustc-oj')
+    .controller("submitCtrl", function ($routeParams, $scope, $http, $rootScope, $window, problemService) {
     $scope.submitSource = "ttt";
     $scope.isIdValid = false;
     $scope.submitLang = "1";

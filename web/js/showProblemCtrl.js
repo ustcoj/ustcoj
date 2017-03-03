@@ -1,4 +1,6 @@
-app.controller("showProblemCtrl", function($scope, $http, $rootScope, $routeParams, problemService){
+angular
+    .module('ustc-oj')
+    .controller("showProblemCtrl", function($scope, $http, $rootScope, $routeParams, problemService){
 
     $scope.finishLoading = false;
     $scope.titleChanged = false;

@@ -1,4 +1,6 @@
-app.controller("navbarCtrl", function($scope, $rootScope, $window, $log, problemService){
+angular
+    .module('ustc-oj')
+    .controller("navbarCtrl", function($scope, $rootScope, $window, $log, problemService){
 
     defaultSearchContent = "ID/Search";
     $scope.searchContent = "";

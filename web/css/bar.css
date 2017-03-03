@@ -1,0 +1,54 @@
+
+.problem-bar-container {
+    background-color: #fafafa;
+    border-radius: 10px;
+    padding: 12px;
+    height: 32px;
+}
+
+.problem-bar-container-column {
+    display: inline-block;
+    line-height: 16px;
+    height: 16px;
+    padding: 8px 20px;
+    border-right: 1px solid #dfdfdf;
+}
+
+.problem-bar-container-id {
+    width: 45px;
+    text-align: center
+}
+
+.problem-bar-container-title {
+    min-width: 400px;
+}
+
+.problem-bar-container-count {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.problem-bar-container-count .problem-bar-container-count-number{
+    display: inline-block;
+    width: 64px;
+    text-align: center;
+}
+
+.problem-bar-container-icon{
+    border: none;
+    text-align: center;
+}
+
+.problem-container {
+    background: none;
+    color: #8e8e8e;
+    font-weight: bold;
+}
+
+.problem-container div {
+    border: none;
+}
+
+.problem-container-count-slash {
+    visibility: hidden;
+}

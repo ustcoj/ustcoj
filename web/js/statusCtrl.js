@@ -1,7 +1,9 @@
 /**
  * Created by zhaohongzhu on 12/8/16.
  */
-app.controller("statusCtrl", function($scope, $http, $rootScope, $window, problemService){
+angular
+    .module('ustc-oj')
+    .controller("statusCtrl", function($scope, $http, $rootScope, $window, problemService){
 
 
     problemService.getStatusList(function(response) {
