@@ -6,16 +6,16 @@ app.run(function ($rootScope) {
     $rootScope.tabShow = "showProblem";
     //$rootScope.apiHost = "http://106.14.46.189";
     $rootScope.apiHost = "http://ustcoj.applinzi.com";
-    $rootScope.loginUrl = "/api/login";
-    $rootScope.registerUrl = "/api/login";
-    $rootScope.problemListUrl = "/api/problem";
-    $rootScope.problemUrl = "/api/problem";
-    $rootScope.contestListUrl = "/api/contest";
-    $rootScope.problemUrl = "/api/problem";
-    $rootScope.contestUrl = "/api/contest";
-    $rootScope.submitUrl = "/api/submission";
-    $rootScope.statusUrl = "/api/status";
-    $rootScope.problemTitleUrl = "/title";
+    $rootScope.loginUrl = "/api/login/";
+    $rootScope.registerUrl = "/api/login/";
+    $rootScope.problemListUrl = "/api/problem/";
+    $rootScope.problemUrl = "/api/problem/";
+    $rootScope.contestListUrl = "/api/contest/";
+    $rootScope.problemUrl = "/api/problem/";
+    $rootScope.contestUrl = "/api/contest/";
+    $rootScope.submitUrl = "/api/submission/";
+    $rootScope.statusUrl = "/api/submission/";
+    $rootScope.problemTitleUrl = "/title/";
 });
 
 app.service('networkService', function($rootScope, $http, $q, userService, $filter) {
@@ -50,7 +50,10 @@ app.service('networkService', function($rootScope, $http, $q, userService, $filt
                 refreshHeader(header, url);
 
                 realUrl = $rootScope.apiHost + url;
+                console.log(url);
+                console.log(realUrl);
                 realConfig = config;
+                console.log(realConfig);
                 realConfig.headers = header;
                 console.log(realConfig);
                 promise = $http.get(realUrl, realConfig);
@@ -96,7 +99,7 @@ app.service('problemService', function($rootScope, $sce, userService, networkSer
 
     this.getProblemData = function(show_problemData, problemId, contestId="none") {
 
-        networkService.handleRepData('get', $rootScope.problemUrl + '/' + problemId, null, null, {})
+        networkService.handleRepData('get', $rootScope.problemUrl + problemId, null, null, {})
             .then(function (response) {
                 console.log(response);
                 show_problemData(resolveProblemData(response.data));
@@ -105,8 +108,17 @@ app.service('problemService', function($rootScope, $sce, userService, networkSer
     };
 
     this.languageList = ["C", "C++", "Python"];
-    this.resultList = ["Accepted", "Runtime Error", "Time Limit Exceeded", "Memory Limit Exceeded",
-        "Compile Error", "Format Error", "Wrong Answer", "System Error", "Pending"];
+    this.resultList = {
+        "Accepted": 0,
+        "Wrong Answer": -1,
+        "Time Limit Exceeded": 1,
+        "Time Limit Exceeded": 2,
+        "Memory Limit Exceeded": 3,
+        "Runtime Error": 4,
+        "System Error": 5,
+        "Compile Error": 6,
+        "Pending": 7
+    };
     this.checkValidProblemId = function(content) {
         if (Number(content).toString() == content && Number(content) >= 1000 && Number(content) <= 9999) {
             return true;
@@ -151,7 +163,7 @@ app.service('problemService', function($rootScope, $sce, userService, networkSer
 
     this.getProblemTitle = function(show_problemTitle, _problem_id) {
 
-        networkService.handleRepData('get', $rootScope.problemUrl + '/' + _problem_id + $scope.problemTitleUrl
+        networkService.handleRepData('get', $rootScope.problemUrl + _problem_id + $scope.problemTitleUrl
             , null, {}, {})
             .then(function (response) {
                 console.log(response);
@@ -177,7 +189,7 @@ app.service('problemService', function($rootScope, $sce, userService, networkSer
 
     this.getContestInfo = function(show_contestInfo, _contestid) {
 
-        networkService.handleRepData('get', $rootScope.contestListUrl + '/' + _contestid, null, null, {
+        networkService.handleRepData('get', $rootScope.contestListUrl + _contestid, null, null, {
             Contestid: _contestid
         })
         .then(function (response) {
@@ -209,6 +221,18 @@ app.service('problemService', function($rootScope, $sce, userService, networkSer
             });
     }
     */
+    this.getStatusList = function(show_statusList, _page, _per_page) {
+
+        param = {
+            page: _page,
+            per_page: _per_page
+        };
+        networkService.handleRepData('get', $rootScope.statusUrl, null, {params: param}, {})
+            .then(function (response) {
+                show_statusList(response);
+            });
+
+    };
 
 });
 

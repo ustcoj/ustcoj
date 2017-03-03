@@ -14,12 +14,12 @@
                 <tr>
                     <td ng-if="!isContest">Prob ID</td>
                     <td ng-if="isContest">Contest</td>
-                    <td ng-if="!isContest">
+                    <td ng-show="!isContest">
                         <input ng-model="submitId"
                                id="submit-id-input"
                                style="width: 90px"
                                ng-change="getProblemTitle()"
-                        />
+                        >
                     </td>
                     <td id="contestName" ng-if="isContest">{{contestName}}</td>
                 </tr>
@@ -61,6 +61,7 @@
         <div class ="submitArea">
             <textarea ng-model="submitSource"></textarea>
         </div>
+        <p>!!!{{submitId}}</p>
         <button ng-click="submitFire(submitSource, submitLang, submitId)">
             Submit
         </button>

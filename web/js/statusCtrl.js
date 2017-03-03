@@ -3,18 +3,20 @@
  */
 app.controller("statusCtrl", function($scope, $http, $rootScope, $window, problemService){
 
-    $http.get($rootScope.apiHost + "/api/submission", {params: {
-        page: 1,
-        per_page: 50
-    }})
-        .then(function(response) {
-            //alert(response.status);
-            $scope.statusList = response.data;
-        });
+
+    problemService.getStatusList(function(response) {
+        console.log(response);
+        $scope.statusList = response;
+    }, 1, 20);
 
     $scope.getResult = function(_resultid) {
         //console.log(_resultid);
-        return problemService.resultList[_resultid];
+        for (var i in problemService.resultList) {
+            if (problemService.resultList[i] == _resultid) {
+                return i;
+            }
+        }
+        return "Unexpected Error";
     };
     $scope.getLanguage = function(_languageid) {
         //console.log(_languageid);
