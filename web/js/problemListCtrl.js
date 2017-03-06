@@ -1,6 +1,6 @@
 angular
     .module('ustc-oj')
-    .controller("problemListCtrl", function($scope, $http, $rootScope, $window, profileService, problemService, userService){
+    .controller("problemListCtrl", function($scope, $http, $rootScope, $window, profileService, problemService, userService, siteService){
 
     $scope.myTrying = {};
     $scope.mySolved = {};

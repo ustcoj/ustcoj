@@ -3,49 +3,68 @@
 
     <div class="bigContent">
 
-        <h2>SUBMIT</h2>
+        <h2>Submission</h2>
 
         <div class="submit-list">
             <table>
                 <colgroup class="submit-inf">
                     <col style="width: 150px">
-                    <col style="width: 200px">
+                    <col style="width: 500px">
                 </colgroup>
                 <tr>
-                    <td ng-if="!isContest">Prob ID</td>
-                    <td ng-if="isContest">Contest</td>
-                    <td ng-if="!isContest">
-                        <input ng-model="submitId"
-                               id="submit-id-input"
-                               style="width: 90px"
-                               ng-change="getProblemTitle()"
-                        />
-                    </td>
-                    <td id="contestName" ng-if="isContest">{{contestName}}</td>
+                    <td>Title</td>
+                    <td ng-bind="submissionTitle"></td>
                 </tr>
                 <tr>
-                    <td>Prob Title</td>
-                    <td ng-if="!isContest">{{submitTitle}}</td>
-                    <td></td>
+                    <td>Status</td>
+                    <td ng-bind="submissionResult"></td>
                 </tr>
-                <tr>
-                    <td>Language</td>
-                    <td style="width: 90px">
-                        <select ng-model="submitLang" id="submit-language-select">
-                            <!--
-                            <option value="0">C</option>
-                            <option value="1">C++</option>
-                            <option value="2">Python</option>
-                            -->
-                            <option ng-repeat="x in languageList" value="{{$index}}">{{x}}</option>
-                        </select>
-                    </td>
+                <tr ng-show="submissionErrorMsg">
+                    <td>Detail</td>
+                    <td ng-bind="submissionErrorMsg" style="font-family: monospace"></td>
                 </tr>
 
             </table>
+        </div>
+
+        <div class="submission-code" id="editormd-view-code">
+            <textarea style="display:none;"></textarea>
+        </div>
+        <div class="submission-code" ng-if="!submissionCode">
+            No code available.
         </div>
 
 
     </div>
 
 </div>
+
+<link rel="stylesheet" href="./editormd/css/editormd.preview.css" />
+<script src="jquery.min.js"></script>
+<script src="./editormd/lib/marked.min.js"></script>
+<script src="./editormd/lib/prettify.min.js"></script>
+
+<script src="./editormd/lib/raphael.min.js"></script>
+<script src="./editormd/lib/underscore.min.js"></script>
+<script src="./editormd/lib/sequence-diagram.min.js"></script>
+<script src="./editormd/lib/flowchart.min.js"></script>
+<script src="./editormd/lib/jquery.flowchart.min.js"></script>
+
+<script src="./editormd/editormd.min.js"></script>
+<script type="text/javascript">
+    function renderCode(elem_id, data){
+        return editormd.markdownToHTML(elem_id, {
+            markdown        : data,
+            htmlDecode      : "style,script,iframe",  // you can filter tags decode
+            markdownSourceCode : true,
+            emoji           : true,
+            taskList        : true,
+            tex             : true,
+            flowChart       : true,
+            sequenceDiagram : true,
+        });
+    }
+    startRender = (function(data){
+        renderCode("editormd-view-code", data);
+    });
+</script>

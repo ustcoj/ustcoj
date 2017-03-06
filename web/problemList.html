@@ -42,7 +42,7 @@
 				</div>
 			</div>
 
-			<div class="problem-bar-container"
+			<div class="problem-bar-container problem-bar-container-item"
 				 ng-repeat="x in problemList.problem_list"
 				 ng-click="showProblem(x.problem_id)"
 				 ng-class="{'problem-bar-trying': myTrying[x.problem_id], 'problem-bar-solved': mySolved[x.problem_id]}">

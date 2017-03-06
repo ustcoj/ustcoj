@@ -8,6 +8,10 @@
     height: 24px;
 }
 
+.status-bar-container {
+    cursor: pointer;
+}
+
 .statusContent .problem-bar-container-column {
      padding: 4px 10px;
  }

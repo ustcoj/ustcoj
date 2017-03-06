@@ -22,6 +22,7 @@
             <div ng-repeat="x in statusList.data.submission_list"
                  class="problem-bar-container status-bar-container"
                  ng-class="{'problem-bar-trying': statusTrying[x.submission_id], 'problem-bar-solved': statusSolved[x.submission_id]}"
+                 ng-click="showSubmission(x.submission_id)"
             >
                 <div class="problem-bar-container-column status-bar-id">{{x.submission_id}}</div>
                 <div class="problem-bar-container-column status-bar-time">{{x.push_time}}</div>

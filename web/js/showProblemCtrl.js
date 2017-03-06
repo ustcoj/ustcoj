@@ -9,8 +9,6 @@ angular
     $scope.descObj = $(".prob-title-inf")[0];
     $scope.isContest = false;
 
-    console.log($routeParams);
-
     if ($routeParams.contest_ID == null) {
         if ($routeParams.problem_ID == null) {
             // TODO: show some error message

@@ -62,5 +62,9 @@ angular
                     ret = _data.info.data[t].memory;
             }
             return ret;
+        };
+
+        $scope.showSubmission = function (_submission_id) {
+            $window.location.href = '#/status/' + _submission_id;
         }
 });

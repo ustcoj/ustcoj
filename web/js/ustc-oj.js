@@ -17,7 +17,7 @@ angular
     $rootScope.submitUrl = "/api/submission/";
     $rootScope.statusUrl = "/api/submission/";
     $rootScope.profileUrl = "/api/user/profile/";
-    $rootScope.problemTitleUrl = "/title/";
+    $rootScope.problemSimpleUrl = "/simple";
 });
 
 angular
@@ -110,27 +110,31 @@ angular
         this.checkResponse = function (response) {
             if (response == null) {
                 this.showAlert("No response, the server might be down.");
-                return;
+                return false;
             }
             if (response.status == null) {
                 this.showAlert("Server error.");
+                return false;
             }
             if (response.status.code != 0) {
                 this.showAlert("Error: " + response.status.message);
+                return false;
             }
+            return true;
         }
 
     });
 
 angular
     .module('ustc-oj')
-    .service('problemService', function($rootScope, $sce, userService, networkService) {
+    .service('problemService', function($rootScope, $sce, userService, networkService, siteService) {
 
     this.getProblemData = function(show_problemData, problemId, contestId="none") {
 
         networkService.handleRepData('get', $rootScope.problemUrl + problemId, null, null, null)
             .then(function (response) {
-                show_problemData(resolveProblemData(response.data));
+                if (siteService.checkResponse(response))
+                    show_problemData(resolveProblemData(response.data));
             });
 
     };
@@ -184,20 +188,19 @@ angular
         };
         networkService.handleRepData('get', $rootScope.problemListUrl, null, {params: param}, null)
             .then(function (response) {
-                console.log(response);
-                show_problemList(response.data);
+                if (siteService.checkResponse(response))
+                    show_problemList(response.data);
             });
 
     };
 
-    this.getProblemTitle = function(show_problemTitle, _problem_id) {
+    this.getSimpleProblem = function(show_simpleProblem, _problem_id) {
 
-        networkService.handleRepData('get', $rootScope.problemUrl + _problem_id + $scope.problemTitleUrl
-            , null, {}, {})
+        networkService.handleRepData('get', $rootScope.problemUrl + _problem_id + $scope.problemSimpleUrl
+            , null, null, null)
             .then(function (response) {
-                console.log(response);
-
-                show_problemTitle(response.data);
+                if (siteService.checkResponse(response))
+                    show_simpleProblem(response.data);
             });
 
     };
@@ -210,8 +213,8 @@ angular
         };
         networkService.handleRepData('get', $rootScope.contestListUrl, null, {params: param}, null)
             .then(function (response) {
-                console.log(response);
-                show_contestList(response.data);
+                if (siteService.checkResponse(response))
+                    show_contestList(response.data);
             });
 
     };
@@ -222,8 +225,8 @@ angular
             Contestid: _contestid
         })
         .then(function (response) {
-            console.log(response);
-            show_contestInfo(response.data);
+            if (siteService.checkResponse(response))
+                show_contestInfo(response.data);
         });
 
     };
@@ -234,22 +237,21 @@ angular
             Contestid: _contestid
         })
         .then(function (response) {
-            console.log(response);
-            submit_complete(response.data);
+            if (siteService.checkResponse(response))
+                submit_complete(response.data);
         });
 
     };
-    /*
+
     this.getSubmissonInfo = function(show_submissionInfo, _submissoinid) {
-        networkService.handleRepData('get', $rootScope.statusUrl + '/' + _submissoinid, null, null, {
-            Contestid: _contestid
-        })
+        networkService.handleRepData('get', $rootScope.statusUrl + _submissoinid, null, null, null)
             .then(function (response) {
-                console.log(response);
-                show_contestInfo(response.data);
+                if (siteService.checkResponse(response)) {
+                    show_submissionInfo(response.data);
+                }
             });
-    }
-    */
+    };
+
     this.getStatusList = function(show_statusList, _page, _per_page) {
 
         param = {
@@ -258,7 +260,8 @@ angular
         };
         networkService.handleRepData('get', $rootScope.statusUrl, null, {params: param}, null)
             .then(function (response) {
-                show_statusList(response);
+                if (siteService.checkResponse(response))
+                    show_statusList(response);
             });
 
     };
@@ -267,12 +270,13 @@ angular
 
 angular
     .module('ustc-oj')
-    .service('profileService', function($rootScope, userService, networkService) {
+    .service('profileService', function($rootScope, userService, networkService, siteService) {
 
         this.getUserProfile = function (showUserProfile, _username) {
             networkService.handleRepData('get', $rootScope.profileUrl + _username, null, null, null)
                 .then(function (response) {
-                    showUserProfile(response);
+                    if (siteService.checkResponse(response))
+                        showUserProfile(response);
                 });
         };
 
@@ -298,14 +302,11 @@ angular
 
         response = $http.post($rootScope.apiHost + $rootScope.loginUrl, $.param(data), tempConfig)
             .then(function (response) {
-                if (response.data.status.code === 0) {
+                if (siteService.checkResponse(response)) {
                     $cookies.put("userId", response.data.data.user.user_id);
                     $cookies.put("token", response.data.data.token);
                     $cookies.put("username", response.data.data.user.username);
                     $window.location.href = '#/problems';
-                }
-                else {
-                    siteService.showAlert(response.data.status.message);
                 }
         });
 
@@ -321,7 +322,8 @@ angular
         //response = networkService.post($rootScope.registerUrl, data);
         response = $http.post($rootScope.registerUrl, $.param(data), tempConfig)
             .then(function (response) {
-                $cookies.put("userId", response.data.user_id);
+                if (siteService.checkResponse(response))
+                    $cookies.put("userId", response.data.user_id);
             });
     };
 

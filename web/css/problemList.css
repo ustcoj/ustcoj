@@ -10,3 +10,6 @@
     margin-bottom: -8px;
 }
 
+.problem-bar-container-item {
+    cursor: pointer;
+}

@@ -50,11 +50,8 @@ angular
         $scope.isIdValid = false;
         $scope.submitTitle = "????";
         if (problemService.checkValidProblemId($scope.submitId)) {
-            problemService.getProblemTitle(function(result) {
-                if (result.isValid) {
-                    $scope.submitTitle = result.title;
-                }
-
+            problemService.getSimpleProblem(function(result) {
+                $scope.submitTitle = result.problem.problem_title;
             })
         }
     };
