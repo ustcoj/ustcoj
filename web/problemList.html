@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="css/problemList.css">
 <link rel="stylesheet" href="css/bar.css">
+<link rel="stylesheet" href="css/problemList.css">
 
 <div ng-controller="problemListCtrl" class="bigContainer">
 
@@ -42,7 +42,10 @@
 				</div>
 			</div>
 
-			<div class="problem-bar-container" ng-repeat="x in problemList.problem_list">
+			<div class="problem-bar-container"
+				 ng-repeat="x in problemList.problem_list"
+				 ng-click="showProblem(x.problem_id)"
+				 ng-class="{'problem-bar-trying': myTrying[x.problem_id], 'problem-bar-solved': mySolved[x.problem_id]}">
 
 					<div class="problem-bar-container-column problem-bar-container-id ">{{x.problem_id}}</div>
 					<div class="problem-bar-container-title problem-bar-container-column">{{x.problem_title}}</div>

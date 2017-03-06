@@ -9,25 +9,28 @@
         <div class="statusContent">
 
             <div class="problem-bar-container problem-container">
-                <div class="problem-bar-container-column">ID</div>
-                <div class="problem-bar-container-column">Time</div>
-                <div class="problem-bar-container-column">Title</div>
-                <div class="problem-bar-container-column">User</div>
-                <div class="problem-bar-container-column">Status</div>
-                <div class="problem-bar-container-column">Run Time</div>
-                <div class="problem-bar-container-column">Language</div>
-                <div class="problem-bar-container-column">Memory</div>
+                <div class="problem-bar-container-column status-bar-id">ID</div>
+                <div class="problem-bar-container-column status-bar-time">Time</div>
+                <div class="problem-bar-container-column status-bar-title">Title</div>
+                <div class="problem-bar-container-column status-bar-user">User</div>
+                <div class="problem-bar-container-column status-bar-status">Status</div>
+                <div class="problem-bar-container-column status-bar-run">Run Time</div>
+                <div class="problem-bar-container-column status-bar-lang">Language</div>
+                <div class="problem-bar-container-column status-bar-mem">Memory</div>
             </div>
 
-            <div ng-repeat="x in statusList.data.submission_list" class="problem-bar-container status-bar-container">
-                <div class="problem-bar-container-column">{{x.submission_id}}</div>
-                <div class="problem-bar-container-column">{{x.push_time}}</div>
-                <div class="problem-bar-container-column">{{x.problem.problem_title}}</div>
-                <div class="problem-bar-container-column">{{x.user_id}}</div>
-                <div class="problem-bar-container-column">{{getResult(x.result)}}</div>
-                <div class="problem-bar-container-column">{{getMaxTime(x)}}</div>
-                <div class="problem-bar-container-column">{{getLanguage(x.language)}}</div>
-                <div class="problem-bar-container-column">{{getMaxMem(x)}}</div>
+            <div ng-repeat="x in statusList.data.submission_list"
+                 class="problem-bar-container status-bar-container"
+                 ng-class="{'problem-bar-trying': statusTrying[x.submission_id], 'problem-bar-solved': statusSolved[x.submission_id]}"
+            >
+                <div class="problem-bar-container-column status-bar-id">{{x.submission_id}}</div>
+                <div class="problem-bar-container-column status-bar-time">{{x.push_time}}</div>
+                <div class="problem-bar-container-column status-bar-title">{{x.problem.problem_title}}</div>
+                <div class="problem-bar-container-column status-bar-user">{{x.user.username}}</div>
+                <div class="problem-bar-container-column status-bar-status">{{getResult(x.result)}}</div>
+                <div class="problem-bar-container-column status-bar-run">{{getMaxTime(x)}}</div>
+                <div class="problem-bar-container-column status-bar-lang">{{getLanguage(x.language)}}</div>
+                <div class="problem-bar-container-column status-bar-mem">{{getMaxMem(x)}}</div>
 
             </div>
 

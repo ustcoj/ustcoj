@@ -52,3 +52,13 @@
 .problem-container-count-slash {
     visibility: hidden;
 }
+
+.problem-bar-trying {
+    background-color: #f0ffef !important;
+}
+
+.problem-bar-solved {
+    background-color: #fffaf0 !important;
+    font-weight: bold;
+}
+

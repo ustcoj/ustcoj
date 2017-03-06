@@ -1,3 +1,12 @@
 .problemListContent {
     font-size: 16px;
 }
+
+.problemListContent .problem-bar-container {
+    margin-bottom: 14px;
+}
+
+.problemListContent .problem-container {
+    margin-bottom: -8px;
+}
+

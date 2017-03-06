@@ -7,13 +7,8 @@ angular
 
     $scope.searchFire = function(content) {
         if (problemService.checkValidProblemId(content)) {
-            /*
-            $rootScope.$broadcast('problemNumberChanged', Number(content));
-            $scope.changeTab("showProblem");
-            */
             $window.location.href = '#/problems/' + content;
         }
-        /*$log.log("!!!!");*/
     };
 
     $scope.jumpToProfile = function() {

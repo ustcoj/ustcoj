@@ -3,15 +3,50 @@
     font-size: 14px;
 }
 
-.status-bar-container {
+.status-bar-container, .problem-container {
     padding: 6px;
     height: 24px;
 }
 
 .statusContent .problem-bar-container-column {
-    padding: 4px 20px;
-}
+     padding: 4px 10px;
+ }
 
 .statusContent .problem-bar-container {
     margin-top: 10px;
+}
+
+.statusContent .problem-container {
+    padding-bottom: 0px;
+    margin-bottom: -6px;
+}
+
+.status-bar-id {
+    width: 40px;
+    text-align: center;
+}
+.status-bar-time {
+    width: 140px;
+    text-align: center;
+}
+.status-bar-title {
+    min-width: 150px;
+}
+.status-bar-user {
+    width: 70px;
+}
+.status-bar-status {
+    width: 150px;
+    text-align: center;
+}
+.status-bar-run {
+    width: 80px;
+}
+.status-bar-lang {
+    width: 70px;
+    text-align: center;
+}
+.status-bar-mem {
+    width: 30px;
+    border: none !important;
 }

@@ -8,36 +8,39 @@ angular
     $rootScope.tabShow = "showProblem";
     //$rootScope.apiHost = "http://106.14.46.189";
     $rootScope.apiHost = "http://ustcoj.applinzi.com";
-    $rootScope.loginUrl = "/api/login/";
-    $rootScope.registerUrl = "/api/login/";
+    $rootScope.loginUrl = "/api/user/login";
+    $rootScope.registerUrl = "/api/user/register";
     $rootScope.problemListUrl = "/api/problem/";
     $rootScope.problemUrl = "/api/problem/";
     $rootScope.contestListUrl = "/api/contest/";
-    $rootScope.problemUrl = "/api/problem/";
     $rootScope.contestUrl = "/api/contest/";
     $rootScope.submitUrl = "/api/submission/";
     $rootScope.statusUrl = "/api/submission/";
+    $rootScope.profileUrl = "/api/user/profile/";
     $rootScope.problemTitleUrl = "/title/";
 });
 
 angular
     .module('ustc-oj')
-    .service('networkService', function($rootScope, $http, $q, userService, $filter) {
+    .service('networkService', function($rootScope, $http, $q, userService, $filter, siteService) {
 
-    addDefaultHeader = function(header) {
+    var addDefaultHeader = function(header) {
         header['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8;';
         return header;
     };
 
-    refreshHeader = function (header, url) {
-        time = $filter('date')(new Date(), 'yyyyMMddHHmmss');
-        userid = userService.getUserid().toString();
-        token = userService.getToken();
+    var refreshHeader = function (header, url) {
+        var time = $filter('date')(new Date(), 'yyyyMMddHHmmss');
+        var userid = userService.getUserid();
+        var token = userService.getToken();
         header['Time'] = time;
-        header['Userid'] = userid;
-        tmp = url + time + userid + token;
-        console.log(tmp);
-        header['Sign'] = window.btoa(tmp);
+        if (userid) {
+            header['Userid'] = userid;
+        }
+        if (userid && token) {
+            var tmp = url + time + userid.toString() + token;
+            header['Sign'] = window.btoa(tmp);
+        }
     };
 
     this.handleRepData = function(method, url, data, config, extraHeader) {
@@ -45,6 +48,9 @@ angular
         var defer = $q.defer();
         if (config == null) {
             config = {}
+        }
+        if (extraHeader == null) {
+            extraHeader = {}
         }
         switch (method) {
             case 'get':
@@ -54,24 +60,18 @@ angular
                 refreshHeader(header, url);
 
                 realUrl = $rootScope.apiHost + url;
-                console.log(url);
-                console.log(realUrl);
                 realConfig = config;
-                console.log(realConfig);
                 realConfig.headers = header;
-                console.log(realConfig);
                 promise = $http.get(realUrl, realConfig);
                 break;
             case 'post':
                 header = extraHeader;
                 dataTosend = $.param(data);
-                //console.log(header);
                 addDefaultHeader(header);
                 refreshHeader(header, url);
                 realUrl = $rootScope.apiHost + url;
                 realConfig = config;
                 realConfig.headers = header;
-                console.log(realConfig);
                 promise = $http.post(realUrl, dataTosend, realConfig);
                 break;
             case 'put':
@@ -87,7 +87,7 @@ angular
                 defer.resolve(rep.data);
             } else {
                 var errorMsg = rep.data.status.message || 'Unknown error.';
-                alert(errorMsg);
+                siteService.showAlert(errorMsg);
                 // TODO: redirect to error page
             }
         }, function() {
@@ -101,13 +101,35 @@ angular
 
 angular
     .module('ustc-oj')
+    .service('siteService', function($rootScope) {
+
+        this.showAlert = function(message) {
+            alert(message);
+        };
+
+        this.checkResponse = function (response) {
+            if (response == null) {
+                this.showAlert("No response, the server might be down.");
+                return;
+            }
+            if (response.status == null) {
+                this.showAlert("Server error.");
+            }
+            if (response.status.code != 0) {
+                this.showAlert("Error: " + response.status.message);
+            }
+        }
+
+    });
+
+angular
+    .module('ustc-oj')
     .service('problemService', function($rootScope, $sce, userService, networkService) {
 
     this.getProblemData = function(show_problemData, problemId, contestId="none") {
 
-        networkService.handleRepData('get', $rootScope.problemUrl + problemId, null, null, {})
+        networkService.handleRepData('get', $rootScope.problemUrl + problemId, null, null, null)
             .then(function (response) {
-                console.log(response);
                 show_problemData(resolveProblemData(response.data));
             });
 
@@ -115,21 +137,22 @@ angular
 
     this.languageList = ["C", "C++", "Python"];
     this.resultList = {
-        "Accepted": 0,
-        "Wrong Answer": -1,
-        "Time Limit Exceeded": 1,
-        "Time Limit Exceeded": 2,
-        "Memory Limit Exceeded": 3,
-        "Runtime Error": 4,
-        "System Error": 5,
-        "Compile Error": 6,
-        "Pending": 7
+        "0": "Accepted",
+        "-1": "Wrong Answer",
+        "1": "Time Limit Exceeded",
+        "2": "Time Limit Exceeded",
+        "3": "Memory Limit Exceeded",
+        "4": "Runtime Error",
+        "5": "System Error",
+        "6": "Compile Error",
+        "7": "Pending"
     };
     this.checkValidProblemId = function(content) {
-        if (Number(content).toString() == content && Number(content) >= 1000 && Number(content) <= 9999) {
-            return true;
-        }
-        else return false;
+        return (
+            Number(content).toString() == content
+            && Number(content) >= 1000
+            && Number(content) <= 9999
+        );
     };
 
     resolveProblemData = function (data) {
@@ -159,7 +182,7 @@ angular
             page: _page,
             per_page: _per_page
         };
-        networkService.handleRepData('get', $rootScope.problemListUrl, null, {params: param}, {})
+        networkService.handleRepData('get', $rootScope.problemListUrl, null, {params: param}, null)
             .then(function (response) {
                 console.log(response);
                 show_problemList(response.data);
@@ -185,7 +208,7 @@ angular
             page: _page,
             per_page: _per_page
         };
-        networkService.handleRepData('get', $rootScope.contestListUrl, null, {params: param}, {})
+        networkService.handleRepData('get', $rootScope.contestListUrl, null, {params: param}, null)
             .then(function (response) {
                 console.log(response);
                 show_contestList(response.data);
@@ -207,7 +230,7 @@ angular
 
     this.submitCode = function(submit_complete, _submission_data, _contestid) {
 
-        networkService.handleRepData('post', $rootScope.submitUrl, _submission_data, {}, {
+        networkService.handleRepData('post', $rootScope.submitUrl, _submission_data, null, {
             Contestid: _contestid
         })
         .then(function (response) {
@@ -233,7 +256,7 @@ angular
             page: _page,
             per_page: _per_page
         };
-        networkService.handleRepData('get', $rootScope.statusUrl, null, {params: param}, {})
+        networkService.handleRepData('get', $rootScope.statusUrl, null, {params: param}, null)
             .then(function (response) {
                 show_statusList(response);
             });
@@ -244,7 +267,20 @@ angular
 
 angular
     .module('ustc-oj')
-    .service('userService', function($rootScope, $cookies, $http, $window) {
+    .service('profileService', function($rootScope, userService, networkService) {
+
+        this.getUserProfile = function (showUserProfile, _username) {
+            networkService.handleRepData('get', $rootScope.profileUrl + _username, null, null, null)
+                .then(function (response) {
+                    showUserProfile(response);
+                });
+        };
+
+});
+
+angular
+    .module('ustc-oj')
+    .service('userService', function($rootScope, $cookies, $http, $window, siteService) {
 
     var tempConfig = {
         headers : {
@@ -269,7 +305,7 @@ angular
                     $window.location.href = '#/problems';
                 }
                 else {
-                    alert(response.data.status.message);
+                    siteService.showAlert(response.data.status.message);
                 }
         });
 
@@ -295,13 +331,27 @@ angular
     };
 
     this.getUserid = function() {
-        tmpId = $cookies.get("userId");
+        var tmpId = $cookies.get("userId");
         if (tmpId) {
             return tmpId;
         }
         else {
-            return -1;
+            return null;
         }
+    };
+
+    this.getUsername = function() {
+        var tmpName = $cookies.get("username");
+        if (tmpName) {
+            return tmpName;
+        }
+        else {
+            return null;
+        }
+    };
+
+    this.isLoggedIn = function () {
+        return $cookies.get("userId") != null;
     };
 
     var MD5 = function (s) {

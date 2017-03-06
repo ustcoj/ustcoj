@@ -41,6 +41,7 @@
     <script src="js/contestListCtrl.js" charset="utf-8"></script>
     <script src="js/problemListCtrl.js" charset="utf-8"></script>
     <script src="js/editCtrl.js" charset="utf-8"></script>
+    <script src="js/profileCtrl.js" charset="utf-8"></script>
     <script src="js/showSubmissionCtrl.js" charset="utf-8"></script>
 
 
@@ -52,6 +53,7 @@
             .config(['$routeProvider', function($routeProvider){
                 $routeProvider
                     .when('/',{templateUrl:'login.html'})
+                    .when('/login',{templateUrl:'login.html'})
                     .when('/problems',{templateUrl:'problemList.html'})
                     .when('/problems/:problem_ID',{
                         templateUrl:'showProblem.html',
@@ -99,6 +101,12 @@
                         controllerAs: 'ctrl'
                     })
                     .when('/profile',{templateUrl:'profile.html'})
+                    .when('/profile/:user_name', {
+                        templateUrl:'profile.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
                     .otherwise({redirectTo:'/'});
             }]);
     </script>
