@@ -6,7 +6,7 @@
     margin-right: 20px;
 }
 
-.submit-list td:nth-child(1) {
+.submit-list table tr td:nth-child(2) {
     font-size: 18px;
 }
 
@@ -16,6 +16,7 @@
 
 .submit-list tr {
     height: 35px;
+    vertical-align: top;
 }
 
 #submit-id-input {

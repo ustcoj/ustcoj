@@ -5,12 +5,20 @@
 
         <h2>Submission</h2>
 
-        <div class="submit-list">
+        <div class="submission-list">
             <table>
-                <colgroup class="submit-inf">
+                <colgroup class="submission-inf">
                     <col style="width: 150px">
                     <col style="width: 500px">
                 </colgroup>
+                <tr>
+                    <td>ID</td>
+                    <td ng-bind="submissionId"></td>
+                </tr>
+                <tr>
+                    <td>Prob ID</td>
+                    <td ng-bind="submissionTitle"></td>
+                </tr>
                 <tr>
                     <td>Title</td>
                     <td ng-bind="submissionTitle"></td>

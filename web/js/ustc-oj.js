@@ -4,6 +4,12 @@ angular.module("ustc-oj", ['ngRoute', 'ngCookies']);
 
 angular
     .module('ustc-oj')
+    .config(function ($locationProvider) {
+        //$locationProvider.html5Mode(true);
+    });
+
+angular
+    .module('ustc-oj')
     .run(function ($rootScope) {
     $rootScope.tabShow = "showProblem";
     //$rootScope.apiHost = "http://106.14.46.189";
