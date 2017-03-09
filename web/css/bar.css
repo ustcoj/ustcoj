@@ -1,6 +1,6 @@
 
 .problem-bar-container {
-    background-color: #f8f8f8;
+    background-color: #f9f9f9;
     border-radius: 10px;
     padding: 12px;
     height: 32px;
@@ -57,9 +57,18 @@
     background-color: #f0ffef !important;
 }
 
+.problem-bar-result-trying {
+    font-weight: bold;
+    color: #67c761;
+}
+
+.problem-bar-result-solved {
+    font-weight: bold;
+    color: #faa634;
+}
+
 .problem-bar-solved {
     background-color: #fffaf0 !important;
-    font-weight: bold;
 }
 
 

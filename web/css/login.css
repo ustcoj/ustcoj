@@ -27,9 +27,9 @@
 }
 
 .loginContainer input {
-    font-size: 24px;
+    font-size: 20px;
     width: 300px;
-    height: 50px;
+    height: 40px;
     border-radius: 3px;
     border-width: 0px;
     outline: none;
@@ -48,10 +48,10 @@
 }
 
 .loginSwitch button {
-    font-size: 24px;
+    font-size: 18px;
+    color: #8e8e8e;
     background-color: transparent;
     border: none;
-    cursor: hand;
     cursor: pointer;
     outline: none;
 }
@@ -67,7 +67,6 @@
 }
 
 .loginClick svg {
-    cursor: hand;
     cursor: pointer;
 }
 

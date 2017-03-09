@@ -10,16 +10,32 @@
 
 
 
-        <div class="inputWrapper" ng-style="wrapperStyle">
+        <div class="inputWrapper" ng-style="wrapperStyle" ng-show="!signUpMode">
 
             <p>
-                <input ng-model="indexUsername" placeholder="Email or Username" type="text" id="username">
+                <input ng-model="logInUsername" placeholder="Username" type="text" id="log-in-username">
+            </p>
+
+            <p>
+                <input ng-model="logInPassword" placeholder="Password" type="password" id="log-in-pass">
+            </p>
+
+        </div>
+
+        <div class="inputWrapper" ng-style="wrapperStyle" ng-show="signUpMode">
+
+            <p>
+                <input ng-model="signUpEmail" placeholder="Email" type="email" id="sign-up-email">
             </p>
             <p>
-                <input ng-model="indexPassword" placeholder="Password" type="password" id="password">
+                <input ng-model="signUpUsername" placeholder="Username" type="text" id="sign-up-username">
             </p>
-            <p ng-show="signUpMode">
-                <input ng-model="indexPasswordAgain" placeholder="Password Again" type="password" id="passwordAgain">
+
+            <p>
+                <input ng-model="signUpPassword" placeholder="Password" type="password" id="sign-up-pass">
+            </p>
+            <p>
+                <input ng-model="signUpPasswordAgain" placeholder="Password Again" type="password" id="sign-up-pass-again">
             </p>
 
         </div>
@@ -30,7 +46,7 @@
         <button ng-click="loginFire(indexUsername, indexPassword)" ng-show="!signUpMode">Goo</button>
         -->
         <div class="loginClick">
-            <svg ng-show="signUpMode" ng-click="registerFire(indexUsername, indexPassword, indexPasswordAgain)" width="64px" height="64px" viewBox="480 468 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <svg ng-show="signUpMode" ng-click="registerFire(signUpUsername, signUpPassword, signUpPasswordAgain, signUpEmail)" width="64px" height="64px" viewBox="480 468 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
                 <desc>Created with Sketch.</desc>
                 <defs>
@@ -40,13 +56,13 @@
                     </mask>
                 </defs>
 
-                <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(480.000000, 468.000000)">
+                <g id="Group" stroke="none" stroke-width="2" fill="none" fill-rule="evenodd" transform="translate(480.000000, 468.000000)">
                     <use id="Oval" stroke="#67C761" mask="url(#mask-2)" stroke-width="6" fill="#F0FFEF" xlink:href="#path-1"></use>
-                    <circle id="Oval-2" fill="#67C761" cx="32.5" cy="32.5" r="12.5"></circle>
+                    <circle id="Oval-2" fill="#67C761" cx="32.5" cy="32.5" r="16.5"></circle>
                 </g>
             </svg>
 
-            <svg ng-show="!signUpMode" ng-click="loginFire(indexUsername, indexPassword)" width="64px" height="64px" viewBox="480 468 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <svg ng-show="!signUpMode" ng-click="loginFire(logInUsername, logInPassword)" width="64px" height="64px" viewBox="480 468 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
                 <desc>Created with Sketch.</desc>
                 <defs>
@@ -55,9 +71,9 @@
                         <use xlink:href="#path-1"></use>
                     </mask>
                 </defs>
-                <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(480.000000, 468.000000)">
+                <g id="Group" stroke="none" stroke-width="2" fill="none" fill-rule="evenodd" transform="translate(480.000000, 468.000000)">
                     <use id="Oval" stroke="#FAA634" mask="url(#mask-2)" stroke-width="6" fill="#FFFAF0" xlink:href="#path-1"></use>
-                    <circle id="Oval-2" fill="#FAA634" cx="32.5" cy="32.5" r="12.5"></circle>
+                    <circle id="Oval-2" fill="#FAA634" cx="32.5" cy="32.5" r="16.5"></circle>
                 </g>
             </svg>
         </div>

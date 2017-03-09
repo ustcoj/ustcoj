@@ -4,11 +4,11 @@
 
 angular
     .module('ustc-oj')
-    .controller("contestListCtrl", function($scope, $http, $rootScope, $window, problemService){
+    .controller("contestListCtrl", function($scope, $http, $rootScope, $window, problemService, siteService){
 
     problemService.getContestList(function(data){$scope.contestList = data}, 1, 10);
 
     $scope.showContest = function(contestId){
-        $window.location.href = '#/contests/' + contestId;
+        $window.location.href = siteService.contestLink + contestId;
     }
 });

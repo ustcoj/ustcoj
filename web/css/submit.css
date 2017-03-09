@@ -36,6 +36,7 @@
 }
 
 .submitArea textarea{
+    width: 100%;
     font-family: monospace;
     padding: 5px;
     resize: none;
@@ -44,6 +45,6 @@
     border-radius: 5px;
     border:solid 1px #8e8e8e;
     outline: none;
-    width: 600px;
+    max-width: 600px;
     height: 300px;
 }

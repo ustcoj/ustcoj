@@ -13,3 +13,8 @@
 .problem-bar-container-item {
     cursor: pointer;
 }
+
+.problem-list-container {
+    margin-top: 20px;
+    margin-bottom: 25px;
+}

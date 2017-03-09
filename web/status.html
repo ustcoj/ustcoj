@@ -28,7 +28,7 @@
                 <div class="problem-bar-container-column status-bar-time">{{x.push_time}}</div>
                 <div class="problem-bar-container-column status-bar-title">{{x.problem.problem_title}}</div>
                 <div class="problem-bar-container-column status-bar-user">{{x.user.username}}</div>
-                <div class="problem-bar-container-column status-bar-status">{{getResult(x.result)}}</div>
+                <div class="problem-bar-container-column status-bar-status"  ng-class="{'problem-bar-result-trying': statusTrying[x.submission_id], 'problem-bar-result-solved': statusSolved[x.submission_id]}">{{getResult(x.result)}}</div>
                 <div class="problem-bar-container-column status-bar-run">{{getMaxTime(x)}}</div>
                 <div class="problem-bar-container-column status-bar-lang">{{getLanguage(x.language)}}</div>
                 <div class="problem-bar-container-column status-bar-mem">{{getMaxMem(x)}}</div>

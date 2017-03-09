@@ -16,8 +16,8 @@
             </div>
             <ul>
 
-                <li><a href="/problems">Problem</a></li>
-                <li><a href="/contests">Contest</a></li>
+                <li><a ng-href="{{siteService.problemLink}}">Problem</a></li>
+                <li><a ng-href="{{siteService.contestLink}}">Contest</a></li>
             </ul>
         </div>
         <!-- float顺序问题 -->
@@ -25,11 +25,11 @@
 
         <div class="fixed-navbar-right">
             <div class="fixed-navbar-user">
-                <img src="user_head.png" ng-click="jumpToProfile()">
+                <img src="user_head.png" ng-click="toProfile()">
             </div>
             <ul>
-                <li><a href="#/status">Status</a></li>
-                <li><a href="#/submit">Submit</a></li>
+                <li><a ng-href="{{siteService.statusLink}}">Status</a></li>
+                <li><a ng-href="{{siteService.submitLink}}">Submit</a></li>
             </ul>
 
         </div>
