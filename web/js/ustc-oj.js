@@ -353,8 +353,7 @@ angular
             response = $http.post($rootScope.registerUrl, $.param(data), tempConfig)
                 .then(function (response, userService) {
                     if (siteService.checkResponse(response)) {
-                        $cookies.put("userId", response.data.user_id);
-                        userService.login(showRegisterResult, _username, _password);
+                        //$cookies.put("userId", response.data.user_id);
                     }
 
                 });

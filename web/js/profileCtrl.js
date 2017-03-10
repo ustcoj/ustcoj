@@ -14,6 +14,7 @@ angular
             var tname = userService.getUsername();
             if (tname) {
                 $window.location.href = '#/profile/' + tname;
+                profileUsername = tname;
             }
             else {
                 $window.location.href = '#/login';

@@ -10,20 +10,22 @@ angular
 
                 userService.register(function(result) {
                     if (result) {
-                        $window.location.href = siteService.profileLink;
+                        $scope.loginFire(username, pass, true);
                     }
                 }, username, pass, email);
+
             }
             else {
 
             }
 
         };
-        $scope.loginFire = function (username, pass) {
+        $scope.loginFire = function (username, pass,fromRegister=false) {
 
             userService.login(function(result) {
                 if (result) {
-                    $window.location.href = siteService.profileLink;
+                    if (fromRegister) $window.location.href = siteService.profileLink;
+                    else $window.location.href = siteService.problemLink;
                 }
             }, username, pass);
 

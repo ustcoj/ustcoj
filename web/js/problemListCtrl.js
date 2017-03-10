@@ -4,7 +4,7 @@ angular
 
         $scope.myTrying = {};
         $scope.mySolved = {};
-        $scope.perpage = 30;
+        $scope.perpage = 5;
         $scope.pageNow = 1;
         $scope.catchEnter = function(_event) {
             if (_event.which === 13) {
@@ -31,9 +31,7 @@ angular
             $scope.pageSum = Math.ceil($scope.problemNum / $scope.perpage);
         });
 
-
-
-
+        
         if (userService.isLoggedIn()) {
             profileService.getUserProfile(function (response) {
                 response.data.solved_problem.forEach(function (item) {

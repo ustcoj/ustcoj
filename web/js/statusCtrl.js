@@ -38,7 +38,7 @@ angular
             if (_data.info == undefined) {
                 return "-";
             }
-            if (_data.info.data[0].result == undefined) {
+            if (_data.info.data[0] == undefined) {
                 return "-";
             }
             var ret = 0;
@@ -53,7 +53,7 @@ angular
             if (_data.info == undefined) {
                 return "-";
             }
-            if (_data.info.data[0].result == undefined) {
+            if (_data.info.data[0] == undefined) {
                 return "-";
             }
             var ret = 0;
@@ -61,6 +61,7 @@ angular
                 if (_data.info.data[t].memory > ret)
                     ret = _data.info.data[t].memory;
             }
+
             return ret;
         };
 

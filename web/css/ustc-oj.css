@@ -47,10 +47,19 @@ body{
 }
 
 .bigContent > h2 {
+    font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
+.biggerContent > h2 {
+    font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 
 .small-bubble {
     font-size: 14px;
@@ -116,6 +125,7 @@ body{
 }
 
 .rightbar{
+    font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;;
     float: right;
     width: 220px;
     margin-top: 100px;
