@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html ng-app="ustc-oj" ng-controller="indexCtrl">
+<head>
+    <meta charset="utf-8">
+    <title>USTC-OJ</title>
+    <!--<base href="/">-->
+    <!--
+    <script src="https://use.typekit.net/ejt7hhx.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/ustc-oj.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/navbar.css">
+</head>
+<body>
+
+    <div ng-include="'navbar.html'"></div>
+
+    <!-- 1.11.3 -->
+    <script src="jquery.min.js"></script>
+    <!-- 1.5.0 -->
+    <script src="angular.min.js" charset="utf-8"></script>
+    <script src="angular-route.min.js" charset="utf-8"></script>
+    <script src="angular-cookies.min.js" charset="utf-8"></script>
+    <script src="bootstrap/js/bootstrap.min.js" charset="utf-8"></script>
+
+
+    <script src="js/ustc-oj.js" charset="utf-8"></script>
+    <script src="js/indexCtrl.js" charset="utf-8"></script>
+    <script src="js/loginCtrl.js" charset="utf-8"></script>
+    <script src="js/navbarCtrl.js" charset="utf-8"></script>
+    <script src="js/showProblemCtrl.js" charset="utf-8"></script>
+    <script src="js/submitCtrl.js" charset="utf-8"></script>
+    <script src="js/statusCtrl.js" charset="utf-8"></script>
+    <script src="js/showContestCtrl.js" charset="utf-8"></script>
+    <script src="js/contestListCtrl.js" charset="utf-8"></script>
+    <script src="js/problemListCtrl.js" charset="utf-8"></script>
+    <script src="js/editCtrl.js" charset="utf-8"></script>
+    <script src="js/profileCtrl.js" charset="utf-8"></script>
+    <script src="js/showSubmissionCtrl.js" charset="utf-8"></script>
+
+
+    <div ng-view></div>
+
+    <script>
+        angular
+            .module('ustc-oj')
+            .config(['$routeProvider', function($routeProvider){
+                $routeProvider
+                    .when('/',{templateUrl:'login.html'})
+                    .when('/login',{templateUrl:'login.html'})
+                    .when('/problems',{templateUrl:'problemList.html'})
+                    .when('/problems/:problem_ID',{
+                        templateUrl:'showProblem.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
+                    .when('/contests',{templateUrl:'contestList.html'})
+                    .when('/contests/:contest_ID',{
+                        templateUrl:'showContest.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
+                    .when('/contests/:contest_ID/problem/:problem_SEQ',{
+                        templateUrl:'showProblem.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
+                    .when('/contests/:contest_ID/submit/:problem_SEQ',{
+                        templateUrl:'submit.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
+                    .when('/submit',{templateUrl:'submit.html'})
+                    .when('/submit/:problem_ID',{
+                        templateUrl:'submit.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
+                    .when('/status',{templateUrl:'status.html'})
+                    .when('/status/:submission_ID',{
+                        templateUrl:'showSubmission.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
+                    .when('/edit/:problem_ID',{
+                        templateUrl:'edit.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
+                    .when('/profile',{templateUrl:'profile.html'})
+                    .when('/profile/:user_name', {
+                        templateUrl:'profile.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
+                    .otherwise({redirectTo:'/'});
+            }]);
+    </script>
+
+
+</body>
+</html>

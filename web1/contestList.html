@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="css/contestList.css">
+<div ng-controller="contestListCtrl" class="bigContainer">
+
+
+    <div class="rightbar">
+        <div class="rightbarItem">
+            <div class="rightbarHead">
+                Problem Tag
+            </div>
+            <div>
+                <span class="rightbarTag">dfs</span>
+            </div>
+            <div>
+                <span class="rightbarTag">dynamic programming</span>
+            </div>
+            <div></div>
+        </div>
+        <div class="rightbarItem">
+            <div class="rightbarProb">
+                1001
+            </div>
+            <div>Submit</div>
+            <div>Status</div>
+        </div>
+    </div>
+
+
+    <div class="bigContent">
+
+        <h2>Contest List</h2>
+        <div class="contestListContent">
+
+            <table align="left" style="width:100%">
+
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Status</th>
+                </tr>
+
+                <tr ng-repeat="x in contestList.contest_list" class="contestListItem" ng-click="showContest(x.contest_id)">
+
+
+                    <td>
+                        {{x.contest_id}}
+                    </td>
+                    <td>
+                        {{x.contest_title}}
+                    </td>
+                    <td>
+                        {{x.start_time}}
+                    </td>
+                    <td>
+                        {{x.end_time}}
+                    </td>
+                    <td>
+                        {{}}
+                    </td>
+
+
+                </tr>
+
+            </table>
+        </div>
+
+    </div>
+
+</div>

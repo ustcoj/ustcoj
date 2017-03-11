@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="css/showSubmisson.css">
+<link rel="stylesheet" href="prism/prism.css">
+<script src="prism/prism.js" charset="utf-8"></script>
+<div ng-controller="showSubmissionCtrl" class="bigContainer">
+
+    <div class="bigContent">
+
+        <h2>Submission</h2>
+
+        <div class="submission-list">
+            <table>
+                <colgroup class="submission-inf">
+                    <col style="width: 150px">
+                    <col style="width: 500px">
+                </colgroup>
+                <tr>
+                    <td>ID</td>
+                    <td ng-bind="submissionId"></td>
+                </tr>
+                <tr>
+                    <td>Prob ID</td>
+                    <td ng-bind="submissionTitle"></td>
+                </tr>
+                <tr>
+                    <td>Title</td>
+                    <td ng-bind="submissionTitle"></td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td ng-bind="submissionResult"></td>
+                </tr>
+                <tr ng-show="submissionErrorMsg">
+                    <td>Detail</td>
+                    <td style="font-family: monospace" >
+                        <pre ng-bind="submissionErrorMsg" id="submission-error-detail"></pre>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="submission-code" ng-show="!submissionCode">
+            No code available.
+        </div>
+
+        <pre ng-show="submissionCode"><code class="language-c++ line-numbers" id="code-area">
+        </code></pre>
+
+
+        <div class="submission-list" ng-show="submissionCaseDetail">
+
+
+            <table>
+
+                <colgroup class="submission-inf">
+                    <col style="width: 60px">
+                    <col style="width: 100px">
+                    <col style="width: 100px">
+                </colgroup>
+
+                <tr>
+                    <th></th>
+                    <th>Time</th>
+                    <th>Memory</th>
+                </tr>
+
+                <tr ng-repeat="x in submissionCaseDetail">
+
+                    <td>{{$index + 1}}</td>
+                    <td ng-bind="x.cpu_time"></td>
+                    <td ng-bind="x.memory"></td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+
+    </div>
+
+</div>

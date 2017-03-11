@@ -1,0 +1,30 @@
+.submission-list td:first-child {
+    color: #8e8e8e;
+    font-weight: bold;
+    font-size: 16px;
+    width: 50px;
+    margin-right: 20px;
+}
+
+.submission-list td:nth-child(2) {
+    font-size: 16px;
+}
+
+.submission-list table {
+    margin-left: 10px;
+}
+
+.submission-list tr {
+    height: 30px;
+    vertical-align: top;
+}
+
+#submission-error-detail {
+    font-family: monospace;
+    display: inline-block;
+    width: 600px;
+    background-color: #f9f9f9;
+    word-spacing: 0px;
+    overflow-x: scroll;
+    padding: 5px;
+}

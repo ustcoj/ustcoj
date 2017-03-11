@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="css/profile.css">
+<div ng-controller="profileCtrl" class="bigContainer">
+
+
+    <div class="biggerContent">
+
+        <div class="profile-avatar">
+            <img src="user_head.png" class="profile-avatar-img">
+            <h2 class="profile-avatar-name">{{userDetail.username}}</h2>
+        </div>
+
+        <div class="profile-basic">
+
+            <!--<div ng-repeat="(key, value) in userDetail">-->
+                <!--<h4>{{key}}</h4>-->
+                <!--<p>{{value}}</p>-->
+            <!--</div>-->
+
+            <div class="profile-block">
+                <div class="profile-list">
+                    <table>
+                        <tr>
+                            <td>Email</td>
+                            <td>{{userDetail.email}}<span><a>Verify</a></span></td>
+                        </tr>
+                        <tr>
+                            <td>USTC ID</td>
+                            <td><span><a>Bind</a></span></td>
+                        </tr>
+                        <!--<tr ng-show="userDetail.role">-->
+                            <!--<td>Role</td>-->
+                            <!--<td>{{userDetail.role}}</td>-->
+                        <!--</tr>-->
+                    </table>
+                </div>
+
+                <div class="profile-list">
+                    <table>
+                        <tr>
+                            <td>Email</td>
+                            <td>{{userDetail.email}}<span><a>Verify</a></span></td>
+                        </tr>
+                        <tr>
+                            <td>USTC ID</td>
+                            <td><span><a>Bind</a></span></td>
+                        </tr>
+                        <!--<tr ng-show="userDetail.role">-->
+                        <!--<td>Role</td>-->
+                        <!--<td>{{userDetail.role}}</td>-->
+                        <!--</tr>-->
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

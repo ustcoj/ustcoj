@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="css/submit.css">
+
+<div ng-controller="submitCtrl" class="bigContainer">
+
+    <div class="bigContent">
+
+        <h2>SUBMIT</h2>
+
+        <div class="submit-list">
+            <table>
+                <colgroup class="submit-inf">
+                    <col style="width: 150px">
+                    <col style="width: 200px">
+                </colgroup>
+                <tr>
+                    <td ng-if="!isContest">Prob ID</td>
+                    <td ng-if="isContest">Contest</td>
+                    <td ng-show="!isContest">
+                        <input ng-model="submitId"
+                               id="submit-id-input"
+                               style="width: 90px"
+                               ng-change="getProblemTitle()"
+                        >
+                    </td>
+                    <td id="contestName" ng-if="isContest">{{contestName}}</td>
+                </tr>
+                <tr>
+                    <td>Prob Title</td>
+                    <td ng-if="!isContest">{{submitTitle}}</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Language</td>
+                    <td style="width: 90px">
+                        <select ng-model="submitLang" id="submit-language-select">
+                            <!--
+                            <option value="0">C</option>
+                            <option value="1">C++</option>
+                            <option value="2">Python</option>
+                            -->
+                            <option ng-repeat="x in languageList" value="{{$index}}">{{x}}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr ng-if="!isContest">
+                    <td>Public</td>
+                    <td>
+                        <label>
+                            <input type="radio" ng-model="submitPublic" value="1">
+                            Yes
+                        </label>
+
+                        <label>
+                            <input type="radio" ng-model="submitPublic" value="0">
+                            No
+                        </label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class ="submitArea">
+            <textarea ng-model="submitSource"></textarea>
+        </div>
+        <button ng-click="submitFire(submitSource, submitLang, submitId)">
+            Submit
+        </button>
+
+
+    </div>
+
+</div>

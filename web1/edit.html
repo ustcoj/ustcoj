@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="editormd/css/editormd.min.css" />
+<link rel="stylesheet" href="css/edit.css">
+
+<div ng-controller="editCtrl" class="bigContainer">
+
+    <div class="editTitle">
+        <h2>Problem Title</h2>
+        <input ng-model="problemEdit.problem_title">
+        <div class="prob-title-inf">
+            <p>Time limit: <input ng-model="problemEdit.time_limit"> ms</p>
+            <p>Memory limit: <input ng-model="problemEdit.memory_limit"> KiB</p>
+            <p>Standard I/O</p>
+        </div>
+
+    </div>
+
+    <div class="editTitle">
+        <h2>Description</h2>
+        <div id="editormd-title" class="editormd-window-title">
+            <textarea style="display: none" ng-bind="problemData.problem.description">Loading...</textarea>
+
+        </div>
+    </div>
+
+    <div class="editTitle">
+        <h2>Input Description</h2>
+        <div id="editormd-input-description" class="editormd-window-input-description">
+            <textarea style="display: none" ng-bind="problemData.problem.input_description">Loading...</textarea>
+
+        </div>
+    </div>
+
+    <div class="editTitle">
+        <h2>Output Description</h2>
+        <div id="editormd-output-description" class="editormd-window-output-description">
+            <textarea style="display: none" ng-bind="problemData.problem.output_description">Loading...</textarea>
+
+        </div>
+    </div>
+
+    <div class="editTitle">
+        <h2>Hint</h2>
+        <div id="editormd-hint" class="editormd-window-hint">
+            <textarea style="display: none" ng-bind="problemData.problem.hint">Loading...</textarea>
+
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+<script src="editormd/editormd.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+
+    var editormdTitle, editormdInputDescription, editormdOutputDescription, editormdHint;
+
+    startRender = function() {
+        editormdTitle = editormd("editormd-title", {
+            path : "./editormd/lib/" // Autoload modules mode, codemirror, marked... dependents libs path
+        });
+        editormdInputDescription = editormd("editormd-input-description", {
+            path : "./editormd/lib/" // Autoload modules mode, codemirror, marked... dependents libs path
+        });
+        editormdOutputDescription = editormd("editormd-output-description", {
+            path : "./editormd/lib/" // Autoload modules mode, codemirror, marked... dependents libs path
+        });
+        editormdHint = editormd("editormd-hint", {
+            path : "./editormd/lib/" // Autoload modules mode, codemirror, marked... dependents libs path
+        });
+        /*
+         // or
+         var editor = editormd({
+         id   : "editormd",
+         path : "../lib/"
+         });
+         */
+    };
+
+
+</script>

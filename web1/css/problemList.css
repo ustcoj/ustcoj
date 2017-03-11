@@ -1,0 +1,20 @@
+.problemListContent {
+    font-size: 16px;
+}
+
+.problemListContent .problem-bar-container {
+    margin-bottom: 14px;
+}
+
+.problemListContent .problem-container {
+    margin-bottom: -8px;
+}
+
+.problem-bar-container-item {
+    cursor: pointer;
+}
+
+.problem-list-container {
+    margin-top: 20px;
+    margin-bottom: 25px;
+}

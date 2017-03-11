@@ -1,0 +1,121 @@
+
+
+.prob-title{
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.prob-title h2{
+    font-size: 34px;
+    padding-bottom: 5px;
+    font-weight: 600;
+    font-family: "Open Sans", sans-serif;
+}
+
+.prob-title-inf {
+    margin-bottom: 7px;
+    margin-top: 7px;
+}
+
+.prob-title-inf p{
+    font-size: 14px;
+    color: #6B6B6B;
+    font-family: "Open Sans", sans-serif;
+}
+
+.prob-desc {
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.prob-desc div {
+    font-size: 15px;
+    margin-bottom: 16px;
+    margin-top: 8px;
+    line-height: 1.7;
+}
+
+.prob-desc br{
+    display: block; /* makes it have a width */
+    content: ""; /* clears default height */
+    margin-top: 18px;
+}
+
+.prob-desc a {
+    color: #faa634;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.prob-desc table {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.sample-title h4 {
+    width: 360px;
+    float: left;
+}
+
+#sample div{
+    margin-bottom: 0px;
+}
+#sample br {
+    margin-top: 0px;
+}
+
+.sample-wrapper {
+    white-space: nowrap;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 0;
+
+}
+
+.prob-sample-input{
+    /*border: 1px solid #faa634;*/
+    font-family: monospace;
+    display: inline-block;
+    width: 340px;
+    background-color: #fffaf0;
+    word-spacing: 0px;
+    overflow-x: scroll;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.prob-sample-output {
+    font-family: monospace;
+    display: inline-block;
+    float: right;
+    margin-right: 5px;
+    width: 340px;
+    background-color: #fffaf0;
+    word-spacing: 0px;
+    overflow-x: scroll;
+    padding: 5px;
+}
+
+.prob-sample-heads {
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #797979;
+    margin-bottom: 0px;
+}
+
+.prob-sample-input-head {
+    display: inline-block;
+    width: 340px;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.prob-sample-output-head {
+    float: right;
+    display: inline-block;
+    width: 340px;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+
