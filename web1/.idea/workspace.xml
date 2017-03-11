@@ -4,12 +4,11 @@
     <list default="true" id="90ac4ba7-e2f9-4db2-b95e-8e1e4903704a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../web/js/text-autospace" afterPath="$PROJECT_DIR$/../web/js/text-autospace" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/text-autospace" afterPath="$PROJECT_DIR$/js/text-autospace" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/navbar.css" afterPath="$PROJECT_DIR$/css/navbar.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/text-autospace/README.md" afterPath="$PROJECT_DIR$/js/text-autospace/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/text-autospace/text-autospace.js" afterPath="$PROJECT_DIR$/js/text-autospace/text-autospace.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/text-autospace/text-autospace.min.js" afterPath="$PROJECT_DIR$/js/text-autospace/text-autospace.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/navbar.html" afterPath="$PROJECT_DIR$/navbar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/problemList.html" afterPath="$PROJECT_DIR$/problemList.html" />
     </list>
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,20 +28,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-771">
-              <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+            <state relative-caret-position="654">
+              <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navbar.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="navbar.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/navbar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
+            <state relative-caret-position="630">
               <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding />
             </state>
@@ -52,8 +51,8 @@
       <file leaf-file-name="problemList.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/problemList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="-15">
+              <caret line="3" column="53" lean-forward="false" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -127,7 +126,6 @@
         <option value="$PROJECT_DIR$/login.html" />
         <option value="$PROJECT_DIR$/css/problemList.css" />
         <option value="$PROJECT_DIR$/css/submit.css" />
-        <option value="$PROJECT_DIR$/problemList.html" />
         <option value="$PROJECT_DIR$/js/loginCtrl.js" />
         <option value="$PROJECT_DIR$/css/ustc-oj.css" />
         <option value="$PROJECT_DIR$/js/profileCtrl.js" />
@@ -146,9 +144,10 @@
         <option value="$PROJECT_DIR$/css/profile.css" />
         <option value="$PROJECT_DIR$/status.html" />
         <option value="$PROJECT_DIR$/js/navbarCtrl.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/navbar.css" />
         <option value="$PROJECT_DIR$/navbar.html" />
+        <option value="$PROJECT_DIR$/problemList.html" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -377,7 +376,7 @@
       <workItem from="1488780400769" duration="13535000" />
       <workItem from="1488880246563" duration="19733000" />
       <workItem from="1489138892369" duration="16970000" />
-      <workItem from="1489218978473" duration="4151000" />
+      <workItem from="1489218978473" duration="4490000" />
     </task>
     <task id="LOCAL-00001" summary="Add styles to login page&#10;clear outline in navbar&#10;change background color to none">
       <created>1484553390965</created>
@@ -488,7 +487,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="273358000" />
+    <option name="totallyTimeSpent" value="273697000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -904,14 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/problemList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/navbar.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -920,18 +911,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/navbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-771">
-          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+        <state relative-caret-position="630">
+          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/navbar.html">
+    <entry file="file://$PROJECT_DIR$/problemList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        <state relative-caret-position="-15">
+          <caret line="3" column="53" lean-forward="false" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="654">
+          <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
           <folding />
         </state>
       </provider>
