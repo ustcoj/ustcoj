@@ -21,20 +21,22 @@ angular
             }
         }
 
-        profileService.getUserProfile(function (response) {
-            siteService.checkResponse(response);
-            $scope.userDetail = {
-                "email" : response.data.email,
-                "last_login" : response.data.login_time,
-                "register_time" : response.data.push_time,
-                "privilege" : response.data.role,
-                "solved" : response.data.solved_problem,
-                "trying" : response.data.trying_problem,
-                "userId" : response.data.user_id,
-                "username" : response.data.username
-            };
-            console.log($scope.userDetail);
-            $scope.finishLoading = true;
-        }, profileUsername);
+        if (profileUsername) {
+            profileService.getUserProfile(function (response) {
+                siteService.checkResponse(response);
+                $scope.userDetail = {
+                    "email" : response.data.email,
+                    "last_login" : response.data.login_time,
+                    "register_time" : response.data.push_time,
+                    "privilege" : response.data.role,
+                    "solved" : response.data.solved_problem,
+                    "trying" : response.data.trying_problem,
+                    "userId" : response.data.user_id,
+                    "username" : response.data.username
+                };
+                console.log($scope.userDetail);
+                $scope.finishLoading = true;
+            }, profileUsername);
+        }
 
     });

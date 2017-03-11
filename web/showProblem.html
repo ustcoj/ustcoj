@@ -31,7 +31,7 @@
             <h2>{{problemData.problem.problem_title}}</h2>
             <div class="prob-title-inf">
                 <p>Time limit: {{problemData.problem.time_limit}} ms</p>
-                <p>Memory limit: {{problemData.problem.memory_limit}} KiB</p>
+                <p>Memory limit: {{problemData.problem.memory_limit | bytes}}</p>
                 <p>Standard I/O</p>
             </div>
         </div>

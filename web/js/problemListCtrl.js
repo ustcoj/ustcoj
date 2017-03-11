@@ -12,6 +12,7 @@ angular
             }
         };
         $scope.pageOffset = function (_offset) {
+            $scope.pageNow = Number($scope.pageNow);
             if ($scope.pageNow) {
                 if (_offset + $scope.pageNow >= 1 && _offset + $scope.pageNow <= $scope.pageSum) {
                     $scope.pageNow += _offset;
@@ -19,6 +20,7 @@ angular
                 $scope.refreshPage();
             }
         };
+
         $scope.refreshPage = function () {
             problemService.getProblemList(function(data){
                 $scope.problemList = data;
@@ -27,7 +29,7 @@ angular
         };
 
         problemService.getSiteInfo(function (response) {
-            $scope.problemNum = 1000;
+            $scope.problemNum = response.problem_number;
             $scope.pageSum = Math.ceil($scope.problemNum / $scope.perpage);
         });
 

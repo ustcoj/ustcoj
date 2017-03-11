@@ -7,20 +7,42 @@ angular
 
         $scope.statusTrying = {};
         $scope.statusSolved = {};
-
-        problemService.getStatusList(function(response) {
-
-            $scope.statusList = response;
-            $scope.statusList.data.submission_list.forEach(function (item) {
-                console.log(item);
-                if ($scope.getResult(item.result) == "Accepted") {
-                    $scope.statusSolved[item.submission_id] = true;
+        $scope.perpage = 30;
+        $scope.pageNow = 1;
+        $scope.pageOffset = function (_offset) {
+            $scope.pageNow = Number($scope.pageNow);
+            if ($scope.pageNow) {
+                if (_offset + $scope.pageNow >= 1 && _offset + $scope.pageNow <= $scope.pageSum) {
+                    $scope.pageNow += _offset;
                 }
-                else if ($scope.getResult(item.result) != "Compile Error") {
-                    $scope.statusTrying[item.submission_id] = true;
-                }
-            })
-        }, 1, 20);
+                $scope.refreshPage();
+            }
+        };
+
+        $scope.refreshPage = function () {
+
+            problemService.getStatusList(function(response) {
+
+                $scope.statusList = response;
+                $scope.statusList.data.submission_list.forEach(function (item) {
+                    if ($scope.getResult(item.result) == "Accepted") {
+                        $scope.statusSolved[item.submission_id] = true;
+                    }
+                    else if ($scope.getResult(item.result) != "Compile Error") {
+                        $scope.statusTrying[item.submission_id] = true;
+                    }
+                })
+            }, $scope.pageNow, $scope.perpage);
+
+        };
+
+
+        problemService.getSiteInfo(function (response) {
+            $scope.submissionNum = response.submission_number;
+            $scope.pageSum = Math.ceil($scope.submissionNum / $scope.perpage);
+        });
+
+        $scope.refreshPage();
 
         $scope.getResult = function(_resultid) {
             if (problemService.resultList[_resultid] == undefined)
@@ -35,10 +57,10 @@ angular
         $scope.getMaxTime = function(_data) {
 
 
-            if (_data.info == undefined) {
+            if (_data.info == undefined || _data.info.data == undefined) {
                 return "-";
             }
-            if (_data.info.data[0] == undefined) {
+            if (!Array.isArray(_data.info.data)) {
                 return "-";
             }
             var ret = 0;
@@ -46,14 +68,14 @@ angular
                 if (_data.info.data[t].cpu_time > ret)
                     ret = _data.info.data[t].cpu_time;
             }
-            return ret;
+            return ret + " ms";
         };
 
         $scope.getMaxMem = function(_data) {
-            if (_data.info == undefined) {
+            if (_data.info == undefined || _data.info.data == undefined) {
                 return "-";
             }
-            if (_data.info.data[0] == undefined) {
+            if (!Array.isArray(_data.info.data)) {
                 return "-";
             }
             var ret = 0;

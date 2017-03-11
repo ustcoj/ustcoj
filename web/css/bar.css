@@ -6,6 +6,11 @@
     height: 32px;
 }
 
+.problem-bar-container > div {
+    text-overflow: ellipsis;
+    overflow:hidden
+}
+
 .problem-bar-container-column {
     display: inline-block;
     line-height: 16px;

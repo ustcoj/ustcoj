@@ -24,8 +24,21 @@ angular
         $rootScope.statusUrl = "/api/submission/";
         $rootScope.profileUrl = "/api/user/profile/";
         $rootScope.problemSimpleUrl = "/simple";
-        $rootScope.siteInfoUrl = '/api/server/status'
+        $rootScope.siteInfoUrl = '/api/server/status';
+        $rootScope.userAvatar = '/';
     });
+
+angular
+    .module('ustc-oj')
+    .filter('bytes', function() {
+        return function(bytes, precision) {
+            if (isNaN(parseFloat(bytes)) || !isFinite(bytes)) return '-';
+            if (typeof precision === 'undefined') precision = 0;
+            var units = ['bytes', 'kB', 'MB', 'GB', 'TB', 'PB'],
+                number = Math.floor(Math.log(bytes) / Math.log(1024));
+            return (bytes / Math.pow(1024, Math.floor(number))).toFixed(precision) +  ' ' + units[number];
+    }
+});
 
 angular
     .module('ustc-oj')
@@ -89,7 +102,7 @@ angular
             }
 
             promise.then(function(rep) {
-                console.log(rep);
+                //console.log(rep);
                 if (rep.data.status.code === 0) {
                     defer.resolve(rep.data);
                 } else {
@@ -146,9 +159,6 @@ angular
 
         this.getSiteInfo = function(save_siteInfo) {
 
-            save_siteInfo(true);
-            return;
-
             networkService.handleRepData('get', $rootScope.siteInfoUrl, null, null, null)
                 .then(function (response) {
                     if (siteService.checkResponse(response))
@@ -167,13 +177,13 @@ angular
 
         };
 
-        this.languageList = ["C", "C++", "Python"];
+        this.languageList = ["GCC", "G++", "Python 2.7", "Python 3.5"];
         this.resultList = {
             "0": "Accepted",
             "-1": "Wrong Answer",
             "1": "Time Limit Exceeded",
             "2": "Time Limit Exceeded",
-            "3": "Memory Limit Exceeded",
+            "3": "Mem Limit Exceeded",
             "4": "Runtime Error",
             "5": "System Error",
             "6": "Compile Error",
@@ -275,6 +285,12 @@ angular
             networkService.handleRepData('get', $rootScope.statusUrl + _submissoinid, null, null, null)
                 .then(function (response) {
                     if (siteService.checkResponse(response)) {
+                        if (response.data.hasOwnProperty("info")) {
+                            if (typeof response.data.info.data === "string" || response.data.info.data instanceof String) {
+                                //response.data.info.data = $sce.trustAsHtml(response.data.info.data.replace(/(?:\r\n|\r|\n)/g, '<br />'))
+                            }
+                        }
+
                         show_submissionInfo(response.data);
                     }
                 });
@@ -360,7 +376,6 @@ angular
         };
 
         this.getToken = function () {
-            console.log($cookies.get("token"));
             return $cookies.get("token");
         };
 
@@ -386,6 +401,36 @@ angular
 
         this.isLoggedIn = function () {
             return $cookies.get("userId") != null;
+        };
+
+        this.getUserAvatar = function() {
+            return $rootScope.avatarUrl + "user_head.png";
+        };
+
+        this.saveLastLang = function (_lang) {
+            $cookies.put("lastLang", _lang);
+        };
+
+        this.getLastLang = function () {
+            if ($cookies.get("lastLang")) {
+                return $cookies.get("lastLang");
+            }
+            else {
+                return 1;
+            }
+        };
+
+        this.saveLastProb = function (_lang) {
+            $cookies.put("lastProb", _lang);
+        };
+
+        this.getLastProb = function () {
+            if ($cookies.get("lastProb")) {
+                return $cookies.get("lastProb");
+            }
+            else {
+                return null;
+            }
         };
 
         var MD5 = function (s) {

@@ -1,9 +1,10 @@
 angular
     .module('ustc-oj')
-    .controller("submitCtrl", function ($routeParams, $scope, $http, $rootScope, $window, problemService) {
+    .controller("submitCtrl", function ($routeParams, $scope, $http, $rootScope, $window, problemService, userService) {
     $scope.submitSource = "";
     $scope.isIdValid = false;
-    $scope.submitLang = "1";
+    $scope.submitLang = userService.getLastLang();
+    $scope.submitId = userService.getLastLang();
     $scope.submitStatus = false;
     $scope.submitMsg = "";
     $scope.submitPublic = 0;
@@ -29,6 +30,8 @@ angular
             language: lang,
             problem_id: id
         };
+        userService.saveLastLang(lang);
+        userService.saveLastProb(id);
         /*
         $http.post($rootScope.apiHost + $rootScope.submitUrl, data, config).then(function (response) {
             if (response.data.status.code === 1){

@@ -15,7 +15,7 @@
                 <div class="problem-bar-container-column status-bar-user">User</div>
                 <div class="problem-bar-container-column status-bar-status">Status</div>
                 <div class="problem-bar-container-column status-bar-run">Run Time</div>
-                <div class="problem-bar-container-column status-bar-lang">Language</div>
+                <div class="problem-bar-container-column status-bar-lang">Lang</div>
                 <div class="problem-bar-container-column status-bar-mem">Memory</div>
             </div>
 
@@ -31,8 +31,34 @@
                 <div class="problem-bar-container-column status-bar-status"  ng-class="{'problem-bar-result-trying': statusTrying[x.submission_id], 'problem-bar-result-solved': statusSolved[x.submission_id]}">{{getResult(x.result)}}</div>
                 <div class="problem-bar-container-column status-bar-run">{{getMaxTime(x)}}</div>
                 <div class="problem-bar-container-column status-bar-lang">{{getLanguage(x.language)}}</div>
-                <div class="problem-bar-container-column status-bar-mem">{{getMaxMem(x)}}</div>
+                <div class="problem-bar-container-column status-bar-mem">{{getMaxMem(x) | bytes}}</div>
 
+            </div>
+            <br>
+
+            <div class="page-switch-container">
+                <div class="pages-switch pages-switch-submission">
+                    <svg ng-click="pageOffset(-1)"
+                         class="pages-switch-button" width="14px" height="23px" viewBox="422 692 14 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+                        <desc>Created with Sketch.</desc>
+                        <defs></defs>
+                        <polygon id="Triangle" stroke="none" fill="#D8D8D8" fill-rule="evenodd" transform="translate(429.000000, 703.500000) rotate(-90.000000) translate(-429.000000, -703.500000) " points="429 696.5 440.5 710.5 417.5 710.5"></polygon>
+                    </svg>
+                    <div class="pages-switch-number">
+                        <input placeholder=" " class="pages-switch-number-choose" ng-model="pageNow"
+                               ng-keypress="catchEnter($event)" />
+                        <div class="pages-switch-number-slash">/</div>
+                        <div class="pages-switch-number-sum" ng-bind="pageSum">..</div>
+                    </div>
+                    <svg ng-click="pageOffset(+1)"
+                         class="pages-switch-button" width="14px" height="23px" viewBox="422 692 14 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+                        <desc>Created with Sketch.</desc>
+                        <defs></defs>
+                        <polygon id="Triangle" stroke="none" fill="#D8D8D8" fill-rule="evenodd" transform="translate(429.000000, 703.500000) rotate(90.000000) translate(-429.000000, -703.500000) " points="429 696.5 440.5 710.5 417.5 710.5"></polygon>
+                    </svg>
+                </div>
             </div>
 
         </div>

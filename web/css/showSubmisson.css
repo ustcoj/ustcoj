@@ -18,3 +18,13 @@
     height: 30px;
     vertical-align: top;
 }
+
+#submission-error-detail {
+    font-family: monospace;
+    display: inline-block;
+    width: 600px;
+    background-color: #f9f9f9;
+    word-spacing: 0px;
+    overflow-x: scroll;
+    padding: 5px;
+}

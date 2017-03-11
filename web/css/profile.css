@@ -1,3 +1,47 @@
 .profile-basic {
     float: left;
+    width: 300px;
+}
+
+.profile-avatar {
+    width: 200px;
+    display: block;
+    margin: 50px auto 20px;
+}
+
+.profile-avatar-img,  .profile-avatar-name{
+    width: 200px;
+    text-align: center;
+}
+
+.profile-block {
+    width: 900px;
+}
+
+.profile-list {
+    display: block;
+    float: left;
+    width: 50%;
+}
+
+.profile-list td:first-child {
+    color: #8e8e8e;
+    font-weight: bold;
+    font-size: 16px;
+    width: 30%;
+    margin-right: 20px;
+}
+
+.profile-list td:nth-child(2) {
+    font-size: 16px;
+    width: 70%;
+}
+
+.profile-list table {
+    margin-left: 10px;
+}
+
+.profile-list tr {
+    height: 30px;
+    vertical-align: top;
 }

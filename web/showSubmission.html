@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="css/showSubmisson.css">
+<link rel="stylesheet" href="prism/prism.css">
+<script src="prism/prism.js" charset="utf-8"></script>
 <div ng-controller="showSubmissionCtrl" class="bigContainer">
 
     <div class="bigContent">
@@ -29,50 +31,52 @@
                 </tr>
                 <tr ng-show="submissionErrorMsg">
                     <td>Detail</td>
-                    <td ng-bind="submissionErrorMsg" style="font-family: monospace"></td>
+                    <td style="font-family: monospace" >
+                        <pre ng-bind="submissionErrorMsg" id="submission-error-detail"></pre>
+                    </td>
                 </tr>
 
             </table>
         </div>
 
-        <div class="submission-code" id="editormd-view-code">
-            <textarea style="display:none;"></textarea>
-        </div>
-        <div class="submission-code" ng-if="!submissionCode">
+        <div class="submission-code" ng-show="!submissionCode">
             No code available.
+        </div>
+
+        <pre ng-show="submissionCode"><code class="language-c++ line-numbers" id="code-area">
+        </code></pre>
+
+
+        <div class="submission-list" ng-show="submissionCaseDetail">
+
+
+            <table>
+
+                <colgroup class="submission-inf">
+                    <col style="width: 60px">
+                    <col style="width: 100px">
+                    <col style="width: 100px">
+                </colgroup>
+
+                <tr>
+                    <th></th>
+                    <th>Time</th>
+                    <th>Memory</th>
+                </tr>
+
+                <tr ng-repeat="x in submissionCaseDetail">
+
+                    <td>{{$index + 1}}</td>
+                    <td ng-bind="x.cpu_time"></td>
+                    <td ng-bind="x.memory"></td>
+
+                </tr>
+
+            </table>
+
         </div>
 
 
     </div>
 
 </div>
-
-<link rel="stylesheet" href="./editormd/css/editormd.preview.css" />
-<script src="jquery.min.js"></script>
-<script src="./editormd/lib/marked.min.js"></script>
-<script src="./editormd/lib/prettify.min.js"></script>
-
-<script src="./editormd/lib/raphael.min.js"></script>
-<script src="./editormd/lib/underscore.min.js"></script>
-<script src="./editormd/lib/sequence-diagram.min.js"></script>
-<script src="./editormd/lib/flowchart.min.js"></script>
-<script src="./editormd/lib/jquery.flowchart.min.js"></script>
-
-<script src="./editormd/editormd.min.js"></script>
-<script type="text/javascript">
-    function renderCode(elem_id, data){
-        return editormd.markdownToHTML(elem_id, {
-            markdown        : data,
-            htmlDecode      : "style,script,iframe",  // you can filter tags decode
-            markdownSourceCode : true,
-            emoji           : true,
-            taskList        : true,
-            tex             : true,
-            flowChart       : true,
-            sequenceDiagram : true,
-        });
-    }
-    startRender = (function(data){
-        renderCode("editormd-view-code", data);
-    });
-</script>
