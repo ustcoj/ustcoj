@@ -1,64 +1,6 @@
 
-.statusContent {
+.status-content {
     font-size: 14px;
 }
 
-.status-bar-container, .problem-container {
-    padding: 6px;
-    height: 24px;
-}
 
-.status-bar-container {
-    cursor: pointer;
-}
-
-.statusContent .problem-bar-container-column {
-     padding: 4px 10px;
- }
-
-.statusContent .problem-bar-container {
-    margin-top: 10px;
-}
-
-.statusContent .problem-container {
-    padding-bottom: 0px;
-    margin-bottom: -6px;
-}
-
-.status-bar-id {
-    width: 40px;
-    text-align: center;
-}
-.status-bar-time {
-    width: 140px;
-    text-align: center;
-}
-
-
-.status-bar-title {
-    min-width: 170px;
-}
-.status-bar-user {
-    width: 70px;
-}
-.status-bar-status {
-    width: 160px;
-    text-align: center;
-}
-.status-bar-run {
-    width: 70px;
-    text-align: right;
-}
-
-.problem-bar-container-column .status-bar-run {
-    text-align: right !important;
-}
-.status-bar-lang {
-    width: 70px;
-    text-align: center;
-}
-.status-bar-mem {
-    text-align: right;
-    width: 70px;
-    border: none !important;
-}

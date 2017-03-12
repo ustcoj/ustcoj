@@ -1,23 +1,27 @@
 
-.problem-bar-container {
+
+.bar-content {
+    margin-top: 12px;
     background-color: #f9f9f9;
+
     border-radius: 10px;
-    padding: 12px;
-    height: 32px;
+
+    line-height: 24px;
+    padding: 6px;
 }
 
-.problem-bar-container > div {
+.bar-content > div {
     text-overflow: ellipsis;
-    overflow:hidden
+    overflow:hidden;
+    border-right: 1px solid #dfdfdf;
+
 }
 
-.problem-bar-container-column {
-    display: inline-block;
-    line-height: 16px;
-    height: 16px;
-    padding: 8px 20px;
-    border-right: 1px solid #dfdfdf;
+.bar-head {
+    font-weight: bold;
+    color: #8e8e8e;
 }
+
 
 .problem-bar-container-id {
     width: 45px;

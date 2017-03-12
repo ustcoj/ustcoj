@@ -1,68 +1,107 @@
 <link rel="stylesheet" href="css/bar.css">
 <link rel="stylesheet" href="css/status.css">
-<div ng-controller="statusCtrl" class="bigContainer">
+<div ng-controller="statusCtrl" class="container" role="main">
 
 
-    <div class="biggerContent">
 
+    <div class="page-header">
         <h2>Status</h2>
-        <div class="statusContent">
+    </div>
 
-            <div class="problem-bar-container problem-container">
-                <div class="problem-bar-container-column status-bar-id">ID</div>
-                <div class="problem-bar-container-column status-bar-time">Time</div>
-                <div class="problem-bar-container-column status-bar-title">Title</div>
-                <div class="problem-bar-container-column status-bar-user">User</div>
-                <div class="problem-bar-container-column status-bar-status">Status</div>
-                <div class="problem-bar-container-column status-bar-run">Run Time</div>
-                <div class="problem-bar-container-column status-bar-lang">Lang</div>
-                <div class="problem-bar-container-column status-bar-mem">Memory</div>
-            </div>
+    <div class="status-content table-responsive">
 
-            <div ng-repeat="x in statusList.data.submission_list"
-                 class="problem-bar-container status-bar-container"
-                 ng-class="{'problem-bar-trying': statusTrying[x.submission_id], 'problem-bar-solved': statusSolved[x.submission_id]}"
-                 ng-click="showSubmission(x.submission_id)"
-            >
-                <div class="problem-bar-container-column status-bar-id">{{x.submission_id}}</div>
-                <div class="problem-bar-container-column status-bar-time">{{x.push_time}}</div>
-                <div class="problem-bar-container-column status-bar-title">{{x.problem.problem_title}}</div>
-                <div class="problem-bar-container-column status-bar-user">{{x.user.username}}</div>
-                <div class="problem-bar-container-column status-bar-status"  ng-class="{'problem-bar-result-trying': statusTrying[x.submission_id], 'problem-bar-result-solved': statusSolved[x.submission_id]}">{{getResult(x.result)}}</div>
-                <div class="problem-bar-container-column status-bar-run">{{getMaxTime(x)}}</div>
-                <div class="problem-bar-container-column status-bar-lang">{{getLanguage(x.language)}}</div>
-                <div class="problem-bar-container-column status-bar-mem">{{getMaxMem(x) | bytes}}</div>
 
-            </div>
-            <br>
 
-            <div class="page-switch-container">
-                <div class="pages-switch pages-switch-submission">
-                    <svg ng-click="pageOffset(-1)"
-                         class="pages-switch-button" width="14px" height="23px" viewBox="422 692 14 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
-                        <desc>Created with Sketch.</desc>
-                        <defs></defs>
-                        <polygon id="Triangle" stroke="none" fill="#D8D8D8" fill-rule="evenodd" transform="translate(429.000000, 703.500000) rotate(-90.000000) translate(-429.000000, -703.500000) " points="429 696.5 440.5 710.5 417.5 710.5"></polygon>
-                    </svg>
-                    <div class="pages-switch-number">
-                        <input placeholder=" " class="pages-switch-number-choose" ng-model="pageNow"
-                               ng-keypress="catchEnter($event)" />
-                        <div class="pages-switch-number-slash">/</div>
-                        <div class="pages-switch-number-sum" ng-bind="pageSum">..</div>
-                    </div>
-                    <svg ng-click="pageOffset(+1)"
-                         class="pages-switch-button" width="14px" height="23px" viewBox="422 692 14 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
-                        <desc>Created with Sketch.</desc>
-                        <defs></defs>
-                        <polygon id="Triangle" stroke="none" fill="#D8D8D8" fill-rule="evenodd" transform="translate(429.000000, 703.500000) rotate(90.000000) translate(-429.000000, -703.500000) " points="429 696.5 440.5 710.5 417.5 710.5"></polygon>
-                    </svg>
-                </div>
-            </div>
+        <table class="visible-xs visible-sm">
+            <tr class="bar-head status-bar row ">
+                <th class="col-md-1">ID</th>
+                <th class="col-md-4">Time</th>
+                <th class="col-md-6">Title</th>
+                <th class="col-md-3">User</th>
+                <th class="col-md-4">Status</th>
+                <th class="col-md-2">Run Time</th>
+                <th class="col-md-2">Compiler</th>
+                <th class="col-md-2">Memory</th>
+            </tr>
 
+            <tr ng-repeat="x in statusList.data.submission_list"
+                class="bar-content status-bar row"
+                ng-class="{'problem-bar-trying': statusTrying[x.submission_id], 'problem-bar-solved': statusSolved[x.submission_id]}"
+                ng-click="showSubmission(x.submission_id)">
+                <td class="col-md-1">{{x.submission_id}}</td>
+                <td class="col-md-4">{{x.push_time}}</td>
+                <td class="col-md-6">{{x.problem.problem_title}}</td>
+                <td class="col-md-3">{{x.user.username}}</td>
+                <td class="col-md-4"
+                    ng-class="{'problem-bar-result-trying': statusTrying[x.submission_id], 'problem-bar-result-solved': statusSolved[x.submission_id]}">
+                    {{getResult(x.result)}}
+                </td>
+                <td class="col-md-2">{{getMaxTime(x)}}</td>
+                <td class="col-md-2">{{getLanguage(x.language)}}</td>
+                <td class="col-md-2">{{getMaxMem(x) | bytes}}</td>
+            </tr>
+        </table>
+
+        <div class="bar-head status-bar row hidden-xs hidden-sm">
+            <div class="col-md-2 col-centered">ID</div>
+            <div class="col-md-7 col-centered">Time</div>
+            <div class="col-md-12">Title</div>
+            <div class="col-md-6">User</div>
+            <div class="col-md-8 col-centered">Status</div>
+            <div class="col-md-4 col-centered">Run Time</div>
+            <div class="col-md-5 col-centered">Compiler</div>
+            <div class="col-md-4 col-centered">Memory</div>
         </div>
 
+        <div ng-repeat="x in statusList.data.submission_list"
+             class="bar-content status-bar row hidden-xs hidden-sm"
+             ng-class="{'problem-bar-trying': statusTrying[x.submission_id], 'problem-bar-solved': statusSolved[x.submission_id]}"
+             ng-click="showSubmission(x.submission_id)">
+            <div class="col-md-2 col-centered">{{x.submission_id}}</div>
+            <div class="col-md-7 col-centered">{{x.push_time}}</div>
+            <div class="col-md-12">{{x.problem.problem_title}}</div>
+            <div class="col-md-6">{{x.user.username}}</div>
+            <div class="col-md-8 col-centered"
+                 ng-class="{'problem-bar-result-trying': statusTrying[x.submission_id], 'problem-bar-result-solved': statusSolved[x.submission_id]}">
+                {{getResult(x.result)}}
+            </div>
+            <div class="col-md-4 col-right">{{getMaxTime(x)}}</div>
+            <div class="col-md-5 col-centered">{{getLanguage(x.language)}}</div>
+            <div class="col-md-4 col-right">{{getMaxMem(x) | bytes}}</div>
+        </div>
+
+
+
+        <!--<br>-->
+
+        <!--<div class="page-switch-container">-->
+        <!--<div class="pages-switch pages-switch-submission">-->
+        <!--<svg ng-click="pageOffset(-1)"-->
+        <!--class="pages-switch-button" width="14px" height="23px" viewBox="422 692 14 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">-->
+        <!--&lt;!&ndash; Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch &ndash;&gt;-->
+        <!--<desc>Created with Sketch.</desc>-->
+        <!--<defs></defs>-->
+        <!--<polygon id="Triangle" stroke="none" fill="#D8D8D8" fill-rule="evenodd" transform="translate(429.000000, 703.500000) rotate(-90.000000) translate(-429.000000, -703.500000) " points="429 696.5 440.5 710.5 417.5 710.5"></polygon>-->
+        <!--</svg>-->
+        <!--<div class="pages-switch-number">-->
+        <!--<input placeholder=" " class="pages-switch-number-choose" ng-model="pageNow"-->
+        <!--ng-keypress="catchEnter($event)" />-->
+        <!--<div class="pages-switch-number-slash">/</div>-->
+        <!--<div class="pages-switch-number-sum" ng-bind="pageSum">..</div>-->
+        <!--</div>-->
+        <!--<svg ng-click="pageOffset(+1)"-->
+        <!--class="pages-switch-button" width="14px" height="23px" viewBox="422 692 14 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">-->
+        <!--&lt;!&ndash; Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch &ndash;&gt;-->
+        <!--<desc>Created with Sketch.</desc>-->
+        <!--<defs></defs>-->
+        <!--<polygon id="Triangle" stroke="none" fill="#D8D8D8" fill-rule="evenodd" transform="translate(429.000000, 703.500000) rotate(90.000000) translate(-429.000000, -703.500000) " points="429 696.5 440.5 710.5 417.5 710.5"></polygon>-->
+        <!--</svg>-->
+        <!--</div>-->
+        <!--</div>-->
+
+
+
     </div>
+
 
 </div>

@@ -1,90 +1,66 @@
 <link rel="stylesheet" href="css/bar.css">
 <link rel="stylesheet" href="css/problemList.css">
 
-<div ng-controller="problemListCtrl" class="container">
+<div ng-controller="problemListCtrl" class="container" role="main">
+
+	<div class="page-header">
+		<h2>Problem List</h2>
+	</div>
 
 
-	<!--<div class="rightbar">-->
-	<!--<div class="rightbarItem">-->
-	<!--<div class="rightbarHead">-->
-	<!--Problem Tag-->
-	<!--</div>-->
-	<!--<div>-->
-	<!--<span class="rightbarTag">dfs</span>-->
-	<!--</div>-->
-	<!--<div>-->
-	<!--<span class="rightbarTag">dynamic programming</span>-->
-	<!--</div>-->
-	<!--<div></div>-->
-	<!--</div>-->
-	<!--<div class="rightbarItem">-->
-	<!--<div class="rightbarProb">-->
-	<!--1001-->
-	<!--</div>-->
-	<!--<div>Submit</div>-->
-	<!--<div>Status</div>-->
-	<!--</div>-->
-	<!--</div>-->
+	<div class="problem-list-content">
 
-
-
-	<h2>Problem List</h2>
-	<div class="problemListContent">
-
-		<div class="problem-list-container">
-
-			<div class="problem-bar-container problem-container">
-				<div class="problem-bar-container-column problem-bar-container-id">ID</div>
-				<div class="problem-bar-container-column problem-bar-container-title">Title</div>
-				<div class="problem-bar-container-column problem-bar-container-count">
-					<span class="problem-bar-container-count-number">Solved</span>
-					<span class="problem-container-count-slash">/</span>
-					<span class="problem-bar-container-count-number">Tried</span>
-				</div>
+		<div class="bar-head problem-bar row">
+			<div class="col-md-4">ID</div>
+			<div class="col-md-10">Title</div>
+			<div class="col-md-8">
+				<div class="col-md-10">Solved</div>
+				<div class="col-md-4">/</div>
+				<div class="col-md-10">Tried</div>
 			</div>
-
-			<div class="problem-bar-container problem-bar-container-item"
-				 ng-repeat="x in problemList.problem_list"
-				 ng-click="showProblem(x.problem_id)"
-				 ng-class="{'problem-bar-trying': myTrying[x.problem_id], 'problem-bar-solved': mySolved[x.problem_id]}">
-
-				<div class="problem-bar-container-column problem-bar-container-id ">{{x.problem_id}}</div>
-				<div class="problem-bar-container-title problem-bar-container-column" ng-class="{'problem-bar-result-trying': myTrying[x.problem_id], 'problem-bar-result-solved': mySolved[x.problem_id]}">{{x.problem_title}}</div>
-				<div class="problem-bar-container-count problem-bar-container-column">
-					<span class="problem-bar-container-count-number">{{x.solved_cnt}}</span>
-					<span>/</span>
-					<span class="problem-bar-container-count-number">{{x.trying_cnt}}</span>
-				</div>
-				<div class="problem-bar-container-icon problem-bar-container-column" ng-show="mySolved[x.problem_id]">
-					&#x263A
-				</div>
-			</div>
+			<div class="col-md-2"></div>
 		</div>
 
-		<div class="page-switch-container">
-			<div class="pages-switch pages-switch-problem">
-				<svg ng-click="pageOffset(-1)"
-					 class="pages-switch-button" width="14px" height="23px" viewBox="422 692 14 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-					<!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
-					<desc>Created with Sketch.</desc>
-					<defs></defs>
-					<polygon id="Triangle" stroke="none" fill="#D8D8D8" fill-rule="evenodd" transform="translate(429.000000, 703.500000) rotate(-90.000000) translate(-429.000000, -703.500000) " points="429 696.5 440.5 710.5 417.5 710.5"></polygon>
-				</svg>
-				<div class="pages-switch-number">
-					<input placeholder=" " class="pages-switch-number-choose" ng-model="pageNow"
-						   ng-keypress="catchEnter($event)" />
-					<div class="pages-switch-number-slash">/</div>
-					<div class="pages-switch-number-sum" ng-bind="pageSum">..</div>
-				</div>
-				<svg ng-click="pageOffset(+1)"
-					 class="pages-switch-button" width="14px" height="23px" viewBox="422 692 14 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-					<!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
-					<desc>Created with Sketch.</desc>
-					<defs></defs>
-					<polygon id="Triangle" stroke="none" fill="#D8D8D8" fill-rule="evenodd" transform="translate(429.000000, 703.500000) rotate(90.000000) translate(-429.000000, -703.500000) " points="429 696.5 440.5 710.5 417.5 710.5"></polygon>
-				</svg>
+		<div class="bar-content problem-bar row" ng-repeat="x in problemList.problem_list"
+			ng-click="showProblem(x.problem_id)"
+			ng-class="{'problem-bar-trying': myTrying[x.problem_id], 'problem-bar-solved': mySolved[x.problem_id]}">
+
+			<div class="col-md-4">{{x.problem_id}}</div>
+			<div class="col-md-10" ng-class="{'problem-bar-result-trying': myTrying[x.problem_id], 'problem-bar-result-solved': mySolved[x.problem_id]}">{{x.problem_title}}</div>
+			<div class="col-md-8">
+				<div class="col-md-10">{{x.solved_cnt}}</div>
+				<div class="col-md-4">/</div>
+				<div class="col-md-10">{{x.trying_cnt}}</div>
 			</div>
+			<div class="col-md-2" ng-show="mySolved[x.problem_id]">&#x263A</div>
+
 		</div>
+
+
+		<!--<div class="page-switch-container">-->
+			<!--<div class="pages-switch pages-switch-problem">-->
+				<!--<svg ng-click="pageOffset(-1)"-->
+					 <!--class="pages-switch-button" width="14px" height="23px" viewBox="422 692 14 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">-->
+					<!--&lt;!&ndash; Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch &ndash;&gt;-->
+					<!--<desc>Created with Sketch.</desc>-->
+					<!--<defs></defs>-->
+					<!--<polygon id="Triangle" stroke="none" fill="#D8D8D8" fill-rule="evenodd" transform="translate(429.000000, 703.500000) rotate(-90.000000) translate(-429.000000, -703.500000) " points="429 696.5 440.5 710.5 417.5 710.5"></polygon>-->
+				<!--</svg>-->
+				<!--<div class="pages-switch-number">-->
+					<!--<input placeholder=" " class="pages-switch-number-choose" ng-model="pageNow"-->
+						   <!--ng-keypress="catchEnter($event)" />-->
+					<!--<div class="pages-switch-number-slash">/</div>-->
+					<!--<div class="pages-switch-number-sum" ng-bind="pageSum">..</div>-->
+				<!--</div>-->
+				<!--<svg ng-click="pageOffset(+1)"-->
+					 <!--class="pages-switch-button" width="14px" height="23px" viewBox="422 692 14 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">-->
+					<!--&lt;!&ndash; Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch &ndash;&gt;-->
+					<!--<desc>Created with Sketch.</desc>-->
+					<!--<defs></defs>-->
+					<!--<polygon id="Triangle" stroke="none" fill="#D8D8D8" fill-rule="evenodd" transform="translate(429.000000, 703.500000) rotate(90.000000) translate(-429.000000, -703.500000) " points="429 696.5 440.5 710.5 417.5 710.5"></polygon>-->
+				<!--</svg>-->
+			<!--</div>-->
+		<!--</div>-->
 
 	</div>
 
