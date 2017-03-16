@@ -1,58 +1,96 @@
 <link rel="stylesheet" href="css/profile.css">
-<div ng-controller="profileCtrl" class="bigContainer">
+<div ng-controller="profileCtrl" class="container">
 
 
-    <div class="biggerContent">
+    <div class="row">
 
-        <div class="profile-avatar">
-            <img src="user_head.png" class="profile-avatar-img">
-            <h2 class="profile-avatar-name">{{userDetail.username}}</h2>
+        <div class="profile-avatar col-xs-18 col-xs-offset-15 col-md-10 col-md-offset-19">
+            <img src="user_head.png" width="100%">
+            <h2 class="profile-avatar-name col-center">{{userDetail.username}}</h2>
         </div>
-
-        <div class="profile-basic">
-
-            <!--<div ng-repeat="(key, value) in userDetail">-->
-                <!--<h4>{{key}}</h4>-->
-                <!--<p>{{value}}</p>-->
-            <!--</div>-->
-
-            <div class="profile-block">
-                <div class="profile-list">
-                    <table>
-                        <tr>
-                            <td>Email</td>
-                            <td>{{userDetail.email}}<span><a>Verify</a></span></td>
-                        </tr>
-                        <tr>
-                            <td>USTC ID</td>
-                            <td><span><a>Bind</a></span></td>
-                        </tr>
-                        <!--<tr ng-show="userDetail.role">-->
-                            <!--<td>Role</td>-->
-                            <!--<td>{{userDetail.role}}</td>-->
-                        <!--</tr>-->
-                    </table>
-                </div>
-
-                <div class="profile-list">
-                    <table>
-                        <tr>
-                            <td>Email</td>
-                            <td>{{userDetail.email}}<span><a>Verify</a></span></td>
-                        </tr>
-                        <tr>
-                            <td>USTC ID</td>
-                            <td><span><a>Bind</a></span></td>
-                        </tr>
-                        <!--<tr ng-show="userDetail.role">-->
-                        <!--<td>Role</td>-->
-                        <!--<td>{{userDetail.role}}</td>-->
-                        <!--</tr>-->
-                    </table>
-                </div>
-            </div>
-        </div>
-
     </div>
+
+    <div class="row">
+        <div class="col-md-40 col-md-offset-4 row profile-tables">
+
+            <table class="col-md-21 row">
+                <colgroup class="col-xs-16"></colgroup>
+                <colgroup class="col-xs-32 row"></colgroup>
+                <tr>
+                    <th>Email</th>
+                    <td>
+                        <div ng-class="{'col-xs-36' : !hasVerifiedEmail}">
+                            {{userDetail.email}}
+                        </div>
+                        <div ng-show="!hasVerifiedEmail" class="col-xs-12">
+                            <a>Verify</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>USTC ID</th>
+                    <td ng-show="userDetail.ustcid">{{userDetail.ustcid}}</td>
+                    <td ng-show="!userDetail.ustcid">
+                        <a>Bind</a>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="col-md-6">
+            </div>
+
+            <table class="col-md-21 row">
+
+                <colgroup class="col-xs-16"></colgroup>
+                <colgroup class="col-xs-32 row"></colgroup>
+                <tr>
+                    <th>Last Login</th>
+                    <td>{{userDetail.last_login}}</td>
+                </tr>
+                <tr>
+                    <th>Register</th>
+                    <td>{{userDetail.register_time}}</td>
+                </tr>
+            </table>
+
+            <table class="col-md-48 row">
+
+                <colgroup class="col-md-7"></colgroup>
+                <colgroup class="col-md-41"></colgroup>
+                <tr>
+                    <th>Roles</th>
+                    <td>
+                        <div class="role-bubble">
+                            <div class="bubble" ng-repeat="x in userDetail.privilege" ng-show="findPri(x)">{{findPri(x)}}</div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Solved</th>
+                    <td>
+                        <div class="role-bubble">
+                            <div class="bubble" ng-repeat="x in userDetail.solved">{{x}}</div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Trying</th>
+                    <td>
+                        <div class="role-bubble">
+                            <div class="bubble" ng-repeat="x in userDetail.trying">{{x}}</div>
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
+
+
+
+        </div>
+    </div>
+
+
 
 </div>

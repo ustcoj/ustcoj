@@ -8,59 +8,77 @@
 	</div>
 
 
-	<div class="problem-list-content">
+	<div class="problem-list-content table-responsive">
 
-		<div class="bar-head problem-bar row">
-			<div class="col-md-4">ID</div>
-			<div class="col-md-10">Title</div>
-			<div class="col-md-8">
-				<div class="col-md-10">Solved</div>
-				<div class="col-md-4">/</div>
-				<div class="col-md-10">Tried</div>
+		<div class=" col-md-38 col-md-offset-1">
+
+			<table class="problem-table bar-table">
+
+				<tr class="bar-head problem-bar">
+
+					<th class="col-md-5 col-center">ID</th>
+					<th class="col-md-24">Title</th>
+					<th class="col-md-14 col-center">
+						<div class="col-xs-18 col-center">Solved</div>
+						<div class="col-xs-12 col-center"></div>
+						<div class="col-xs-18 col-center">Trying</div>
+					</th>
+					<th class="col-md-5 col-center"></th>
+
+				</tr>
+
+				<tr class="bar-content problem-bar" ng-repeat="x in problemList.problem_list"
+					ng-click="showProblem(x.problem_id)"
+					ng-class="{'problem-bar-trying': myTrying[x.problem_id], 'problem-bar-solved': mySolved[x.problem_id]}">
+
+					<td class="col-center"><div class="bardiv1"><div class="bardiv2">{{x.problem_id}}</div></div></td>
+					<td ng-class="{'problem-bar-result-trying': myTrying[x.problem_id], 'problem-bar-result-solved': mySolved[x.problem_id]}"><div class="bardiv1"><div class="bardiv2">{{x.problem_title}}</div></div></td>
+					<td class="col-center">
+						<div class="bardiv1">
+							<div class="bardiv2">
+								<div class="col-xs-20 col-center">{{x.solved_cnt}}</div>
+								<div class="col-xs-8 col-center">/</div>
+								<div class="col-xs-20 col-center">{{x.trying_cnt}}</div>
+							</div>
+						</div>
+
+					</td>
+					<td class="col-center"><div class="bardiv1"><div class="bardiv2" ng-show="mySolved[x.problem_id]">&#x263A</div></div></td>
+
+				</tr>
+
+
+			</table>
+
+
+			<div class="page-switch-container">
+				<div class="pages-switch pages-switch-problem">
+					<svg ng-click="pageOffset(-1)"
+						 class="pages-switch-button" width="14px" height="23px" viewBox="422 692 14 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+						<desc>Created with Sketch.</desc>
+						<defs></defs>
+						<polygon id="Triangle" stroke="none" fill="#D8D8D8" fill-rule="evenodd" transform="translate(429.000000, 703.500000) rotate(-90.000000) translate(-429.000000, -703.500000) " points="429 696.5 440.5 710.5 417.5 710.5"></polygon>
+					</svg>
+					<div class="pages-switch-number">
+						<input placeholder=" " class="pages-switch-number-choose" ng-model="pageNow"
+							   ng-keypress="catchEnter($event)" />
+						<div class="pages-switch-number-slash">/</div>
+						<div class="pages-switch-number-sum" ng-bind="pageSum">..</div>
+					</div>
+					<svg ng-click="pageOffset(+1)"
+						 class="pages-switch-button" width="14px" height="23px" viewBox="422 692 14 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+						<desc>Created with Sketch.</desc>
+						<defs></defs>
+						<polygon id="Triangle" stroke="none" fill="#D8D8D8" fill-rule="evenodd" transform="translate(429.000000, 703.500000) rotate(90.000000) translate(-429.000000, -703.500000) " points="429 696.5 440.5 710.5 417.5 710.5"></polygon>
+					</svg>
+				</div>
 			</div>
-			<div class="col-md-2"></div>
+
+
 		</div>
 
-		<div class="bar-content problem-bar row" ng-repeat="x in problemList.problem_list"
-			ng-click="showProblem(x.problem_id)"
-			ng-class="{'problem-bar-trying': myTrying[x.problem_id], 'problem-bar-solved': mySolved[x.problem_id]}">
-
-			<div class="col-md-4">{{x.problem_id}}</div>
-			<div class="col-md-10" ng-class="{'problem-bar-result-trying': myTrying[x.problem_id], 'problem-bar-result-solved': mySolved[x.problem_id]}">{{x.problem_title}}</div>
-			<div class="col-md-8">
-				<div class="col-md-10">{{x.solved_cnt}}</div>
-				<div class="col-md-4">/</div>
-				<div class="col-md-10">{{x.trying_cnt}}</div>
-			</div>
-			<div class="col-md-2" ng-show="mySolved[x.problem_id]">&#x263A</div>
-
-		</div>
-
-
-		<!--<div class="page-switch-container">-->
-			<!--<div class="pages-switch pages-switch-problem">-->
-				<!--<svg ng-click="pageOffset(-1)"-->
-					 <!--class="pages-switch-button" width="14px" height="23px" viewBox="422 692 14 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">-->
-					<!--&lt;!&ndash; Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch &ndash;&gt;-->
-					<!--<desc>Created with Sketch.</desc>-->
-					<!--<defs></defs>-->
-					<!--<polygon id="Triangle" stroke="none" fill="#D8D8D8" fill-rule="evenodd" transform="translate(429.000000, 703.500000) rotate(-90.000000) translate(-429.000000, -703.500000) " points="429 696.5 440.5 710.5 417.5 710.5"></polygon>-->
-				<!--</svg>-->
-				<!--<div class="pages-switch-number">-->
-					<!--<input placeholder=" " class="pages-switch-number-choose" ng-model="pageNow"-->
-						   <!--ng-keypress="catchEnter($event)" />-->
-					<!--<div class="pages-switch-number-slash">/</div>-->
-					<!--<div class="pages-switch-number-sum" ng-bind="pageSum">..</div>-->
-				<!--</div>-->
-				<!--<svg ng-click="pageOffset(+1)"-->
-					 <!--class="pages-switch-button" width="14px" height="23px" viewBox="422 692 14 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">-->
-					<!--&lt;!&ndash; Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch &ndash;&gt;-->
-					<!--<desc>Created with Sketch.</desc>-->
-					<!--<defs></defs>-->
-					<!--<polygon id="Triangle" stroke="none" fill="#D8D8D8" fill-rule="evenodd" transform="translate(429.000000, 703.500000) rotate(90.000000) translate(-429.000000, -703.500000) " points="429 696.5 440.5 710.5 417.5 710.5"></polygon>-->
-				<!--</svg>-->
-			<!--</div>-->
-		<!--</div>-->
 
 	</div>
 

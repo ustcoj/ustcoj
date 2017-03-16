@@ -1,20 +1,47 @@
-.problemListContent {
+.problem-list-content {
     font-size: 16px;
 }
 
-.problemListContent .problem-bar-container {
+
+.problem-list-content .bar-content {
     margin-bottom: 14px;
 }
 
-.problemListContent .problem-container {
+.problem-list-content .bar-head {
     margin-bottom: -8px;
 }
 
-.problem-bar-container-item {
-    cursor: pointer;
-}
-
-.problem-list-container {
+.problem-table {
     margin-top: 20px;
     margin-bottom: 25px;
+}
+
+
+.problem-table {
+    border-collapse: separate;
+    border-spacing: 0 14px !important;
+}
+
+.problem-table tbody td {
+    padding: 12px 0px !important;
+}
+
+.problem-bar .bar-content {
+    margin-top: 12px;
+    line-height: 32px;
+    padding: 12px;
+}
+
+.problem-bar .bardiv1 {
+    overflow:auto;
+    line-height: 32px;
+    width: 100%;
+    border-right: 1px solid #dfdfdf;
+}
+
+.problem-bar .bardiv2 {
+    overflow:auto;
+    line-height: 32px;
+    width: 100%;
+    padding: 0px 12px;
 }

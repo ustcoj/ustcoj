@@ -21,7 +21,7 @@
 
 #submission-error-detail {
     font-family: monospace;
-    display: inline-block;
+    display: block;
     width: 600px;
     background-color: #f9f9f9;
     word-spacing: 0px;

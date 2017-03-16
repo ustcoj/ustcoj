@@ -6,6 +6,11 @@
 
 }
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body{
     /*background-image: url("../background2.png");*/
     /*background-repeat: repeat;*/
@@ -14,10 +19,45 @@ body{
     display: block;
     */
     /*background-color: #fffaf0;*/
+    margin-bottom: 150px;
     padding-top: 80px;
 }
 
-.col-centered {
+
+
+a {
+    color: #faa634;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #faa634;
+    text-decoration: inherit;
+    cursor: pointer;
+}
+
+pre {
+    border: none;
+}
+
+.footer {
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    text-align: center;
+}
+
+.footer .bottom-block {
+    width: 160px;
+    height: 4px;
+    margin: 0 auto;
+    border-bottom: 4px solid #faa634;
+
+}
+
+.col-center {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -31,4 +71,74 @@ body{
     text-align: right;
 }
 
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
+.bubble {
+    height: 32px;
+    padding: 6px 12px;
+    border-radius: 16px;
+    background-color: #fffaf0;
+    margin: 0 3px;
+    float: left;
+}
+
+
+
+.page-switch-container {
+    height: 36px;
+    width: 100%;
+}
+
+.pages-switch {
+    display: block;
+    float: right;
+    height: 36px;
+    width: 200px;
+}
+
+.pages-switch-number-choose {
+    font-size: 16px;
+    text-align: center;
+    float: left;
+    width: 36px;
+    height: 36px;
+    border: none;
+    outline: none;
+    background-color: #f8f8f8;
+}
+
+.pages-switch-number {
+    float: left;
+    text-align: center;
+    line-height: 36px;
+    width: 100px;
+    height: 36px;
+    font-size: 16px;
+}
+.pages-switch-number-slash {
+    height: 36px;
+    width: 30px;
+    float: left;
+}
+
+.pages-switch-number-sum {
+    height: 36px;
+    width: 30px;
+    float: left;
+}
+
+.pages-switch-button {
+    float: left;
+    height: 36px;
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#Triangle:hover {
+    fill: #faa634;
+}
 

@@ -22,48 +22,53 @@
     color: #8e8e8e;
 }
 
-
-.problem-bar-container-id {
-    width: 45px;
-    text-align: center
+.bar-table {
+    border-collapse: separate;
+    border-spacing: 0 12px;
 }
 
-.problem-bar-container-title {
-    min-width: 400px;
-}
-
-.problem-bar-container-count {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.problem-bar-container-count .problem-bar-container-count-number{
-    display: inline-block;
-    width: 64px;
-    text-align: center;
-}
-
-.problem-bar-container-icon{
-    border: none;
-    text-align: center;
-}
-
-.problem-container {
-    background: none;
-    color: #8e8e8e;
+.bar-table thead th {
     font-weight: bold;
+    color: #8e8e8e;
 }
 
-.problem-container div {
-    font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+.bar-table tbody td {
+    background-color: #f9f9f9;
+    cursor: pointer;
+    padding: 6px 0px;
+}
+
+.bardiv1 {
+    overflow:auto;
+    line-height: 24px;
+    width: 100%;
+    border-right: 1px solid #dfdfdf;
+}
+
+.bardiv2 {
+    overflow:auto;
+    line-height: 24px;
+    width: 100%;
+    padding: 0px 12px;
+}
+
+.bar-table tr td:first-child,
+.bar-table tr th:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.bar-table tr td:last-child,
+.bar-table tr th:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.bar-table tr td:last-child > div {
     border: none;
 }
 
-.problem-container-count-slash {
-    visibility: hidden;
-}
-
-.problem-bar-trying {
+.problem-bar-trying > td {
     background-color: #f0ffef !important;
 }
 
@@ -77,7 +82,7 @@
     color: #faa634;
 }
 
-.problem-bar-solved {
+.problem-bar-solved > td {
     background-color: #fffaf0 !important;
 }
 
