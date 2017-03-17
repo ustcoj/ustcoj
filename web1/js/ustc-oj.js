@@ -129,6 +129,23 @@ angular
         this.statusLink = '#/status/';
         this.submitLink = '#/submit/';
         this.editLink = '#/edit/';
+        this.errorMsg = {
+            "411" : "Invalid username or wrong password",
+            "412" : "Your email address has already been verified",
+            "413" : "Login required",
+            "414" : "Verification failed. Goto your profile page to resend a token",
+            "415" : "Failed to submit: ",
+            "416" : "No such user",
+            "417" : "Cannot fetch job from redis queue",
+            "418" : "Failed to load this problem",
+            "419" : "Failed to load this submission",
+            "420" : "Sorry, cannot access this submission",
+            "421" : "Failed to load this contest",
+            "422" : "Calm down~ You are submitting too fast",
+            "423" : "To submit a new problem, please contact us",
+            "424" : "Please verify your email address",
+            "425" : "Privilege required"
+        };
 
 
         this.showAlert = function(message) {
@@ -145,7 +162,12 @@ angular
                 return false;
             }
             if (response.status.code != 0) {
-                this.showAlert("Error: " + response.status.message);
+                if (response.status.code == "415") {
+                    this.showAlert(this.errorMsg[response.status.code] + response.status.message);
+                }
+                else {
+                    this.showAlert("Error: " + this.errorMsg[response.status.code]);
+                }
                 return false;
             }
             return true;
@@ -177,7 +199,7 @@ angular
 
         };
 
-        this.languageList = ["GCC", "G++", "Python 2.7", "Python 3.5"];
+        this.languageList = ["GCC", "G++", "Python 2.7"];
         this.resultList = {
             "0": "Accepted",
             "-1": "Wrong Answer",
@@ -191,7 +213,7 @@ angular
         };
         this.checkValidProblemId = function(content) {
             return (
-                Number(content).toString() == content
+                Number(content).toString() === content
                 && Number(content) >= 1000
                 && Number(content) <= 9999
             );
