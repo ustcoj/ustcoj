@@ -26,6 +26,7 @@ angular
         $rootScope.problemSimpleUrl = "/simple";
         $rootScope.siteInfoUrl = '/api/server/status';
         $rootScope.userAvatar = '/';
+        $rootScope.verifyEmailUrl = '/user/verify_email'
     });
 
 angular
@@ -50,7 +51,7 @@ angular
         };
 
         var refreshHeader = function (header, url) {
-            var time = $filter('date')(new Date(), 'yyyyMMddHHmmss');
+            var time = siteService.getTime();
             var userid = userService.getUserid();
             var token = userService.getToken();
             header['Time'] = time;
@@ -72,18 +73,24 @@ angular
             if (extraHeader == null) {
                 extraHeader = {}
             }
+
+            if (config.hasOwnProperty("params")) {
+                config.params["ut"] = siteService.getTime();
+            }
+            else {
+                config["params"] = {"ut" : siteService.getTime()}
+            }
             switch (method) {
                 case 'get':
                     header = extraHeader;
-                    //console.log(header);
                     addDefaultHeader(header);
                     refreshHeader(header, url);
-
                     realUrl = $rootScope.apiHost + url;
                     realConfig = config;
                     realConfig.headers = header;
                     promise = $http.get(realUrl, realConfig);
                     break;
+
                 case 'post':
                     header = extraHeader;
                     dataTosend = $.param(data);
@@ -94,22 +101,21 @@ angular
                     realConfig.headers = header;
                     promise = $http.post(realUrl, dataTosend, realConfig);
                     break;
+
                 case 'put':
                     promise = $http.put(url, data, config);
                     break;
+
                 case 'delete':
                     promise = $http.delete(url, config)
             }
 
             promise.then(function(rep) {
-                //console.log(rep);
-                if (rep.data.status.code === 0) {
+
+                if (siteService.checkResponse(rep)) {
                     defer.resolve(rep.data);
-                } else {
-                    var errorMsg = rep.data.status.message || 'Unknown error.';
-                    siteService.showAlert(errorMsg);
-                    // TODO: redirect to error page
                 }
+
             }, function() {
                 defer.reject('HTTP request failed. Please try again.');
             });
@@ -121,7 +127,7 @@ angular
 
 angular
     .module('ustc-oj')
-    .service('siteService', function($rootScope) {
+    .service('siteService', function($rootScope, $filter) {
 
         this.profileLink = '#/profile/';
         this.problemLink = '#/problems/';
@@ -147,12 +153,18 @@ angular
             "425" : "Privilege required"
         };
 
+        this.getTime = function () {
+            return $filter('date')(new Date(), 'yyyyMMddHHmmss');
+        };
 
         this.showAlert = function(message) {
             alert(message);
         };
 
         this.checkResponse = function (response) {
+            console.log(response);
+            response = response.data;
+
             if (response == null) {
                 this.showAlert("No response, the server might be down.");
                 return false;
@@ -163,6 +175,7 @@ angular
             }
             if (response.status.code != 0) {
                 if (response.status.code == "415") {
+
                     this.showAlert(this.errorMsg[response.status.code] + response.status.message);
                 }
                 else {
@@ -183,7 +196,6 @@ angular
 
             networkService.handleRepData('get', $rootScope.siteInfoUrl, null, null, null)
                 .then(function (response) {
-                    if (siteService.checkResponse(response))
                         save_siteInfo(response.data);
                 });
 
@@ -193,13 +205,12 @@ angular
 
             networkService.handleRepData('get', $rootScope.problemUrl + problemId, null, null, null)
                 .then(function (response) {
-                    if (siteService.checkResponse(response))
                         show_problemData(resolveProblemData(response.data));
                 });
 
         };
 
-        this.languageList = ["GCC", "G++", "Python 2.7"];
+        this.languageList = ["GCC", "G++", "Python 2.7", "Python 3.5", "Java"];
         this.resultList = {
             "0": "Accepted",
             "-1": "Wrong Answer",
@@ -220,16 +231,16 @@ angular
         };
 
         resolveProblemData = function (data) {
-            /*
+
              data.problem.description =
              $sce.trustAsHtml(data.problem.description);
-             data.problem.input =
+             data.problem.input_description =
              $sce.trustAsHtml(data.problem.input_description);
-             data.problem.output =
+             data.problem.output_description =
              $sce.trustAsHtml(data.problem.output_description);
              data.problem.hint =
              $sce.trustAsHtml(data.problem.hint);
-             */
+
             //str = str.replace(/(?:\r\n|\r|\n)/g, '<br />');
             var len = data.problem.input_sample.length;
             for (i = 0; i < len; i++) {
@@ -248,7 +259,7 @@ angular
             };
             networkService.handleRepData('get', $rootScope.problemListUrl, null, {params: param}, null)
                 .then(function (response) {
-                    if (siteService.checkResponse(response))
+
                         show_problemList(response.data);
                 });
 
@@ -256,10 +267,10 @@ angular
 
         this.getSimpleProblem = function(show_simpleProblem, _problem_id) {
 
-            networkService.handleRepData('get', $rootScope.problemUrl + _problem_id + $scope.problemSimpleUrl
+            networkService.handleRepData('get', $rootScope.problemUrl + _problem_id + $rootScope.problemSimpleUrl
                 , null, null, null)
                 .then(function (response) {
-                    if (siteService.checkResponse(response))
+
                         show_simpleProblem(response.data);
                 });
 
@@ -273,7 +284,7 @@ angular
             };
             networkService.handleRepData('get', $rootScope.contestListUrl, null, {params: param}, null)
                 .then(function (response) {
-                    if (siteService.checkResponse(response))
+
                         show_contestList(response.data);
                 });
 
@@ -281,24 +292,20 @@ angular
 
         this.getContestInfo = function(show_contestInfo, _contestid) {
 
-            networkService.handleRepData('get', $rootScope.contestListUrl + _contestid, null, null, {
-                Contestid: _contestid
-            })
+            networkService.handleRepData('get', $rootScope.contestListUrl + _contestid, null, null, null)
                 .then(function (response) {
-                    if (siteService.checkResponse(response))
+
                         show_contestInfo(response.data);
                 });
 
         };
 
-        this.submitCode = function(submit_complete, _submission_data, _contestid) {
+        this.submitCode = function(submit_complete, _submission_data) {
+            //console.log(_submission_data);
 
-            networkService.handleRepData('post', $rootScope.submitUrl, _submission_data, null, {
-                Contestid: _contestid
-            })
+            networkService.handleRepData('post', $rootScope.submitUrl, _submission_data, null, null)
                 .then(function (response) {
-                    if (siteService.checkResponse(response))
-                        submit_complete(response.data);
+                    submit_complete(response.data);
                 });
 
         };
@@ -306,7 +313,7 @@ angular
         this.getSubmissonInfo = function(show_submissionInfo, _submissoinid) {
             networkService.handleRepData('get', $rootScope.statusUrl + _submissoinid, null, null, null)
                 .then(function (response) {
-                    if (siteService.checkResponse(response)) {
+
                         if (response.data.hasOwnProperty("info")) {
                             if (typeof response.data.info.data === "string" || response.data.info.data instanceof String) {
                                 //response.data.info.data = $sce.trustAsHtml(response.data.info.data.replace(/(?:\r\n|\r|\n)/g, '<br />'))
@@ -314,7 +321,7 @@ angular
                         }
 
                         show_submissionInfo(response.data);
-                    }
+
                 });
         };
 
@@ -326,7 +333,7 @@ angular
             };
             networkService.handleRepData('get', $rootScope.statusUrl, null, {params: param}, null)
                 .then(function (response) {
-                    if (siteService.checkResponse(response))
+
                         show_statusList(response);
                 });
 
@@ -338,10 +345,17 @@ angular
     .module('ustc-oj')
     .service('profileService', function($rootScope, userService, networkService, siteService) {
 
+        this.verifyEmail = function (after_sending) {
+            networkService.handleRepData('get', $rootScope.verifyEmailUrl, null, null, null)
+                .then(function (response) {
+                    siteService.showAlert("An verification email has been sent. Please check your inbox.");
+                    after_sending(response);
+                })
+        };
+
         this.getUserProfile = function (showUserProfile, _username) {
             networkService.handleRepData('get', $rootScope.profileUrl + _username, null, null, null)
                 .then(function (response) {
-                    if (siteService.checkResponse(response))
                         showUserProfile(response);
                 });
         };
@@ -364,12 +378,11 @@ angular
                 password: MD5(password),
                 username: username
             };
-            console.log(data);
+            //console.log(data);
 
             response = $http.post($rootScope.apiHost + $rootScope.loginUrl, $.param(data), tempConfig)
                 .then(function (response) {
-                    console.log(response.data);
-                    if (siteService.checkResponse(response.data)) {
+                    if (siteService.checkResponse(response)) {
                         $cookies.put("userId", response.data.data.user.user_id);
                         $cookies.put("token", response.data.data.token);
                         $cookies.put("username", response.data.data.user.username);
@@ -453,6 +466,13 @@ angular
             else {
                 return null;
             }
+        };
+
+        this.logOut = function () {
+            var cookies = $cookies.getAll();
+            angular.forEach(cookies, function (v, k) {
+                $cookies.remove(k);
+            });
         };
 
         var MD5 = function (s) {

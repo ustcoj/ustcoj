@@ -1,6 +1,6 @@
 angular
     .module('ustc-oj')
-    .controller("navbarCtrl", function($scope, $rootScope, $location, $window, $log, problemService, siteService){
+    .controller("navbarCtrl", function($scope, $rootScope, $location, $window, $log, problemService, siteService, userService){
 
         $('.search-text').keypress(function (e) {
             if (e.which == 13) {
@@ -36,4 +36,8 @@ angular
             $window.location.href = siteService.submitLink;
         };
 
+        $scope.logOut = function () {
+            userService.logOut();
+            $window.location.href = '#/';
+        }
 });

@@ -1,6 +1,6 @@
 angular
     .module('ustc-oj')
-    .controller("loginCtrl", function ($scope, $http, $rootScope, $window, userService, siteService) {
+    .controller("loginCtrl", function ($scope, $http, $rootScope, $window, userService, siteService, profileService) {
 
         $scope.signUpMode = false;
 
@@ -10,6 +10,9 @@ angular
 
                 userService.register(function(result) {
                     if (result) {
+                        profileService.verifyEmail(function (response) {
+
+                        });
                         $scope.loginFire(username, pass, true);
                     }
                 }, username, pass, email);

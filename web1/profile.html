@@ -23,7 +23,7 @@
                             {{userDetail.email}}
                         </div>
                         <div ng-show="!hasVerifiedEmail" class="col-xs-12">
-                            <a>Verify</a>
+                            <a ng-click="verifyEmail()">Verify</a>
                         </div>
                     </td>
                 </tr>

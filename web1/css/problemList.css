@@ -1,3 +1,7 @@
+.bar-head > th > div {
+    font-family: inherit;
+}
+
 .problem-list-content {
     font-size: 16px;
 }

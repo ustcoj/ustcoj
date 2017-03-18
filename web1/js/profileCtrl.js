@@ -36,7 +36,7 @@ angular
             'View All Profile' : 53,
 
             'Add Privilege' : 60,
-            'Del Privilege' : 61,
+            'Del Privilege' : 61
         };
         $scope.findPri = function(index) {
             for (var x in $scope.privilege_code) {
@@ -45,6 +45,12 @@ angular
                 }
             }
             return "";
+        };
+
+        $scope.verifyEmail = function () {
+            profileService.verifyEmail(function (response) {
+                
+            });
         };
 
 
@@ -61,7 +67,6 @@ angular
 
         if (profileUsername) {
             profileService.getUserProfile(function (response) {
-                siteService.checkResponse(response);
                 $scope.userDetail = {
                     "email" : response.data.email,
                     "last_login" : response.data.login_time,
@@ -76,7 +81,7 @@ angular
                 if ($scope.userDetail.privilege.indexOf(1) != -1) {
                     $scope.hasVerifiedEmail = true;
                 }
-                console.log($scope.userDetail);
+                //console.log($scope.userDetail);
                 $scope.finishLoading = true;
             }, profileUsername);
         }

@@ -1,6 +1,67 @@
-.contestListContent th {
-    font-weight: bold;
-    color: #faa634;
-    text-align: left;
+
+.contest-table {
+    width: 100%;
 }
 
+.contest-list-content {
+    font-size: 16px;
+}
+
+.contest-bar-right {
+    padding: 3px 3px !important;
+}
+
+.contest-bar-left {
+    padding: 12px 6px !important;
+}
+
+.contest-table tbody tr {
+    cursor: default;
+}
+
+.contest-list-content .bar-content {
+    margin-bottom: 14px;
+}
+
+
+.contest-table {
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.contest-title {
+    height: 64px;
+    padding: 12px 12px;
+    font-size: 24px;
+}
+
+.contest-button {
+    float: left;
+    margin: 0 12px;
+}
+
+
+.contest-table {
+    border-collapse: separate;
+    border-spacing: 0 44px !important;
+}
+
+.contest-bar .bar-content {
+    margin-top: 12px;
+    line-height: 32px;
+    padding: 12px;
+}
+
+.contest-bar .bardiv1 {
+    overflow:auto;
+    line-height: 32px;
+    width: 100%;
+    border-right: 1px solid #dfdfdf;
+}
+
+.contest-bar .bardiv2 {
+    overflow:auto;
+    line-height: 32px;
+    width: 100%;
+    padding: 0px 12px;
+}

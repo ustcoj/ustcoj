@@ -1,11 +1,7 @@
-
-
 .bar-content {
     margin-top: 12px;
     background-color: #f9f9f9;
-
     border-radius: 10px;
-
     line-height: 24px;
     padding: 6px;
 }
@@ -17,9 +13,10 @@
 
 }
 
-.bar-head {
+.bar-head > th {
     font-weight: bold;
     color: #8e8e8e;
+    font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .bar-table {
@@ -34,8 +31,15 @@
 
 .bar-table tbody td {
     background-color: #f9f9f9;
-    cursor: pointer;
+    /*cursor: pointer;*/
     padding: 6px 0px;
+}
+
+.bar-table tbody tr {
+    cursor: pointer;
+}
+.bar-head {
+    cursor: default !important;
 }
 
 .bardiv1 {

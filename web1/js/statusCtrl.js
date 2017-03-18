@@ -9,6 +9,12 @@ angular
         $scope.statusSolved = {};
         $scope.perpage = 30;
         $scope.pageNow = 1;
+
+        $scope.catchEnter = function(_event) {
+            if (_event.which === 13) {
+                $scope.refreshPage();
+            }
+        };
         $scope.pageOffset = function (_offset) {
             $scope.pageNow = Number($scope.pageNow);
             if ($scope.pageNow) {

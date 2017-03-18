@@ -6,39 +6,39 @@
         <h2>Status</h2>
     </div>
 
-    <div class="status-content table-responsive">
+    <div class="status-content">
+        <div class="table-responsive">
 
-        <table class="status-table bar-table col-md-48">
-            <tr class="bar-head status-bar">
-                <th class="col-md-3 col-center">ID</th>
-                <th class="col-md-7 col-center">Time</th>
-                <th class="col-md-10">Title</th>
-                <th class="col-md-6">User</th>
-                <th class="col-md-8 col-center">Status</th>
-                <th class="col-md-5 col-center">Run Time</th>
-                <th class="col-md-5 col-center">Compiler</th>
-                <th class="col-md-4 col-center">Memory</th>
-            </tr>
+            <table class="status-table bar-table col-md-48">
+                <tr class="bar-head status-bar">
+                    <th class="col-md-3 col-center">ID</th>
+                    <th class="col-md-7 col-center">Time</th>
+                    <th class="col-md-10">Title</th>
+                    <th class="col-md-6">User</th>
+                    <th class="col-md-8 col-center">Status</th>
+                    <th class="col-md-5 col-center">Run Time</th>
+                    <th class="col-md-5 col-center">Compiler</th>
+                    <th class="col-md-4 col-center">Memory</th>
+                </tr>
 
-            <tr ng-repeat="x in statusList.data.submission_list"
-                class="bar-content status-bar"
-                ng-class="{'problem-bar-trying': statusTrying[x.submission_id], 'problem-bar-solved': statusSolved[x.submission_id]}"
-                ng-click="showSubmission(x.submission_id)">
-                <td class="col-center"><div class="bardiv1"><div class="bardiv2">{{x.submission_id}}</div></div></td>
-                <td class="col-center"><div class="bardiv1"><div class="bardiv2">{{x.push_time}}</div></div></td>
-                <td><div class="bardiv1"><div class="bardiv2">{{x.problem.problem_title}}</div></div></td>
-                <td><div class="bardiv1"><div class="bardiv2">{{x.user.username}}</div></div></td>
-                <td class="col-center"
-                    ng-class="{'problem-bar-result-trying': statusTrying[x.submission_id], 'problem-bar-result-solved': statusSolved[x.submission_id]}">
-                    <div class="bardiv1"><div class="bardiv2">{{getResult(x.result)}}</div></div>
-                </td>
-                <td class="col-right"><div class="bardiv1"><div class="bardiv2">{{getMaxTime(x)}}</div></div></td>
-                <td class="col-center"><div class="bardiv1"><div class="bardiv2">{{getLanguage(x.language)}}</div></div></td>
-                <td class="col-right"><div class="bardiv1"><div class="bardiv2">{{getMaxMem(x) | bytes}}</div></div></td>
-            </tr>
-        </table>
-
-
+                <tr ng-repeat="x in statusList.data.submission_list"
+                    class="bar-content status-bar"
+                    ng-class="{'problem-bar-trying': statusTrying[x.submission_id], 'problem-bar-solved': statusSolved[x.submission_id]}"
+                    ng-click="showSubmission(x.submission_id)">
+                    <td class="col-center"><div class="bardiv1"><div class="bardiv2">{{x.submission_id}}</div></div></td>
+                    <td class="col-center"><div class="bardiv1"><div class="bardiv2">{{x.push_time}}</div></div></td>
+                    <td><div class="bardiv1"><div class="bardiv2">{{x.problem.problem_title}}</div></div></td>
+                    <td><div class="bardiv1"><div class="bardiv2">{{x.user.username}}</div></div></td>
+                    <td class="col-center"
+                        ng-class="{'problem-bar-result-trying': statusTrying[x.submission_id], 'problem-bar-result-solved': statusSolved[x.submission_id]}">
+                        <div class="bardiv1"><div class="bardiv2">{{getResult(x.result)}}</div></div>
+                    </td>
+                    <td class="col-right"><div class="bardiv1"><div class="bardiv2">{{getMaxTime(x)}}</div></div></td>
+                    <td class="col-center"><div class="bardiv1"><div class="bardiv2">{{getLanguage(x.language)}}</div></div></td>
+                    <td class="col-right"><div class="bardiv1"><div class="bardiv2">{{getMaxMem(x) | bytes}}</div></div></td>
+                </tr>
+            </table>
+        </div>
 
         <br>
 

@@ -10,8 +10,7 @@
 .prob-title h2{
     font-size: 34px;
     padding-bottom: 5px;
-    font-weight: 600;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .prob-title-inf p{
@@ -24,6 +23,11 @@
 .prob-desc {
     margin-top: 0px;
     margin-bottom: 30px;
+}
+
+.prob-desc > h4 {
+    font-weight: bold;
+    font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .prob-desc div {
@@ -91,6 +95,7 @@
 
 
 .prob-sample-input-head {
+    font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     letter-spacing: 2px;
     font-weight: bold;
     color: #797979;
@@ -100,6 +105,7 @@
 }
 
 .prob-sample-output-head {
+    font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     letter-spacing: 2px;
     font-weight: bold;
     color: #797979;

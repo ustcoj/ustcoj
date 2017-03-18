@@ -19,10 +19,14 @@ body{
     display: block;
     */
     /*background-color: #fffaf0;*/
-    margin-bottom: 150px;
-    padding-top: 80px;
+    margin-bottom: 80px;
+    padding-top: 70px;
 }
 
+.page-header {
+    text-transform: uppercase;
+    font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
 
 
 a {

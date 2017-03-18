@@ -1,43 +1,28 @@
 <link rel="stylesheet" href="css/login.css">
-<div class="indexMain">
+<div ng-controller="loginCtrl" class="container">
 
-    <div ng-controller="loginCtrl" class="loginContainer">
 
-        <div class="loginSwitch">
-            <button ng-click="toLogin(); wrapperStyle={'border-color': '#faa634'}">LOG IN</button>
-            <button id="signUpButton" ng-click="toSignUp(); wrapperStyle={'border-color': '#67C761'}">SIGN UP</button>
+    <div class="login-container" ng-style="containerHeight">
+
+        <div class="login-switch">
+            <button ng-click="toLogin(); wrapperStyle={'border-color': '#faa634'}; containerHeight={'padding-top': '28%'}">LOG IN</button>
+            <button id="sign-up-button" ng-click="toSignUp(); wrapperStyle={'border-color': '#67C761'}; containerHeight={'padding-top': '22%'}">SIGN UP</button>
         </div>
 
 
 
-        <div class="inputWrapper" ng-style="wrapperStyle" ng-show="!signUpMode">
-
-            <p>
+        <div class="input-wrapper" ng-style="wrapperStyle">
+            <div ng-show="!signUpMode">
                 <input ng-model="logInUsername" placeholder="Username" type="text" id="log-in-username">
-            </p>
-
-            <p>
                 <input ng-model="logInPassword" placeholder="Password" type="password" id="log-in-pass">
-            </p>
+            </div>
 
-        </div>
-
-        <div class="inputWrapper" ng-style="wrapperStyle" ng-show="signUpMode">
-
-            <p>
+            <div ng-show="signUpMode">
                 <input ng-model="signUpEmail" placeholder="Email" type="email" id="sign-up-email">
-            </p>
-            <p>
                 <input ng-model="signUpUsername" placeholder="Username" type="text" id="sign-up-username">
-            </p>
-
-            <p>
                 <input ng-model="signUpPassword" placeholder="Password" type="password" id="sign-up-pass">
-            </p>
-            <p>
                 <input ng-model="signUpPasswordAgain" placeholder="Password Again" type="password" id="sign-up-pass-again">
-            </p>
-
+            </div>
         </div>
 
         <!--
@@ -45,7 +30,7 @@
         <button ng-click="registerFire(indexUsername, indexPassword, indexPasswordAgain)" ng-show="signUpMode">Go</button>
         <button ng-click="loginFire(indexUsername, indexPassword)" ng-show="!signUpMode">Goo</button>
         -->
-        <div class="loginClick">
+        <div class="login-click">
             <svg ng-show="signUpMode" ng-click="registerFire(signUpUsername, signUpPassword, signUpPasswordAgain, signUpEmail)" width="64px" height="64px" viewBox="480 468 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
                 <desc>Created with Sketch.</desc>

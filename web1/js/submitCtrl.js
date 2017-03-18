@@ -4,7 +4,7 @@ angular
     $scope.submitSource = "";
     $scope.isIdValid = false;
     $scope.submitLang = userService.getLastLang();
-    $scope.submitId = userService.getLastLang();
+    $scope.submitId = userService.getLastProb();
     $scope.submitStatus = false;
     $scope.submitMsg = "";
     $scope.submitPublic = 0;
@@ -13,7 +13,7 @@ angular
     $scope.nowContestProblem = null;
     $scope.languageList = problemService.languageList;
     $scope.submitTitle = "????";
-    console.log($scope.languageList);
+    //console.log($scope.languageList);
 
     if ($routeParams.contest_ID == null) {
 
@@ -24,29 +24,23 @@ angular
         $scope.nowContestProblem = $routeParams.prolem_SEQ;
     }
 
-    $scope.submitFire = function (source, lang, id) {
+    $scope.submitFire = function (__source, __lang) {
+
         var submissionData = {
-            code: source,
-            language: lang,
-            problem_id: id
+            code: __source,
+            language: __lang,
+            problem_id: $scope.submitId
         };
-        userService.saveLastLang(lang);
-        userService.saveLastProb(id);
-        /*
-        $http.post($rootScope.apiHost + $rootScope.submitUrl, data, config).then(function (response) {
-            if (response.data.status.code === 1){
-                $scope.submitStatus = true;
-                $scope.submitMsg = response.data.status.message;
-            } else {
-                $window.location.href = '#/status/';
-            }
+        if ($scope.isContest) {
+            submissionData["contest_id"] = $scope.ContestId;
+        }
+        console.log(submissionData);
+        userService.saveLastLang(__lang);
+        userService.saveLastProb($scope.submitId);
 
-
-        });
-        */
         problemService.submitCode(function(response) {
             $window.location.href = '#/status/';
-        }, submissionData, $scope.ContestId);
+        }, submissionData);
     };
 
     $scope.getProblemTitle = function() {
@@ -55,8 +49,9 @@ angular
         if (problemService.checkValidProblemId($scope.submitId)) {
             problemService.getSimpleProblem(function(result) {
                 $scope.submitTitle = result.problem.problem_title;
-            })
+            }, $scope.submitId)
         }
     };
+
 });
 

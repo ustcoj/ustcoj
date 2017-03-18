@@ -1,30 +1,60 @@
-
+<link rel="stylesheet" href="css/bar.css">
 <link rel="stylesheet" href="css/showContest.css">
-<div ng-controller="showContestCtrl" class="bigContainer">
+<div ng-controller="showContestCtrl" class="container">
 
 
-    <div class="rightbar">
-        <div class="rightbarItem">
-            <div class="rightbarHead">
-                Problem Tag
-            </div>
-            <div>
-                <span class="rightbarTag">dfs</span>
-            </div>
-            <div>
-                <span class="rightbarTag">dynamic programming</span>
-            </div>
-            <div></div>
-        </div>
-        <div class="rightbarItem">
-            <div class="rightbarProb">
-                1001
-            </div>
-            <div>Submit</div>
-            <div>Status</div>
-        </div>
+    <div class="contest-title">
+        <h2>{{contestInfo.contest.contest_title}}</h2>
     </div>
 
+
+    <div class="contest-content">
+
+        <div class="col-md-38 col-md-offset-1">
+
+            <div class="table-responsive">
+
+                <table class="problem-table bar-table">
+
+                    <tr class="bar-head problem-bar">
+
+                        <th class="col-md-5 col-center">ID</th>
+                        <th class="col-md-24">Title</th>
+                        <th class="col-md-14 col-center">
+                            <div class="col-xs-18 col-center">Solved</div>
+                            <div class="col-xs-12 col-center"></div>
+                            <div class="col-xs-18 col-center">Trying</div>
+                        </th>
+                        <th class="col-md-5 col-center"></th>
+
+                    </tr>
+
+                    <tr class="bar-content problem-bar" ng-repeat="x in problemList.problem_list"
+                        ng-click="showProblem(x.problem_id)"
+                        ng-class="{'problem-bar-trying': myTrying[x.problem_id], 'problem-bar-solved': mySolved[x.problem_id]}">
+
+                        <td class="col-center"><div class="bardiv1"><div class="bardiv2">{{x.problem_id}}</div></div></td>
+                        <td ng-class="{'problem-bar-result-trying': myTrying[x.problem_id], 'problem-bar-result-solved': mySolved[x.problem_id]}"><div class="bardiv1"><div class="bardiv2">{{x.problem_title}}</div></div></td>
+                        <td class="col-center">
+                            <div class="bardiv1">
+                                <div class="bardiv2">
+                                    <div class="col-xs-20 col-center">{{x.solved_cnt}}</div>
+                                    <div class="col-xs-8 col-center">/</div>
+                                    <div class="col-xs-20 col-center">{{x.trying_cnt}}</div>
+                                </div>
+                            </div>
+
+                        </td>
+                        <td class="col-center"><div class="bardiv1"><div class="bardiv2" ng-show="mySolved[x.problem_id]">&#x263A</div></div></td>
+
+                    </tr>
+
+
+                </table>
+
+            </div>
+
+        </div>
 
     <div class="bigContent" ng-show="finishLoading">
 

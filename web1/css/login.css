@@ -1,19 +1,6 @@
-.indexMain {
-    display: block;
-    height: 100%;
-    width: 100%;
-}
 
-.loginContainer {
-    position:fixed;
-    top:50%;
-    left:50%;
-    transform: translateX(-50%) translateY(-50%);
-    min-height: 70px;
-}
-
-.inputWrapper {
-    padding: 2px 5px 2px 5px;
+.input-wrapper {
+    padding: 2px 5px;
     margin-top: 30px;
     margin-bottom: 30px;
     border-radius: 10px;
@@ -21,33 +8,34 @@
     display: block;
 }
 
-.loginContainer label {
+.login-container {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 28%;
+}
+
+.login-container label {
     color: #797979;
     font-size: 18px;
 }
 
-.loginContainer input {
+.login-container input {
     font-size: 20px;
-    width: 300px;
+    width: 100%;
     height: 40px;
     border-radius: 3px;
     border-width: 0px;
     outline: none;
-    /*
-    box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    -webkit-box-sizing:border-box;
-    */
-    /*box-shadow: 1px 1px 1px #797979;*/
 }
 
-.loginSwitch {
+.login-switch {
     width: 200px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.loginSwitch button {
+.login-switch button {
     font-size: 18px;
     color: #8e8e8e;
     background-color: transparent;
@@ -56,17 +44,17 @@
     outline: none;
 }
 
-.loginSwitch #signUpButton {
+.login-switch #sign-up-button {
     float: right;
 }
 
-.loginClick {
+.login-click {
     width: 64px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.loginClick svg {
+.login-click svg {
     cursor: pointer;
 }
 
