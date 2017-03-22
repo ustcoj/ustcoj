@@ -153,12 +153,35 @@ angular
             "425" : "Privilege required"
         };
 
-        this.getTime = function () {
-            return $filter('date')(new Date(), 'yyyyMMddHHmmss');
+        this.showAlert = function(message, type, closeDelay = 3000) {
+
+            if ($("#alerts-container").length == 0) {
+                // alerts-container does not exist, create it
+                $("body")
+                    .append($("<div id=\"alerts-container\" style=\"position: fixed;width: 50%; left: 25%; bottom: 10%;\">"));
+            }
+
+            // default to alert-info; other options include success, warning, danger
+            type = type || "warning";
+
+            // create the alert div
+            var alert = $('<div class="alert alert-' + type + ' fade in">')
+                .append(
+                    $('<button type="button" class="close" data-dismiss="alert">')
+                        .append("&times;")
+                )
+                .append(message);
+
+            // add the alert div to top of alerts-container, use append() to add to bottom
+            $("#alerts-container").prepend(alert);
+
+            // if closeDelay was passed - set a timeout to close the alert
+            if (closeDelay)
+                window.setTimeout(function() { alert.alert("close") }, closeDelay);
         };
 
-        this.showAlert = function(message) {
-            alert(message);
+        this.getTime = function () {
+            return $filter('date')(new Date(), 'yyyyMMddHHmmss');
         };
 
         this.checkResponse = function (response) {
