@@ -134,6 +134,7 @@ angular
         this.problemLink = '#/problems/';
         this.contestLink = '#/contests/';
         this.statusLink = '#/status/';
+        this.boardLink = '#/board/';
         this.submitLink = '#/submit/';
         this.editLink = '#/edit/';
         this.errorMsg = {
