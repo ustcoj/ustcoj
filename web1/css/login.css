@@ -1,3 +1,9 @@
+.login-main {
+    height: 100%;
+    min-height: 720px;
+    margin-bottom: -50px;
+}
+
 
 .input-wrapper {
     padding: 2px 5px;
@@ -9,10 +15,14 @@
 }
 
 .login-container {
+    position: absolute;
     width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 28%;
+    left: 50%;
+    top: 50%;
+    height: 300px;
+    margin-top: -150px;
+    margin-left: -150px;
+    /*padding-top: 28%;; containerHeight={'padding-top': '28%'}*/
 }
 
 .login-container label {

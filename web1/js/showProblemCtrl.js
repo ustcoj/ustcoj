@@ -18,7 +18,7 @@ angular
             problemService.getProblemData(function(data){
                 $scope.problemData = data;
                 $scope.finishLoading = true;
-                startRender($scope.problemData.problem);
+                //startRender($scope.problemData.problem);
             }, $routeParams.problem_ID);
         }
     }

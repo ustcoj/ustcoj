@@ -109,35 +109,35 @@
 
 
 </div>
-<link rel="stylesheet" href="./editormd/css/editormd.preview.css" />
-<script src="jquery.min.js"></script>
-<script src="./editormd/lib/marked.min.js"></script>
-<script src="./editormd/lib/prettify.min.js"></script>
-        
-<script src="./editormd/lib/raphael.min.js"></script>
-<script src="./editormd/lib/underscore.min.js"></script>
-<script src="./editormd/lib/sequence-diagram.min.js"></script>
-<script src="./editormd/lib/flowchart.min.js"></script>
-<script src="./editormd/lib/jquery.flowchart.min.js"></script>
+<!--<link rel="stylesheet" href="./editormd/css/editormd.preview.css" />-->
+<!--<script src="jquery.min.js"></script>-->
+<!--<script src="./editormd/lib/marked.min.js"></script>-->
+<!--<script src="./editormd/lib/prettify.min.js"></script>-->
+        <!---->
+<!--<script src="./editormd/lib/raphael.min.js"></script>-->
+<!--<script src="./editormd/lib/underscore.min.js"></script>-->
+<!--<script src="./editormd/lib/sequence-diagram.min.js"></script>-->
+<!--<script src="./editormd/lib/flowchart.min.js"></script>-->
+<!--<script src="./editormd/lib/jquery.flowchart.min.js"></script>-->
 
-<script src="./editormd/editormd.min.js"></script>
-<script type="text/javascript">
-function renderData(elem_id, data){
-    return editormd.markdownToHTML(elem_id, {
-        markdown        : data,
-        htmlDecode      : "style,script,iframe",  // you can filter tags decode
-        markdownSourceCode : true,
-        emoji           : true,
-        taskList        : true,
-        tex             : true,
-        flowChart       : true,
-        sequenceDiagram : true,
-    });
-}
-startRender = (function(data){
-    renderData("editormd-view-desc", data.description);
-    renderData("editormd-view-input-desc", data.input_description);
-    renderData("editormd-view-output-desc", data.output_description);
-    renderData("editormd-view-hint", data.hint);
-});
-</script>
+<!--<script src="./editormd/editormd.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--function renderData(elem_id, data){-->
+    <!--return editormd.markdownToHTML(elem_id, {-->
+        <!--markdown        : data,-->
+        <!--htmlDecode      : "style,script,iframe",  // you can filter tags decode-->
+        <!--markdownSourceCode : true,-->
+        <!--emoji           : true,-->
+        <!--taskList        : true,-->
+        <!--tex             : true,-->
+        <!--flowChart       : true,-->
+        <!--sequenceDiagram : true,-->
+    <!--});-->
+<!--}-->
+<!--startRender = (function(data){-->
+    <!--renderData("editormd-view-desc", data.description);-->
+    <!--renderData("editormd-view-input-desc", data.input_description);-->
+    <!--renderData("editormd-view-output-desc", data.output_description);-->
+    <!--renderData("editormd-view-hint", data.hint);-->
+<!--});-->
+<!--</script>-->

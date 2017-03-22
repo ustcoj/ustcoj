@@ -26,7 +26,7 @@ angular
         $rootScope.problemSimpleUrl = "/simple";
         $rootScope.siteInfoUrl = '/api/server/status';
         $rootScope.userAvatar = '/';
-        $rootScope.verifyEmailUrl = '/user/verify_email'
+        $rootScope.verifyEmailUrl = '/api/user/verify_email'
     });
 
 angular
@@ -401,10 +401,11 @@ angular
             };
 
             //response = networkService.post($rootScope.registerUrl, data);
-            response = $http.post($rootScope.registerUrl, $.param(data), tempConfig)
-                .then(function (response, userService) {
+            response = $http.post($rootScope.apiHost + $rootScope.registerUrl, $.param(data), tempConfig)
+                .then(function (response) {
                     if (siteService.checkResponse(response)) {
                         //$cookies.put("userId", response.data.user_id);
+                        showRegisterResult(response);
                     }
 
                 });

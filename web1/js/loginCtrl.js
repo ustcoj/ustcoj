@@ -19,7 +19,7 @@ angular
 
             }
             else {
-
+                siteService.showAlert("Inconsistent passwords")
             }
 
         };
