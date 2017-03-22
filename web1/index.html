@@ -43,6 +43,7 @@
     <script src="js/editCtrl.js" charset="utf-8"></script>
     <script src="js/profileCtrl.js" charset="utf-8"></script>
     <script src="js/showSubmissionCtrl.js" charset="utf-8"></script>
+    <script src="js/boardCtrl.js" charset="utf-8"></script>
 
 
     <div ng-view></div>
@@ -76,6 +77,12 @@
                     })
                     .when('/contests/:contest_ID/submit/:problem_SEQ',{
                         templateUrl:'submit.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
+                    .when('/contests/:contest_ID/board/',{
+                        templateUrl:'board.html',
                         controller: ['$routeParams', function($routeParams) {
                         }],
                         controllerAs: 'ctrl'
