@@ -101,6 +101,7 @@
                         }],
                         controllerAs: 'ctrl'
                     })
+                    .when('/board',{templateUrl:'board.html'})
                     .when('/edit/:problem_ID',{
                         templateUrl:'edit.html',
                         controller: ['$routeParams', function($routeParams) {
