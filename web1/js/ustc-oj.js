@@ -20,6 +20,7 @@ angular
         $rootScope.problemUrl = "/api/problem/";
         $rootScope.contestListUrl = "/api/contest/";
         $rootScope.contestUrl = "/api/contest/";
+        $rootScope.registerContestUrl = "/register";
         $rootScope.submitUrl = "/api/submission/";
         $rootScope.statusUrl = "/api/submission/";
         $rootScope.profileUrl = "/api/user/profile/";
@@ -150,7 +151,9 @@ angular
             "422" : "Calm down~ You are submitting too fast",
             "423" : "To submit a new problem, please contact us",
             "424" : "Please verify your email address",
-            "425" : "Privilege required"
+            "425" : "Privilege required",
+            "426" : "Please register to this contest first",
+            "427" : "Seems that you have already registered"
         };
 
         this.showAlert = function(message, type, closeDelay = 3000) {
@@ -185,7 +188,7 @@ angular
         };
 
         this.checkResponse = function (response) {
-            console.log(response);
+            //console.log(response);
             response = response.data;
 
             if (response == null) {
@@ -311,6 +314,13 @@ angular
                         show_contestList(response.data);
                 });
 
+        };
+
+        this.registerContest = function (updateRegisterStatus, contestId) {
+            networkService.handleRepData('get', $rootScope.contestUrl + contestId + $rootScope.registerContestUrl, null, null, null)
+                .then(function (response) {
+                    updateRegisterStatus(response);
+                })
         };
 
         this.getContestInfo = function(show_contestInfo, _contestid) {

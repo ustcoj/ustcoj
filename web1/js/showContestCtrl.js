@@ -27,5 +27,9 @@ angular
             $window.location.href = '#/contests/' + $scope.contestId + '/board/';
         };
 
+        $scope.gotoSubmit = function () {
+            $window.location.href = '#/contests/' + $scope.contestId + '/submit/';
+        };
+
 
     });

@@ -53,12 +53,16 @@ pre {
     text-align: center;
 }
 
+
 .footer .bottom-block {
     width: 160px;
     height: 4px;
     margin: 0 auto;
     border-bottom: 4px solid #faa634;
-
+    position: fixed;
+    top: calc(100% - 4px);
+    left: calc(50% - 80px);
+    z-index: 999999;
 }
 
 .col-center {

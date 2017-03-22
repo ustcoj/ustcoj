@@ -9,7 +9,8 @@ angular
     $scope.submitMsg = "";
     $scope.submitPublic = 0;
     $scope.isContest = false;
-    $scope.ContestId = 0;
+    $scope.contestId = 0;
+    $scope.contestInfo = null;
     $scope.nowContestProblem = null;
     $scope.languageList = problemService.languageList;
     $scope.submitTitle = "????";
@@ -19,28 +20,47 @@ angular
 
     }
     else {
+        console.log($routeParams);
         $scope.isContest = true;
-        $scope.ContestId = $routeParams.contest_ID;
+        $scope.contestId = $routeParams.contest_ID;
         $scope.nowContestProblem = $routeParams.prolem_SEQ;
+        problemService.getContestInfo(function (response) {
+            console.log(response.problem_list);
+            $scope.contestInfo = response;
+            $scope.contestProblem = response.problem_list;
+            if ($routeParams.problem_SEQ == null) {
+                $scope.nowContestProblem = $scope.contestProblem[0].sort_index;
+            }
+            else {
+                $scope.nowContestProblem = $routeParams.problem_SEQ;
+            }
+        }, $scope.contestId);
     }
 
-    $scope.submitFire = function (__source, __lang) {
+    $scope.submitFire = function () {
 
         var submissionData = {
-            code: __source,
-            language: __lang,
-            problem_id: $scope.submitId
+            code: $scope.submitSource,
+            language: $scope.submitLang
         };
         if ($scope.isContest) {
-            submissionData["contest_id"] = $scope.ContestId;
+            submissionData["contest_id"] = $scope.contestId;
+            submissionData["sort_index"] = $scope.nowContestProblem;
+            problemService.submitCode(function(response) {
+                $window.location.href = '#/contests/' + $scope.contestId;
+            }, submissionData);
+        }
+        else {
+            submissionData["problem_id"] = $scope.submitId;
+            userService.saveLastLang($scope.submitLang);
+            userService.saveLastProb($scope.submitId);
+
+            problemService.submitCode(function(response) {
+                $window.location.href = '#/status/';
+            }, submissionData);
         }
         console.log(submissionData);
-        userService.saveLastLang(__lang);
-        userService.saveLastProb($scope.submitId);
 
-        problemService.submitCode(function(response) {
-            $window.location.href = '#/status/';
-        }, submissionData);
     };
 
     $scope.getProblemTitle = function() {

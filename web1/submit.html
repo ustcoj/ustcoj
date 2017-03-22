@@ -9,22 +9,37 @@
 
     <form class="form-horizontal">
 
-        <div class="form-group">
+        <div class="form-group" ng-show="!isContest">
             <label for="inputProblemID" class="col-sm-8 control-label">Prob ID</label>
             <div class="col-sm-40">
                 <input ng-model="submitId"
                        type="text"
                        class="form-control"
                        id="inputProblemID"
-                       ng-change="getProblemTitle()"
-                >
+                       ng-change="getProblemTitle()">
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" ng-show="isContest">
+            <label for="inputProblemID" class="col-sm-8 control-label">Contest</label>
+            <div class="col-sm-40">
+                <p class="form-control-static">{{contestInfo.contest_title}}</p>
+            </div>
+        </div>
+
+        <div class="form-group" ng-show="!isContest">
             <label class="col-sm-8 control-label">Prob Title</label>
             <div class="col-sm-40">
                 <p class="form-control-static" ng-bind="submitTitle"></p>
+            </div>
+        </div>
+
+        <div class="form-group" ng-show="isContest">
+            <label class="col-sm-8 control-label">Problem</label>
+            <div class="col-sm-40">
+                <select ng-model="nowContestProblem" class="form-control" id="submit-contest-problem">
+                    <option ng-repeat="x in contestProblem" value="{{x.sort_index}}">{{x.sort_index + ' - ' + x.problem_title}}</option>
+                </select>
             </div>
         </div>
 
@@ -37,7 +52,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" ng-show="!isContest">
             <label class="col-sm-8 control-label">Share</label>
             <div class="col-sm-40">
                 <div class="radio-inline">
@@ -66,7 +81,7 @@
         <div class="form-group">
             <label class="col-sm-8 control-label"></label>
             <div class="col-sm-40">
-                <button class="btn btn-primary" ng-click="submitFire(submitSource, submitLang)">
+                <button class="btn btn-primary" ng-click="submitFire()">
                     Submit
                 </button>
             </div>

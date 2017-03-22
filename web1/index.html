@@ -81,6 +81,18 @@
                         }],
                         controllerAs: 'ctrl'
                     })
+                    .when('/contests/:contest_ID/submit/',{
+                        templateUrl:'submit.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
+                    .when('/contests/:contest_ID/status/',{
+                        templateUrl:'status.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
                     .when('/contests/:contest_ID/board/',{
                         templateUrl:'board.html',
                         controller: ['$routeParams', function($routeParams) {

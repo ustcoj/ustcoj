@@ -4,12 +4,20 @@
 
 angular
     .module('ustc-oj')
-    .controller("contestListCtrl", function($scope, $http, $rootScope, $window, problemService, siteService){
+    .controller("contestListCtrl", function($scope, $http, $rootScope, $window, problemService, siteService, userService, profileService){
 
         $scope.perpage = 10;
         $scope.pageNow = 1;
         $scope.ongoing = {};
         $scope.pending = {};
+
+        $scope.updateUserData = function () {
+
+        };
+
+        profileService.getUserProfile(function (response) {
+            $scope.updateUserData()
+        }, userService.getUsername());
 
         $scope.catchEnter = function(_event) {
             if (_event.which === 13) {
@@ -50,6 +58,9 @@ angular
         };
 
         $scope.registerContest = function(contestId) {
-
+            problemService.registerContest(function(response) {
+                siteService.showAlert("Register Success");
+                $scope.updateUserData();
+            }, contestId);
         };
 });
