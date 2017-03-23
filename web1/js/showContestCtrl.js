@@ -31,5 +31,9 @@ angular
             $window.location.href = '#/contests/' + $scope.contestId + '/submit/';
         };
 
+        $scope.gotoStatus = function() {
+            $window.location.href = '#/contests/' + $scope.contestId + '/status/';
+        }
+
 
     });

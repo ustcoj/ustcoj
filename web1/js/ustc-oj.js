@@ -1,5 +1,26 @@
 // Directed by Li Ding
 
+String.Format = function (format, Args) {
+    var args = arguments;
+    var replaceObj = {};
+    var i = 1;
+    if (typeof Args === "object") {
+        for (var prop in Args) {
+            format = format.replace(new RegExp("{" + prop + "}", "g"), Args[prop]);
+        }
+        return format;
+    } else {
+        if (args.length > 1) {
+            for (; i < args.length; i++) {
+                replaceObj["{" + (i - 1) + "}"] = args[i];
+            }
+        }
+        return format.replace(/\{\d+\}/g, function (resourse) {
+            return replaceObj[resourse];
+        });
+    }
+};
+
 angular.module("ustc-oj", ['ngRoute', 'ngCookies']);
 
 angular
@@ -20,14 +41,15 @@ angular
         $rootScope.problemUrl = "/api/problem/";
         $rootScope.contestListUrl = "/api/contest/";
         $rootScope.contestUrl = "/api/contest/";
-        $rootScope.registerContestUrl = "/register";
+        $rootScope.registerContestUrl = $rootScope.contestListUrl + "{0}" + "/register";
         $rootScope.submitUrl = "/api/submission/";
         $rootScope.statusUrl = "/api/submission/";
         $rootScope.profileUrl = "/api/user/profile/";
-        $rootScope.problemSimpleUrl = "/simple";
+        $rootScope.problemSimpleUrl = $rootScope.problemUrl + "{0}" + "/simple";
         $rootScope.siteInfoUrl = '/api/server/status';
         $rootScope.userAvatar = '/';
-        $rootScope.verifyEmailUrl = '/api/user/verify_email'
+        $rootScope.verifyEmailUrl = '/api/user/verify_email';
+        $rootScope.myContestStatusUrl = $rootScope.contestUrl + "{0}" + "/submission";
     });
 
 angular
@@ -157,7 +179,9 @@ angular
             "427" : "Seems that you have already registered"
         };
 
-        this.showAlert = function(message, type, closeDelay = 3000) {
+        this.showAlert = function(message, type, closeDelay) {
+
+            closeDelay = closeDelay || 3000;
 
             if ($("#alerts-container").length == 0) {
                 // alerts-container does not exist, create it
@@ -228,7 +252,7 @@ angular
 
         };
 
-        this.getProblemData = function(show_problemData, problemId, contestId="none") {
+        this.getProblemData = function(show_problemData, problemId) {
 
             networkService.handleRepData('get', $rootScope.problemUrl + problemId, null, null, null)
                 .then(function (response) {
@@ -271,8 +295,8 @@ angular
             //str = str.replace(/(?:\r\n|\r|\n)/g, '<br />');
             var len = data.problem.input_sample.length;
             for (i = 0; i < len; i++) {
-                data.problem.input_sample[i] = $sce.trustAsHtml(data.problem.input_sample[i].replace(/(?:\r\n|\r|\n)/g, '<br />'));
-                data.problem.output_sample[i] = $sce.trustAsHtml(data.problem.output_sample[i].replace(/(?:\r\n|\r|\n)/g, '<br />'));
+                if (data.problem.input_sample[i]) data.problem.input_sample[i] = $sce.trustAsHtml(data.problem.input_sample[i].replace(/(?:\r\n|\r|\n)/g, '<br />'));
+                if (data.problem.output_sample[i]) data.problem.output_sample[i] = $sce.trustAsHtml(data.problem.output_sample[i].replace(/(?:\r\n|\r|\n)/g, '<br />'));
             }
             return data;
 
@@ -294,7 +318,7 @@ angular
 
         this.getSimpleProblem = function(show_simpleProblem, _problem_id) {
 
-            networkService.handleRepData('get', $rootScope.problemUrl + _problem_id + $rootScope.problemSimpleUrl
+            networkService.handleRepData('get', String.Format($rootScope.problemSimpleUrl, _problem_id)
                 , null, null, null)
                 .then(function (response) {
 
@@ -318,7 +342,7 @@ angular
         };
 
         this.registerContest = function (updateRegisterStatus, contestId) {
-            networkService.handleRepData('get', $rootScope.contestUrl + contestId + $rootScope.registerContestUrl, null, null, null)
+            networkService.handleRepData('get', String.Format($rootScope.registerContestUrl, contestId), null, null, null)
                 .then(function (response) {
                     updateRegisterStatus(response);
                 })
@@ -372,6 +396,17 @@ angular
                 });
 
         };
+
+        this.getMyContestStatus = function(show_contestStatus, _contestId, _page, _per_page) {
+            param = {
+                page: _page,
+                per_page: _per_page
+            };
+            networkService.handleRepData('get', String.Format($rootScope.myContestStatusUrl, _contestId), null, {params: param}, null)
+                .then(function (response) {
+                    show_contestStatus(response);
+                });
+        }
 
     });
 

@@ -3,12 +3,27 @@
  */
 angular
     .module('ustc-oj')
-    .controller("statusCtrl", function($scope, $http, $rootScope, $window, problemService){
+    .controller("statusCtrl", function($routeParams, $scope, $http, $rootScope, $window, problemService){
 
         $scope.statusTrying = {};
         $scope.statusSolved = {};
         $scope.perpage = 30;
         $scope.pageNow = 1;
+        $scope.isContest = false;
+        $scope.contestId = null;
+
+        if ($routeParams.contest_ID) {
+            $scope.isContest = true;
+            $scope.perpage = 200;
+            $scope.pageNow = 1;
+            $scope.contestId = $routeParams.contest_ID;
+        }
+        else {
+            problemService.getSiteInfo(function (response) {
+                $scope.submissionNum = response.submission_number;
+                $scope.pageSum = Math.ceil($scope.submissionNum / $scope.perpage);
+            });
+        }
 
         $scope.catchEnter = function(_event) {
             if (_event.which === 13) {
@@ -26,27 +41,41 @@ angular
         };
 
         $scope.refreshPage = function () {
+            if (!$scope.isContest) {
+                problemService.getStatusList(function(response) {
 
-            problemService.getStatusList(function(response) {
+                    $scope.statusList = response;
+                    $scope.statusList.data.submission_list.forEach(function (item) {
+                        if ($scope.getResult(item.result) == "Accepted") {
+                            $scope.statusSolved[item.submission_id] = true;
+                        }
+                        else if ($scope.getResult(item.result) != "Compile Error") {
+                            $scope.statusTrying[item.submission_id] = true;
+                        }
+                    });
+                    $scope.finishLoading = true;
+                }, $scope.pageNow, $scope.perpage);
+            }
+            else {
+                problemService.getMyContestStatus(function(response) {
 
-                $scope.statusList = response;
-                $scope.statusList.data.submission_list.forEach(function (item) {
-                    if ($scope.getResult(item.result) == "Accepted") {
-                        $scope.statusSolved[item.submission_id] = true;
-                    }
-                    else if ($scope.getResult(item.result) != "Compile Error") {
-                        $scope.statusTrying[item.submission_id] = true;
-                    }
-                })
-            }, $scope.pageNow, $scope.perpage);
+                    $scope.statusList = response;
+                    $scope.statusList.data.submission_list.forEach(function (item) {
+                        if ($scope.getResult(item.result) == "Accepted") {
+                            $scope.statusSolved[item.submission_id] = true;
+                        }
+                        else if ($scope.getResult(item.result) != "Compile Error") {
+                            $scope.statusTrying[item.submission_id] = true;
+                        }
+                    });
+                    $scope.finishLoading = true;
+                }, $scope.contestId, $scope.pageNow, $scope.perpage);
+            }
 
         };
 
 
-        problemService.getSiteInfo(function (response) {
-            $scope.submissionNum = response.submission_number;
-            $scope.pageSum = Math.ceil($scope.submissionNum / $scope.perpage);
-        });
+
 
         $scope.refreshPage();
 

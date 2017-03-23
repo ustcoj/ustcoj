@@ -1,3 +1,7 @@
+.contest-title {
+    text-transform: none !important;
+}
+
 .bar-head > th > div {
     font-family: inherit;
 }

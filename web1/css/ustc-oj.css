@@ -44,6 +44,10 @@ pre {
     border: none;
 }
 
+span {
+    font-family: inherit;
+}
+
 .footer {
     font-size: 12px;
     position: absolute;
@@ -53,17 +57,32 @@ pre {
     text-align: center;
 }
 
-
 .footer .bottom-block {
     width: 160px;
     height: 4px;
     margin: 0 auto;
     border-bottom: 4px solid #faa634;
-    position: fixed;
-    top: calc(100% - 4px);
-    left: calc(50% - 80px);
-    z-index: 999999;
 }
+
+.waiting-orange {
+    content: url("../wait.svg");
+    margin: 100px auto;
+}
+
+@media (min-width: 992px) {
+    .footer .bottom-block {
+        width: 160px;
+        height: 4px;
+        margin: 0 auto;
+        border-bottom: 4px solid #faa634;
+        position: fixed;
+        top: calc(100% - 4px);
+        left: calc(50% - 80px);
+        z-index: 999999;
+    }
+}
+
+
 
 .col-center {
     display: block;

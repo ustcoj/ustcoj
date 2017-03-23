@@ -23,7 +23,9 @@ angular
             }
 
         };
-        $scope.loginFire = function (username, pass,fromRegister=false) {
+        $scope.loginFire = function (username, pass,fromRegister) {
+
+            fromRegister = fromRegister || false;
 
             userService.login(function(result) {
                 if (result) {

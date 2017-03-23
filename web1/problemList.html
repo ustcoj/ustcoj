@@ -10,7 +10,9 @@
 
 	<div class="problem-list-content">
 
-		<div class=" col-md-38 col-md-offset-1">
+		<div class="col-md-38 col-md-offset-1">
+
+			<div ng-show="finishLoading">
 
 			<div class="table-responsive">
 
@@ -78,10 +80,11 @@
 					</svg>
 				</div>
 			</div>
+			</div>
+
+			<div class="waiting-orange" ng-show="!finishLoading">
 
 		</div>
-
-
 
 	</div>
 

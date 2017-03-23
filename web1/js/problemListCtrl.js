@@ -25,6 +25,7 @@ angular
             problemService.getProblemList(function(data){
                 $scope.problemList = data;
                 $scope.problemOnPage = $scope.problemList.problem_list.length;
+                $scope.finishLoading = true;
             }, $scope.pageNow, $scope.perpage);
         };
 

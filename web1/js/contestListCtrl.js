@@ -39,7 +39,7 @@ angular
             problemService.getContestList(function(data){
                 $scope.contestList = data;
                 $scope.contestList.contest_list.forEach(function (item) {
-
+                $scope.finishLoading = true;
                 })
             }, $scope.pageNow, $scope.perpage);
 
