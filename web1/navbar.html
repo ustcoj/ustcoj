@@ -13,15 +13,30 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-logo visible-xs" href="#/">
-                    <img src="USTCOJ.svg" height="42px" alt="USTC ONLINE JUDGE" />
+                <a class="navbar-logo visible-xs">
+                    <img ng-click="clickLogo()" src="USTCOJ.svg" height="42px" alt="USTC ONLINE JUDGE" ng-show="!isContest" />
+                    <div class="navbar-brand-text" ng-show="isContest">{{contestInfo.contest_title}}</div>
                 </a>
+
+
+                <a class="navbar-brand" ng-show="isContest" ng-click="toBack()">
+                    <div class="navbar-brand-icon" ng-show="isContest">
+                        <svg width="16px" height="18px" viewBox="17 18 16 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+                            <desc>Created with Sketch.</desc>
+                            <defs></defs>
+                            <path d="M24.6082332,19.6066686 C25.1710042,19.6078901 25.7337752,20.4971789 25.7337752,20.4971789 L32.8928683,33.2244557 C32.8928683,33.2244557 33.1444645,33.8902719 33.0123726,34.1684999 C32.8802808,34.446728 32.2890865,34.4962154 32.2890865,34.4962154 L16.8323592,34.4962154 C16.8323592,34.4962154 16.3119654,34.5291066 16.1384296,34.2933913 C15.9648939,34.0576759 16.1384296,33.5536439 16.1384296,33.5536439 L23.485436,20.4922991 C23.485436,20.4922991 24.0454622,19.6054472 24.6082332,19.6066686 Z" id="Triangle-3" stroke="none" fill="#FAA634" fill-rule="evenodd" transform="translate(24.556009, 27.052224) rotate(-90.000000) translate(-24.556009, -27.052224) "></path>
+                        </svg>
+                    </div>
+                </a>
+
+
             </div>
 
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
 
-                    <li class="hidden-xs">
+                    <li class="hidden-xs" ng-show="!isContest">
                         <button type="submit" class="btn btn-default search-btn" ng-click="searchFire(searchContent)">
                             <svg width="20px" height="24px" viewBox="36 15 20 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <path d="M48.8277436,30.9032413 C47.5625726,31.6507808 46.0878414,32.0795812 44.5132695,32.0795812 C39.8115206,32.0795812 36,28.2561867 36,23.5397906 C36,18.8233945 39.8115206,15 44.5132695,15 C49.2150185,15 53.026539,18.8233945 53.026539,23.5397906 C53.026539,25.8519418 52.1105081,27.9494759 50.6226318,29.4871351 L55.6666879,36.6907937 L53.7969475,38 L48.8277436,30.9032413 Z M44.6210324,29.9176089 C48.0729494,29.9176089 50.8712809,27.1105598 50.8712809,23.6478892 C50.8712809,20.1852187 48.0729494,17.3781695 44.6210324,17.3781695 C41.1691155,17.3781695 38.3707839,20.1852187 38.3707839,23.6478892 C38.3707839,27.1105598 41.1691155,29.9176089 44.6210324,29.9176089 Z" id="Combined-Shape" stroke="none" fill="#5E5E5E" fill-rule="evenodd"></path>
@@ -31,26 +46,28 @@
                     </li>
 
 
-                    <li class="search-text">
+                    <li class="search-text" ng-show="!isContest">
                         <input type="text" class="form-control" placeholder="ID/Search" ng-model="searchContent">
 
                     </li>
 
                     <!--<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>-->
-                    <li><a ng-href="{{siteService.problemLink}}">Problem</a></li>
-                    <li><a ng-href="{{siteService.contestLink}}">Contest</a></li>
-                    <a class="navbar-logo hidden-xs" href="#/">
-                        <img src="USTCOJ.svg" height="42px" alt="USTC ONLINE JUDGE" />
-                        <span id="public-version">pre-α</span>
+                    <li ng-show="!isContest"><a ng-href="{{siteService.problemLink}}">Problems</a></li>
+                    <li ng-show="!isContest"><a ng-href="{{siteService.contestLink}}">Contests</a></li>
+                    <li ng-show="isContest" class="hidden-xs navbar-back-text"><a ng-click="toBack()"">Back</a></li>
+                    <a class="navbar-logo hidden-xs">
+                        <img ng-click="clickLogo()" src="USTCOJ.svg" height="42px" alt="USTC ONLINE JUDGE" ng-show="!isContest"/>
+                        <span id="public-version" ng-show="!isContest">pre-α</span>
+                        <div class="navbar-brand-text" ng-show="isContest">{{contestInfo.contest_title}}</div>
                     </a>
                 </ul>
 
 
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li><a ng-href="{{siteService.submitLink}}">Submit</a></li>
-                    <li><a ng-href="{{siteService.statusLink}}">Status</a></li>
-                    <li><a ng-href="{{siteService.boardLink}}">Board</a></li>
+                    <li><a ng-click="toSubmit()">Submit</a></li>
+                    <li><a ng-click="toStatus()">Status</a></li>
+                    <li ng-show="isContest"><a ng-click="toBoard()">Board</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             <img src="user_head.png" class="user-avatar">
@@ -58,7 +75,6 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a ng-click="toProfile()">Profile</a></li>
-
                             <li role="separator" class="divider"></li>
                             <li><a ng-click="logOut()">Log Out</a></li>
                         </ul>

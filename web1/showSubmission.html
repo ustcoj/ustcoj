@@ -18,13 +18,13 @@
                     <td>ID</td>
                     <td ng-bind="submissionId"></td>
                 </tr>
-                <tr>
+                <tr ng-show="!isContest">
                     <td>Prob ID</td>
-                    <td ng-bind="submissionTitle"></td>
+                    <td ng-bind="submissionProbId"></td>
                 </tr>
                 <tr>
                     <td>Title</td>
-                    <td ng-bind="submissionTitle"></td>
+                    <td><span ng-show="isContest">{{submissionSortIdx + " - "}}</span>{{submissionTitle}}</td>
                 </tr>
                 <tr>
                     <td>Status</td>

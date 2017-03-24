@@ -4,7 +4,7 @@
     <body>
         <div>
             <h1>Browser not supported</h1>
-            <p>Hi, please update your Internet Explorer to a <a href="https://www.microsoft.com/zh-cn/download/internet-explorer.aspx">higher version</a> or use <a href="https://www.google.com/intl/zh-CN/chrome/browser/desktop/index.html">Chrome</a> or <a href="http://www.apple.com/cn/shop/buy-mac/mac-pro">Safari</a> instead.</p>
+            <p>Hi, please update your Internet Explorer to a <a href="https://www.microsoft.com/en-us/download/internet-explorer.aspx">higher version</a> or use <a href="https://www.google.com/intl/zh-CN/chrome/browser/desktop/index.html">Chrome</a> or <a href="http://www.apple.com/cn/shop/buy-mac/mac-pro">Safari</a> instead.</p>
         </div>
     </body>
 </html>
@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="css/ustc-oj.css">
     <!--<link rel="stylesheet" href="css/index.css">-->
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" ng-href="css/navbar-{{nowTheme}}.css">
 </head>
 <body>
     <div ng-include="'navbar.html'"></div>
@@ -43,9 +44,9 @@
 
 
     <script src="js/ustc-oj.js" charset="utf-8"></script>
+    <script src="js/navbarCtrl.js" charset="utf-8"></script>
     <script src="js/indexCtrl.js" charset="utf-8"></script>
     <script src="js/loginCtrl.js" charset="utf-8"></script>
-    <script src="js/navbarCtrl.js" charset="utf-8"></script>
     <script src="js/showProblemCtrl.js" charset="utf-8"></script>
     <script src="js/submitCtrl.js" charset="utf-8"></script>
     <script src="js/statusCtrl.js" charset="utf-8"></script>
@@ -66,28 +67,31 @@
             .config(['$routeProvider', function($routeProvider){
                 $routeProvider
                     .when('/',{templateUrl:'login.html'})
-                    .when('/login',{templateUrl:'login.html'})
-                    .when('/problems',{templateUrl:'problemList.html'})
-                    .when('/problems/:problem_ID',{
+                    .when('/login/',{templateUrl:'login.html'})
+                    .when('/problems/',{templateUrl:'problemList.html'})
+                    .when('/problems/:problem_ID/',{
                         templateUrl:'showProblem.html',
                         controller: ['$routeParams', function($routeParams) {
                         }],
                         controllerAs: 'ctrl'
                     })
-                    .when('/contests',{templateUrl:'contestList.html'})
-                    .when('/contests/:contest_ID',{
+                    .when('/contests/',{templateUrl:'contestList.html'})
+                    .when('/contests/:contest_ID/',{
                         templateUrl:'showContest.html',
                         controller: ['$routeParams', function($routeParams) {
                         }],
                         controllerAs: 'ctrl'
                     })
-                    .when('/contests/:contest_ID/problem/:problem_SEQ',{
+                    .when('/contests/:contest_ID/problems/:problem_SEQ/',{
                         templateUrl:'showProblem.html',
                         controller: ['$routeParams', function($routeParams) {
                         }],
                         controllerAs: 'ctrl'
                     })
-                    .when('/contests/:contest_ID/submit/:problem_SEQ',{
+                    .when('/contests/:contest_ID/problems/',{
+                        redirectTo:'/contests/:contest_ID/'}
+                    )
+                    .when('/contests/:contest_ID/submit/:problem_SEQ/',{
                         templateUrl:'submit.html',
                         controller: ['$routeParams', function($routeParams) {
                         }],
@@ -105,35 +109,41 @@
                         }],
                         controllerAs: 'ctrl'
                     })
+                    .when('/contests/:contest_ID/status/:submission_ID/',{
+                        templateUrl:'showSubmission.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
                     .when('/contests/:contest_ID/board/',{
                         templateUrl:'board.html',
                         controller: ['$routeParams', function($routeParams) {
                         }],
                         controllerAs: 'ctrl'
                     })
-                    .when('/submit',{templateUrl:'submit.html'})
-                    .when('/submit/:problem_ID',{
+                    .when('/submit/',{templateUrl:'submit.html'})
+                    .when('/submit/:problem_ID/',{
                         templateUrl:'submit.html',
                         controller: ['$routeParams', function($routeParams) {
                         }],
                         controllerAs: 'ctrl'
                     })
-                    .when('/status',{templateUrl:'status.html'})
-                    .when('/status/:submission_ID',{
+                    .when('/status/',{templateUrl:'status.html'})
+                    .when('/status/:submission_ID/',{
                         templateUrl:'showSubmission.html',
                         controller: ['$routeParams', function($routeParams) {
                         }],
                         controllerAs: 'ctrl'
                     })
-                    .when('/board',{templateUrl:'board.html'})
-                    .when('/edit/:problem_ID',{
+                    .when('/board/',{templateUrl:'board.html'})
+                    .when('/edit/:problem_ID/',{
                         templateUrl:'edit.html',
                         controller: ['$routeParams', function($routeParams) {
                         }],
                         controllerAs: 'ctrl'
                     })
-                    .when('/profile',{templateUrl:'profile.html'})
-                    .when('/profile/:user_name', {
+                    .when('/profile/',{templateUrl:'profile.html'})
+                    .when('/profile/:user_name/', {
                         templateUrl:'profile.html',
                         controller: ['$routeParams', function($routeParams) {
                         }],

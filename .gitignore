@@ -11,6 +11,8 @@
 .DS_Store
 web/.idea/
 web1/.idea/
+*/.idea/
+web1/.idea/*
 */.DS_Store
 
 #Workspace

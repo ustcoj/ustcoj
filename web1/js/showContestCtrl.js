@@ -19,7 +19,7 @@ angular
         }, $routeParams.contest_ID);
 
         $scope.showContestProblem = function(problemSeq){
-            $window.location.href = '#/contests/' + $routeParams.contest_ID + '/problem/' + problemSeq;
+            $window.location.href = '#/contests/' + $routeParams.contest_ID + '/problems/' + problemSeq + '/';
         };
 
 

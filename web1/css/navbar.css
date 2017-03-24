@@ -1,17 +1,4 @@
 
-@supports(-webkit-backdrop-filter: blur()) {
-    .navbar-fixed-top{
-        -webkit-backdrop-filter: blur(20px);
-        background-color: rgba(255, 255, 255, 0.70);
-
-    }
-}
-
-@supports not (-webkit-backdrop-filter: blur()) {
-    .navbar-fixed-top{
-        background-color: rgba(255, 255, 255, 0.95);
-    }
-}
 
 .search-btn, .search-form {
     margin: 0;
@@ -37,14 +24,6 @@
 }
 
 
-
-.navbar-fixed-top {
-    min-height: 53px;
-    border-bottom: 2px solid #faa634;
-    color: #333333;
-    z-index: 9999;
-}
-
 .navbar-header {
     min-height: 53px;
     z-index: 9999;
@@ -67,8 +46,7 @@
 }
 
 .navbar-brand {
-    padding: 2px auto;
-    line-height: 53px;
+    padding-top: 16px;
 }
 
 #public-version{

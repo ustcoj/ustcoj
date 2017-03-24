@@ -3,7 +3,7 @@
  */
 angular
     .module('ustc-oj')
-    .controller("statusCtrl", function($routeParams, $scope, $http, $rootScope, $window, problemService){
+    .controller("statusCtrl", function($routeParams, $scope, $http, $rootScope, $window, problemService, siteService){
 
         $scope.statusTrying = {};
         $scope.statusSolved = {};
@@ -123,6 +123,11 @@ angular
         };
 
         $scope.showSubmission = function (_submission_id) {
-            $window.location.href = '#/status/' + _submission_id;
+            if ($scope.isContest) {
+                $window.location.href = String.Format(siteService.contestSubmissionLink, $scope.contestId, _submission_id);
+            }
+            else {
+                $window.location.href = '#/status/' + _submission_id;
+            }
         }
 });

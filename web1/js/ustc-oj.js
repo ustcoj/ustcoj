@@ -50,6 +50,7 @@ angular
         $rootScope.userAvatar = '/';
         $rootScope.verifyEmailUrl = '/api/user/verify_email';
         $rootScope.myContestStatusUrl = $rootScope.contestUrl + "{0}" + "/submission";
+
     });
 
 angular
@@ -150,20 +151,26 @@ angular
 
 angular
     .module('ustc-oj')
-    .service('siteService', function($rootScope, $filter) {
+    .service('siteService', function($rootScope, $routeParams, $filter, $location, $window) {
 
+        this.homeLink = '#/';
+        this.loginLink = '#/login/';
         this.profileLink = '#/profile/';
         this.problemLink = '#/problems/';
         this.contestLink = '#/contests/';
         this.statusLink = '#/status/';
+        this.contestStatusLink = '#/contests/{0}/status/';
         this.boardLink = '#/board/';
+        this.contestBoardLink = '#/contests/{0}/board/';
         this.submitLink = '#/submit/';
+        this.contestSubmitLink = '#/contests/{0}/submit/';
+        this.contestSubmissionLink = '#/contests/{0}/status/{1}/';
         this.editLink = '#/edit/';
         this.errorMsg = {
             "411" : "Invalid username or wrong password",
             "412" : "Your email address has already been verified",
             "413" : "Login required",
-            "414" : "Verification failed. Goto your profile page to resend a token",
+            "414" : "Verification failed. Go to your profile page to resend a token",
             "415" : "Failed to submit: ",
             "416" : "No such user",
             "417" : "Cannot fetch job from redis queue",
@@ -177,6 +184,15 @@ angular
             "425" : "Privilege required",
             "426" : "Please register to this contest first",
             "427" : "Seems that you have already registered"
+        };
+
+        this.goBack = function () {
+            var nowUrl = $location.path();
+
+            nowUrl = nowUrl.substr(0, nowUrl.lastIndexOf('/'));
+            nowUrl = nowUrl.substr(0, nowUrl.lastIndexOf('/') + 1);
+            console.log(nowUrl);
+            $window.location.href = '#' + nowUrl;
         };
 
         this.showAlert = function(message, type, closeDelay) {
@@ -212,6 +228,12 @@ angular
             return $filter('date')(new Date(), 'yyyyMMddHHmmss');
         };
 
+        this.checkErrorCode = function (code) {
+            if (code == 413) {
+                $window.location.href = this.loginLink;
+            }
+        };
+
         this.checkResponse = function (response) {
             //console.log(response);
             response = response.data;
@@ -232,6 +254,7 @@ angular
                 else {
                     this.showAlert("Error: " + this.errorMsg[response.status.code]);
                 }
+                this.checkErrorCode(response.status.code);
                 return false;
             }
             return true;

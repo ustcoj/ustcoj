@@ -15,9 +15,11 @@ angular
 
         };
 
-        profileService.getUserProfile(function (response) {
-            $scope.updateUserData()
-        }, userService.getUsername());
+        if (userService.isLoggedIn()) {
+            profileService.getUserProfile(function (response) {
+                $scope.updateUserData()
+            }, userService.getUsername());
+        }
 
         $scope.catchEnter = function(_event) {
             if (_event.which === 13) {

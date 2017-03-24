@@ -66,7 +66,7 @@ span {
 
 .waiting-orange {
     content: url("../wait.svg");
-    margin: 100px auto;
+    margin: 150px auto;
 }
 
 @media (min-width: 992px) {

@@ -1,0 +1,50 @@
+.navbar-fixed-top {
+    min-height: 53px;
+    background-color: #000000;
+    border-bottom: 4px solid #faa634;
+    color: #f8f8f8;
+    z-index: 9999;
+    transition: background-color 2s, border-bottom 1s;
+}
+
+#navbar > ul > li > a {
+    color: #d8d8d8;
+}
+
+#navbar > ul > li > a:hover {
+    color: #ffffff;
+}
+
+.icon-bar {
+    background-color: #d8d8d8 !important;
+}
+
+.navbar-brand {
+    padding: 0 15px;
+}
+
+.navbar-brand-icon {
+    line-height: 53px;
+    padding-top: 2px;
+}
+
+.navbar-brand-text {
+    display: inline-block;
+    line-height: 53px;
+    float: left;
+    color: #e8e8e8;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.navbar-back-text {
+    margin-left: -18px;
+}
+
+.navbar-toggle {
+    background-color: transparent !important;
+}
+
+.navbar-toggle:hover {
+    background-color: #333333 !important;
+}

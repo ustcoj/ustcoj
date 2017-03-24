@@ -11,6 +11,9 @@ angular
         $scope.titleObj = $(".fixed-navbar-title")[0];
         $scope.descObj = $(".submisson-inf")[0];
         $scope.isContest = false;
+        if ($routeParams.contest_ID) {
+            $scope.isContest = true;
+        }
 
 
         if ($routeParams.submission_ID != null) {
@@ -27,7 +30,11 @@ angular
                     $scope.submissionErrorMsg = response.info.data;
                 }
                 $scope.submissionCode = response.code;
+                $scope.submissionProbId = response.problem_id;
                 $scope.submissionTitle = response.problem.problem_title;
+                if ($scope.isContest) {
+                    $scope.submissionSortIdx = response.problem.sort_index;
+                }
                 var codetext = $('<div>').text($scope.submissionCode).html();
                 $("#code-area").html(codetext);
                 Prism.highlightAll();

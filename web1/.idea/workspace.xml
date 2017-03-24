@@ -2,24 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90ac4ba7-e2f9-4db2-b95e-8e1e4903704a" name="Default" comment="Language/Status info is available now.&#10;Runtime and memory usage can now be displayed naïvely.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/navbar-contest.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/navbar-norm.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contestList.html" afterPath="$PROJECT_DIR$/contestList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/login.css" afterPath="$PROJECT_DIR$/css/login.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/showContest.css" afterPath="$PROJECT_DIR$/css/showContest.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/showProblem.css" afterPath="$PROJECT_DIR$/css/showProblem.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/showSubmisson.css" afterPath="$PROJECT_DIR$/css/showSubmisson.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/navbar.css" afterPath="$PROJECT_DIR$/css/navbar.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/ustc-oj.css" afterPath="$PROJECT_DIR$/css/ustc-oj.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/contestListCtrl.js" afterPath="$PROJECT_DIR$/js/contestListCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/loginCtrl.js" afterPath="$PROJECT_DIR$/js/loginCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/problemListCtrl.js" afterPath="$PROJECT_DIR$/js/problemListCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/indexCtrl.js" afterPath="$PROJECT_DIR$/js/indexCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/navbarCtrl.js" afterPath="$PROJECT_DIR$/js/navbarCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/showContestCtrl.js" afterPath="$PROJECT_DIR$/js/showContestCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/showSubmissionCtrl.js" afterPath="$PROJECT_DIR$/js/showSubmissionCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/statusCtrl.js" afterPath="$PROJECT_DIR$/js/statusCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ustc-oj.js" afterPath="$PROJECT_DIR$/js/ustc-oj.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.html" afterPath="$PROJECT_DIR$/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/problemList.html" afterPath="$PROJECT_DIR$/problemList.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/navbar.html" afterPath="$PROJECT_DIR$/navbar.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/showContest.html" afterPath="$PROJECT_DIR$/showContest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/showProblem.html" afterPath="$PROJECT_DIR$/showProblem.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/showSubmission.html" afterPath="$PROJECT_DIR$/showSubmission.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/status.html" afterPath="$PROJECT_DIR$/status.html" />
     </list>
     <ignored path="web.iws" />
@@ -39,88 +37,38 @@
     <favorites_list name="web" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.43174985">
+    <splitter split-orientation="horizontal" split-proportion="0.5892714">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+                <state relative-caret-position="330">
+                  <caret line="96" column="27" lean-forward="true" selection-start-line="96" selection-start-column="27" selection-end-line="96" selection-end-column="27" />
                   <folding>
-                    <marker date="1490253167000" expanded="true" signature="39:474" ph="..." />
-                    <marker date="1490253167000" expanded="true" signature="50:466" ph="..." />
-                    <marker date="1490253167000" expanded="true" signature="64:454" ph="..." />
+                    <marker date="1490360638000" expanded="true" signature="39:474" ph="..." />
+                    <marker date="1490360638000" expanded="true" signature="50:466" ph="..." />
+                    <marker date="1490360638000" expanded="true" signature="64:454" ph="..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/login.html">
+          <file leaf-file-name="showSubmission.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/showSubmission.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="660">
-                  <caret line="44" column="53" lean-forward="false" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
+                <state relative-caret-position="315">
+                  <caret line="21" column="11" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="contestList.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/contestList.html">
+          <file leaf-file-name="contestListCtrl.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/js/contestListCtrl.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1110">
-                  <caret line="74" column="42" lean-forward="true" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="status.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/status.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="658">
-                  <caret line="44" column="62" lean-forward="false" selection-start-line="44" selection-start-column="62" selection-end-line="44" selection-end-column="62" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="showContest.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/showContest.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="885">
-                  <caret line="64" column="14" lean-forward="true" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="showProblem.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/showProblem.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="49" column="58" lean-forward="true" selection-start-line="49" selection-start-column="58" selection-end-line="49" selection-end-column="58" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="submit.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/submit.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="600">
-                  <caret line="40" column="83" lean-forward="false" selection-start-line="40" selection-start-column="83" selection-end-line="40" selection-end-column="83" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="showContestCtrl.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/showContestCtrl.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" column="47" lean-forward="false" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+                <state relative-caret-position="270">
+                  <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
                   <folding />
                 </state>
               </provider>
@@ -129,12 +77,42 @@
           <file leaf-file-name="problemList.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/problemList.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="705">
-                  <caret line="87" column="0" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+                <state relative-caret-position="628">
+                  <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
                   <folding>
                     <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
                     <marker date="1490273237000" expanded="true" signature="3540:3547" ph="..." />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="status.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/status.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="435">
+                  <caret line="29" column="66" lean-forward="true" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="131" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="navbar.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/navbar.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="495">
+                  <caret line="56" column="82" lean-forward="false" selection-start-line="56" selection-start-column="82" selection-end-line="56" selection-end-column="82" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="showContest.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/showContest.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                  <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -146,61 +124,43 @@
           <file leaf-file-name="ustc-oj.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/ustc-oj.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="555">
-                  <caret line="407" column="19" lean-forward="true" selection-start-line="407" selection-start-column="19" selection-end-line="407" selection-end-column="19" />
+                <state relative-caret-position="142">
+                  <caret line="204" column="26" lean-forward="false" selection-start-line="204" selection-start-column="26" selection-end-line="204" selection-end-column="26" />
                   <folding>
-                    <element signature="e#19060#27372#0" expanded="false" />
-                    <marker date="1490282824000" expanded="true" signature="6852:6903" ph="..." />
+                    <element signature="e#19932#28244#0" expanded="false" />
+                    <marker date="1490361895000" expanded="true" signature="7504:7555" ph="..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="showProblem.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/css/showProblem.css">
+          <file leaf-file-name="showSubmissionCtrl.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/showSubmissionCtrl.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="232">
-                  <caret line="65" column="12" lean-forward="true" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
+                <state relative-caret-position="150">
+                  <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+                  <folding>
+                    <element signature="e#0#45#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="contestList.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/contestList.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1087">
+                  <caret line="74" column="42" lean-forward="true" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="statusCtrl.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/js/statusCtrl.js">
+          <file leaf-file-name="navbar-contest.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/navbar-contest.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="38" column="37" lean-forward="true" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="contestListCtrl.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/contestListCtrl.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="127">
-                  <caret line="24" column="12" lean-forward="false" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="showContest.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/css/showContest.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="1" column="36" lean-forward="false" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="login.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/css/login.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+                <state relative-caret-position="180">
+                  <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -209,8 +169,18 @@
           <file leaf-file-name="ustc-oj.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/ustc-oj.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+                <state relative-caret-position="240">
+                  <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="statusCtrl.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/statusCtrl.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                  <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -219,18 +189,8 @@
           <file leaf-file-name="showContestCtrl.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/showContestCtrl.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="570">
-                  <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="showSubmisson.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/css/showSubmisson.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="405">
-                  <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+                <state relative-caret-position="315">
+                  <caret line="21" column="109" lean-forward="false" selection-start-line="21" selection-start-column="109" selection-end-line="21" selection-end-column="109" />
                   <folding />
                 </state>
               </provider>
@@ -243,9 +203,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -284,8 +244,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/problems.html" />
-        <option value="$PROJECT_DIR$/js/indexCtrl" />
         <option value="$PROJECT_DIR$/showProb.html" />
         <option value="$PROJECT_DIR$/ustc-oj.js" />
         <option value="$PROJECT_DIR$/ustc-oj.css" />
@@ -293,16 +251,10 @@
         <option value="$PROJECT_DIR$/css/edit.css" />
         <option value="$PROJECT_DIR$/editormd/css/editormd.preview.css" />
         <option value="$PROJECT_DIR$/js/editCtrl.js" />
-        <option value="$PROJECT_DIR$/js/indexCtrl.js" />
         <option value="$PROJECT_DIR$/css/submit.css" />
-        <option value="$PROJECT_DIR$/js/showSubmissionCtrl.js" />
         <option value="$PROJECT_DIR$/prism/prism.css" />
         <option value="$PROJECT_DIR$/css/status.css" />
         <option value="$PROJECT_DIR$/css/profile.css" />
-        <option value="$PROJECT_DIR$/showSubmission.html" />
-        <option value="$PROJECT_DIR$/css/navbar.css" />
-        <option value="$PROJECT_DIR$/navbar.html" />
-        <option value="$PROJECT_DIR$/js/navbarCtrl.js" />
         <option value="$PROJECT_DIR$/css/problemList.css" />
         <option value="$PROJECT_DIR$/css/bar.css" />
         <option value="$PROJECT_DIR$/css/contestList.css" />
@@ -318,23 +270,31 @@
         <option value="$PROJECT_DIR$/js/contestStatusCtrl.js" />
         <option value="$PROJECT_DIR$/contestStatus.html" />
         <option value="$PROJECT_DIR$/js/loginCtrl.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/login.css" />
         <option value="$PROJECT_DIR$/login.html" />
         <option value="$PROJECT_DIR$/showProblem.html" />
         <option value="$PROJECT_DIR$/js/problemListCtrl.js" />
         <option value="$PROJECT_DIR$/problemList.html" />
         <option value="$PROJECT_DIR$/contestList.html" />
-        <option value="$PROJECT_DIR$/js/contestListCtrl.js" />
         <option value="$PROJECT_DIR$/css/showContest.css" />
-        <option value="$PROJECT_DIR$/showContest.html" />
         <option value="$PROJECT_DIR$/css/showSubmisson.css" />
-        <option value="$PROJECT_DIR$/css/ustc-oj.css" />
         <option value="$PROJECT_DIR$/css/showProblem.css" />
+        <option value="$PROJECT_DIR$/css/navbar.css" />
+        <option value="$PROJECT_DIR$/js/indexCtrl.js" />
+        <option value="$PROJECT_DIR$/showContest.html" />
+        <option value="$PROJECT_DIR$/css/navbar-norm.css" />
+        <option value="$PROJECT_DIR$/navbar.html" />
+        <option value="$PROJECT_DIR$/js/navbarCtrl.js" />
+        <option value="$PROJECT_DIR$/css/ustc-oj.css" />
         <option value="$PROJECT_DIR$/js/showContestCtrl.js" />
-        <option value="$PROJECT_DIR$/status.html" />
-        <option value="$PROJECT_DIR$/js/ustc-oj.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/navbar-contest.css" />
         <option value="$PROJECT_DIR$/js/statusCtrl.js" />
+        <option value="$PROJECT_DIR$/status.html" />
+        <option value="$PROJECT_DIR$/showSubmission.html" />
+        <option value="$PROJECT_DIR$/js/showSubmissionCtrl.js" />
+        <option value="$PROJECT_DIR$/js/ustc-oj.js" />
+        <option value="$PROJECT_DIR$/js/contestListCtrl.js" />
       </list>
     </option>
   </component>
@@ -345,10 +305,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-288" />
-    <option name="y" value="-1200" />
-    <option name="width" value="1920" />
-    <option name="height" value="1200" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -366,6 +324,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -408,8 +368,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -574,7 +532,8 @@
       <workItem from="1490159024149" duration="1547000" />
       <workItem from="1490168523984" duration="140000" />
       <workItem from="1490169795412" duration="14724000" />
-      <workItem from="1490252781436" duration="8045000" />
+      <workItem from="1490252781436" duration="16319000" />
+      <workItem from="1490343325928" duration="11522000" />
     </task>
     <task id="LOCAL-00001" summary="Add styles to login page&#10;clear outline in navbar&#10;change background color to none">
       <created>1484553390965</created>
@@ -685,7 +644,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="372250000" />
+    <option name="totallyTimeSpent" value="392046000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -697,10 +656,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-288" y="-1200" width="1920" height="1200" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12427594" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.119802676" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22891566" sideWeight="0.50277776" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30361447" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -761,14 +720,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/angular-route.js" />
-    <entry file="file://$PROJECT_DIR$/angular.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/edit.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -794,13 +745,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/indexCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -832,43 +776,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/showSubmissionCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#45#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/navbar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/submit.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/navbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="61" column="53" lean-forward="false" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/navbarCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="125" lean-forward="false" selection-start-line="2" selection-start-column="125" selection-end-line="2" selection-end-column="125" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1001,49 +912,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding>
-            <marker date="1490253167000" expanded="true" signature="39:474" ph="..." />
-            <marker date="1490253167000" expanded="true" signature="50:466" ph="..." />
-            <marker date="1490253167000" expanded="true" signature="64:454" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/problemList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="87" column="0" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <marker date="1490273237000" expanded="true" signature="3540:3547" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contestList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="74" column="42" lean-forward="true" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/contestListCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="24" column="12" lean-forward="false" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1064,77 +936,174 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/showSubmission.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/ustc-oj.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/showProblem.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
+        <state relative-caret-position="735">
           <caret line="49" column="58" lean-forward="true" selection-start-line="49" selection-start-column="58" selection-end-line="49" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/showProblem.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="65" column="12" lean-forward="false" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/showContest.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="64" column="14" lean-forward="true" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
+        <state relative-caret-position="75">
+          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/navbar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="59" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/navbar-norm.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/problemList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <marker date="1490273237000" expanded="true" signature="3540:3547" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="56" column="82" lean-forward="false" selection-start-line="56" selection-start-column="82" selection-end-line="56" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/indexCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="38" lean-forward="true" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/navbarCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="38" column="26" lean-forward="false" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/showContestCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+        <state relative-caret-position="315">
+          <caret line="21" column="109" lean-forward="false" selection-start-line="21" selection-start-column="109" selection-end-line="21" selection-end-column="109" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/navbar-contest.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="96" column="27" lean-forward="true" selection-start-line="96" selection-start-column="27" selection-end-line="96" selection-end-column="27" />
+          <folding>
+            <marker date="1490360638000" expanded="true" signature="39:474" ph="..." />
+            <marker date="1490360638000" expanded="true" signature="50:466" ph="..." />
+            <marker date="1490360638000" expanded="true" signature="64:454" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/status.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="44" column="62" lean-forward="false" selection-start-line="44" selection-start-column="62" selection-end-line="44" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/ustc-oj.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="407" column="19" lean-forward="true" selection-start-line="407" selection-start-column="19" selection-end-line="407" selection-end-column="19" />
-          <folding>
-            <element signature="e#19060#27372#0" expanded="false" />
-            <marker date="1490282824000" expanded="true" signature="6852:6903" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/showProblem.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="65" column="12" lean-forward="true" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
+        <state relative-caret-position="435">
+          <caret line="29" column="66" lean-forward="true" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="131" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/statusCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/showSubmissionCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#45#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/ustc-oj.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ustc-oj.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="204" column="26" lean-forward="false" selection-start-line="204" selection-start-column="26" selection-end-line="204" selection-end-column="26" />
+          <folding>
+            <element signature="e#19932#28244#0" expanded="false" />
+            <marker date="1490361895000" expanded="true" signature="7504:7555" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contestList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1087">
+          <caret line="74" column="42" lean-forward="true" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/showSubmission.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="11" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/contestListCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="38" column="37" lean-forward="true" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+          <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
           <folding />
         </state>
       </provider>
