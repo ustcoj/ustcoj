@@ -2,13 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90ac4ba7-e2f9-4db2-b95e-8e1e4903704a" name="Default" comment="Language/Status info is available now.&#10;Runtime and memory usage can now be displayed naïvely.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/board.html" afterPath="$PROJECT_DIR$/board.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/showProblem.css" afterPath="$PROJECT_DIR$/css/showProblem.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_24/config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_24/css/bootstrap-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_24/css/bootstrap-theme.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_24/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_24/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_24/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_24/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_24/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_24/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_24/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_24/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_24/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_old/css/bootstrap-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_old/css/bootstrap-theme.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_old/css/bootstrap-theme.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_old/css/bootstrap-theme.min.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_old/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_old/css/bootstrap.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_old/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_old/css/bootstrap.min.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_old/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_old/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_old/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_old/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_old/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_old/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_old/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap_old/js/npm.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/boardCtrl.js" afterPath="$PROJECT_DIR$/js/boardCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/navbarCtrl.js" afterPath="$PROJECT_DIR$/js/navbarCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ustc-oj.js" afterPath="$PROJECT_DIR$/js/ustc-oj.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/navbar.html" afterPath="$PROJECT_DIR$/navbar.html" />
     </list>
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,18 +49,18 @@
     <favorites_list name="web" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.63730985">
+    <splitter split-orientation="horizontal" split-proportion="0.6485188">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2265">
-                  <caret line="151" column="54" lean-forward="false" selection-start-line="151" selection-start-column="54" selection-end-line="151" selection-end-column="54" />
+                <state relative-caret-position="450">
+                  <caret line="30" column="48" lean-forward="true" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
                   <folding>
-                    <marker date="1490365989000" expanded="true" signature="39:474" ph="..." />
-                    <marker date="1490365989000" expanded="true" signature="50:466" ph="..." />
-                    <marker date="1490365989000" expanded="true" signature="64:454" ph="..." />
+                    <marker date="1490368936000" expanded="true" signature="39:474" ph="..." />
+                    <marker date="1490368936000" expanded="true" signature="50:466" ph="..." />
+                    <marker date="1490368936000" expanded="true" signature="64:454" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -48,7 +70,7 @@
             <entry file="file://$PROJECT_DIR$/showSubmission.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="300">
-                  <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+                  <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -81,7 +103,7 @@
             <entry file="file://$PROJECT_DIR$/status.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="435">
-                  <caret line="29" column="66" lean-forward="true" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="131" />
+                  <caret line="29" column="66" lean-forward="false" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="131" />
                   <folding />
                 </state>
               </provider>
@@ -91,20 +113,8 @@
             <entry file="file://$PROJECT_DIR$/navbar.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="373">
-                  <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+                  <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="boardCtrl.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/js/boardCtrl.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-                  <folding>
-                    <element signature="e#0#45#0" expanded="false" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -131,6 +141,7 @@
                   <folding>
                     <element signature="e#20241#28553#0" expanded="false" />
                     <marker date="1490367027000" expanded="true" signature="7551:7602" ph="..." />
+                    <marker date="1490367027000" expanded="true" signature="15795:16003" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -139,8 +150,8 @@
           <file leaf-file-name="board.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/board.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
-                  <caret line="23" column="39" lean-forward="false" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+                <state relative-caret-position="435">
+                  <caret line="29" column="10" lean-forward="true" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -150,7 +161,7 @@
             <entry file="file://$PROJECT_DIR$/js/navbarCtrl.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="420">
-                  <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+                  <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
@@ -172,7 +183,7 @@
             <entry file="file://$PROJECT_DIR$/js/showSubmissionCtrl.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="150">
-                  <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+                  <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
                   <folding>
                     <element signature="e#0#45#0" expanded="false" />
                   </folding>
@@ -184,7 +195,7 @@
             <entry file="file://$PROJECT_DIR$/contestList.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="120">
-                  <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+                  <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -194,7 +205,7 @@
             <entry file="file://$PROJECT_DIR$/css/navbar-contest.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="180">
-                  <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+                  <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -204,7 +215,7 @@
             <entry file="file://$PROJECT_DIR$/css/ustc-oj.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="240">
-                  <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+                  <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -224,7 +235,7 @@
             <entry file="file://$PROJECT_DIR$/js/statusCtrl.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="75">
-                  <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+                  <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -322,13 +333,13 @@
         <option value="$PROJECT_DIR$/showSubmission.html" />
         <option value="$PROJECT_DIR$/js/showSubmissionCtrl.js" />
         <option value="$PROJECT_DIR$/js/contestListCtrl.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/navbar.html" />
         <option value="$PROJECT_DIR$/js/navbarCtrl.js" />
         <option value="$PROJECT_DIR$/css/showProblem.css" />
         <option value="$PROJECT_DIR$/js/ustc-oj.js" />
         <option value="$PROJECT_DIR$/board.html" />
         <option value="$PROJECT_DIR$/js/boardCtrl.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -567,7 +578,7 @@
       <workItem from="1490168523984" duration="140000" />
       <workItem from="1490169795412" duration="14724000" />
       <workItem from="1490252781436" duration="16319000" />
-      <workItem from="1490343325928" duration="13637000" />
+      <workItem from="1490343325928" duration="14191000" />
     </task>
     <task id="LOCAL-00001" summary="Add styles to login page&#10;clear outline in navbar&#10;change background color to none">
       <created>1484553390965</created>
@@ -678,7 +689,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="394161000" />
+    <option name="totallyTimeSpent" value="394715000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1007,7 +1018,7 @@
     <entry file="file://$PROJECT_DIR$/css/navbar-contest.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1015,7 +1026,7 @@
     <entry file="file://$PROJECT_DIR$/js/statusCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1023,7 +1034,7 @@
     <entry file="file://$PROJECT_DIR$/css/ustc-oj.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1036,22 +1047,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2265">
-          <caret line="151" column="54" lean-forward="false" selection-start-line="151" selection-start-column="54" selection-end-line="151" selection-end-column="54" />
-          <folding>
-            <marker date="1490365989000" expanded="true" signature="39:474" ph="..." />
-            <marker date="1490365989000" expanded="true" signature="50:466" ph="..." />
-            <marker date="1490365989000" expanded="true" signature="64:454" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/contestList.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1059,7 +1058,7 @@
     <entry file="file://$PROJECT_DIR$/showSubmission.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1067,7 +1066,7 @@
     <entry file="file://$PROJECT_DIR$/js/navbarCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
-          <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+          <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1083,18 +1082,10 @@
     <entry file="file://$PROJECT_DIR$/js/showSubmissionCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+          <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
           <folding>
             <element signature="e#0#45#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/navbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1105,6 +1096,7 @@
           <folding>
             <element signature="e#20241#28553#0" expanded="false" />
             <marker date="1490367027000" expanded="true" signature="7551:7602" ph="..." />
+            <marker date="1490367027000" expanded="true" signature="15795:16003" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1122,15 +1114,7 @@
     <entry file="file://$PROJECT_DIR$/status.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
-          <caret line="29" column="66" lean-forward="true" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="131" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/board.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="39" lean-forward="false" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+          <caret line="29" column="66" lean-forward="false" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="131" />
           <folding />
         </state>
       </provider>
@@ -1141,6 +1125,34 @@
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="e#0#45#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/board.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="10" lean-forward="true" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="48" lean-forward="true" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
+          <folding>
+            <marker date="1490368936000" expanded="true" signature="39:474" ph="..." />
+            <marker date="1490368936000" expanded="true" signature="50:466" ph="..." />
+            <marker date="1490368936000" expanded="true" signature="64:454" ph="..." />
           </folding>
         </state>
       </provider>
