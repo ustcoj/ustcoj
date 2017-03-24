@@ -67,8 +67,8 @@
 
                     <li><a ng-click="toSubmit()">Submit</a></li>
                     <li><a ng-click="toStatus()">Status</a></li>
-                    <li ng-show="isContest"><a ng-click="toBoard()">Board</a></li>
-                    <li class="dropdown">
+                    <li><a ng-click="toBoard()">Board</a></li>
+                    <li class="dropdown" ng-show="isLoggedIn">
                         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             <img src="user_head.png" class="user-avatar">
                             <span class="caret"></span>

@@ -35,6 +35,7 @@ angular
         $rootScope.tabShow = "showProblem";
         //$rootScope.apiHost = "http://106.14.46.189";
         $rootScope.apiHost = "http://ustcoj.applinzi.com";
+        $rootScope.siteRankUrl = "/api/user/";
         $rootScope.loginUrl = "/api/user/login";
         $rootScope.registerUrl = "/api/user/register";
         $rootScope.problemListUrl = "/api/problem/";
@@ -429,6 +430,13 @@ angular
                 .then(function (response) {
                     show_contestStatus(response);
                 });
+        };
+
+        this.getUserList = function (showUserList) {
+            networkService.handleRepData('get', $rootScope.siteRankUrl, null, null, null)
+                .then(function (response) {
+                    showUserList(response);
+                })
         }
 
     });

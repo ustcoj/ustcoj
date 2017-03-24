@@ -79,7 +79,7 @@
     font-family: monospace;
     background-color: #fffaf0;
     word-spacing: 0px;
-    overflow-x: scroll;
+    overflow-x: auto;
     padding: 5px;
 }
 

@@ -2,6 +2,8 @@ angular
     .module('ustc-oj')
     .controller("navbarCtrl", function($routeParams, $scope, $rootScope, $location, $window, $log, problemService, siteService, userService){
 
+        $scope.isLoggedIn = userService.isLoggedIn();
+
         $scope.switchTheme = function () {
             $scope.isContest = $routeParams.contest_ID;
             $scope.contestId = $routeParams.contest_ID;
@@ -12,6 +14,7 @@ angular
 
         $scope.$on("$routeChangeSuccess", function (event) {
             $scope.switchTheme();
+            $scope.isLoggedIn = userService.isLoggedIn();
         });
 
         $('.search-text').keypress(function (e) {

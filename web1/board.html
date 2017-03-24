@@ -9,20 +9,24 @@
     </div>
 
     <div class="board-content">
-      <div class=" col-md-38 col-md-offset-1">
         <div class="table-responsive">
-          <table class="board-table">
+          <table class="board-table bar-table">
             <tr class="bar-head board-bar">
-              <th class="col-md-5 col-center">Rank</th>
-              <th class="col-md-5 col-center">Name</th>
-              <th class="col-md-5 col-center">Username</th>
-              <th class="col-md-5 col-center">AC</th>
-              <th class="col-md-5 col-center">Subs</th>
+              <th class="col-md-4 col-center">Rank</th>
+              <th class="col-md-4 col-center">ID</th>
+              <th class="col-md-15 col-center">Username</th>
+              <th class="col-md-10 col-center">AC Count</th>
             </tr>
+
+              <tr ng-repeat="x in userList.user_list" class="bar-content board-bar">
+                  <td class="col-center">{{$index}}</td>
+                  <td class="col-center">{{x.user_id}}</td>
+                  <td class="col-center">{{x.username}}</td>
+                  <td class="col-center">{{x.solved_cnt}}</td>
+              </tr>
 
           </table>
         </div>
-      </div>
     </div>
 
 </div>

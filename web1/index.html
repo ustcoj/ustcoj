@@ -149,6 +149,12 @@
                         }],
                         controllerAs: 'ctrl'
                     })
+                    .when('/validate/:user_name/:token/', {
+                        templateUrl:'profile.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
                     .otherwise({redirectTo:'/'});
             }]);
     </script>
