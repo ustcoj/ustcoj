@@ -78,7 +78,8 @@
 
 .problem-bar-result-trying {
     font-weight: bold;
-    color: #67c761;
+    /*color: #67c761;*/
+    color: #6cd165;
 }
 
 .problem-bar-result-solved {

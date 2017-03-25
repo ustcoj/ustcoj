@@ -1,5 +1,5 @@
 .problem-body {
-    padding-top: 5%;
+    padding-top: 3%;
 }
 
 .prob-title{
@@ -10,6 +10,7 @@
 .prob-title h2{
     font-size: 34px;
     padding-bottom: 5px;
+    letter-spacing: 1px;
     font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
@@ -27,6 +28,7 @@
 
 .prob-desc > h4 {
     font-weight: bold;
+    letter-spacing: 0.5px;
     font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
@@ -110,7 +112,7 @@
     color: #797979;
     margin-bottom: 0px;
     padding: 5px;
-    margin-left: 5px;
+    margin-left: 4px;
 }
 
 

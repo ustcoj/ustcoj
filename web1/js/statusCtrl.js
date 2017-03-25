@@ -46,10 +46,11 @@ angular
 
                     $scope.statusList = response;
                     $scope.statusList.data.submission_list.forEach(function (item) {
-                        if ($scope.getResult(item.result) == "Accepted") {
+                        var result = $scope.getResult(item.result);
+                        if (result == "Accepted") {
                             $scope.statusSolved[item.submission_id] = true;
                         }
-                        else if ($scope.getResult(item.result) != "Compile Error") {
+                        else if (result != "Compile Error" && result != "System Error" && result != "Pending") {
                             $scope.statusTrying[item.submission_id] = true;
                         }
                     });
@@ -61,10 +62,11 @@ angular
 
                     $scope.statusList = response;
                     $scope.statusList.data.submission_list.forEach(function (item) {
-                        if ($scope.getResult(item.result) == "Accepted") {
+                        var result = $scope.getResult(item.result);
+                        if (result == "Accepted") {
                             $scope.statusSolved[item.submission_id] = true;
                         }
-                        else if ($scope.getResult(item.result) != "Compile Error") {
+                        else if (result != "Compile Error" && result != "System Error" && result != "Pending") {
                             $scope.statusTrying[item.submission_id] = true;
                         }
                     });

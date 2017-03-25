@@ -25,6 +25,7 @@ body{
 
 .page-header {
     text-transform: uppercase;
+    letter-spacing: 1.5px;
     font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
