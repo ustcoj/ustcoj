@@ -33,8 +33,9 @@ angular
     .module('ustc-oj')
     .run(function ($rootScope) {
         $rootScope.tabShow = "showProblem";
+        var apiHostBody = "ustcoj.applinzi.com;
         //$rootScope.apiHost = "http://106.14.46.189";
-        $rootScope.apiHost = "http://ustcoj.applinzi.com";
+        $rootScope.apiHost = ('https:' == document.location.protocol ? 'https://' : 'http://') + apiHostBody;
         $rootScope.siteRankUrl = "/api/user/";
         $rootScope.loginUrl = "/api/user/login";
         $rootScope.registerUrl = "/api/user/register";
