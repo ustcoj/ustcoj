@@ -15,3 +15,55 @@
 .profile-tables table > tbody > tr {
     margin: 12px 0;
 }
+
+.profile-top {
+    margin-top: 70px;
+}
+
+.profile-header {
+    font-size: 18px;
+    color: #8e8e8e;
+    font-weight: bold;
+}
+
+.profile-info-avatar {
+    border-right: 1px solid #8e8e8e;
+    padding-right: 60px;
+}
+
+.profile-info-detail {
+    padding-left: 60px;
+}
+
+.profile-info-detail section {
+    margin-bottom: 10px;
+}
+
+.profile-username {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px 5px;
+}
+
+
+.profile-info-avatar img {
+    width: 200px;
+}
+@media (min-width: 767px) {
+    .profile-statistic {
+        margin-top: 80px;
+    }
+}
+
+.profile-bubble {
+    margin-bottom: 40px;
+}
+
+.profile-content {
+    font-size: 14px;
+}
+
+.profile-info {
+    float: right;
+    margin-right: ;
+}

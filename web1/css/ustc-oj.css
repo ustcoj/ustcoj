@@ -65,6 +65,10 @@ span {
     border-bottom: 4px solid #faa634;
 }
 
+.small-title-font {
+    font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
 .waiting-orange {
     content: url("../wait.svg");
     margin: 150px auto;

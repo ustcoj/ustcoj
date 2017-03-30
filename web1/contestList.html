@@ -9,8 +9,9 @@
 
 
     <div class="contest-list-content row">
+        <div class="col-md-1"></div>
 
-        <div class="col-md-38 col-md-offset-1">
+        <div class="col-md-38">
             <div ng-show="finishLoading">
 
                 <div class="table-responsive">
@@ -19,8 +20,8 @@
 
                         <tr class="bar-head contest-bar">
 
-                            <th class="col-md-40"></th>
-                            <th class="col-md-8 col-center"></th>
+                            <th class="col-md-36"></th>
+                            <th class="col-md-12 col-center"></th>
 
                         </tr>
 
@@ -31,7 +32,7 @@
 
                                 <div class="contest-title">{{x.contest_title}}</div>
                                 <div class="contest-buttons">
-                                    <div class="contest-button">x<a>999</a></div>
+                                    <div class="contest-button">× <a>{{x.player_cnt}}</a></div>
                                     <div class="contest-button"><a ng-click="registerContest(x.contest_id)">Register</a></div>
                                     <div class="contest-button"><a ng-click="showContest(x.contest_id)">View</a></div>
                                 </div>
@@ -40,11 +41,11 @@
                             <td class="contest-bar-right">
 
                                 <div class="contest-time">
-                                    <h5>Start at</h5>
+                                    <h5 class="small-title-font">Start</h5>
                                     <p>{{x.start_time}}</p>
                                 </div>
                                 <div class="contest-time">
-                                    <h5>End at</h5>
+                                    <h5 class="small-title-font">End</h5>
                                     <p>{{x.end_time}}</p>
                                 </div>
 

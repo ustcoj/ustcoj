@@ -40,6 +40,14 @@
     margin: 0 12px;
 }
 
+.contest-time {
+    text-align: center;
+    margin: 15px 10px;
+}
+.contest-time > h5 {
+    margin: 0;
+}
+
 
 .contest-table {
     border-collapse: separate;
