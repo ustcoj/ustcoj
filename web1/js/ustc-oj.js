@@ -184,8 +184,14 @@ angular
             "424" : "Please verify your email address",
             "425" : "Privilege required",
             "426" : "Please register to this contest first",
-            "427" : "Seems that you have already registered"
+            "427" : "Seems that you have already registered",
+            "428" : "Contest has not begun yet",
+            "429" : "Contest has ended"
         };
+
+        this.languageCode = ["gcc -DONLINE_JUDGE -O2 -w -fmax-errors=3 -std=c99 {src_path} -lm -o {exe_path}",
+            "g++ -DONLINE_JUDGE -O2 -w -fmax-errors=3 -std=c++11 {src_path} -lm -o {exe_path}",
+            "python -m py_compile {src_path}", "", ""];
 
         this.goBack = function () {
             var nowUrl = $location.path();
@@ -295,7 +301,8 @@ angular
             "4": "Runtime Error",
             "5": "System Error",
             "6": "Compile Error",
-            "7": "Pending"
+            "7": "Pending",
+            "8": "Judge Failed"
         };
         this.checkValidProblemId = function(content) {
             return (

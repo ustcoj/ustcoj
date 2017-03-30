@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90ac4ba7-e2f9-4db2-b95e-8e1e4903704a" name="Default" comment="Language/Status info is available now.&#10;Runtime and memory usage can now be displayed naïvely.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contestList.html" afterPath="$PROJECT_DIR$/contestList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/contestList.css" afterPath="$PROJECT_DIR$/css/contestList.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/profile.css" afterPath="$PROJECT_DIR$/css/profile.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/ustc-oj.css" afterPath="$PROJECT_DIR$/css/ustc-oj.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profile.html" afterPath="$PROJECT_DIR$/profile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ustc-oj.js" afterPath="$PROJECT_DIR$/js/ustc-oj.js" />
     </list>
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -88,18 +82,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="profileCtrl.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/profileCtrl.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="765">
-                  <caret line="53" column="10" lean-forward="false" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
-                  <folding>
-                    <element signature="e#0#44#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="profile.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/profile.css">
               <provider selected="true" editor-type-id="text-editor">
@@ -110,12 +92,37 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="contestList.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="contestList.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/contestList.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="-377">
                   <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="profileCtrl.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/profileCtrl.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+                  <folding>
+                    <element signature="e#0#44#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ustc-oj.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/js/ustc-oj.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="4560">
+                  <caret line="304" column="31" lean-forward="false" selection-start-line="304" selection-start-column="31" selection-end-line="304" selection-end-column="31" />
+                  <folding>
+                    <element signature="e#20628#28940#0" expanded="false" />
+                    <marker date="1490859044000" expanded="true" signature="7905:7956" ph="..." />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -223,7 +230,6 @@
         <option value="$PROJECT_DIR$/js/contestListCtrl.js" />
         <option value="$PROJECT_DIR$/navbar.html" />
         <option value="$PROJECT_DIR$/js/navbarCtrl.js" />
-        <option value="$PROJECT_DIR$/js/ustc-oj.js" />
         <option value="$PROJECT_DIR$/board.html" />
         <option value="$PROJECT_DIR$/js/boardCtrl.js" />
         <option value="$PROJECT_DIR$/showProblem.html" />
@@ -239,6 +245,7 @@
         <option value="$PROJECT_DIR$/css/ustc-oj.css" />
         <option value="$PROJECT_DIR$/contestList.html" />
         <option value="$PROJECT_DIR$/css/contestList.css" />
+        <option value="$PROJECT_DIR$/js/ustc-oj.js" />
       </list>
     </option>
   </component>
@@ -481,7 +488,7 @@
       <workItem from="1490429706925" duration="130000" />
       <workItem from="1490442815048" duration="4432000" />
       <workItem from="1490514064577" duration="227000" />
-      <workItem from="1490855890252" duration="1056000" />
+      <workItem from="1490855890252" duration="1305000" />
     </task>
     <task id="LOCAL-00001" summary="Add styles to login page&#10;clear outline in navbar&#10;change background color to none">
       <created>1484553390965</created>
@@ -592,7 +599,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="405862000" />
+    <option name="totallyTimeSpent" value="406111000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -889,17 +896,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/ustc-oj.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="436" column="19" lean-forward="false" selection-start-line="436" selection-start-column="19" selection-end-line="436" selection-end-column="19" />
-          <folding>
-            <element signature="e#20241#28553#0" expanded="false" />
-            <marker date="1490367027000" expanded="true" signature="7551:7602" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/showSubmisson.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -963,16 +959,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="744">
           <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/profileCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="53" column="10" lean-forward="false" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1041,6 +1027,27 @@
         <state relative-caret-position="660">
           <caret line="44" column="19" lean-forward="false" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/profileCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ustc-oj.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4560">
+          <caret line="304" column="31" lean-forward="false" selection-start-line="304" selection-start-column="31" selection-end-line="304" selection-end-column="31" />
+          <folding>
+            <element signature="e#20628#28940#0" expanded="false" />
+            <marker date="1490859044000" expanded="true" signature="7905:7956" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
