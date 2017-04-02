@@ -1,138 +1,73 @@
 <link rel="stylesheet" href="css/profile.css">
 <div ng-controller="profileCtrl" class="container">
-    <section class="row profile-top">
-        <div class="col-md-10"></div>
-        <div class="profile-info-avatar col-md-14 col-center">
+
+    <div ng-show="finishLoading">
+
+        <div ng-show="!hasVerifiedEmail&&myProfile">
+            <h3 class="small-title-font">Verify Your Email Address</h3>
+            <form ng-submit="verifyCode()">
+                <input type="number" ng-model="verifyEmailCode" />
+            </form>
+        </div>
+
+        <section class="row profile-top" ng-show="finishLoading">
+            <div class="col-md-10"></div>
+            <div class="profile-info-avatar col-md-14 col-center">
                 <img src="user_head.png" />
                 <header class="profile-username">{{userDetail.username}}</header>
-        </div>
-        <div class="profile-info-detail col-md-12">
-            <section>
-                <header class="profile-header">Email</header>
-                <div class="profile-content">{{userDetail.email}}</div>
-            </section>
-            <section>
-                <header class="profile-header">USTC ID</header>
-                <div class="profile-content">{{userDetail.ustcid || "---"}}</div>
-            </section>
-            <section>
-                <header class="profile-header">Register Time</header>
-                <div class="profile-content">{{userDetail.register_time}}</div>
-            </section>
-            <section>
-                <header class="profile-header">Last Online</header>
-                <div class="profile-content">{{userDetail.last_login}}</div>
-            </section>
-        </div>
-    </section>
+            </div>
+            <div class="col-md-1 vertical-separate hidden-sm"></div>
+            <div class="col-md-1 hidden-sm"></div>
+            <div class="profile-info-detail col-md-12">
+                <section ng-show="userDetail.email">
+                    <header class="profile-header">Email</header>
+                    <div class="profile-content">{{userDetail.email}}</div>
+                </section>
+                <section>
+                    <header class="profile-header">USTC ID<a ng-show="!hasBindId&&myProfile" class="profile-bind-id small-title-font">BIND</a></header>
 
-    <section class="row profile-statistic">
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-40">
-            <section class="profile-bubble">
-                <header class="profile-header">Privilege</header>
-                <div></div>
-            </section>
-            <section class="profile-bubble">
-                <header class="profile-header">Solved(15)</header>
-                <div></div>
-            </section>
-            <section class="profile-bubble">
-                <header class="profile-header">Trying(15)</header>
-                <div></div>
-            </section>
+                    <div class="profile-content">{{userDetail.ustcid || "---"}}</div>
+                </section>
+                <section>
+                    <header class="profile-header">Register Time</header>
+                    <div class="profile-content">{{userDetail.register_time}}</div>
+                </section>
+                <section>
+                    <header class="profile-header">Last Online</header>
+                    <div class="profile-content">{{userDetail.last_login}}</div>
+                </section>
+            </div>
+        </section>
 
-        </div>
+        <section class="row profile-statistic">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-40">
+                <section class="profile-bubble">
+                    <header class="profile-header" ng-show="userDetail.privilege">Privilege</header>
+                    <div>
+                        <div class="bubble" ng-repeat="x in userDetail.privilege" ng-show="x!=1">{{findPri(x)}}</div>
+                    </div>
+                </section>
+                <section class="profile-bubble">
+                    <header class="profile-header">Solved ({{userDetail.solved.length}})</header>
+                    <div>
+                        <div class="bubble" ng-repeat="x in userDetail.solved" ng-show="x!=1">{{x}}</div>
+                    </div>
+                </section>
+                <section class="profile-bubble">
+                    <header class="profile-header">Trying ({{userDetail.trying.length}})</header>
+                    <div>
+                        <div class="bubble profile-bubble-trying" ng-repeat="x in userDetail.trying" ng-show="x!=1">{{x}}</div>
+                    </div>
+                </section>
 
-    </section>
+            </div>
 
-    <!--<div class="row">-->
+        </section>
 
-        <!--<div class="profile-avatar col-xs-18 col-xs-offset-15 col-md-10 col-md-offset-19">-->
-            <!--<img src="user_head.png" width="100%">-->
-            <!--<h2 class="profile-avatar-name col-center">{{userDetail.username}}</h2>-->
-        <!--</div>-->
-    <!--</div>-->
+    </div>
 
-    <!--<div class="row">-->
-        <!--<div class="col-md-40 col-md-offset-4 row profile-tables">-->
-
-            <!--<table class="col-md-21 row">-->
-                <!--<colgroup class="col-xs-16"></colgroup>-->
-                <!--<colgroup class="col-xs-32 row"></colgroup>-->
-                <!--<tr>-->
-                    <!--<th>Email</th>-->
-                    <!--<td>-->
-                        <!--<div ng-class="{'col-xs-36' : !hasVerifiedEmail}">-->
-                            <!--{{userDetail.email}}-->
-                        <!--</div>-->
-                        <!--<div ng-show="!hasVerifiedEmail" class="col-xs-12">-->
-                            <!--<a ng-click="verifyEmail()">Verify</a>-->
-                        <!--</div>-->
-                    <!--</td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<th>USTC ID</th>-->
-                    <!--<td ng-show="userDetail.ustcid">{{userDetail.ustcid}}</td>-->
-                    <!--<td ng-show="!userDetail.ustcid">-->
-                        <!--<a>Bind</a>-->
-                    <!--</td>-->
-                <!--</tr>-->
-            <!--</table>-->
-
-            <!--<table class="col-md-21 col-md-offset-6 row">-->
-
-                <!--<colgroup class="col-xs-16"></colgroup>-->
-                <!--<colgroup class="col-xs-32 row"></colgroup>-->
-                <!--<tr>-->
-                    <!--<th>Last Login</th>-->
-                    <!--<td>{{userDetail.last_login}}</td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<th>Register</th>-->
-                    <!--<td>{{userDetail.register_time}}</td>-->
-                <!--</tr>-->
-            <!--</table>-->
-
-            <!--<table class="col-md-48 row">-->
-
-                <!--<colgroup class="col-md-7"></colgroup>-->
-                <!--<colgroup class="col-md-41"></colgroup>-->
-                <!--<tr>-->
-                    <!--<th>Roles</th>-->
-                    <!--<td>-->
-                        <!--<div class="role-bubble">-->
-                            <!--<div class="bubble" ng-repeat="x in userDetail.privilege" ng-show="findPri(x)">{{findPri(x)}}</div>-->
-                        <!--</div>-->
-                    <!--</td>-->
-                <!--</tr>-->
-
-                <!--<tr>-->
-                    <!--<th>Solved</th>-->
-                    <!--<td>-->
-                        <!--<div class="role-bubble">-->
-                            <!--<div class="bubble" ng-repeat="x in userDetail.solved">{{x}}</div>-->
-                        <!--</div>-->
-                    <!--</td>-->
-                <!--</tr>-->
-
-                <!--<tr>-->
-                    <!--<th>Trying</th>-->
-                    <!--<td>-->
-                        <!--<div class="role-bubble">-->
-                            <!--<div class="bubble" ng-repeat="x in userDetail.trying">{{x}}</div>-->
-                        <!--</div>-->
-                    <!--</td>-->
-                <!--</tr>-->
-
-            <!--</table>-->
-
-
-
-        <!--</div>-->
-    <!--</div>-->
-
-
+    <div ng-show="!finishLoading" class="waiting-orange"></div>
 
 </div>

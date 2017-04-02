@@ -47,8 +47,7 @@
 
 
                     <li class="search-text" ng-show="!isContest">
-                        <input type="text" class="form-control" placeholder="ID/Search" ng-model="searchContent">
-
+                        <input type="text" class="form-control" placeholder="Problem ID" ng-model="searchContent">
                     </li>
 
                     <!--<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>-->
@@ -57,7 +56,7 @@
                     <li ng-show="isContest" class="hidden-xs navbar-back-text"><a ng-click="toBack()"">Back</a></li>
                     <a class="navbar-logo hidden-xs">
                         <img ng-click="clickLogo()" src="USTCOJ.svg" height="42px" alt="USTC ONLINE JUDGE" ng-show="!isContest"/>
-                        <span id="public-version" ng-show="!isContest">pre-α</span>
+                        <span id="public-version" ng-show="!isContest">α</span>
                         <div class="navbar-brand-text" ng-show="isContest">{{contestInfo.contest_title}}</div>
                     </a>
                 </ul>
@@ -68,6 +67,7 @@
                     <li><a ng-click="toSubmit()">Submit</a></li>
                     <li><a ng-click="toStatus()">Status</a></li>
                     <li><a ng-click="toBoard()">Board</a></li>
+                    <li><a ng-click="toLogIn()" ng-show="!isLoggedIn">Log in</a></li>
                     <li class="dropdown" ng-show="isLoggedIn">
                         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             <img src="user_head.png" class="user-avatar">

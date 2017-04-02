@@ -10,16 +10,20 @@ angular
         $scope.pageNow = 1;
         $scope.ongoing = {};
         $scope.pending = {};
+        $scope.registeredContest = {};
 
         $scope.updateUserData = function () {
-
+            if (userService.isLoggedIn()) {
+                profileService.getRegisteredList(function (response) {
+                    var registered = response.contest_list;
+                    registered.forEach(function (item) {
+                        $scope.registeredContest[item] = true;
+                    })
+                }, null)
+            }
         };
 
-        if (userService.isLoggedIn()) {
-            profileService.getUserProfile(function (response) {
-                $scope.updateUserData()
-            }, userService.getUsername());
-        }
+        $scope.updateUserData();
 
         $scope.catchEnter = function(_event) {
             if (_event.which === 13) {
@@ -41,8 +45,9 @@ angular
             problemService.getContestList(function(data){
                 $scope.contestList = data;
                 $scope.contestList.contest_list.forEach(function (item) {
+
+                });
                 $scope.finishLoading = true;
-                })
             }, $scope.pageNow, $scope.perpage);
 
         };

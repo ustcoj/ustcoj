@@ -23,13 +23,6 @@ body{
     padding-top: 70px;
 }
 
-.page-header {
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-}
-
-
 a {
     color: #faa634;
     font-weight: bold;
@@ -47,6 +40,13 @@ pre {
 
 span {
     font-family: inherit;
+}
+
+.page-header {
+    border-bottom: none;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .footer {
@@ -85,6 +85,30 @@ span {
         left: calc(50% - 80px);
         z-index: 999999;
     }
+}
+
+.dropdown-menu {
+    box-shadow: none;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-horizontal .control-label {
+    text-align: left;
+}
+
+.form-control {
+    border-radius: 6px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border-color: #faa634;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(250, 166, 52, 0.6);
 }
 
 

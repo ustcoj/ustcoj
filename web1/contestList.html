@@ -20,21 +20,21 @@
 
                         <tr class="bar-head contest-bar">
 
-                            <th class="col-md-36"></th>
-                            <th class="col-md-12 col-center"></th>
+                            <th class="col-sm-36 contest-bar-left-part"></th>
+                            <th class="col-sm-12 contest-bar-right-part"></th>
 
                         </tr>
 
-                        <tr class="bar-content contest-bar" ng-repeat="x in contestList.contest_list"
+                        <tr class="contest-bar" ng-repeat="x in contestList.contest_list"
                             ng-class="{'contest-bar-ongoing': ongoing[x.contest_id], 'contest-bar-pending': pending[x.contest_id]}">
 
                             <td class="contest-bar-left">
 
                                 <div class="contest-title">{{x.contest_title}}</div>
                                 <div class="contest-buttons">
-                                    <div class="contest-button">× <a>{{x.player_cnt}}</a></div>
-                                    <div class="contest-button"><a ng-click="registerContest(x.contest_id)">Register</a></div>
+                                    <div class="contest-button"><b>×</b> <a>{{x.player_cnt}}</a></div>
                                     <div class="contest-button"><a ng-click="showContest(x.contest_id)">View</a></div>
+                                    <div class="contest-button" ng-show="!registeredContest[x.contest_id]"><a ng-click="registerContest(x.contest_id)">Register</a></div>
                                 </div>
 
                             </td>

@@ -50,7 +50,7 @@ angular
                         if (result == "Accepted") {
                             $scope.statusSolved[item.submission_id] = true;
                         }
-                        else if (result != "Compile Error" && result != "System Error" && result != "Pending") {
+                        else if ($scope.checkWA(result)) {
                             $scope.statusTrying[item.submission_id] = true;
                         }
                     });
@@ -66,7 +66,7 @@ angular
                         if (result == "Accepted") {
                             $scope.statusSolved[item.submission_id] = true;
                         }
-                        else if (result != "Compile Error" && result != "System Error" && result != "Pending") {
+                        else if ($scope.checkWA(result)) {
                             $scope.statusTrying[item.submission_id] = true;
                         }
                     });
@@ -74,6 +74,10 @@ angular
                 }, $scope.contestId, $scope.pageNow, $scope.perpage);
             }
 
+        };
+
+        $scope.checkWA = function (result) {
+            return (result != "Compile Error" && result != "System Error" && result != "Pending" && result != "Judge Failed")
         };
 
 

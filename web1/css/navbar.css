@@ -11,6 +11,10 @@
     margin-bottom: 10px;
 }
 
+.search-btn:hover {
+    background: none;
+}
+
 .search-text {
     margin-left: 5px;
     margin-top: 9px;
@@ -18,9 +22,9 @@
 }
 
 .search-text > input {
-    border: none;
+    border: 1px solid #e8e8e8;
     font-size: 12px;
-    width: 80px;
+    width: 90px;
 }
 
 
@@ -49,6 +53,14 @@
     padding-top: 16px;
 }
 
+.navbar-brand-text {
+    max-height: 53px;
+    max-width: 360px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 #public-version{
     font-weight: lighter;
     color: #aaaaaa;
@@ -74,5 +86,8 @@
 }
 
 .user-avatar {
-    height: 36px;
+    background-color: white;
+    border-radius: 18px;
+    max-height: 36px;
+    max-width: 36px;
 }

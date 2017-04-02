@@ -10,9 +10,6 @@ angular
 
                 userService.register(function(result) {
                     if (result) {
-                        profileService.verifyEmail(function (response) {
-
-                        });
                         $scope.loginFire(username, pass, true);
                     }
                 }, username, pass, email);
@@ -29,7 +26,12 @@ angular
 
             userService.login(function(result) {
                 if (result) {
-                    if (fromRegister) $window.location.href = siteService.profileLink;
+                    if (fromRegister) {
+                        profileService.verifyEmail(function (response) {
+
+                        });
+                        $window.location.href = siteService.profileLink;
+                    }
                     else $window.location.href = siteService.problemLink;
                 }
             }, username, pass);

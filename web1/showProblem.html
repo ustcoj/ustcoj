@@ -43,7 +43,7 @@
                         <!--<div id="editormd-view-desc">-->
                             <!--<textarea style="display:none;"></textarea>-->
                         <!--</div>-->
-                        <div ng-bind-html="problemData.problem.description"></div>
+                        <div ng-bind-html="problemData.problem.description" class="prob-desc-body"></div>
                         <div class="prob-desc">
                             <h4 ng-show="problemData.problem.output_description">Input Description</h4>
                             <h4 ng-show="!problemData.problem.output_description">I/O Description</h4>
@@ -85,9 +85,6 @@
                         <div class="prob-desc" ng-show="problemData.problem.hint">
                             <h4>Hint</h4>
                             <div ng-bind-html="problemData.problem.hint"></div>
-                            <!--<div id="editormd-view-hint" style="color: #6B6B6B">-->
-                                <!--<textarea style="display:none;"></textarea>-->
-                            <!--</div>-->
                         </div>
 
                     </div>

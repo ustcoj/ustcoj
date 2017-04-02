@@ -2,29 +2,28 @@
     color: #8e8e8e;
     font-weight: bold;
     font-size: 16px;
-    width: 50px;
-    margin-right: 20px;
+    font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .submission-list td:nth-child(2) {
     font-size: 16px;
 }
 
-.submission-list table {
-    margin-left: 10px;
+.submission-table {
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .submission-list tr {
-    height: 30px;
+    line-height: 30px;
     vertical-align: top;
 }
 
 #submission-error-detail {
     font-family: monospace;
     display: block;
-    width: 600px;
     background-color: #f9f9f9;
-    word-spacing: 0px;
-    overflow-x: auto;
-    padding: 5px;
+    word-spacing: 0;
+    overflow: auto;
+    padding: 5px 10px;
 }

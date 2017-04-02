@@ -8,36 +8,35 @@
     </div>
 
 
-    <div class="submission-list">
-            <table>
-                <colgroup class="submission-inf">
-                    <col style="width: 150px">
-                    <col style="width: 500px">
-                </colgroup>
-                <tr>
-                    <td>ID</td>
-                    <td ng-bind="submissionId"></td>
-                </tr>
-                <tr ng-show="!isContest">
-                    <td>Prob ID</td>
-                    <td ng-bind="submissionProbId"></td>
-                </tr>
-                <tr>
-                    <td>Title</td>
-                    <td><span ng-show="isContest">{{submissionSortIdx + " - "}}</span>{{submissionTitle}}</td>
-                </tr>
-                <tr>
-                    <td>Status</td>
-                    <td ng-bind="submissionResult"></td>
-                </tr>
-                <tr ng-show="submissionErrorMsg">
-                    <td>Detail</td>
-                    <td style="font-family: monospace" >
-                        <pre ng-bind="submissionErrorMsg" id="submission-error-detail"></pre>
-                    </td>
-                </tr>
+    <div class="submission-list" ng-show="finishLoading">
+        <table class="submission-table">
+            <tr>
+                <th class="col-md-6"></th>
+                <th class="col-md-42"></th>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td ng-bind="submissionId"></td>
+            </tr>
+            <tr ng-show="!isContest">
+                <td>Prob ID</td>
+                <td ng-bind="submissionProbId"></td>
+            </tr>
+            <tr>
+                <td>Title</td>
+                <td><span ng-show="isContest">{{submissionSortIdx + " - "}}</span>{{submissionTitle}}</td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td ng-bind="submissionResult"></td>
+            </tr>
 
-            </table>
+        </table>
+
+        <div ng-show="submissionErrorMsg">
+            <div>
+                <pre ng-bind="submissionErrorMsg" id="submission-error-detail"></pre>
+            </div>
         </div>
 
         <div class="submission-code" ng-show="!submissionCode">
@@ -77,7 +76,8 @@
 
         </div>
 
-
     </div>
+
+    <div class="waiting-orange" ng-show="!finishLoading"></div>
 
 </div>

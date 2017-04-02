@@ -56,6 +56,11 @@
     margin-bottom: 15px;
 }
 
+.prob-desc-body:first-letter {
+    font-weight: bold;
+    font-size: 18px;
+}
+
 .sample-title h4 {
     width: 360px;
     float: left;
@@ -88,8 +93,8 @@
 .prob-sample-output {
     font-family: monospace;
     background-color: #fffaf0;
-    word-spacing: 0px;
-    overflow-x: scroll;
+    word-spacing: 0;
+    overflow-x: auto;
     padding: 5px;
 }
 

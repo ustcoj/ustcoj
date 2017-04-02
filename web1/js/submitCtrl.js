@@ -13,7 +13,7 @@ angular
     $scope.contestInfo = null;
     $scope.nowContestProblem = null;
     $scope.languageList = problemService.languageList;
-    $scope.submitTitle = "????";
+    $scope.submitTitle = " --- ";
     //console.log($scope.languageList);
 
     if ($routeParams.contest_ID == null) {
@@ -65,13 +65,15 @@ angular
 
     $scope.getProblemTitle = function() {
         $scope.isIdValid = false;
-        $scope.submitTitle = "????";
+        $scope.submitTitle = " --- ";
         if (problemService.checkValidProblemId($scope.submitId)) {
             problemService.getSimpleProblem(function(result) {
                 $scope.submitTitle = result.problem.problem_title;
             }, $scope.submitId)
         }
     };
+
+    $scope.getProblemTitle();
 
 });
 

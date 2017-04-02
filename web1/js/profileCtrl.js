@@ -8,7 +8,8 @@ angular
         var profileUsername = $routeParams.user_name;
         $scope.userDetail = {};
         $scope.finishLoading = false;
-        $scope.hasVerifiedEmail = false;
+        $scope.hasVerifiedEmail = true;
+        $scope.hasBindId = true;
         $scope.privilege_code = {
             'Add Content' : 10,
             'Edit Content' : 11,
@@ -47,12 +48,17 @@ angular
             return "";
         };
 
-        $scope.verifyEmail = function () {
-            profileService.verifyEmail(function (response) {
-                
-            });
+        $scope.verifyCode = function () {
+            profileService.verifyCode(function (response) {
+                siteService.reload();
+            }, $verifyEmailCode);
         };
 
+        $scope.verifyEmail = function () {
+            profileService.verifyEmail(function (response) {
+
+            });
+        };
 
         if (profileUsername == null) {
             var tname = userService.getUsername();
@@ -65,22 +71,32 @@ angular
             }
         }
 
+        if (profileUsername == userService.getUsername()) {
+            $scope.myProfile = true;
+        }
+
         if (profileUsername) {
             profileService.getUserProfile(function (response) {
                 $scope.userDetail = {
-                    "email" : response.data.email,
+                    "email" : response.data.email || null,
                     "last_login" : response.data.login_time,
                     "register_time" : response.data.push_time,
-                    "privilege" : response.data.roles,
+                    "privilege" : response.data.roles || null,
                     "solved" : response.data.solved_problem,
                     "trying" : response.data.trying_problem,
                     "userId" : response.data.user_id,
                     "username" : response.data.username,
-                    "ustcid" : response.data.ustc_id
+                    "ustcid" : response.data.ustc_id || null
                 };
-                if ($scope.userDetail.privilege.indexOf(1) != -1) {
-                    $scope.hasVerifiedEmail = true;
+                //if ($scope.userDetail.privilege.indexOf(1) == -1) {
+                    $scope.hasVerifiedEmail = false;
+                //}
+                //
+                if ($scope.userDetail.ustcid == null) {
+                    $scope.hasBindId = false;
                 }
+
+
                 //console.log($scope.userDetail);
                 $scope.finishLoading = true;
             }, profileUsername);

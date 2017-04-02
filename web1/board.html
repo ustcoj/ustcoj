@@ -14,14 +14,14 @@
             <tr class="bar-head board-bar">
               <th class="col-md-4 col-center">Rank</th>
               <th class="col-md-4 col-center">ID</th>
-              <th class="col-md-15 col-center">Username</th>
-              <th class="col-md-10 col-center">AC Count</th>
+              <th class="col-md-10 col-center">Username</th>
+              <th class="col-md-4 col-center">AC Count</th>
             </tr>
 
               <tr ng-repeat="x in userList.user_list" class="bar-content board-bar">
-                  <td class="col-center">{{$index}}</td>
-                  <td class="col-center">{{x.user_id}}</td>
-                  <td class="col-center">{{x.username}}</td>
+                  <td class="col-center"><div class="bardiv1"><div class="bardiv2">{{$index + 1}}</div></div></td>
+                  <td class="col-center"><div class="bardiv1"><div class="bardiv2">{{x.user_id}}</div></div></td>
+                  <td class="col-center"><div class="bardiv1"><div class="bardiv2">{{x.username}}</div></div></td>
                   <td class="col-center">{{x.solved_cnt}}</td>
               </tr>
 

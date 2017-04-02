@@ -21,22 +21,24 @@
 }
 
 .profile-header {
+    float: none;
     font-size: 18px;
     color: #8e8e8e;
     font-weight: bold;
 }
 
-.profile-info-avatar {
-    border-right: 1px solid #8e8e8e;
-    padding-right: 60px;
+.profile-info-detail {
 }
 
-.profile-info-detail {
-    padding-left: 60px;
+.profile-bind-id {
+    padding-left: 5px;
+    baseline-shift: sub;
+    font-size: 12px;
+    color: #faa634;
 }
 
 .profile-info-detail section {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .profile-username {
@@ -49,7 +51,11 @@
 .profile-info-avatar img {
     width: 200px;
 }
-@media (min-width: 767px) {
+@media (min-width: 992px) {
+    .vertical-separate {
+        border-right: 1px solid #8e8e8e;
+        height: 220px;
+    }
     .profile-statistic {
         margin-top: 80px;
     }
@@ -59,11 +65,19 @@
     margin-bottom: 40px;
 }
 
+.profile-bubble > .profile-header {
+    padding-top: 18px;
+    padding-bottom: 6px;
+}
+
+.profile-bubble-trying {
+    background-color: #f0ffef;
+}
+
 .profile-content {
     font-size: 14px;
 }
 
 .profile-info {
     float: right;
-    margin-right: ;
 }
