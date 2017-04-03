@@ -72,7 +72,7 @@ angular
                 $window.location.href = String.Format(siteService.contestBoardLink, $scope.contestId);
             }
             else
-                $window.location.href = siteService.boardLink;
+                $window.location.href = siteService.rankLink;
         };
 
         $scope.logOut = function () {

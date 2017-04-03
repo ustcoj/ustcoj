@@ -43,6 +43,7 @@ angular
         $rootScope.problemUrl = "/api/problem/";
         $rootScope.contestListUrl = "/api/contest/";
         $rootScope.contestUrl = "/api/contest/";
+        $rootScope.contestBoardUrl = $rootScope.contestUrl + "{0}" + "/board/";
         $rootScope.registeredContestListUrl = "/api/user/contest_list";
         $rootScope.registerContestUrl = $rootScope.contestListUrl + "{0}" + "/register";
         $rootScope.submitUrl = "/api/submission/";
@@ -165,7 +166,7 @@ angular
         this.contestLink = '#/contests/';
         this.statusLink = '#/status/';
         this.contestStatusLink = '#/contests/{0}/status/';
-        this.boardLink = '#/board/';
+        this.rankLink = '#/rank/';
         this.contestBoardLink = '#/contests/{0}/board/';
         this.submitLink = '#/submit/';
         this.contestSubmitLink = '#/contests/{0}/submit/';
@@ -299,7 +300,14 @@ angular
 
         };
 
-        this.languageList = ["GCC", "G++", "Python 2.7", "Python 3.5", "Java"];
+        // this.languageList = ["GCC", "G++", "Python 2.7", "Python 3.5", "Java"];
+        this.languageList = {
+            "0" : "C",
+            "1" : "C++",
+            "2" : "Python 2.7",
+            "3" : "Python 3.5",
+            "4" : "Java"
+        };
         this.resultList = {
             "0": "Accepted",
             "-1": "Wrong Answer",
@@ -451,6 +459,14 @@ angular
             networkService.handleRepData('get', $rootScope.siteRankUrl, null, null, null)
                 .then(function (response) {
                     showUserList(response);
+                })
+        };
+        
+        this.getContestBoard = function (show_contestBoard, _contestId) {
+            var url = String.Format($rootScope.contestBoardUrl, _contestId);
+            networkService.handleRepData('get', url, null, {params: param}, null)
+                .then(function (response) {
+                    show_contestBoard(response);
                 })
         }
 

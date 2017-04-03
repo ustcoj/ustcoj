@@ -7,8 +7,6 @@ angular
 
         $scope.isContest = $routeParams.contest_ID;
 
-
-
         if (!$scope.isContest) problemService.getUserList(function (response) {
             $scope.userList = response.data;
         })

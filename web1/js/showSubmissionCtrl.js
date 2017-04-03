@@ -11,6 +11,7 @@ angular
         $scope.titleObj = $(".fixed-navbar-title")[0];
         $scope.descObj = $(".submisson-inf")[0];
         $scope.isContest = false;
+        $scope.languageList = problemService.languageList;
         if ($routeParams.contest_ID) {
             $scope.isContest = true;
         }
@@ -32,6 +33,7 @@ angular
                 $scope.submissionCode = response.code;
                 $scope.submissionProbId = response.problem_id;
                 $scope.submissionTitle = response.problem.problem_title;
+                $scope.submissionLang = response.language;
                 if ($scope.isContest) {
                     $scope.submissionSortIdx = response.problem.sort_index;
                 }

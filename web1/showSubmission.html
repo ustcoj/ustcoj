@@ -18,13 +18,17 @@
                 <td>ID</td>
                 <td ng-bind="submissionId"></td>
             </tr>
-            <tr ng-show="!isContest">
-                <td>Prob ID</td>
-                <td ng-bind="submissionProbId"></td>
+            <tr>
+                <td>Problem</td>
+                <td>
+                    <span ng-show="isContest">{{submissionSortIdx}}</span>
+                    <span ng-show="!isContest">{{submissionProbId}}</span>
+                     - {{submissionTitle}}
+                </td>
             </tr>
             <tr>
-                <td>Title</td>
-                <td><span ng-show="isContest">{{submissionSortIdx + " - "}}</span>{{submissionTitle}}</td>
+                <td>Language</td>
+                <td ng-bind="languageList[submissionLang]"></td>
             </tr>
             <tr>
                 <td>Status</td>

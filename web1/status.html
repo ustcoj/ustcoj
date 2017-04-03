@@ -3,7 +3,19 @@
 <div ng-controller="statusCtrl" class="container" role="main">
 
     <div class="page-header">
-        <h2>Status</h2>
+        <h2>Status <span ng-show="!isContest">
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" id="option1"> 选项 1
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" id="option2"> 选项 2
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" id="option3"> 选项 3
+                </label>
+            </div>
+        </span></h2>
     </div>
 
     <div class="status-content" ng-show="finishLoading">
@@ -17,7 +29,7 @@
                     <th class="col-md-6">User</th>
                     <th class="col-md-8 col-center">Status</th>
                     <th class="col-md-5 col-center">Run Time</th>
-                    <th class="col-md-5 col-center">Compiler</th>
+                    <th class="col-md-5 col-center">Language</th>
                     <th class="col-md-4 col-center">Memory</th>
                 </tr>
 

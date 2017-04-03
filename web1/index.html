@@ -117,7 +117,7 @@
                         controllerAs: 'ctrl'
                     })
                     .when('/contests/:contest_ID/board/',{
-                        templateUrl:'board.html',
+                        templateUrl:'contestBoard.html',
                         controller: ['$routeParams', function($routeParams) {
                         }],
                         controllerAs: 'ctrl'
@@ -136,7 +136,7 @@
                         }],
                         controllerAs: 'ctrl'
                     })
-                    .when('/board/',{templateUrl:'board.html'})
+                    .when('/rank/',{templateUrl:'board.html'})
                     .when('/edit/:problem_ID/',{
                         templateUrl:'edit.html',
                         controller: ['$routeParams', function($routeParams) {

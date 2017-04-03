@@ -65,7 +65,8 @@
 
                     <li><a ng-click="toSubmit()">Submit</a></li>
                     <li><a ng-click="toStatus()">Status</a></li>
-                    <li><a ng-click="toBoard()">Board</a></li>
+                    <li><a ng-click="toBoard()" ng-show="isContest">Board</a></li>
+                    <li><a ng-click="toBoard()" ng-show="!isContest">Rank</a></li>
                     <li><a ng-click="toLogIn()" ng-show="!isLoggedIn">Log in</a></li>
                     <li class="dropdown" ng-show="isLoggedIn">
                         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
