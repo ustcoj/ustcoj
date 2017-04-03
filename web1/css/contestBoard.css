@@ -1,0 +1,12 @@
+.board-single-null {
+
+}
+
+.board-single-trying {
+    background-color: #f0ffef;
+}
+
+.board-single-solved {
+    background-color: #faa634;
+    color: #fff;
+}

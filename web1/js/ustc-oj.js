@@ -43,7 +43,7 @@ angular
         $rootScope.problemUrl = "/api/problem/";
         $rootScope.contestListUrl = "/api/contest/";
         $rootScope.contestUrl = "/api/contest/";
-        $rootScope.contestBoardUrl = $rootScope.contestUrl + "{0}" + "/board/";
+        $rootScope.contestBoardUrl = $rootScope.contestUrl + "{0}" + "/board";
         $rootScope.registeredContestListUrl = "/api/user/contest_list";
         $rootScope.registerContestUrl = $rootScope.contestListUrl + "{0}" + "/register";
         $rootScope.submitUrl = "/api/submission/";
@@ -68,6 +68,16 @@ angular
             return (bytes / Math.pow(1024, Math.floor(number))).toFixed(precision) +  ' ' + units[number];
     }
 });
+
+angular
+    .module('ustc-oj')
+    .filter('minute', function() {
+        return function(seconds, precision) {
+            if (isNaN(parseFloat(bytes)) || !isFinite(bytes)) return '-';
+            if (typeof precision === 'undefined') precision = 0;
+            return Math.floor(seconds / 60);
+        }
+    });
 
 angular
     .module('ustc-oj')
@@ -466,7 +476,7 @@ angular
             var url = String.Format($rootScope.contestBoardUrl, _contestId);
             networkService.handleRepData('get', url, null, {params: param}, null)
                 .then(function (response) {
-                    show_contestBoard(response);
+                    show_contestBoard(response.data);
                 })
         }
 

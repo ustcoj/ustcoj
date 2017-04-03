@@ -3,7 +3,7 @@
  */
 angular
     .module('ustc-oj')
-    .controller("boardCtrl", function($scope, $http, $rootScope, $window, $routeParams, problemService, siteService){
+    .controller("rankCtrl", function($scope, $http, $rootScope, $window, $routeParams, problemService, siteService){
 
         $scope.isContest = $routeParams.contest_ID;
 
