@@ -1,5 +1,12 @@
 @font-face {
-  font-family: 'Calluna Sans';
+  font-family: 'Verb';
   font-style: normal;
-  src: url("fonts/CallunaSansRegular-webfont.woff") format('woff');
+  src: url("fonts/Fontspring-DEMO-VerbRegular.otf") format('Opentype');
+}
+
+@font-face {
+  font-family: 'Verb';
+  font-style: normal;
+  font-weight: bold;
+  src: url("fonts/Fontspring-DEMO-VerbBold.otf") format('Opentype');
 }

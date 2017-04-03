@@ -67,13 +67,17 @@
                             <div class="sample-wrapper row" ng-repeat="s in problemData.problem.input_sample">
 
                                 <div class="col-sm-22">
-                                    <p class="prob-sample-input-head">INPUT <span ng-show="problemData.problem.input_sample.length > 1">{{$index + 1}}</span></p>
+                                    <p class="prob-sample-input-head">
+                                        INPUT <span ng-show="problemData.problem.input_sample.length > 1">{{$index + 1}}</span>
+                                        <span class="prob-sample-copy copy-icon"></span>
+                                    </p>
                                     <p class="prob-sample-input" ng-bind-html="s"></p>
                                 </div>
 
 
                                 <div class="col-sm-22 col-sm-offset-4">
-                                    <p class="prob-sample-output-head">OUTPUT <span ng-show="problemData.problem.input_sample.length > 1">{{$index + 1}}</span></p>
+                                    <p class="prob-sample-output-head">OUTPUT <span ng-show="problemData.problem.input_sample.length > 1">{{$index + 1}}</span>
+                                        <span class="prob-sample-copy copy-icon"></span></p>
                                     <p class="prob-sample-output" ng-bind-html="problemData.problem.output_sample[$index]"></p>
                                 </div>
 

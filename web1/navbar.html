@@ -56,7 +56,6 @@
                     <li ng-show="isContest" class="hidden-xs navbar-back-text"><a ng-click="toBack()"">Back</a></li>
                     <a class="navbar-logo hidden-xs">
                         <img ng-click="clickLogo()" src="USTCOJ.svg" height="42px" alt="USTC ONLINE JUDGE" ng-show="!isContest"/>
-                        <span id="public-version" ng-show="!isContest">α</span>
                         <div class="navbar-brand-text" ng-show="isContest">{{contestInfo.contest_title}}</div>
                     </a>
                 </ul>

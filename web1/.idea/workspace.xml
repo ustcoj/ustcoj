@@ -2,33 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90ac4ba7-e2f9-4db2-b95e-8e1e4903704a" name="Default" comment="Language/Status info is available now.&#10;Runtime and memory usage can now be displayed naïvely.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/emailToken.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/CallunaSansRegular-webfont.woff" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/board.html" afterPath="$PROJECT_DIR$/board.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contestList.html" afterPath="$PROJECT_DIR$/contestList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bar.css" afterPath="$PROJECT_DIR$/css/bar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/contestList.css" afterPath="$PROJECT_DIR$/css/contestList.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/callunasans.css" afterPath="$PROJECT_DIR$/callunasans.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/navbar.css" afterPath="$PROJECT_DIR$/css/navbar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/profile.css" afterPath="$PROJECT_DIR$/css/profile.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/showContest.css" afterPath="$PROJECT_DIR$/css/showContest.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/showProblem.css" afterPath="$PROJECT_DIR$/css/showProblem.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/showSubmisson.css" afterPath="$PROJECT_DIR$/css/showSubmisson.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/submit.css" afterPath="$PROJECT_DIR$/css/submit.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/ustc-oj.css" afterPath="$PROJECT_DIR$/css/ustc-oj.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/contestListCtrl.js" afterPath="$PROJECT_DIR$/js/contestListCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/loginCtrl.js" afterPath="$PROJECT_DIR$/js/loginCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/profileCtrl.js" afterPath="$PROJECT_DIR$/js/profileCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/statusCtrl.js" afterPath="$PROJECT_DIR$/js/statusCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/submitCtrl.js" afterPath="$PROJECT_DIR$/js/submitCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ustc-oj.js" afterPath="$PROJECT_DIR$/js/ustc-oj.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/navbar.html" afterPath="$PROJECT_DIR$/navbar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/problemList.html" afterPath="$PROJECT_DIR$/problemList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profile.html" afterPath="$PROJECT_DIR$/profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/showContest.html" afterPath="$PROJECT_DIR$/showContest.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/showProblem.html" afterPath="$PROJECT_DIR$/showProblem.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/showSubmission.html" afterPath="$PROJECT_DIR$/showSubmission.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/submit.html" afterPath="$PROJECT_DIR$/submit.html" />
     </list>
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,48 +29,28 @@
     <favorites_list name="web" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5497076">
+    <splitter split-orientation="horizontal" split-proportion="0.50431037">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+                <state relative-caret-position="-1245">
+                  <caret line="53" column="38" lean-forward="false" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
                   <folding>
-                    <marker date="1491138381000" expanded="true" signature="39:474" ph="..." />
-                    <marker date="1491138381000" expanded="true" signature="50:466" ph="..." />
-                    <marker date="1491138381000" expanded="true" signature="64:454" ph="..." />
+                    <marker date="1491148263000" expanded="true" signature="39:474" ph="..." />
+                    <marker date="1491148263000" expanded="true" signature="50:466" ph="..." />
+                    <marker date="1491148263000" expanded="true" signature="64:454" ph="..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="showContest.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/showContest.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/profile.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="21" column="50" lean-forward="false" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="showProblem.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="showProblem.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/showProblem.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="735">
-                  <caret line="49" column="78" lean-forward="false" selection-start-line="49" selection-start-column="78" selection-end-line="49" selection-end-column="78" />
+                <state relative-caret-position="480">
+                  <caret line="79" column="79" lean-forward="false" selection-start-line="79" selection-start-column="79" selection-end-line="79" selection-end-column="79" />
                   <folding />
                 </state>
               </provider>
@@ -98,14 +60,14 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="ustc-oj.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="ustc-oj.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/ustc-oj.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="5985">
-                  <caret line="399" column="27" lean-forward="false" selection-start-line="399" selection-start-column="27" selection-end-line="399" selection-end-column="27" />
+                <state relative-caret-position="712">
+                  <caret line="820" column="0" lean-forward="true" selection-start-line="820" selection-start-column="0" selection-end-line="820" selection-end-column="0" />
                   <folding>
                     <element signature="e#21712#28496#0" expanded="false" />
-                    <marker date="1491112983000" expanded="true" signature="8241:8292" ph="..." />
+                    <marker date="1491209874000" expanded="true" signature="8241:8292" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -114,7 +76,7 @@
           <file leaf-file-name="bar.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/bar.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1185">
+                <state relative-caret-position="259">
                   <caret line="79" column="29" lean-forward="false" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="29" />
                   <folding />
                 </state>
@@ -124,18 +86,28 @@
           <file leaf-file-name="showProblem.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/showProblem.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+                <state relative-caret-position="88">
+                  <caret line="83" column="19" lean-forward="true" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ustc-oj.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ustc-oj.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/ustc-oj.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="3" column="27" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="27" />
+                <state relative-caret-position="300">
+                  <caret line="77" column="22" lean-forward="false" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="navbar.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/navbar.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
@@ -194,8 +166,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ustc-oj.js" />
-        <option value="$PROJECT_DIR$/ustc-oj.css" />
         <option value="$PROJECT_DIR$/edit.html" />
         <option value="$PROJECT_DIR$/css/edit.css" />
         <option value="$PROJECT_DIR$/editormd/css/editormd.preview.css" />
@@ -233,18 +203,20 @@
         <option value="$PROJECT_DIR$/css/showContest.css" />
         <option value="$PROJECT_DIR$/js/submitCtrl.js" />
         <option value="$PROJECT_DIR$/problemList.html" />
-        <option value="$PROJECT_DIR$/js/ustc-oj.js" />
         <option value="$PROJECT_DIR$/css/showSubmisson.css" />
         <option value="$PROJECT_DIR$/showSubmission.html" />
         <option value="$PROJECT_DIR$/js/profileCtrl.js" />
         <option value="$PROJECT_DIR$/css/profile.css" />
-        <option value="$PROJECT_DIR$/css/navbar.css" />
+        <option value="$PROJECT_DIR$/profile.html" />
+        <option value="$PROJECT_DIR$/verb.css" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/callunasans.css" />
         <option value="$PROJECT_DIR$/navbar.html" />
+        <option value="$PROJECT_DIR$/css/navbar.css" />
+        <option value="$PROJECT_DIR$/css/ustc-oj.css" />
         <option value="$PROJECT_DIR$/showProblem.html" />
         <option value="$PROJECT_DIR$/css/showProblem.css" />
-        <option value="$PROJECT_DIR$/profile.html" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/css/ustc-oj.css" />
+        <option value="$PROJECT_DIR$/js/ustc-oj.js" />
       </list>
     </option>
   </component>
@@ -255,10 +227,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="234" />
-    <option name="y" value="135" />
     <option name="width" value="1440" />
-    <option name="height" value="918" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -276,6 +246,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -302,35 +274,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/zhaohongzhu/Dropbox/ustcoj/web1/js/showContestCtrl.js" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="FullScreen" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
   </component>
   <component name="Push.Settings">
     <excluded-roots>
@@ -493,6 +455,11 @@
       <workItem from="1491041629159" duration="5608000" />
       <workItem from="1491055487105" duration="24699000" />
       <workItem from="1491138348933" duration="149000" />
+      <workItem from="1491146295221" duration="1038000" />
+      <workItem from="1491147791290" duration="3509000" />
+      <workItem from="1491201077698" duration="1423000" />
+      <workItem from="1491208267376" duration="96000" />
+      <workItem from="1491209130423" duration="1132000" />
     </task>
     <task id="LOCAL-00001" summary="Add styles to login page&#10;clear outline in navbar&#10;change background color to none">
       <created>1484553390965</created>
@@ -603,7 +570,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="437460000" />
+    <option name="totallyTimeSpent" value="444658000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -615,12 +582,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="234" y="135" width="1440" height="918" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1564482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18252291" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22891566" sideWeight="0.50277776" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17349398" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30361447" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19036144" sideWeight="0.49722221" order="9" side_tool="false" content_ui="tabs" />
@@ -631,6 +599,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -679,20 +648,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/prism/prism.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2535">
-          <caret line="169" column="26" lean-forward="false" selection-start-line="169" selection-start-column="26" selection-end-line="169" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -904,14 +859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/showContest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/status.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-45">
@@ -957,28 +904,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/bar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1185">
-          <caret line="79" column="29" lean-forward="false" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/navbar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/navbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="56" column="45" lean-forward="false" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/profile.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="583">
@@ -996,22 +921,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/showProblem.html">
+    <entry file="file://$PROJECT_DIR$/verb.css" />
+    <entry file="file://$PROJECT_DIR$/css/navbar.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" column="78" lean-forward="false" selection-start-line="49" selection-start-column="78" selection-end-line="49" selection-end-column="78" />
+        <state relative-caret-position="150">
+          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/ustc-oj.js">
+    <entry file="file://$PROJECT_DIR$/navbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5985">
-          <caret line="399" column="27" lean-forward="false" selection-start-line="399" selection-start-column="27" selection-end-line="399" selection-end-column="27" />
-          <folding>
-            <element signature="e#21712#28496#0" expanded="false" />
-            <marker date="1491112983000" expanded="true" signature="8241:8292" ph="..." />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="12" column="50" lean-forward="false" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/callunasans.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/showContest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1023,31 +960,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/showProblem.css">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        <state relative-caret-position="-1245">
+          <caret line="53" column="38" lean-forward="false" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
+          <folding>
+            <marker date="1491148263000" expanded="true" signature="39:474" ph="..." />
+            <marker date="1491148263000" expanded="true" signature="50:466" ph="..." />
+            <marker date="1491148263000" expanded="true" signature="64:454" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/bar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="79" column="29" lean-forward="false" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/showProblem.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-          <folding>
-            <marker date="1491138381000" expanded="true" signature="39:474" ph="..." />
-            <marker date="1491138381000" expanded="true" signature="50:466" ph="..." />
-            <marker date="1491138381000" expanded="true" signature="64:454" ph="..." />
-          </folding>
+        <state relative-caret-position="480">
+          <caret line="79" column="79" lean-forward="false" selection-start-line="79" selection-start-column="79" selection-end-line="79" selection-end-column="79" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/ustc-oj.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="27" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="27" />
+        <state relative-caret-position="300">
+          <caret line="77" column="22" lean-forward="false" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/showProblem.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="83" column="19" lean-forward="true" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ustc-oj.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="712">
+          <caret line="820" column="0" lean-forward="true" selection-start-line="820" selection-start-column="0" selection-end-line="820" selection-end-column="0" />
+          <folding>
+            <element signature="e#21712#28496#0" expanded="false" />
+            <marker date="1491209874000" expanded="true" signature="8241:8292" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

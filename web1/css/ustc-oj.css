@@ -49,6 +49,11 @@ span {
     font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
+::selection {
+    background: #faa634;
+    color: #fffaf0;
+}
+
 .footer {
     font-size: 12px;
     position: absolute;
@@ -72,6 +77,10 @@ span {
 .waiting-orange {
     content: url("../wait.svg");
     margin: 150px auto;
+}
+
+.copy-icon {
+    content: url("../resource/copy.svg");
 }
 
 @media (min-width: 992px) {
