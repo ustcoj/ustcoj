@@ -9,7 +9,10 @@ angular
     $scope.descObj = $(".prob-title-inf")[0];
     $scope.isContest = false;
 
-
+    $scope.$watch(function(){
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        return true;
+    });
 
     if ($routeParams.contest_ID == null) {
         if ($routeParams.problem_ID == null) {
