@@ -49,17 +49,14 @@
     transform: translateX(-50%);
 }
 
+.navbar-logo > img {
+    cursor: pointer;
+}
+
 .navbar-brand {
     padding-top: 16px;
 }
 
-.navbar-brand-text {
-    max-height: 53px;
-    max-width: 360px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
 
 #public-version{
     font-weight: lighter;

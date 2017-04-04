@@ -88,16 +88,20 @@ angular
                     "username" : response.data.username,
                     "ustcid" : response.data.ustc_id || null
                 };
-                //if ($scope.userDetail.privilege.indexOf(1) == -1) {
+                var vEmail = $scope.userDetail.privilege.indexOf(1);
+                if ($scope.userDetail.privilege.indexOf(1) == -1) {
                     $scope.hasVerifiedEmail = false;
-                //}
-                //
+                }
+                else {
+                    $scope.userDetail.privilege.splice(vEmail, 1);
+                }
+
                 if ($scope.userDetail.ustcid == null) {
                     $scope.hasBindId = false;
                 }
 
 
-                //console.log($scope.userDetail);
+                console.log($scope.userDetail);
                 $scope.finishLoading = true;
             }, profileUsername);
         }

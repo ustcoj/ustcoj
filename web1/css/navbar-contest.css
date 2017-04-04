@@ -7,6 +7,30 @@
     transition: background-color 2s, border-bottom 1s;
 }
 
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+    background-color: #555555;
+    color: #fff;
+}
+
+.navbar-brand-text {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.navbar-brand-text a {
+    color: inherit;
+    font-weight: inherit;
+    max-height: 53px;
+    max-width: 360px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.navbar-brand-text:hover {
+    color: #fff;
+}
+
 #navbar > ul > li > a {
     color: #d8d8d8;
 }

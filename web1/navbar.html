@@ -54,10 +54,24 @@
                     <li ng-show="!isContest"><a ng-href="{{siteService.problemLink}}">Problems</a></li>
                     <li ng-show="!isContest"><a ng-href="{{siteService.contestLink}}">Contests</a></li>
                     <li ng-show="isContest" class="hidden-xs navbar-back-text"><a ng-click="toBack()"">Back</a></li>
-                    <a class="navbar-logo hidden-xs">
+                    <div class="navbar-logo hidden-xs">
                         <img ng-click="clickLogo()" src="USTCOJ.svg" height="42px" alt="USTC ONLINE JUDGE" ng-show="!isContest"/>
-                        <div class="navbar-brand-text" ng-show="isContest">{{contestInfo.contest_title}}</div>
-                    </a>
+
+                    </div>
+                    <div class="navbar-logo hidden-xs dropdown" ng-show="isContest&&contestInfo">
+                        <a class="dropdown-toggle navbar-brand-text" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            {{contestInfo.contest_title}}
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li ng-repeat="x in contestInfo.problem_list">
+                                <a ng-click="gotoContestProblem(contestId, x.sort_index)">
+                                    {{x.sort_index + " - " + x.problem_title}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
                 </ul>
 
 
@@ -68,6 +82,7 @@
                     <li><a ng-click="toBoard()" ng-show="isContest">Board</a></li>
                     <li><a ng-click="toBoard()" ng-show="!isContest">Rank</a></li>
                     <li><a ng-click="toLogIn()" ng-show="!isLoggedIn">Log in</a></li>
+
                     <li class="dropdown" ng-show="isLoggedIn">
                         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             <img src="user_head.png" class="user-avatar">
@@ -79,6 +94,7 @@
                             <li><a ng-click="logOut()">Log Out</a></li>
                         </ul>
                     </li>
+
                 </ul>
             </div><!--/.nav-collapse -->
         </div>

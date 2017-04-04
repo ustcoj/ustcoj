@@ -4,18 +4,21 @@ angular
 
         $scope.isLoggedIn = userService.isLoggedIn();
 
-        $scope.switchTheme = function () {
+        $scope.dealWithRoute = function () {
+            $scope.isLoggedIn = userService.isLoggedIn();
             $scope.isContest = $routeParams.contest_ID;
             $scope.contestId = $routeParams.contest_ID;
-            if ($scope.isContest) problemService.getContestInfo(function (response) {
-                $scope.contestInfo = response;
-            }, $scope.contestId);
         };
 
-        $scope.$on("$routeChangeSuccess", function (event) {
-            $scope.switchTheme();
-            $scope.isLoggedIn = userService.isLoggedIn();
+        $scope.$watch('root_currentContest', function (event) {
+            $scope.contestInfo = $rootScope.root_currentContest;
         });
+
+        $scope.$on("$routeChangeSuccess", function (event) {
+            $scope.dealWithRoute();
+
+        });
+        $scope.dealWithRoute();
 
         $('.search-text').keypress(function (e) {
             if (e.which == 13) {
@@ -24,7 +27,7 @@ angular
             }
         });
 
-        defaultSearchContent = "ID/Search";
+        defaultSearchContent = "Problem ID";
         $scope.searchContent = "";
         $scope.siteService = siteService;
 
@@ -35,7 +38,10 @@ angular
         };
 
         $scope.clickLogo = function () {
-            $window.location.href = siteService.homeLink;
+            if (!$scope.isLoggedIn) $window.location.href = siteService.homeLink;
+            else {
+                $window.location.href = siteService.problemLink;
+            }
         };
 
         $scope.toBack = function () {
@@ -73,6 +79,10 @@ angular
             }
             else
                 $window.location.href = siteService.rankLink;
+        };
+
+        $scope.gotoContestProblem = function (contestId, problem) {
+            $window.location.href = String.Format(siteService.contestProblemLink, contestId, problem)
         };
 
         $scope.logOut = function () {

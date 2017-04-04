@@ -14,8 +14,7 @@ angular
         };
 
         $scope.$on("$routeChangeSuccess", function (event) {
-
             $scope.switchTheme();
-            console.log($scope.nowTheme);
         });
+        $scope.switchTheme();
 });

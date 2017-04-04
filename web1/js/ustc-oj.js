@@ -73,11 +73,12 @@ angular
     .module('ustc-oj')
     .filter('minute', function() {
         return function(seconds, precision) {
-            if (isNaN(parseFloat(bytes)) || !isFinite(bytes)) return '-';
+            if (isNaN(parseFloat(seconds)) || !isFinite(seconds) || seconds == -1) return '-';
             if (typeof precision === 'undefined') precision = 0;
             return Math.floor(seconds / 60);
         }
     });
+
 
 angular
     .module('ustc-oj')
@@ -181,6 +182,7 @@ angular
         this.submitLink = '#/submit/';
         this.contestSubmitLink = '#/contests/{0}/submit/';
         this.contestSubmissionLink = '#/contests/{0}/status/{1}/';
+        this.contestProblemLink = '#/contests/{0}/problems/{1}/';
         this.editLink = '#/edit/';
         this.errorMsg = {
             "411" : "Invalid username or wrong password",
@@ -405,12 +407,15 @@ angular
                 })
         };
 
-        this.getContestInfo = function(show_contestInfo, _contestid) {
+        this.getContestInfo = function(show_contestInfo, _contestid, doNotBroadCast) {
 
+            doNotBroadCast = doNotBroadCast || false;
             networkService.handleRepData('get', $rootScope.contestListUrl + _contestid, null, null, null)
                 .then(function (response) {
-
-                        show_contestInfo(response.data);
+                    show_contestInfo(response.data);
+                    if (!doNotBroadCast) {
+                        $rootScope.root_currentContest = response.data;
+                    }
                 });
 
         };
@@ -474,7 +479,7 @@ angular
         
         this.getContestBoard = function (show_contestBoard, _contestId) {
             var url = String.Format($rootScope.contestBoardUrl, _contestId);
-            networkService.handleRepData('get', url, null, {params: param}, null)
+            networkService.handleRepData('get', url, null, null, null)
                 .then(function (response) {
                     show_contestBoard(response.data);
                 })

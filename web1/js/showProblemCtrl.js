@@ -25,10 +25,6 @@ angular
     else {
         $scope.isContest = true;
 
-        problemService.getContestInfo(function(data){
-            $scope.contestInfo = data;
-        }, $routeParams.contest_ID);
-
         if ($routeParams.problem_SEQ == null) {
             // TODO: show some error message
         }

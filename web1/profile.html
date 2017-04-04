@@ -44,7 +44,7 @@
             </div>
             <div class="col-md-40">
                 <section class="profile-bubble">
-                    <header class="profile-header" ng-show="userDetail.privilege">Privilege</header>
+                    <header class="profile-header" ng-show="userDetail.privilege&&userDetail.privilege.length">Privilege</header>
                     <div>
                         <div class="bubble" ng-repeat="x in userDetail.privilege" ng-show="x!=1">{{findPri(x)}}</div>
                     </div>

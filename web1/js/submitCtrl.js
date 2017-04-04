@@ -46,6 +46,7 @@ angular
         if ($scope.isContest) {
             submissionData["contest_id"] = $scope.contestId;
             submissionData["sort_index"] = $scope.nowContestProblem;
+            userService.saveLastLang($scope.submitLang);
             problemService.submitCode(function(response) {
                 $window.location.href = '#/contests/' + $scope.contestId;
             }, submissionData);

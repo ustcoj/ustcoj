@@ -1,3 +1,49 @@
+.board-table {
+    width: 100%;
+    /*table-layout: fixed;*/
+}
+
+.board-contest-title {
+    text-transform: none;
+}
+
+.board-head > th {
+    font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    color: #8e8e8e;
+    text-align: center;
+}
+
+.board-content {
+    height: 50px;
+}
+
+.board-content > td {
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.board-col-rank {
+    width: 50px !important;
+}
+
+.board-col-user {
+    width: 200px !important;
+}
+
+.board-col-solved {
+    width: 80px !important;
+}
+
+.board-col-penalty {
+    width: 80px !important;
+}
+
+.board-col-prob {
+    min-width: 40px;
+}
+
 .board-single-null {
 
 }
