@@ -9,9 +9,7 @@ angular
     $scope.descObj = $(".prob-title-inf")[0];
     $scope.isContest = false;
 
-    problemService.getContestInfo(function (response) {
 
-    }, $routeParams.contest_ID);
 
     if ($routeParams.contest_ID == null) {
         if ($routeParams.problem_ID == null) {
@@ -28,6 +26,9 @@ angular
     }
     else {
         $scope.isContest = true;
+        problemService.getContestInfo(function (response) {
+
+        }, $routeParams.contest_ID);
 
         if ($routeParams.problem_SEQ == null) {
             // TODO: show some error message

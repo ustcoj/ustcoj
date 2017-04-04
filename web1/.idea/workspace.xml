@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90ac4ba7-e2f9-4db2-b95e-8e1e4903704a" name="Default" comment="Language/Status info is available now.&#10;Runtime and memory usage can now be displayed naïvely.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/navbar-contest.css" afterPath="$PROJECT_DIR$/css/navbar-contest.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/problemList.css" afterPath="$PROJECT_DIR$/css/problemList.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/showContest.css" afterPath="$PROJECT_DIR$/css/showContest.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/showProblem.css" afterPath="$PROJECT_DIR$/css/showProblem.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/indexCtrl.js" afterPath="$PROJECT_DIR$/js/indexCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/showContestCtrl.js" afterPath="$PROJECT_DIR$/js/showContestCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ustc-oj.js" afterPath="$PROJECT_DIR$/js/ustc-oj.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/showProblem.html" afterPath="$PROJECT_DIR$/showProblem.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/showProblemCtrl.js" afterPath="$PROJECT_DIR$/js/showProblemCtrl.js" />
     </list>
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,7 +38,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="showProblem.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="showProblem.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/showProblem.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="360">
@@ -65,7 +58,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="navbar.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="navbar.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/navbar.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="720">
@@ -142,12 +135,24 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="navbar-contest.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="navbar-contest.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/navbar-contest.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+                <state relative-caret-position="180">
+                  <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="showProblemCtrl.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/js/showProblemCtrl.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="450">
+                  <caret line="30" column="36" lean-forward="false" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+                  <folding>
+                    <marker date="1491278486000" expanded="true" signature="2352:2367" ph="..." />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -257,7 +262,6 @@
         <option value="$PROJECT_DIR$/contestBoard.html" />
         <option value="$PROJECT_DIR$/js/profileCtrl.js" />
         <option value="$PROJECT_DIR$/profile.html" />
-        <option value="$PROJECT_DIR$/js/showProblemCtrl.js" />
         <option value="$PROJECT_DIR$/showProblem.html" />
         <option value="$PROJECT_DIR$/css/showProblem.css" />
         <option value="$PROJECT_DIR$/css/problemList.css" />
@@ -268,6 +272,7 @@
         <option value="$PROJECT_DIR$/js/showContestCtrl.js" />
         <option value="$PROJECT_DIR$/navbar.html" />
         <option value="$PROJECT_DIR$/css/navbar-contest.css" />
+        <option value="$PROJECT_DIR$/js/showProblemCtrl.js" />
       </list>
     </option>
   </component>
@@ -526,7 +531,7 @@
       <workItem from="1491208267376" duration="96000" />
       <workItem from="1491209130423" duration="1625000" />
       <workItem from="1491226037245" duration="273000" />
-      <workItem from="1491227631450" duration="19514000" />
+      <workItem from="1491227631450" duration="19604000" />
     </task>
     <task id="LOCAL-00001" summary="Add styles to login page&#10;clear outline in navbar&#10;change background color to none">
       <created>1484553390965</created>
@@ -637,7 +642,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="464938000" />
+    <option name="totallyTimeSpent" value="465028000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -981,16 +986,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/showProblemCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="43" lean-forward="false" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-          <folding>
-            <marker date="1491276354000" expanded="true" signature="2343:2358" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/problemListCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
@@ -1003,14 +998,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
           <caret line="48" column="19" lean-forward="true" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/showProblem.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -1106,11 +1093,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/showProblem.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/navbar-contest.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        <state relative-caret-position="180">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/showProblemCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="36" lean-forward="false" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+          <folding>
+            <marker date="1491278486000" expanded="true" signature="2352:2367" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
