@@ -13,11 +13,11 @@
 }
 
 .navbar-brand-text {
-    padding-left: 10px;
+    padding-left: 20px;
     padding-right: 10px;
 }
 
-.navbar-brand-text a {
+.navbar-brand-text {
     color: inherit;
     font-weight: inherit;
     max-height: 53px;

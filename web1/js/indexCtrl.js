@@ -4,7 +4,7 @@ angular
         $scope.nowTheme = "norm";
 
         $scope.switchTheme = function () {
-            console.log($routeParams);
+            // console.log($routeParams);
             if ($routeParams["contest_ID"]) {
                 $scope.nowTheme = "contest";
             }

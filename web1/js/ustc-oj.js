@@ -45,6 +45,7 @@ angular
         $rootScope.contestUrl = "/api/contest/";
         $rootScope.contestBoardUrl = $rootScope.contestUrl + "{0}" + "/board";
         $rootScope.contestProblemUrl = $rootScope.contestUrl + "{0}" + "/problem/" + "{1}";
+        $rootScope.contestSingleUrl = $rootScope.contestUrl + "{0}" + "/player/" + "{1}";
         $rootScope.registeredContestListUrl = "/api/user/contest_list";
         $rootScope.registerContestUrl = $rootScope.contestListUrl + "{0}" + "/register";
         $rootScope.submitUrl = "/api/submission/";
@@ -95,7 +96,7 @@ angular
             var userid = userService.getUserid();
             var token = userService.getToken();
             url = $rootScope.apiHost + url;
-            console.log(url);
+            // console.log(url);
             header['Time'] = time;
             if (userid) {
                 header['Userid'] = userid;
@@ -480,6 +481,14 @@ angular
                     show_contestStatus(response);
                 });
         };
+
+        this.getContestSingleStatus = function(show_contestStatus, _contestId, _username) {
+            networkService.handleRepData('get', String.Format($rootScope.contestSingleUrl, _contestId, _username), null, null, null)
+                .then(function (response) {
+                    show_contestStatus(response.data);
+                });
+        };
+
 
         this.getUserList = function (showUserList) {
             networkService.handleRepData('get', $rootScope.siteRankUrl, null, null, null)

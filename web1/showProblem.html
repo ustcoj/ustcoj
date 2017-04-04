@@ -30,7 +30,7 @@
             <div ng-show="finishLoading">
 
                 <div class="prob-title">
-                    <h2>{{problemData.problem.problem_title}}</h2>
+                    <h2><span ng-show="isContest">{{problemData.problem.sort_index + " - "}}</span>{{problemData.problem.problem_title}}</h2>
                     <div class="prob-title-inf">
                         <p>Time limit: {{problemData.problem.time_limit}} ms</p>
                         <p>Memory limit: {{problemData.problem.memory_limit | bytes}}</p>
