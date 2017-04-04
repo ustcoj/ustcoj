@@ -81,12 +81,16 @@ angular
                 $window.location.href = siteService.rankLink;
         };
 
+        $scope.toLogIn = function () {
+            $window.location.href = siteService.loginLink;
+        };
+
         $scope.gotoContestProblem = function (contestId, problem) {
             $window.location.href = String.Format(siteService.contestProblemLink, contestId, problem)
         };
 
         $scope.logOut = function () {
             userService.logOut();
-            $window.location.href = '#/';
+            $window.location.href = siteService.loginLink;
         }
 });

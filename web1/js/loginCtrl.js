@@ -2,6 +2,10 @@ angular
     .module('ustc-oj')
     .controller("loginCtrl", function ($scope, $http, $rootScope, $window, userService, siteService, profileService) {
 
+        if (userService.isLoggedIn()) {
+            $window.location.href = siteService.problemLink;
+        }
+
         $scope.signUpMode = false;
 
         $scope.registerFire = function (username, pass, passagain, email) {

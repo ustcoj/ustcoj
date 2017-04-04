@@ -3,11 +3,18 @@
 
     <div ng-show="finishLoading">
 
-        <div ng-show="!hasVerifiedEmail&&myProfile">
-            <h3 class="small-title-font">Verify Your Email Address</h3>
-            <form ng-submit="verifyCode()">
-                <input type="number" ng-model="verifyEmailCode" />
-            </form>
+        <div ng-show="!hasVerifiedEmail&&myProfile" class="inf-board inf-board-alert">
+            <div class="inf-board-title small-title-font">Verify your email address</div>
+            <div class="inf-board-content">
+                <form ng-submit="verifyCode()" class="profile-verify-email-form">
+                    <input id="numberField" type="text" ng-model="verifyEmailCode" maxlength="6" pattern="\d{6}" required />
+                    <button type="submit" class="btn btn-alert">Verify</button>
+                </form>
+                <p>Please enter the 6-digit number in the email we sent you. It may take a few minutes for the email to arrive.</p>
+                <p ng-show="!hasResend">Or you can <a class="profile-resend-email" ng-click="resendEmail()">CLICK HERE</a> to resend.</p>
+                <p ng-show="hasResend">The email has been resent.</p>
+            </div>
+
         </div>
 
         <section class="row profile-top" ng-show="finishLoading">
@@ -21,7 +28,7 @@
             <div class="profile-info-detail col-md-12">
                 <section ng-show="userDetail.email">
                     <header class="profile-header">Email</header>
-                    <div class="profile-content">{{userDetail.email}}</div>
+                    <div class="profile-content">{{userDetail.email}}<span ng-show="hasVerifiedEmail&&myProfile"> (Verified)</span></div>
                 </section>
                 <section>
                     <header class="profile-header">USTC ID<a ng-show="!hasBindId&&myProfile" class="profile-bind-id small-title-font">BIND</a></header>

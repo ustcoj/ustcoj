@@ -20,7 +20,7 @@ body{
     */
     /*background-color: #fffaf0;*/
     margin-bottom: 80px;
-    padding-top: 70px;
+    padding-top: 90px;
 }
 
 a {
@@ -52,6 +52,49 @@ span {
 ::selection {
     background: #faa634;
     color: #fffaf0;
+}
+
+.round-tick {
+    float: left;
+    content: "✓";
+    color: #fffaf0;
+    font-size: 12px;
+    line-height: 12px;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    background-color: #faa634;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.btn {
+    border-radius: 6px;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn-alert {
+    color: #67c761;
+    background-color: white;
+    border-color: #67c761;
+    transition: background-color 0.5s;
+}
+
+.btn-alert:hover {
+    color: white;
+    background-color: #67c761;
+    transition: background-color 0.5s;
+}
+
+@media print
+{
+    .footer, .footer *, .main-navbar, .main-navbar *
+    {
+        display: none !important;
+    }
 }
 
 .footer {
@@ -210,4 +253,54 @@ span {
 #Triangle:hover {
     fill: #faa634;
 }
+
+
+.inf-board {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.inf-board-content {
+    font-size: 14px;
+    padding: 8px;
+}
+
+.inf-board-title {
+    line-height: 36px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.inf-board-alert .inf-board-title {
+    color: #f0ffef;
+}
+
+.inf-board-info .inf-board-title {
+    color: #fffaf0;
+}
+
+.inf-board-alert {
+    border: 1px solid #67c761;
+    background-color: #f0ffef;
+}
+
+.inf-board-alert > .inf-board-title {
+    background-color: #67c761;
+}
+
+.inf-board-alert a {
+    color: #67c761;
+}
+
+.inf-board-info > .inf-board-title {
+    background-color: #faa634;
+}
+
+.inf-board-info {
+    border: 1px solid #faa634;
+    background-color: #fffaf0;
+}
+
 

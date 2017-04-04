@@ -51,12 +51,12 @@ angular
         $scope.verifyCode = function () {
             profileService.verifyCode(function (response) {
                 siteService.reload();
-            }, $verifyEmailCode);
+            }, $scope.verifyEmailCode);
         };
 
-        $scope.verifyEmail = function () {
+        $scope.resendEmail = function () {
             profileService.verifyEmail(function (response) {
-
+                $scope.hasResend = true;
             });
         };
 

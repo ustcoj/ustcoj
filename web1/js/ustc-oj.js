@@ -31,7 +31,7 @@ angular
 
 angular
     .module('ustc-oj')
-    .run(function ($rootScope) {
+    .run(function ($rootScope, $window) {
         $rootScope.tabShow = "showProblem";
         var apiHostBody = "ustcoj.applinzi.com";
         //$rootScope.apiHost = "http://106.14.46.189";
@@ -424,6 +424,7 @@ angular
             doNotBroadCast = doNotBroadCast || false;
             networkService.handleRepData('get', $rootScope.contestListUrl + _contestid, null, null, null)
                 .then(function (response) {
+                    response.data.description = $sce.trustAsHtml(response.data.description);
                     show_contestInfo(response.data);
                     if (!doNotBroadCast) {
                         $rootScope.root_currentContest = response.data;
@@ -520,10 +521,10 @@ angular
         };
 
         this.verifyCode = function (show_verifyResult, _token) {
-            param = {
+            data = {
                 "token" : _token
             };
-            networkService.handleRepData('post', $rootScope.verifyEmailUrl, null, {params: param}, null)
+            networkService.handleRepData('post', $rootScope.verifyEmailUrl, data, null, null)
                 .then(function (result) {
                     show_verifyResult(result);
                 })
