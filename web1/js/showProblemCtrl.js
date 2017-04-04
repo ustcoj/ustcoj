@@ -9,6 +9,10 @@ angular
     $scope.descObj = $(".prob-title-inf")[0];
     $scope.isContest = false;
 
+    problemService.getContestInfo(function (response) {
+
+    }, $routeParams.contest_ID);
+
     if ($routeParams.contest_ID == null) {
         if ($routeParams.problem_ID == null) {
             // TODO: show some error message
@@ -29,7 +33,10 @@ angular
             // TODO: show some error message
         }
         else {
-
+            problemService.getProblemData(function(data){
+                $scope.problemData = data;
+                $scope.finishLoading = true;
+            }, $routeParams.problem_SEQ, $routeParams.contest_ID);
         }
     }
 

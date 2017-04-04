@@ -44,6 +44,7 @@ angular
         $rootScope.contestListUrl = "/api/contest/";
         $rootScope.contestUrl = "/api/contest/";
         $rootScope.contestBoardUrl = $rootScope.contestUrl + "{0}" + "/board";
+        $rootScope.contestProblemUrl = $rootScope.contestUrl + "{0}" + "/problem/" + "{1}";
         $rootScope.registeredContestListUrl = "/api/user/contest_list";
         $rootScope.registerContestUrl = $rootScope.contestListUrl + "{0}" + "/register";
         $rootScope.submitUrl = "/api/submission/";
@@ -303,9 +304,17 @@ angular
 
         };
 
-        this.getProblemData = function(show_problemData, problemId) {
+        this.getProblemData = function(show_problemData, problemId, _contest_id) {
 
-            networkService.handleRepData('get', $rootScope.problemUrl + problemId, null, null, null)
+            var url;
+            if (_contest_id) {
+                url = String.Format($rootScope.contestProblemUrl, _contest_id, problemId);
+            }
+            else {
+                url = $rootScope.problemUrl + problemId;
+            }
+
+            networkService.handleRepData('get', url, null, null, null)
                 .then(function (response) {
                         show_problemData(resolveProblemData(response.data));
                 });
@@ -341,6 +350,8 @@ angular
         };
 
         resolveProblemData = function (data) {
+
+             console.log(data);
 
              data.problem.description =
              $sce.trustAsHtml(data.problem.description);
