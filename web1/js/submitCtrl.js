@@ -17,7 +17,7 @@ angular
     //console.log($scope.languageList);
 
     if ($routeParams.contest_ID == null) {
-
+        $scope.submitId = $routeParams.problem_ID || $routeParams.problem_ID;
     }
     else {
         console.log($routeParams);

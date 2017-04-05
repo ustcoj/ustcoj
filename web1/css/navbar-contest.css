@@ -19,7 +19,7 @@
 
 .navbar-brand-text {
     color: inherit;
-    font-weight: inherit;
+    font-weight: bold;
     max-height: 53px;
     max-width: 360px;
     overflow: hidden;

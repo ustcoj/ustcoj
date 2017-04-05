@@ -1,3 +1,6 @@
+.contest-problem-table {
+    width: 100%;
+}
 
 .contest-list-content {
     font-size: 16px;
@@ -30,17 +33,24 @@
 }
 
 .contest-title {
-    height: 73px;
-    padding: 9px 12px;
+    height: 50px;
+    padding: 12px 12px;
     font-size: 24px;
     line-height: 32px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
+.contest-type {
+    font-size: 12px;
+    margin-left: 13px;
+    text-transform: uppercase;
+    color: #888888;
+}
+
 .contest-button {
     float: left;
-    margin: 12px 18px 0 12px;
+    margin: 16px 18px 0 12px;
 }
 
 .contest-time {

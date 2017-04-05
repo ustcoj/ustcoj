@@ -185,7 +185,7 @@ angular
         this.submitLink = '#/submit/';
         this.contestSubmitLink = '#/contests/{0}/submit/';
         this.contestSubmissionLink = '#/contests/{0}/status/{1}/';
-        this.contestProblemLink = '#/contests/{0}/problems/{1}/';
+        this.contestProblemLink = '#/contests/{0}/problems/{1}';
         this.editLink = '#/edit/';
         this.errorMsg = {
             "411" : "Invalid username or wrong password",
@@ -343,6 +343,10 @@ angular
             "7": "Pending",
             "8": "Judge Failed"
         };
+        this.contestType = {
+            "0" : "ACM Contest",
+            "5" : "竞速赛"
+        };
         this.checkValidProblemId = function(content) {
             return (
                 Number(content).toString() === content
@@ -435,13 +439,10 @@ angular
         };
 
         this.submitCode = function(submit_complete, _submission_data) {
-            //console.log(_submission_data);
-
             networkService.handleRepData('post', $rootScope.submitUrl, _submission_data, null, null)
                 .then(function (response) {
                     submit_complete(response.data);
                 });
-
         };
 
         this.getSubmissonInfo = function(show_submissionInfo, _submissoinid) {

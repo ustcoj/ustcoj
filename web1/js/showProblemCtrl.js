@@ -1,6 +1,6 @@
 angular
     .module('ustc-oj')
-    .controller("showProblemCtrl", function($scope, $http, $rootScope, $routeParams, problemService){
+    .controller("showProblemCtrl", function($scope, $http, $window, $rootScope, $routeParams, problemService, siteService){
 
     $scope.finishLoading = false;
     $scope.titleChanged = false;
@@ -13,6 +13,15 @@ angular
         MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
         return true;
     });
+
+    $scope.goSubmit = function () {
+        if ($scope.isContest) {
+            $window.location.href = String.Format(siteService.contestSubmitLink, $routeParams.contest_ID) + $scope.problemData.problem.sort_index;
+        }
+        else {
+            $window.location.href = siteService.submitLink + $scope.problemData.problem.problem_id;
+        }
+    };
 
     if ($routeParams.contest_ID == null) {
         if ($routeParams.problem_ID == null) {

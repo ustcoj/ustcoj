@@ -86,7 +86,27 @@ span {
 .btn-alert:hover {
     color: white;
     background-color: #67c761;
+    border-color: #67c761;
     transition: background-color 0.5s;
+}
+
+.btn-default {
+    color: #faa634;
+    background-color: #fffaf0;
+    border-color: #faa634;
+    transition: background-color 0.5s;
+}
+
+.btn-default:hover {
+    color: white;
+    background-color: #faa634;
+    transition: background-color 0.5s;
+    border-color: #faa634;
+}
+
+.btn-thin {
+    height: 24px;
+    padding: 0 12px;
 }
 
 @media print
@@ -273,12 +293,30 @@ span {
     font-size: 18px;
 }
 
+.inf-board-thin .inf-board-title {
+    line-height: 28px;
+    font-size: 14px;
+}
+
 .inf-board-alert .inf-board-title {
     color: #f0ffef;
 }
 
 .inf-board-info .inf-board-title {
     color: #fffaf0;
+}
+
+.inf-board-side .inf-board-title {
+    color: #faa634;
+}
+
+.inf-board-side {
+    border: 1px solid #faa634;
+    background-color: white;
+}
+
+.inf-board-side > .inf-board-title {
+    background-color: #fffaf0;
 }
 
 .inf-board-alert {

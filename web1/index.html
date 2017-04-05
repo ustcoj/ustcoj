@@ -83,7 +83,7 @@
                         }],
                         controllerAs: 'ctrl'
                     })
-                    .when('/contests/:contest_ID/problems/:problem_SEQ/',{
+                    .when('/contests/:contest_ID/problems/:problem_SEQ',{
                         templateUrl:'showProblem.html',
                         controller: ['$routeParams', function($routeParams) {
                         }],
@@ -92,7 +92,7 @@
                     .when('/contests/:contest_ID/problems/',{
                         redirectTo:'/contests/:contest_ID/'}
                     )
-                    .when('/contests/:contest_ID/submit/:problem_SEQ/',{
+                    .when('/contests/:contest_ID/submit/:problem_SEQ',{
                         templateUrl:'submit.html',
                         controller: ['$routeParams', function($routeParams) {
                         }],

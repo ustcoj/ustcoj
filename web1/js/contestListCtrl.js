@@ -70,4 +70,8 @@ angular
                 $scope.updateUserData();
             }, contestId);
         };
+
+        $scope.getContestType = function (_contest_type) {
+            return problemService.contestType[_contest_type];
+        }
 });

@@ -11,17 +11,19 @@
 
 
         <div class="input-wrapper" ng-style="wrapperStyle">
-            <div ng-show="!signUpMode">
+            <form ng-show="!signUpMode" ng-submit="loginFire(logInUsername, logInPassword)">
                 <input ng-model="logInUsername" placeholder="Username" type="text" id="log-in-username">
                 <input ng-model="logInPassword" placeholder="Password" type="password" id="log-in-pass">
-            </div>
+                <button type="submit" ng-hide="true"value="Submit">
+            </form>
 
-            <div ng-show="signUpMode">
+            <form ng-show="signUpMode" ng-submit="registerFire(signUpUsername, signUpPassword, signUpPasswordAgain, signUpEmail)">
                 <input ng-model="signUpEmail" placeholder="Email" type="email" id="sign-up-email">
                 <input ng-model="signUpUsername" placeholder="Username" type="text" id="sign-up-username">
                 <input ng-model="signUpPassword" placeholder="Password" type="password" id="sign-up-pass">
                 <input ng-model="signUpPasswordAgain" placeholder="Password Again" type="password" id="sign-up-pass-again">
-            </div>
+                <button type="submit" ng-hide="true" value="Submit">
+            </form>
         </div>
 
         <!--

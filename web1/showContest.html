@@ -3,14 +3,14 @@
 <div ng-controller="showContestCtrl" class="container">
 
 
-    <div class="page-header contest-title">
+    <div class="page-header">
         <h2>Problems</h2>
     </div>
 
 
     <div class="contest-content" ng-show="finishLoading">
-        <div class="col-md-1"></div>
-        <div class="col-md-38">
+
+        <div class="col-md-36">
 
             <div class="table-responsive">
 
@@ -58,12 +58,15 @@
 
         </div>
 
-        <div class="col-md-8">
-
-            <div><a ng-click="gotoBoard()">Board</a></div>
-            <div><a ng-click="gotoSubmit()">Submit</a></div>
-            <div><a ng-click="gotoStatus()">Status</a></div>
-
+        <div class="col-md-12 side-bar">
+            <div class="inf-board inf-board-side inf-board-thin" id="side-submit">
+                <div class="inf-board-title small-title-font">
+                    {{contestInfo.contest_typename}}
+                </div>
+                <div class="inf-board-content">
+                    Description for current contest type
+                </div>
+            </div>
         </div>
 
 

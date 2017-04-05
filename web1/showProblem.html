@@ -3,33 +3,9 @@
 </script>
 <div ng-controller="showProblemCtrl" class="container">
 
-
-    <!--<div class="rightbar">-->
-        <!--<div class="rightbarItem">-->
-            <!--<div class="rightbarHead">-->
-                <!--Problem Tag-->
-            <!--</div>-->
-            <!--<div>-->
-                <!--<span class="rightbarTag">dfs</span>-->
-            <!--</div>-->
-            <!--<div>-->
-                <!--<span class="rightbarTag">dynamic programming</span>-->
-            <!--</div>-->
-            <!--<div></div>-->
-        <!--</div>-->
-        <!--<div class="rightbarItem">-->
-            <!--<div class="rightbarProb">-->
-                <!--1001-->
-            <!--</div>-->
-            <!--<div>Submit</div>-->
-            <!--<div>Status</div>-->
-        <!--</div>-->
-    <!--</div>-->
-    <div class="row problem-body">
+    <div class="row problem-body" ng-show="finishLoading">
 
         <div class="col-md-38 col-md-offset-1 col-lg-32 col-lg-offset-4">
-
-            <div ng-show="finishLoading">
 
                 <div class="prob-title">
                     <h2><span ng-show="isContest">{{problemData.problem.sort_index + " - "}}</span>{{problemData.problem.problem_title}}</h2>
@@ -42,25 +18,16 @@
 
                 <div class="prob-inner-content">
                     <div class="prob-desc">
-                        <!--<div id="editormd-view-desc">-->
-                            <!--<textarea style="display:none;"></textarea>-->
-                        <!--</div>-->
                         <div ng-bind-html="problemData.problem.description" class="prob-desc-body"></div>
                         <div class="prob-desc">
                             <h4 ng-show="problemData.problem.output_description">Input Description</h4>
                             <h4 ng-show="!problemData.problem.output_description">I/O Description</h4>
                             <div ng-bind-html="problemData.problem.input_description"></div>
-                            <!--<div id="editormd-view-input-desc">-->
-                                <!--<textarea style="display:none;"></textarea>-->
-                            <!--</div>-->
                         </div>
 
                         <div class="prob-desc" ng-show="problemData.problem.output_description">
                             <h4>Output Description</h4>
                             <div ng-bind-html="problemData.problem.output_description"></div>
-                            <!--<div id="editormd-view-output-desc">-->
-                                <!--<textarea style="display:none;"></textarea>-->
-                            <!--</div>-->
                         </div>
 
                         <div class="prob-desc" id="sample">
@@ -95,23 +62,26 @@
 
                     </div>
 
-
                 </div>
+        </div>
 
-                <div ng-show="!finishLoading">
-                    Loading...
+        <div class="col-md-8 side-bar">
+            <div class="inf-board inf-board-side inf-board-thin" id="side-submit">
+                <div class="inf-board-title small-title-font">
+                    <span ng-show="isContest">{{problemData.problem.sort_index}}</span>
+                    <span ng-show="!isContest">{{problemData.problem.problem_id}}</span>
                 </div>
-
-
+                <div class="inf-board-content">
+                    <a ng-click="goSubmit()" class="col-center">Submit</a>
+                </div>
+            </div>
         </div>
 
 
-            <div ng-show="!finishLoading">
-                <div class="waiting-orange"></div>
-            </div>
-        <div class="col-md-8"></div>
+    </div>
 
-
+    <div ng-show="!finishLoading">
+        <div class="waiting-orange"></div>
     </div>
 
 
