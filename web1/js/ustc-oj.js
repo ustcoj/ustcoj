@@ -37,6 +37,7 @@ angular
         //$rootScope.apiHost = "http://106.14.46.189";
         $rootScope.apiHost = ('https:' == document.location.protocol ? 'https://' : 'http://') + apiHostBody;
         $rootScope.siteRankUrl = "/api/user/";
+        $rootScope.newsUrl = "/api/news/";
         $rootScope.loginUrl = "/api/user/login";
         $rootScope.registerUrl = "/api/user/register";
         $rootScope.problemListUrl = "/api/problem/";
@@ -56,6 +57,9 @@ angular
         $rootScope.userAvatar = '/';
         $rootScope.verifyEmailUrl = '/api/user/verify_email';
         $rootScope.myContestStatusUrl = $rootScope.contestUrl + "{0}" + "/submission";
+
+        $rootScope.fullTime = 'yyyy-MM-dd HH:mm:ss';
+        $rootScope.articleDate = 'yyyy - MM - dd';
 
     });
 
@@ -505,6 +509,20 @@ angular
             networkService.handleRepData('get', url, null, null, null)
                 .then(function (response) {
                     show_contestBoard(response.data);
+                })
+        };
+
+        this.getNewsList = function (show_news, _page, _per_page) {
+            param = {
+                "page" : _page,
+                "per_page" : _per_page
+            };
+            networkService.handleRepData('get', $rootScope.newsUrl, null, {params: param}, null)
+                .then(function (response) {
+                    if (response.data.news_list) {
+                        response.data.news_list[0].news_excerpt = $sce.trustAsHtml(response.data.news_list[0].news_excerpt);
+                    }
+                    show_news(response.data);
                 })
         }
 

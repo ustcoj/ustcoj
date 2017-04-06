@@ -1,15 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 9]>
-<html>
-    <body>
-        <div>
-            <h1>Browser not supported</h1>
-            <p>Hi, please update your Internet Explorer to a <a href="https://www.microsoft.com/en-us/download/internet-explorer.aspx">higher version</a> or use <a href="https://www.google.com/intl/zh-CN/chrome/browser/desktop/index.html">Chrome</a> or <a href="http://www.apple.com/cn/shop/buy-mac/mac-pro">Safari</a> instead.</p>
-        </div>
-    </body>
-</html>
-<![endif]-->
-
 
 <html ng-app="ustc-oj" ng-controller="indexCtrl" xmlns:ng="http://angularjs.org" id="ng-app">
 <head>
@@ -26,7 +15,6 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500" rel="stylesheet">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="callunasans.css">
     <link rel="stylesheet" href="css/ustc-oj.css">
     <!--<link rel="stylesheet" href="css/index.css">-->
     <link rel="stylesheet" href="css/navbar.css">
@@ -47,6 +35,7 @@
     <script src="js/ustc-oj.js" charset="utf-8"></script>
     <script src="js/navbarCtrl.js" charset="utf-8"></script>
     <script src="js/indexCtrl.js" charset="utf-8"></script>
+    <script src="js/homeCtrl.js" charset="utf-8"></script>
     <script src="js/loginCtrl.js" charset="utf-8"></script>
     <script src="js/showProblemCtrl.js" charset="utf-8"></script>
     <script src="js/submitCtrl.js" charset="utf-8"></script>
@@ -67,7 +56,7 @@
             .module('ustc-oj')
             .config(['$routeProvider', function($routeProvider){
                 $routeProvider
-                    .when('/',{templateUrl:'login.html'})
+                    .when('/',{templateUrl:'home.html'})
                     .when('/login/',{templateUrl:'login.html'})
                     .when('/problems/',{templateUrl:'problemList.html'})
                     .when('/problems/:problem_ID/',{
@@ -168,6 +157,17 @@
         </div>
 
     </footer>
+
+    <script>
+        var $buoop = {vs:{i:10,f:-4,o:-4,s:8,c:-4},api:4};
+        function $buo_f(){
+            var e = document.createElement("script");
+            e.src = "//browser-update.org/update.min.js";
+            document.body.appendChild(e);
+        };
+        try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+        catch(e){window.attachEvent("onload", $buo_f)}
+    </script>
 
 </body>
 </html>

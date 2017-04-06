@@ -1,0 +1,129 @@
+.home-container {
+    padding: 0 !important;
+}
+
+.home-main-content {
+    padding-top: 20px;
+}
+
+.home-title {
+    text-transform: uppercase;
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.home-section {
+    margin-bottom: 40px;
+}
+
+.home-section-title {
+    height: 32px;
+}
+
+.home-title-deco {
+    float: left;
+    margin: 2px 12px 2px 18px;
+    height: 24px;
+    width: 6px;
+    background-color: #faa634;
+    content: "";
+}
+
+.home-section-content {
+    margin: 6px 0;
+}
+
+.news-board {
+    cursor: pointer;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    min-height: 96px;
+    padding: 12px;
+    margin: 10px 0;
+    transition: box-shadow 0.5s;
+}
+
+.news-board:hover {
+    box-shadow: 0 0 0 1pt #faa634;
+    transition: box-shadow 0.5s;
+}
+
+.news-board > p {
+    color: #4a4a4a;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0;
+}
+
+.news-board-content-big {
+    min-height: 60px;
+}
+
+.news-board-big {
+    min-height: 212px;
+    background-color: #fffaf0;
+    padding: 20px;
+}
+
+.news-board-title {
+    min-height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.news-board-big .news-board-title {
+    font-size: 28px;
+    min-height: 80px;
+}
+
+.news-board-title-big {
+    min-height: 96px;
+}
+
+.new-board-desc-big {
+    font-size: 14px;
+    color: #4a4a4a;
+}
+
+.news-board-more {
+    background-color: #f8f8f8;
+}
+
+.news-board-more-dot-group {
+    width: 66px;
+    height: 10px;
+    margin: auto auto;
+}
+
+.news-board-more-dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    background-color: #c8c8c8;
+    content: "";
+    margin: 0 6px;
+}
+
+.news-board-date {
+    display: inline-block;
+    background-color: #aaaaaa;
+    color: #f8f8f8;
+    font-size: 12px;
+    vertical-align: middle;
+    padding: 0 4px;
+}
+
+.news-board-big .news-board-date {
+    background-color: #faa634;
+    color: #fffaf0;
+}
+
+.news-board-big .news-board-date {
+    margin-top: 6px;
+    margin-bottom: 8px;
+}
+
+

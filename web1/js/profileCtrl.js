@@ -37,7 +37,11 @@ angular
             'View All Profile' : 53,
 
             'Add Privilege' : 60,
-            'Del Privilege' : 61
+            'Del Privilege' : 61,
+
+            'View All News' : 70,
+            'Add News' : 71,
+            'Edit News' : 72
         };
         $scope.findPri = function(index) {
             for (var x in $scope.privilege_code) {

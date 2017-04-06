@@ -38,10 +38,7 @@ angular
         };
 
         $scope.clickLogo = function () {
-            if (!$scope.isLoggedIn) $window.location.href = siteService.homeLink;
-            else {
-                $window.location.href = siteService.problemLink;
-            }
+            $window.location.href = siteService.homeLink;
         };
 
         $scope.toBack = function () {

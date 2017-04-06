@@ -56,10 +56,10 @@
     margin-bottom: 15px;
 }
 
-.prob-desc-body:first-letter {
-    font-weight: bold;
-    font-size: 24px;
-}
+/*.prob-desc-body:first-letter {*/
+    /*font-weight: bold;*/
+    /*font-size: 24px;*/
+/*}*/
 
 .sample-title h4 {
     width: 360px;

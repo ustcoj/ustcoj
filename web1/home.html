@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="css/home.css">
+
+<div ng-controller="homeCtrl" class="container home-container" role="main">
+
+	<div class="home-main-content col-md-38">
+		<div class="home-section">
+			<div class="home-section-title">
+				<div class="home-title-deco"></div>
+				<div class="home-title small-title-font">News</div>
+			</div>
+			<div class="home-section-content row gutter-ten" ng-show="newsLoaded">
+				<div class="col-sm-28">
+					<div class="news-board news-board-big" ng-show="newsList[0]">
+						<div class="news-board-title" ng-bind="newsList[0].news_title"></div>
+						<div class="news-board-date">{{newsList[0].push_time | date:articleDate}}</div>
+						<p class="news-board-content-big" ng-bind-html="newsList[0].news_excerpt"></p>
+					</div>
+				</div>
+				<div class="col-sm-20">
+					<div class="news-board" ng-show="newsList[1]">
+						<div class="news-board-title" ng-bind="newsList[1].news_title"></div>
+						<div class="news-board-date">{{newsList[1].push_time | date:articleDate}}</div>
+					</div>
+				</div>
+				<div class="col-sm-20">
+					<div class="news-board" ng-show="newsList[2]">
+						<div class="news-board-title" ng-bind="newsList[2].news_title"></div>
+						<div class="news-board-date">{{newsList[2].push_time | date:articleDate}}</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="waiting-orange-small" ng-show="!newsLoaded"></div>
+
+		</div>
+
+		<div class="home-section">
+			<div class="home-section-title">
+				<div class="home-title-deco"></div>
+				<div class="home-title small-title-font">Recent Contests</div>
+			</div>
+			<div class="home-section-content row gutter-ten" ng-show="recentContestLoaded">
+
+			</div>
+			<div class="waiting-orange-small" ng-show="!newsLoaded"></div>
+
+		</div>
+	</div>
+
+	<div class="side-bar col-md-10">
+		<div class="inf-board inf-board-side inf-board-thin" ng-show="isLoggedIn">
+			<div class="inf-board-title small-title-font">User</div>
+			<div class="inf-board-content">{{userId}}</div>
+		</div>
+		<div class="inf-board inf-board-side inf-board-thin">
+			<div class="inf-board-title small-title-font">Site Info</div>
+			<div class="inf-board-content" ng-show="siteInfoLoaded">!!!</div>
+			<div class="inf-board-content" ng-show="!siteInfoLoaded">
+				<div class="waiting-orange-small-super"></div>
+			</div>
+		</div>
+	</div>
+
+
+</div>

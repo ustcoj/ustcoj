@@ -142,8 +142,18 @@ span {
 }
 
 .waiting-orange {
-    content: url("../wait.svg");
+    content: url("../resource/wait.svg");
     margin: 150px auto;
+}
+
+.waiting-orange-small {
+    content: url("../resource/wait.svg");
+    margin: 80px auto;
+}
+
+.waiting-orange-small-super {
+    content: url("../resource/wait.svg");
+    margin: 20px auto;
 }
 
 .copy-icon {
@@ -208,6 +218,11 @@ span {
     padding-left:0;
 }
 
+.gutter-ten > [class*='col-'] {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
 .bubble {
     height: 32px;
     padding: 6px 12px;
@@ -216,8 +231,6 @@ span {
     margin: 0 3px;
     float: left;
 }
-
-
 
 .page-switch-container {
     height: 36px;

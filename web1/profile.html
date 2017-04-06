@@ -37,11 +37,11 @@
                 </section>
                 <section>
                     <header class="profile-header">Register Time</header>
-                    <div class="profile-content">{{userDetail.register_time}}</div>
+                    <div class="profile-content">{{userDetail.register_time | date:fullTime}}</div>
                 </section>
                 <section>
                     <header class="profile-header">Last Online</header>
-                    <div class="profile-content">{{userDetail.last_login}}</div>
+                    <div class="profile-content">{{userDetail.last_login | date:fullTime}}</div>
                 </section>
             </div>
         </section>
