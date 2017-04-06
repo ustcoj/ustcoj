@@ -15,7 +15,7 @@
 
 .bar-head > th {
     font-weight: bold;
-    color: #8e8e8e;
+    color: #8e8e8e !important;
     font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
@@ -26,7 +26,7 @@
 
 .bar-table thead th {
     font-weight: bold;
-    color: #8e8e8e;
+    color: #8e8e8e !important;
 }
 
 .bar-table tbody td {
@@ -68,6 +68,7 @@
     border-bottom-right-radius: 10px;
 }
 
+
 .bar-table tr td:last-child > div {
     border: none;
 }
@@ -76,22 +77,22 @@
     min-width: 220px;
 }
 
-.problem-bar-trying > td {
+.bar-trying > td {
     background-color: #f0ffef !important;
 }
 
-.problem-bar-result-trying {
+.bar-trying-content {
     font-weight: bold;
     /*color: #67c761;*/
     color: #6cd165;
 }
 
-.problem-bar-result-solved {
+.bar-solved-content {
     font-weight: bold;
     color: #faa634;
 }
 
-.problem-bar-solved > td {
+.bar-solved > td {
     background-color: #fffaf0 !important;
 }
 

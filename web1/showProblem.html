@@ -30,7 +30,7 @@
                             <div ng-bind-html="problemData.problem.output_description"></div>
                         </div>
 
-                        <div class="prob-desc" id="sample">
+                        <div class="prob-desc" id="sample" ng-show="problemData.problem.input_sample.length">
                             <h4>Sample<span ng-show="problemData.problem.input_sample.length > 1">s</span></h4>
 
                             <div class="sample-wrapper row" ng-repeat="s in problemData.problem.input_sample">

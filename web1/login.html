@@ -4,6 +4,7 @@
     <div class="login-container" ng-style="containerHeight">
 
         <div class="login-switch">
+            <div class="login-offset" ng-show="!signUpMode"></div>
             <button ng-click="toLogin(); wrapperStyle={'border-color': '#faa634'}">LOG IN</button>
             <button id="sign-up-button" ng-click="toSignUp(); wrapperStyle={'border-color': '#67C761'}">SIGN UP</button>
         </div>
@@ -14,7 +15,7 @@
             <form ng-show="!signUpMode" ng-submit="loginFire(logInUsername, logInPassword)">
                 <input ng-model="logInUsername" placeholder="Username" type="text" id="log-in-username">
                 <input ng-model="logInPassword" placeholder="Password" type="password" id="log-in-pass">
-                <button type="submit" ng-hide="true"value="Submit">
+                <button type="submit" ng-hide="true"value="Log in"></button>
             </form>
 
             <form ng-show="signUpMode" ng-submit="registerFire(signUpUsername, signUpPassword, signUpPasswordAgain, signUpEmail)">
@@ -22,7 +23,7 @@
                 <input ng-model="signUpUsername" placeholder="Username" type="text" id="sign-up-username">
                 <input ng-model="signUpPassword" placeholder="Password" type="password" id="sign-up-pass">
                 <input ng-model="signUpPasswordAgain" placeholder="Password Again" type="password" id="sign-up-pass-again">
-                <button type="submit" ng-hide="true" value="Submit">
+                <button type="submit" ng-hide="true" value="Sign Up"></button>
             </form>
         </div>
 
@@ -34,8 +35,6 @@
         <div class="login-click">
 
             <svg ng-show="signUpMode" ng-click="registerFire(signUpUsername, signUpPassword, signUpPasswordAgain, signUpEmail)" width="50px" height="50px" viewBox="487 475 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
-                <desc>Created with Sketch.</desc>
                 <defs>
                     <circle id="path-1" cx="25" cy="25" r="25"></circle>
                     <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="50" height="50" fill="white">
@@ -49,16 +48,14 @@
             </svg>
 
             <svg ng-show="!signUpMode" ng-click="loginFire(logInUsername, logInPassword)" width="50px" height="50px" viewBox="487 475 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
-                <desc>Created with Sketch.</desc>
                 <defs>
-                    <circle id="path-1" cx="25" cy="25" r="25"></circle>
-                    <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="50" height="50" fill="white">
-                        <use xlink:href="#path-1"></use>
+                    <circle id="path-3" cx="25" cy="25" r="25"></circle>
+                    <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="50" height="50" fill="white">
+                        <use xlink:href="#path-3"></use>
                     </mask>
                 </defs>
                 <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(487.000000, 475.000000)">
-                    <use id="Oval" stroke="#FAA634" mask="url(#mask-2)" stroke-width="6" fill="#FFFAF0" xlink:href="#path-1"></use>
+                    <use id="Oval" stroke="#FAA634" mask="url(#mask-4)" stroke-width="6" fill="#FFFAF0" xlink:href="#path-3"></use>
                     <circle id="Oval-2" fill="#FAA634" cx="25.5" cy="25.5" r="12.5"></circle>
                 </g>
             </svg>

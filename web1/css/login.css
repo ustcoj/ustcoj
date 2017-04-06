@@ -1,9 +1,40 @@
+
 .login-main {
     height: 100%;
-    min-height: 720px;
+    min-height: 540px;
     margin-bottom: -50px;
 }
 
+.login-container {
+    position: absolute;
+    width: 290px;
+    left: 50%;
+    top: 50%;
+    height: 310px;
+    margin-top: -150px;
+    margin-left: -150px;
+}
+@media (max-width: 767px) {
+    .login-main {
+        height: auto;
+        min-height: 0;
+        margin-bottom: 0;
+    }
+    .login-container {
+        position: absolute;
+        width: 300px;
+        left: 50%;
+        top: 50%;
+        height: 310px;
+        margin-top: -150px;
+        margin-left: -150px;
+        margin-bottom: 60px;
+    }
+}
+
+.login-offset {
+    height: 40px;
+}
 
 .input-wrapper {
     overflow: hidden;
@@ -14,30 +45,25 @@
     display: block;
 }
 
-.login-container {
-    position: absolute;
-    width: 300px;
-    left: 50%;
-    top: 50%;
-    height: 300px;
-    margin-top: -150px;
-    margin-left: -150px;
-    /*padding-top: 28%;; containerHeight={'padding-top': '28%'}*/
-}
-
-.login-container label {
-    color: #797979;
-    font-size: 18px;
-}
-
 .login-container input {
+    color: #333333;
     padding: 0 6px;
     font-size: 20px;
     width: 100%;
     height: 40px;
     border-radius: 3px;
-    border-width: 0px;
+    border-width: 0;
     outline: none;
+}
+
+.login-container input::-webkit-input-placeholder {
+    color: #8e8e8e;
+}
+.login-container input::-moz-placeholder {
+    color: #8e8e8e;
+}
+.login-container input:-ms-input-placeholder {
+    color: #8e8e8e;
 }
 
 .login-switch {

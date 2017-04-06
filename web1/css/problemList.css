@@ -27,10 +27,10 @@
 }
 
 .problem-table tbody td {
-    padding: 12px 0px !important;
+    padding: 12px 0 !important;
 }
 
-.problem-bar .bar-content {
+.bar-content .problem-bar  {
     margin-top: 12px;
     line-height: 32px;
     padding: 12px;
@@ -47,7 +47,7 @@
     overflow:auto;
     line-height: 32px;
     width: 100%;
-    padding: 0px 12px;
+    padding: 0 12px;
 }
 
 

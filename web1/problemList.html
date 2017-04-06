@@ -8,7 +8,7 @@
 	</div>
 
 
-	<div class="problem-list-content">
+	<div class="problem-list-content row">
 		<div class="col-md-1"></div>
 
 		<div class="col-md-38">
@@ -17,7 +17,7 @@
 
 			<div class="table-responsive">
 
-				<table class="problem-table bar-table">
+				<table class="problem-table bar-table col-md-48">
 
 					<tr class="bar-head problem-bar">
 
@@ -34,10 +34,10 @@
 
 					<tr class="bar-content problem-bar" ng-repeat="x in problemList.problem_list"
 						ng-click="showProblem(x.problem_id)"
-						ng-class="{'problem-bar-trying': myTrying[x.problem_id], 'problem-bar-solved': mySolved[x.problem_id]}">
+						ng-class="{'bar-trying': myTrying[x.problem_id], 'bar-solved': mySolved[x.problem_id]}">
 
 						<td class="col-center"><div class="bardiv1"><div class="bardiv2">{{x.problem_id}}</div></div></td>
-						<td ng-class="{'problem-bar-result-trying': myTrying[x.problem_id], 'problem-bar-result-solved': mySolved[x.problem_id]}"><div class="bardiv1"><div class="bardiv2">{{x.problem_title}}</div></div></td>
+						<td ng-class="{'bar-trying-content': myTrying[x.problem_id], 'bar-solved-content': mySolved[x.problem_id]}"><div class="bardiv1"><div class="bardiv2">{{x.problem_title}}</div></div></td>
 						<td class="col-center">
 							<div class="bardiv1">
 								<div class="bardiv2">

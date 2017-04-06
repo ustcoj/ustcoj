@@ -88,6 +88,7 @@
     word-spacing: 0px;
     overflow-x: auto;
     padding: 5px;
+    min-height: 35px;
 }
 
 .prob-sample-output {
@@ -96,6 +97,7 @@
     word-spacing: 0;
     overflow-x: auto;
     padding: 5px;
+    min-height: 35px;
 }
 
 .prob-sample-copy {
