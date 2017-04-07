@@ -79,6 +79,10 @@
         overflow: hidden;
     }
 
+    .news-board-content-big {
+        height: 60px;
+    }
+
 }
 
 .news-board-title {
