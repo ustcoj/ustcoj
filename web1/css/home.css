@@ -58,12 +58,7 @@
     margin-bottom: 0;
 }
 
-.news-board-content-big {
-    min-height: 60px;
-}
-
 .news-board-big {
-    min-height: 212px;
     background-color: #fffaf0;
 }
 
@@ -75,12 +70,28 @@
 
     .news-board-big {
         padding: 20px;
-        max-height: 212px;
+        height: 212px;
         overflow: hidden;
     }
 
     .news-board-content-big {
         height: 60px;
+    }
+
+    .home-contest-board-title-part {
+        min-height: 92px;
+    }
+
+    .news-board-content-big {
+        min-height: 60px;
+    }
+
+    .news-board-title-big {
+        min-height: 96px;
+    }
+
+    .news-board-big .news-board-title {
+        min-height: 80px;
     }
 
 }
@@ -94,12 +105,8 @@
 
 .news-board-big .news-board-title {
     font-size: 28px;
-    min-height: 80px;
 }
 
-.news-board-title-big {
-    min-height: 96px;
-}
 
 .new-board-desc-big {
     font-size: 14px;
@@ -169,10 +176,8 @@
 .home-contest-board-title {
     font-weight: 600;
     font-size: 18px;
-}
-
-.home-contest-board-title-part {
-    min-height: 72px;
+    max-height: 75px;
+    overflow: hidden;
 }
 
 .home-contest-board-type {

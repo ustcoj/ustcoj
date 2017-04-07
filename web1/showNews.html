@@ -3,17 +3,15 @@
 </script>
 <div ng-controller="showNewsCtrl" class="container">
 
-    <div class="col-md-38 col-md-offset-1 col-lg-32 col-lg-offset-4" ng-show="finishLoading">
+    <div class="col-md-8">
+    <div class="col-md-32" ng-show="finishLoading">
 
             <div class="news-title">
-                <h2>{{problemData.problem.problem_title}}</h2>
-                <h4>{{problemData.}}</h4>
+                <h2>{{newsInfo.news_title}}</h2>
+                <h5>{{newsInfo.push_time | date:fullTime}} <span>{{newsInfo.user.username}}</span></h5>
             </div>
 
-            <div class="prob-inner-content">
-                <div class="prob-desc">
-                    <div ng-bind-html="problemData.problem.description" class="prob-desc-body"></div>
-                </div>
+            <div class="news-content">
 
             </div>
     </div>

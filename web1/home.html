@@ -10,20 +10,20 @@
 			</div>
 			<div class="home-section-content row gutter-ten" ng-show="newsLoaded">
 				<div class="col-sm-28">
-					<div class="news-board news-board-big" ng-show="newsList[0]">
+					<div class="news-board news-board-big" ng-show="newsList[0]" ng-click="showNews(newsList[0].news_id)">
 						<div class="news-board-title" ng-bind="newsList[0].news_title"></div>
 						<div class="news-board-date">{{newsList[0].push_time | date:articleDate}}</div>
 						<p class="news-board-content-big" ng-bind-html="newsList[0].news_excerpt"></p>
 					</div>
 				</div>
 				<div class="col-sm-20">
-					<div class="news-board" ng-show="newsList[1]">
+					<div class="news-board" ng-show="newsList[1]" ng-click="showNews(newsList[1].news_id)">
 						<div class="news-board-title" ng-bind="newsList[1].news_title"></div>
 						<div class="news-board-date">{{newsList[1].push_time | date:articleDate}}</div>
 					</div>
 				</div>
 				<div class="col-sm-20">
-					<div class="news-board" ng-show="newsList[2]">
+					<div class="news-board" ng-show="newsList[2]" ng-click="showNews(newsList[2].news_id)">
 						<div class="news-board-title" ng-bind="newsList[2].news_title"></div>
 						<div class="news-board-date">{{newsList[2].push_time | date:articleDate}}</div>
 					</div>

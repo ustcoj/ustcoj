@@ -52,7 +52,7 @@ angular
 
         };
 
-
+        $scope.refreshPage();
         problemService.getSiteInfo(function (response) {
             $scope.contestNum = response.contest_number;
             $scope.pageSum = Math.ceil($scope.contestNum / $scope.perpage);

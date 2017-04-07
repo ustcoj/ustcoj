@@ -34,8 +34,9 @@
 
 .contest-title {
     font-weight: 600;
-    height: 50px;
-    padding: 12px 12px;
+    height: 32px;
+    /*padding: 12px 12px;*/
+    margin:12px;
     font-size: 24px;
     line-height: 32px;
     overflow: hidden;
@@ -51,7 +52,7 @@
 
 .contest-button {
     float: left;
-    margin: 16px 18px 0 12px;
+    margin: 12px 18px 0 12px;
 }
 
 .contest-time {

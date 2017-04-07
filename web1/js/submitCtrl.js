@@ -14,7 +14,7 @@ angular
     $scope.nowContestProblem = null;
     $scope.languageList = problemService.languageList;
     $scope.submitTitle = " --- ";
-    console.log($scope.submitLang);
+    // console.log($scope.submitLang);
 
     if ($routeParams.contest_ID == null) {
         $scope.submitId = $scope.submitId || $routeParams.problem_ID;

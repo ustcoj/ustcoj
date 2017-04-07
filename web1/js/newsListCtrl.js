@@ -50,6 +50,6 @@ angular
         $scope.refreshPage();
 
         $scope.showNews = function(newsId){
-            $window.location.href = siteService.NewsLink + newsId;
+            $window.location.href = siteService.newsLink + newsId;
         };
     });

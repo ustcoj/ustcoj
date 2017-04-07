@@ -41,7 +41,7 @@ angular
     };
 
     $scope.showNews = function(newsId){
-        $window.location.href = siteService.NewsLink + newsId;
+        $window.location.href = siteService.newsLink + newsId;
     };
 
     $scope.registerContest = function(contestId) {
@@ -65,6 +65,5 @@ angular
     $scope.showContest = function(contestId){
         $window.location.href = siteService.contestLink + contestId;
     };
-
 
 });
