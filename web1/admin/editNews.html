@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="simditor/styles/simditor.css" />
+<link rel="stylesheet" href="simditor/styles/font-awesome.css" />
+<link rel="stylesheet" href="css/admin/editNews.css">
+
+<div ng-controller="editNewsCtrl" class="bigContainer">
+
+    <div class="editTitle">
+        <h2>News Title</h2>
+        <input class="" ng-model="news.news_title" />
+    </div>
+
+    <div simditor ng-model="excerpt_editor"></div>
+
+    <div simditor ng-model="content_editor"></div>
+
+
+</div>

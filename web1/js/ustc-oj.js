@@ -21,7 +21,7 @@ String.Format = function (format, Args) {
     }
 };
 
-angular.module("ustc-oj", ['ngRoute', 'ngCookies']);
+angular.module("ustc-oj", ['ngRoute', 'ngCookies', 'simditor']);
 
 angular
     .module('ustc-oj')

@@ -3,8 +3,8 @@
  */
 angular
     .module('ustc-oj')
-    .controller("editCtrl", function ($routeParams, $scope, $http, $rootScope, $window, networkService, problemService) {
-
+    .controller("editCtrl", function ($routeParams, $scope, $http, $rootScope, $window,
+                                      networkService, problemService, adminService) {
     $scope.problemId = null;
     $scope.contestId = null;
     $scope.isContest = false;
@@ -25,6 +25,13 @@ angular
             $scope.finishLoading = true;
             startRender();
         }, $scope.problemId);
+    }
+
+    $scope.submitProblem = function () {
+        var problemData = {
+
+        };
+        adminService.getProblemData();
     }
 
 });
