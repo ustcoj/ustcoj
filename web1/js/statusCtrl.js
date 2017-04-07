@@ -7,7 +7,7 @@ angular
 
         $scope.statusTrying = {};
         $scope.statusSolved = {};
-        $scope.perpage = 30;
+        $scope.perpage = 20;
         $scope.pageNow = 1;
         $scope.isContest = false;
         $scope.contestId = null;
