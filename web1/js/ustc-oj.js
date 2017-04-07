@@ -464,6 +464,7 @@ angular
             networkService.handleRepData('get', $rootScope.contestListUrl + _contestid, null, null, null)
                 .then(function (response) {
                     response.data.description = $sce.trustAsHtml(response.data.description);
+                    response.data.mode_msg = $sce.trustAsHtml(response.data.mode_msg);
                     show_contestInfo(response.data);
                     if (!doNotBroadCast) {
                         $rootScope.root_currentContest = response.data;

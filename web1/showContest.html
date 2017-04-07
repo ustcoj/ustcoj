@@ -63,8 +63,7 @@
                 <div class="inf-board-title small-title-font">
                     {{contestInfo.contest_typename}}
                 </div>
-                <div class="inf-board-content">
-                    {{contestInfo.mode_msg}}
+                <div class="inf-board-content" ng-bind-html="contestInfo.mode_msg">
                 </div>
             </div>
         </div>
