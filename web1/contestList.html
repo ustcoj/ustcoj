@@ -33,7 +33,8 @@
                                 <div class="contest-title">{{x.contest_title}}</div>
                                 <div class="contest-type" ng-bind="x.contest_typename || getContestType(x.contest_type)"></div>
                                 <div class="contest-buttons">
-                                    <div class="contest-button"><b>×</b> <a>{{x.player_cnt}}</a></div>
+                                    <div class="contest-button contest-board-icon"><img src="./resource/people-12px-grey.svg" />
+                                        <b>×</b> {{x.player_cnt}}</div>
                                     <button class="contest-button btn btn-default btn-thin" ng-click="showContest(x.contest_id)">View</button>
                                     <button class="contest-button btn btn-default btn-thin" ng-show="!registeredContest[x.contest_id]" ng-click="registerContest(x.contest_id)">Register</button>
                                 </div>

@@ -90,3 +90,19 @@
     width: 100%;
     padding: 0px 12px;
 }
+
+.contest-board-icon {
+    height: 24px;
+    margin-bottom: 12px;
+}
+
+.contest-board-icon {
+    float: left;
+    line-height: 24px;
+    color: #4a4a4a;
+}
+
+.contest-board-icon > img {
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
