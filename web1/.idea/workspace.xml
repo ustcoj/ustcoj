@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="90ac4ba7-e2f9-4db2-b95e-8e1e4903704a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,7 +23,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="editNews.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="editNews.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/editNews.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
@@ -35,8 +36,8 @@
       <file leaf-file-name="admin.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="34" selection-end-column="78" />
+            <state relative-caret-position="168">
+              <caret line="32" column="38" lean-forward="true" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -75,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="32" column="54" lean-forward="false" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+            <state relative-caret-position="105">
+              <caret line="128" column="61" lean-forward="false" selection-start-line="128" selection-start-column="61" selection-end-line="128" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -498,7 +499,7 @@
       <workItem from="1491366288224" duration="4000" />
       <workItem from="1491373245504" duration="30506000" />
       <workItem from="1491492690746" duration="4192000" />
-      <workItem from="1491545857218" duration="6681000" />
+      <workItem from="1491545857218" duration="6944000" />
     </task>
     <task id="LOCAL-00001" summary="Add styles to login page&#10;clear outline in navbar&#10;change background color to none">
       <created>1484553390965</created>
@@ -619,11 +620,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491553297378</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="add simditor">
+      <created>1491553759966</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1491553759966</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="521725000" />
+    <option name="totallyTimeSpent" value="521988000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -711,7 +719,8 @@
     <MESSAGE value="Frame work for edit problem.&#10;Fixed some problem for login. getToken() now available.&#10;Added profile.html. User logo now clickable." />
     <MESSAGE value="Language/Status info is available now.&#10;Runtime and memory usage can now be displayed naïvely." />
     <MESSAGE value="Add submission case detail and sort by (test_case_id, run_time, memory, result)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add submission case detail and sort by (test_case_id, run_time, memory, result)" />
+    <MESSAGE value="add simditor" />
+    <option name="LAST_COMMIT_MESSAGE" value="add simditor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1068,14 +1077,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="32" column="54" lean-forward="false" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/ustc-oj.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -1089,8 +1090,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="34" selection-end-column="78" />
+        <state relative-caret-position="168">
+          <caret line="32" column="38" lean-forward="true" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -1099,6 +1100,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="128" column="61" lean-forward="false" selection-start-line="128" selection-start-column="61" selection-end-line="128" selection-end-column="61" />
           <folding />
         </state>
       </provider>
