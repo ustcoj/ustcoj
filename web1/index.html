@@ -46,7 +46,6 @@
     <script src="js/showContestCtrl.js" charset="utf-8"></script>
     <script src="js/contestListCtrl.js" charset="utf-8"></script>
     <script src="js/problemListCtrl.js" charset="utf-8"></script>
-    <script src="js/editCtrl.js" charset="utf-8"></script>
     <script src="js/profileCtrl.js" charset="utf-8"></script>
     <script src="js/showSubmissionCtrl.js" charset="utf-8"></script>
     <script src="js/rankCtrl.js" charset="utf-8"></script>
@@ -129,12 +128,6 @@
                         controllerAs: 'ctrl'
                     })
                     .when('/rank/',{templateUrl:'rank.html'})
-                    .when('/edit/:problem_ID/',{
-                        templateUrl:'edit.html',
-                        controller: ['$routeParams', function($routeParams) {
-                        }],
-                        controllerAs: 'ctrl'
-                    })
                     .when('/profile/',{templateUrl:'profile.html'})
                     .when('/profile/:user_name/', {
                         templateUrl:'profile.html',
