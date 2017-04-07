@@ -5,7 +5,7 @@ angular
     .module('ustc-oj')
     .controller("editNewsCtrl", function ($routeParams, $scope, $http, $rootScope, $window,
                                       networkService, problemService, adminService) {
-        $scope.news_ID = null;
+        $scope.news_id = null;
         $scope.newsTitle = null;
         $scope.newsExcerpt = null;
         $scope.newsContent = null;
@@ -17,22 +17,29 @@ angular
 
         }
         else {
-            $scope.news_ID = $routeParams.news_ID;
+            $scope.news_id = $routeParams.news_ID;
             adminService.getNews(function(data){
-                $scope.excerpt_editor = 'jack';
-                $scope.content_editor = 'joe'
-                console.log(data.news)
-                $scope.Data = data;
-                $scope.news = data.news;
+                var news = data.news;
+                console.log(news)
+                $scope.news_id = $scope.news_id
+                $scope.excerpt_editor = news.news_excerpt;
+                $scope.content_editor = news.news_content
+                $scope.news_title = news.news_title;
                 $scope.finishLoading = true;
-            }, $scope.news_ID);
+            }, $scope.news_id);
         }
 
         $scope.submitNews = function () {
-            var problemData = {
-
+            var newsData = {
+                news_title: $scope.news_title,
+                news_excerpt: $scope.excerpt_editor,
+                news_content: $scope.content_editor
             };
-            adminService.getProblemData();
+            if ($scope.news_id)
+                newsData["news_id"] = $scope.news_id
+            adminService.addNews(function(data){
+                $window.location.href = '#/';
+            }, newsData);
         }
 
     });

@@ -2,16 +2,91 @@
 <link rel="stylesheet" href="simditor/styles/font-awesome.css" />
 <link rel="stylesheet" href="css/admin/editNews.css">
 
-<div ng-controller="editNewsCtrl" class="bigContainer">
+<div ng-controller="editNewsCtrl" class="container">
 
-    <div class="editTitle">
-        <h2>News Title</h2>
-        <input class="" ng-model="news.news_title" />
+    <div class="container-sm">
+
+        <div class="page-header">
+            <h2>Edit news</h2>
+        </div>
+
+        <form class="form-horizontal submit-form">
+
+            <div class="form-group" ng-show="news_id">
+                <label for="inputNewsId" class="col-sm-8 control-label">News id</label>
+                <div class="col-sm-40">
+                    <input ng-model="news_id"
+                           type="text"
+                           class="form-control submit-id-input"
+                           id="inputNewsId"
+                    >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputNewsTitle" class="col-sm-8 control-label">News title</label>
+                <div class="col-sm-40">
+                    <input ng-model="news_title"
+                           type="text"
+                           class="form-control submit-id-input"
+                           id="inputNewsTitle"
+                    >
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="!isContest">
+                <label class="col-sm-8 control-label">Public</label>
+                <div class="col-sm-40">
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios0" value="0">
+                            Yes
+                        </label>
+                    </div>
+
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" checked>
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-8 control-label">News excerpt</label>
+                <div class="col-sm-48 submit-area">
+                    <div simditor ng-model='excerpt_editor'></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-8 control-label">News content</label>
+                <div class="col-sm-48 submit-area">
+                    <div simditor ng-model='content_editor'></div>
+                </div>
+            </div>
+        </form>
+
+        <div class="submit-btn">
+
+            <svg  ng-click="submitNews()" width="50px" height="50px" viewBox="487 475 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                    <circle id="path-1" cx="25" cy="25" r="25"></circle>
+                    <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="50" height="50" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                </defs>
+                <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(487.000000, 475.000000)">
+                    <use id="Oval" stroke="#FAA634" mask="url(#mask-2)" stroke-width="6" fill="#FFFAF0" xlink:href="#path-1"></use>
+                    <circle id="Oval-2" fill="#FAA634" cx="25.5" cy="25.5" r="12.5"></circle>
+                </g>
+            </svg>
+
+        </div>
+
+
+
     </div>
-
-    <div simditor ng-model="excerpt_editor"></div>
-
-    <div simditor ng-model="content_editor"></div>
-
 
 </div>

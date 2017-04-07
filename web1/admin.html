@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>USTC-OJ Admin Panel</title>
+    <title>USTC-OJ</title>
     <!--<base href="/">-->
     <!--
     <script src="https://use.typekit.net/ejt7hhx.js"></script>
@@ -15,11 +15,11 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500" rel="stylesheet">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="callunasans.css">
     <link rel="stylesheet" href="css/ustc-oj.css">
     <!--<link rel="stylesheet" href="css/index.css">-->
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" ng-href="css/navbar-{{nowTheme}}.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
 <div class="main-navbar" ng-include="'navbar.html'"></div>
@@ -34,10 +34,13 @@
 <script src="simditor/javascripts/simditor-all.js" charset="UTF-8"></script>
 <script src="simditor/javascripts/angular-editor.js" charset="UTF-8"></script>
 
+
 <script src="js/ustc-oj.js" charset="utf-8"></script>
-<script src="js/admin/admin.js" charset="utf-8"></script>
 <script src="js/navbarCtrl.js" charset="utf-8"></script>
 <script src="js/indexCtrl.js" charset="utf-8"></script>
+<script src="js/homeCtrl.js" charset="utf-8"></script>
+<script src="js/showNewsCtrl.js" charset="utf-8"></script>
+<script src="js/newsListCtrl.js" charset="utf-8"></script>
 <script src="js/loginCtrl.js" charset="utf-8"></script>
 <script src="js/showProblemCtrl.js" charset="utf-8"></script>
 <script src="js/submitCtrl.js" charset="utf-8"></script>
@@ -45,12 +48,12 @@
 <script src="js/showContestCtrl.js" charset="utf-8"></script>
 <script src="js/contestListCtrl.js" charset="utf-8"></script>
 <script src="js/problemListCtrl.js" charset="utf-8"></script>
-<script src="js/admin/editCtrl.js" charset="utf-8"></script>
 <script src="js/profileCtrl.js" charset="utf-8"></script>
 <script src="js/showSubmissionCtrl.js" charset="utf-8"></script>
 <script src="js/rankCtrl.js" charset="utf-8"></script>
 <script src="js/contestBoardCtrl.js" charset="utf-8"></script>
-<script src="js/admin/editNewsCtrl.js" charset="utf-8"></script>
+<script src="js/admin/admin.js" charset="UTF-8"></script>
+<script src="js/admin/editNewsCtrl.js" charset="UTF-8"></script>
 
 <div ng-view></div>
 
@@ -59,7 +62,7 @@
         .module('ustc-oj')
         .config(['$routeProvider', function($routeProvider){
             $routeProvider
-                .when('/',{templateUrl:'login.html'})
+                .when('/',{templateUrl:'home.html'})
                 .when('/login/',{templateUrl:'login.html'})
                 .when('/problems/',{templateUrl:'problemList.html'})
                 .when('/problems/:problem_ID/',{
@@ -129,12 +132,6 @@
                     controllerAs: 'ctrl'
                 })
                 .when('/rank/',{templateUrl:'rank.html'})
-                .when('/edit/:problem_ID/',{
-                    templateUrl:'edit.html',
-                    controller: ['$routeParams', function($routeParams) {
-                    }],
-                    controllerAs: 'ctrl'
-                })
                 .when('/profile/',{templateUrl:'profile.html'})
                 .when('/profile/:user_name/', {
                     templateUrl:'profile.html',
@@ -144,6 +141,12 @@
                 })
                 .when('/validate/:user_name/:token/', {
                     templateUrl:'profile.html',
+                    controller: ['$routeParams', function($routeParams) {
+                    }],
+                    controllerAs: 'ctrl'
+                })
+                .when('/news/edit/',{
+                    templateUrl:'admin/editNews.html',
                     controller: ['$routeParams', function($routeParams) {
                     }],
                     controllerAs: 'ctrl'
@@ -161,11 +164,22 @@
 <footer class="footer">
     <div class="container">
 
-        <p class="text-muted">University of Science and Technology of China - Online Judge. V0.01 - Admin Panel</p>
+        <p class="text-muted">University of Science and Technology of China - Online Judge. V0.01 - Alpha</p>
         <div class="bottom-block"></div>
     </div>
 
 </footer>
+
+<script>
+    var $buoop = {vs:{i:10,f:-4,o:-4,s:8,c:-4},api:4};
+    function $buo_f(){
+        var e = document.createElement("script");
+        e.src = "//browser-update.org/update.min.js";
+        document.body.appendChild(e);
+    };
+    try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+    catch(e){window.attachEvent("onload", $buo_f)}
+</script>
 
 </body>
 </html>
