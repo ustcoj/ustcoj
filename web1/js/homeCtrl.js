@@ -7,6 +7,7 @@ angular
     $scope.recentContestLoaded = false;
     $scope.siteInfoLoaded = false;
     $scope.userId = userService.getUserid();
+    $scope.username = userService.getUsername();
     $scope.isLoggedIn = userService.isLoggedIn();
     $scope.registeredContest = {};
 

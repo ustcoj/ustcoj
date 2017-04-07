@@ -3,7 +3,7 @@
 </script>
 <div ng-controller="showNewsCtrl" class="container">
 
-    <div class="col-md-8">
+    <div class="col-md-48">
     <div class="col-md-32" ng-show="finishLoading">
 
             <div class="news-title">
@@ -11,8 +11,7 @@
                 <h5>{{newsInfo.push_time | date:fullTime}} <span>{{newsInfo.user.username}}</span></h5>
             </div>
 
-            <div class="news-content">
-
+            <div class="news-content" ng-bind-html="newsInfo.news_content">
             </div>
     </div>
 
