@@ -563,7 +563,7 @@ angular
                         response.data.news.news_excerpt = $sce.trustAsHtml(response.data.news.news_excerpt);
                         response.data.news.news_content = $sce.trustAsHtml(response.data.news.news_content);
                     }
-                    show_news(response.data);
+                    call_back(response.data);
                 })
         }
 
