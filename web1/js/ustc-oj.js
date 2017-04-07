@@ -56,6 +56,7 @@ angular
         $rootScope.siteInfoUrl = '/api/server/status';
         $rootScope.userAvatar = '/';
         $rootScope.verifyEmailUrl = '/api/user/verify_email';
+        $rootScope.newsUrl = '/api/news/';
         $rootScope.myContestStatusUrl = $rootScope.contestUrl + "{0}" + "/submission";
 
         $rootScope.fullTime = 'yyyy-MM-dd HH:mm:ss';
@@ -216,6 +217,7 @@ angular
         this.contestSubmissionLink = '#/contests/{0}/status/{1}/';
         this.contestProblemLink = '#/contests/{0}/problems/{1}';
         this.editLink = '#/edit/';
+        this.newsLink = '#/news/';
         this.errorMsg = {
             "411" : "Invalid username or wrong password",
             "412" : "Your email address has already been verified",
@@ -235,7 +237,10 @@ angular
             "426" : "Please register to this contest first",
             "427" : "Seems that you have already registered",
             "428" : "Contest has not begun yet",
-            "429" : "Contest has ended"
+            "429" : "Contest has ended",
+            "430" : "Authentication failed. Please log out and log in again",
+            "431" : "Please wait a while to resend another email",
+            "432" : "News not found"
         };
 
         this.reload = function () {
@@ -546,6 +551,17 @@ angular
                 .then(function (response) {
                     if (response.data.news_list) {
                         response.data.news_list[0].news_excerpt = $sce.trustAsHtml(response.data.news_list[0].news_excerpt);
+                    }
+                    show_news(response.data);
+                })
+        };
+
+        this.getNews = function (call_back, _news_id) {
+            networkService.handleRepData('get', $rootScope.newsUrl + _news_id, null, null, null)
+                .then(function (response) {
+                    if (response.data.news) {
+                        response.data.news.news_excerpt = $sce.trustAsHtml(response.data.news.news_excerpt);
+                        response.data.news.news_content = $sce.trustAsHtml(response.data.news.news_content);
                     }
                     show_news(response.data);
                 })

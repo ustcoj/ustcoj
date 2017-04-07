@@ -12,7 +12,7 @@
 web/.idea/
 web1/.idea/
 */.idea/
-web1/.idea/*
+web1/.idea/workspace.xml
 */.DS_Store
 
 #Workspace
