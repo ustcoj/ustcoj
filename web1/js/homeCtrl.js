@@ -41,7 +41,10 @@ angular
     };
 
     $scope.showNews = function(newsId){
-        $window.location.href = siteService.newsLink + newsId;
+        if (!newsId) {
+            $window.location.href = siteService.newsLink
+        }
+        else $window.location.href = siteService.newsLink + newsId;
     };
 
     $scope.registerContest = function(contestId) {
@@ -63,7 +66,10 @@ angular
     };
 
     $scope.showContest = function(contestId){
-        $window.location.href = siteService.contestLink + contestId;
+        if (!contestId) {
+            $window.location.href = siteService.contestLink
+        }
+        else $window.location.href = siteService.contestLink + contestId;
     };
 
 });
