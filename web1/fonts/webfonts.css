@@ -3,11 +3,11 @@
 
 
 @font-face {
-    font-family: 'open_sansitalic';
+    font-family: 'Open Sans';
     src: url('opensans-italic-webfont.woff2') format('woff2'),
          url('opensans-italic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    font-weight: 400;
+    font-style: italic;
 
 }
 
@@ -15,10 +15,10 @@
 
 
 @font-face {
-    font-family: 'open_sansregular';
+    font-family: 'Open Sans';
     src: url('opensans-regular-webfont.woff2') format('woff2'),
          url('opensans-regular-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: 400;
     font-style: normal;
 
 }
@@ -27,10 +27,10 @@
 
 
 @font-face {
-    font-family: 'open_sanssemibold';
+    font-family: 'Open Sans';
     src: url('opensans-semibold-webfont.woff2') format('woff2'),
          url('opensans-semibold-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: 600;
     font-style: normal;
 
 }
@@ -39,10 +39,10 @@
 
 
 @font-face {
-    font-family: 'quicksandmedium';
+    font-family: 'Quicksand';
     src: url('quicksand-medium-webfont.woff2') format('woff2'),
          url('quicksand-medium-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: 500;
     font-style: normal;
 
 }
@@ -51,10 +51,10 @@
 
 
 @font-face {
-    font-family: 'quicksandregular';
+    font-family: 'Quicksand';
     src: url('quicksand-regular-webfont.woff2') format('woff2'),
          url('quicksand-regular-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: 400;
     font-style: normal;
 
 }
