@@ -40,7 +40,32 @@
 				<div class="home-title small-title-font">Recent Contests</div>
 			</div>
 			<div class="home-section-content row gutter-ten" ng-show="recentContestLoaded">
+				<div class="col-sm-12" ng-repeat="x in contestList">
+					<div class="home-contest-board home-contest-board">
+						<p class="home-contest-board-time no-margin-bottom">{{x.start_time | date:articleDate}}</p>
+						<p class="home-contest-board-time">{{x.start_time | date:hourAndMinute}}</p>
+						<div class="home-contest-board-title-part">
+							<p class="home-contest-board-title no-margin-bottom">{{x.contest_title}}</p>
+							<p class="home-contest-board-type">{{x.contest_typename}}</p>
+						</div>
 
+						<div class="home-contest-board-icon-group">
+							<div class="home-contest-board-icon-dur">
+								<img src="./resource/clock-12px-grey.svg" />
+								{{getTimeInterval(x) | time_interval}}
+							</div>
+							<div class="home-contest-board-icon-people">
+								<img src="./resource/people-12px-grey.svg" />
+								<b>×</b> {{x.player_cnt}}
+							</div>
+						</div>
+
+						<button class="btn btn-default btn-thin col-center"
+								ng-show="isLoggedIn && (!registered[x.contest_id])">Register</button>
+						<button class="btn btn-default btn-thin col-center"
+								ng-show="!isLoggedIn || registered[x.contest_id]">View</button>
+					</div>
+				</div>
 			</div>
 			<div class="waiting-orange-small" ng-show="!newsLoaded"></div>
 
@@ -48,7 +73,7 @@
 	</div>
 
 	<div class="side-bar col-md-10">
-		<div class="inf-board inf-board-side inf-board-thin" ng-show="isLoggedIn">
+		<div class="inf-board inf-board-side inf-board-thin" ng-show="isLoggedIn" ng-hide>
 			<div class="inf-board-title small-title-font">User</div>
 			<div class="inf-board-content">{{userId}}</div>
 		</div>

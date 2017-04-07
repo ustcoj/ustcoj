@@ -97,6 +97,12 @@ span {
     transition: background-color 0.5s;
 }
 
+.btn-default:active, .btn-default:focus, .btn-default:active:focus {
+    border-color: #faa634;
+    background-color: #faa634;
+    color: #fffaf0;
+}
+
 .btn-default:hover {
     color: white;
     background-color: #faa634;
@@ -144,6 +150,16 @@ span {
 .waiting-orange {
     content: url("../resource/wait.svg");
     margin: 150px auto;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+.rotate-center {
+    -webkit-animation: rotate-center 2s linear infinite both;
+    -moz-animation: rotate-center 2s linear infinite both;
+    animation: rotate-center 2s linear infinite both;
 }
 
 .waiting-orange-small {
@@ -290,6 +306,7 @@ span {
 
 .inf-board {
     width: 100%;
+    margin-bottom: 20px;
     border-radius: 8px;
     overflow: hidden;
 }
@@ -311,15 +328,16 @@ span {
     font-size: 14px;
 }
 
-.inf-board-alert .inf-board-title {
+.inf-board-alert > .inf-board-title {
     color: #f0ffef;
 }
 
-.inf-board-info .inf-board-title {
+.inf-board-info > .inf-board-title {
     color: #fffaf0;
+    background-color: #faa634;
 }
 
-.inf-board-side .inf-board-title {
+.inf-board-side > .inf-board-title {
     color: #faa634;
 }
 
@@ -345,13 +363,10 @@ span {
     color: #67c761;
 }
 
-.inf-board-info > .inf-board-title {
-    background-color: #faa634;
-}
-
 .inf-board-info {
-    border: 1px solid #faa634;
+    border: none;
     background-color: #fffaf0;
 }
+
 
 

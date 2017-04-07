@@ -60,6 +60,7 @@ angular
 
         $rootScope.fullTime = 'yyyy-MM-dd HH:mm:ss';
         $rootScope.articleDate = 'yyyy - MM - dd';
+        $rootScope.hourAndMinute = 'HH : mm';
 
     });
 
@@ -74,6 +75,29 @@ angular
             return (bytes / Math.pow(1024, Math.floor(number))).toFixed(precision) +  ' ' + units[number];
     }
 });
+
+angular
+    .module('ustc-oj')
+    .filter('time_interval', function() {
+        return function(millis, precision) {
+            if (isNaN(parseFloat(millis)) || !isFinite(millis)) return '-';
+            var units = ['ms', 's', 'min', 'h', 'day', 'month', 'year'];
+            var t = [1000, 60, 60, 24, 30, 12, 10000000];
+            var i = 0;
+            while (millis / t[i] >= 1) {
+                millis /= t[i];
+                i++;
+            }
+            if (typeof precision === 'undefined') {
+                if (i == 3) {
+                    precision = 1;
+                }
+                else precision = 0;
+            }
+            var ret = millis.toFixed(precision);
+            return ret +  ' ' + units[i];
+        }
+    });
 
 angular
     .module('ustc-oj')
@@ -112,7 +136,8 @@ angular
             }
         };
 
-        this.handleRepData = function(method, url, data, config, extraHeader) {
+        this.handleRepData = function(method, url, data, config, extraHeader, no_warning) {
+            no_warning = no_warning || false;
             var promise;
             var defer = $q.defer();
             if (config == null) {
@@ -160,7 +185,7 @@ angular
 
             promise.then(function(rep) {
 
-                if (siteService.checkResponse(rep)) {
+                if (siteService.checkResponse(rep, no_warning)) {
                     defer.resolve(rep.data);
                 }
 
@@ -269,31 +294,31 @@ angular
             }
         };
 
-        this.checkResponse = function (response) {
+        this.checkResponse = function (response, no_warning) {
             //console.log(response);
             response = response.data;
 
             if (response == null) {
-                this.showAlert("No response, the server might be down.");
+                if (!no_warning) this.showAlert("No response, the server might be down.");
                 return false;
             }
             if (response.status == null) {
-                this.showAlert("Server error.");
+                if (!no_warning) this.showAlert("Server error.");
                 return false;
             }
             if (response.status.code != 0) {
                 if (response.status.code == "415") {
 
-                    this.showAlert(this.errorMsg[response.status.code] + response.status.message);
+                    if (!no_warning) this.showAlert(this.errorMsg[response.status.code] + response.status.message);
                 }
                 else {
-                    this.showAlert("Error: " + this.errorMsg[response.status.code]);
+                    if (!no_warning) this.showAlert("Error: " + this.errorMsg[response.status.code]);
                 }
                 this.checkErrorCode(response.status.code);
                 return false;
             }
             return true;
-        }
+        };
 
     });
 
@@ -349,7 +374,7 @@ angular
         };
         this.contestType = {
             "0" : "ACM Contest",
-            "5" : "竞速赛"
+            "5" : "Speed First"
         };
         this.checkValidProblemId = function(content) {
             return (
@@ -399,7 +424,7 @@ angular
         this.getSimpleProblem = function(show_simpleProblem, _problem_id) {
 
             networkService.handleRepData('get', String.Format($rootScope.problemSimpleUrl, _problem_id)
-                , null, null, null)
+                , null, null, null, true)
                 .then(function (response) {
 
                         show_simpleProblem(response.data);
@@ -589,9 +614,9 @@ angular
             response = $http.post($rootScope.apiHost + $rootScope.loginUrl, $.param(data), tempConfig)
                 .then(function (response) {
                     if (siteService.checkResponse(response)) {
-                        $cookies.put("userId", response.data.data.user.user_id);
-                        $cookies.put("token", response.data.data.token);
-                        $cookies.put("username", response.data.data.user.username);
+                        cookieSaving("userId", response.data.data.user.user_id);
+                        cookieSaving("token", response.data.data.token);
+                        cookieSaving("username", response.data.data.user.username);
                         showLoginResult(true);
                     }
                 });
@@ -610,7 +635,6 @@ angular
             response = $http.post($rootScope.apiHost + $rootScope.registerUrl, $.param(data), tempConfig)
                 .then(function (response) {
                     if (siteService.checkResponse(response)) {
-                        //$cookies.put("userId", response.data.user_id);
                         showRegisterResult(response);
                     }
 
@@ -650,7 +674,7 @@ angular
         };
 
         this.saveLastLang = function (_lang) {
-            $cookies.put("lastLang", _lang);
+            cookieSaving("lastLang", _lang);
         };
 
         this.getLastLang = function () {
@@ -663,7 +687,7 @@ angular
         };
 
         this.saveLastProb = function (_lang) {
-            $cookies.put("lastProb", _lang);
+            cookieSaving("lastProb", _lang);
         };
 
         this.getLastProb = function () {
@@ -673,6 +697,13 @@ angular
             else {
                 return null;
             }
+        };
+
+        cookieSaving = function (key, value, expireDays) {
+            expireDays = expireDays || 365;
+            var now = new Date();
+            now.setDate(now.getDate() + expireDays);
+            $cookies.put(key, value, {"expires": now});
         };
 
         this.logOut = function () {
