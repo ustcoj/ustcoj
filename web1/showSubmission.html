@@ -53,31 +53,26 @@
 
         <div class="submission-list" ng-show="submissionCaseDetail">
 
+            <div class="table-responsive">
+                <table class="status-table bar-table col-md-24">
+                    <tr class="bar-head status-bar">
+                        <th class="col-md-4 col-center" ng-click="f='test_case'; rev=!rev">Case</th>
+                        <th class="col-md-10 col-center" ng-click="f='result'; rev=!rev">Result</th>
+                        <th class="col-md-5 col-right" ng-click="f='cpu_time'; rev=!rev">Run Time</th>
+                        <th class="col-md-5 col-right" ng-click="f='memory'; rev=!rev">Memory</th>
+                    </tr>
 
-            <table>
-
-                <colgroup class="submission-inf">
-                    <col style="width: 60px">
-                    <col style="width: 100px">
-                    <col style="width: 100px">
-                </colgroup>
-
-                <tr>
-                    <th></th>
-                    <th>Time</th>
-                    <th>Memory</th>
-                </tr>
-
-                <tr ng-repeat="x in submissionCaseDetail">
-
-                    <td>{{$index + 1}}</td>
-                    <td ng-bind="x.cpu_time"></td>
-                    <td ng-bind="x.memory"></td>
-
-                </tr>
-
-            </table>
-
+                    <tr ng-repeat="x in submissionCaseDetail | orderBy: f : rev"
+                        class="bar-content status-bar">
+                        <td class="col-center">{{x.test_case}}</td>
+                        <td class="col-center">
+                            <div class="bardiv1"><div class="bardiv2">{{getResult(x.result)}}</div></div>
+                        </td>
+                        <td class="col-right"><div class="bardiv1"><div class="bardiv2">{{x.cpu_time}} ms</div></div></td>
+                        <td class="col-right"><div class="bardiv1"><div class="bardiv2">{{x.memory | bytes}}</div></div></td>
+                    </tr>
+                </table>
+            </div>
         </div>
 
     </div>

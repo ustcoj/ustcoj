@@ -26,6 +26,7 @@ angular
 
                 if (response.info["err"] == null) {
                     $scope.submissionCaseDetail = response.info.data;
+                    
                 }
                 else {
                     $scope.submissionErrorMsg = response.info.data;
@@ -45,5 +46,9 @@ angular
 
         }
 
-
+        $scope.getResult = function(_resultid) {
+            if (problemService.resultList[_resultid] == undefined)
+                return "Unexpected Error";
+            else return problemService.resultList[_resultid];
+        };
     });
