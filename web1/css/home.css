@@ -3,7 +3,8 @@
 }
 
 .home-main-content {
-    padding-top: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .home-title {
@@ -64,13 +65,26 @@
 .news-board-big {
     min-height: 212px;
     background-color: #fffaf0;
-    padding: 20px;
+}
+
+@media (min-width: 768px) {
+
+    .home-main-content {
+        padding-top: 20px;
+    }
+
+    .news-board-big {
+        padding: 20px;
+        max-height: 212px;
+        overflow: hidden;
+    }
+
 }
 
 .news-board-title {
     min-height: 50px;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 600;
     overflow: hidden;
 }
 
@@ -124,6 +138,60 @@
 .news-board-big .news-board-date {
     margin-top: 6px;
     margin-bottom: 8px;
+}
+
+.home-contest-board {
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 12px;
+    background-color: #fffaf0;
+
+    transition: box-shadow 0.5s;
+}
+
+.home-contest-board:hover {
+    box-shadow: 0 0 0 1pt #faa634;
+    transition: box-shadow 0.5s;
+}
+
+.home-contest-board-time {
+    font-size: 18px;
+}
+
+.home-contest-board-time-date {
+    margin-bottom: 0;
+}
+
+.home-contest-board-title {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.home-contest-board-title-part {
+    min-height: 72px;
+}
+
+.home-contest-board-type {
+    font-size: 12px;
+    color: #4a4a4a;
+    text-transform: uppercase;
+}
+
+.home-contest-board-icon-group {
+    height: 24px;
+    margin-bottom: 12px;
+}
+
+.home-contest-board-icon-group > div {
+    float: left;
+    width: 50%;
+    line-height: 24px;
+    color: #4a4a4a;
+}
+
+.home-contest-board-icon-group > div > img {
+    vertical-align: middle;
+    margin-bottom: 2px;
 }
 
 

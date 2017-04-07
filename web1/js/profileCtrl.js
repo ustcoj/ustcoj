@@ -3,7 +3,7 @@
  */
 angular
     .module('ustc-oj')
-    .controller("profileCtrl", function($scope, $routeParams, $window, profileService, userService, siteService){
+    .controller("profileCtrl", function($scope, $routeParams, $window, $location, profileService, userService, siteService){
 
         var profileUsername = $routeParams.user_name;
         $scope.userDetail = {};
@@ -67,7 +67,8 @@ angular
         if (profileUsername == null) {
             var tname = userService.getUsername();
             if (tname) {
-                $window.location.href = '#/profile/' + tname;
+                $location.path("/profile/" + tname).replace();
+                // $window.location.href = '#/profile/' + tname;
                 profileUsername = tname;
             }
             else {

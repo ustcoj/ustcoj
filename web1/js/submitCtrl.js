@@ -14,10 +14,10 @@ angular
     $scope.nowContestProblem = null;
     $scope.languageList = problemService.languageList;
     $scope.submitTitle = " --- ";
-    //console.log($scope.languageList);
+    console.log($scope.submitLang);
 
     if ($routeParams.contest_ID == null) {
-        $scope.submitId = $routeParams.problem_ID || $routeParams.problem_ID;
+        $scope.submitId = $scope.submitId || $routeParams.problem_ID;
     }
     else {
         console.log($routeParams);
@@ -25,7 +25,6 @@ angular
         $scope.contestId = $routeParams.contest_ID;
         $scope.nowContestProblem = $routeParams.prolem_SEQ;
         problemService.getContestInfo(function (response) {
-            console.log(response.problem_list);
             $scope.contestInfo = response;
             $scope.contestProblem = response.problem_list;
             if ($routeParams.problem_SEQ == null) {
@@ -48,7 +47,7 @@ angular
             submissionData["sort_index"] = $scope.nowContestProblem;
             userService.saveLastLang($scope.submitLang);
             problemService.submitCode(function(response) {
-                $window.location.href = '#/contests/' + $scope.contestId;
+                $window.location.href = '#/contests/' + $scope.contestId + '/status/';
             }, submissionData);
         }
         else {

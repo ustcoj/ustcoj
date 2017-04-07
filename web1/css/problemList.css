@@ -20,7 +20,6 @@
     margin-bottom: 25px;
 }
 
-
 .problem-table {
     border-collapse: separate;
     border-spacing: 0 14px !important;
@@ -48,6 +47,10 @@
     line-height: 32px;
     width: 100%;
     padding: 0 12px;
+}
+
+.problem-bar-title {
+    min-width: 200px;
 }
 
 

@@ -78,3 +78,7 @@
     background-color: #fffaf0 !important;
 }
 
+.contest-problem-bar-title {
+    min-width: 200px;
+}
+

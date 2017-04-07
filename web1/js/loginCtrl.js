@@ -3,7 +3,7 @@ angular
     .controller("loginCtrl", function ($scope, $http, $rootScope, $window, userService, siteService, profileService) {
 
         if (userService.isLoggedIn()) {
-            $window.location.href = siteService.problemLink;
+            $window.location.href = siteService.homeLink;
         }
 
         $scope.signUpMode = false;
@@ -36,7 +36,7 @@ angular
                         });
                         $window.location.href = siteService.profileLink;
                     }
-                    else $window.location.href = siteService.problemLink;
+                    else $window.location.href = siteService.homeLink;
                 }
             }, username, pass);
 

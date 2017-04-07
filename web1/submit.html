@@ -41,7 +41,7 @@
                 <label class="col-sm-8 control-label">Problem</label>
                 <div class="col-sm-40">
                     <select ng-model="nowContestProblem" class="form-control" id="submit-contest-problem">
-                        <option ng-repeat="x in contestProblem" value="{{x.sort_index}}">{{x.sort_index + ' - ' + x.problem_title}}</option>
+                        <option ng-repeat="x in contestProblem" value="{{x.sort_index}}">{{x.sort_index + '. ' + x.problem_title}}</option>
                     </select>
                 </div>
             </div>
@@ -49,9 +49,10 @@
             <div class="form-group">
                 <label for="submit-language-select" class="col-sm-8 control-label">Language</label>
                 <div class="col-sm-40">
-                    <select ng-model="submitLang" class="form-control submit-language-select" id="submit-language-select">
-                        <option ng-repeat="x in languageList" value="{{$index}}">{{x}}</option>
+                    <select ng-model="submitLang" class="form-control submit-language-select" id="submit-language-select"
+                        ng-options="id as x for (id, x) in languageList">
                     </select>
+                    <!--<p>{{submitLang}}</p>-->
                 </div>
             </div>
 
