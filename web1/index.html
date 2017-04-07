@@ -57,6 +57,13 @@
                 $routeProvider
                     .when('/',{templateUrl:'home.html'})
                     .when('/login/',{templateUrl:'login.html'})
+                    .when('/news/',{templateUrl:'newsList.html'})
+                    .when('/news/:news_ID/',{
+                        templateUrl:'showNews.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
                     .when('/problems/',{templateUrl:'problemList.html'})
                     .when('/problems/:problem_ID/',{
                         templateUrl:'showProblem.html',

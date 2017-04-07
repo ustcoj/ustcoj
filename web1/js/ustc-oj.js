@@ -549,8 +549,8 @@ angular
             };
             networkService.handleRepData('get', $rootScope.newsUrl, null, {params: param}, null)
                 .then(function (response) {
-                    if (response.data.news_list) {
-                        response.data.news_list[0].news_excerpt = $sce.trustAsHtml(response.data.news_list[0].news_excerpt);
+                    for (var i = 0; i < response.data.news_list.length; i++) {
+                        response.data.news_list[i].news_excerpt = $sce.trustAsHtml(response.data.news_list[i].news_excerpt);
                     }
                     show_news(response.data);
                 })

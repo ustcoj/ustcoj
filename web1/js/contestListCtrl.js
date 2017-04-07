@@ -58,8 +58,6 @@ angular
             $scope.pageSum = Math.ceil($scope.contestNum / $scope.perpage);
         });
 
-        $scope.refreshPage();
-
         $scope.showContest = function(contestId){
             $window.location.href = siteService.contestLink + contestId;
         };

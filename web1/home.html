@@ -61,9 +61,11 @@
 						</div>
 
 						<button class="btn btn-default btn-thin col-center"
-								ng-show="isLoggedIn && (!registered[x.contest_id])">Register</button>
+								ng-show="isLoggedIn && (!registeredContest[x.contest_id])"
+								ng-click="registerContest(x.contest_id)">Register</button>
 						<button class="btn btn-default btn-thin col-center"
-								ng-show="!isLoggedIn || registered[x.contest_id]">View</button>
+								ng-show="!isLoggedIn || registeredContest[x.contest_id]"
+								ng-click="showContest(x.contest_id)">View</button>
 					</div>
 				</div>
 			</div>

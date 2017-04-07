@@ -1,13 +1,14 @@
 angular
     .module('ustc-oj')
-    .controller("homeCtrl", function($scope, $http, $window, $rootScope, $routeParams, problemService, userService, profileService){
+    .controller("homeCtrl", function($scope, $http, $window, $rootScope, $routeParams,
+                                     problemService, userService, profileService, siteService){
 
     $scope.newsLoaded = false;
     $scope.recentContestLoaded = false;
     $scope.siteInfoLoaded = false;
     $scope.userId = userService.getUserid();
     $scope.isLoggedIn = userService.isLoggedIn();
-    $scope.registered = {};
+    $scope.registeredContest = {};
 
     problemService.getNewsList(function (response) {
         $scope.newsList = response.news_list;
@@ -27,7 +28,7 @@ angular
     if (userService.isLoggedIn()) {
         profileService.getRegisteredList(function (response) {
             response.contest_list.forEach(function (item) {
-                $scope.registered[item] = true;
+                $scope.registeredContest[item] = true;
             });
         }, userService.getUsername());
     }
@@ -37,7 +38,33 @@ angular
         var end = new Date(contest.end_time);
         var start = new Date(contest.start_time);
         return (end - start);
-    }
+    };
+
+    $scope.showNews = function(newsId){
+        $window.location.href = siteService.NewsLink + newsId;
+    };
+
+    $scope.registerContest = function(contestId) {
+        problemService.registerContest(function(response) {
+            siteService.showAlert("Register Success");
+            $scope.updateUserData();
+        }, contestId);
+    };
+
+    $scope.updateUserData = function () {
+        if (userService.isLoggedIn()) {
+            profileService.getRegisteredList(function (response) {
+                var registered = response.contest_list;
+                registered.forEach(function (item) {
+                    $scope.registeredContest[item] = true;
+                })
+            }, null)
+        }
+    };
+
+    $scope.showContest = function(contestId){
+        $window.location.href = siteService.contestLink + contestId;
+    };
 
 
 });
