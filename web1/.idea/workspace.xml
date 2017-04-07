@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90ac4ba7-e2f9-4db2-b95e-8e1e4903704a" name="Default" comment="Add submission case detail and sort by (test_case_id, run_time, memory, result)">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/editNews.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/admin/editNews.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/admin/admin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/admin/editNewsCtrl.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/edit.css" afterPath="$PROJECT_DIR$/css/admin/edit.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/editCtrl.js" afterPath="$PROJECT_DIR$/js/admin/editCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
+    <list default="true" id="90ac4ba7-e2f9-4db2-b95e-8e1e4903704a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/edit.html" afterPath="$PROJECT_DIR$/edit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ustc-oj.js" afterPath="$PROJECT_DIR$/js/ustc-oj.js" />
     </list>
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -509,7 +498,7 @@
       <workItem from="1491366288224" duration="4000" />
       <workItem from="1491373245504" duration="30506000" />
       <workItem from="1491492690746" duration="4192000" />
-      <workItem from="1491545857218" duration="6287000" />
+      <workItem from="1491545857218" duration="6681000" />
     </task>
     <task id="LOCAL-00001" summary="Add styles to login page&#10;clear outline in navbar&#10;change background color to none">
       <created>1484553390965</created>
@@ -623,11 +612,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491499140103</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Add submission case detail and sort by (test_case_id, run_time, memory, result)">
+      <created>1491553297378</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1491553297378</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="521331000" />
+    <option name="totallyTimeSpent" value="521725000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
