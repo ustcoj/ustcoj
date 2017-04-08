@@ -7,6 +7,7 @@ angular
     .service('adminService', function($rootScope, $sce, userService, networkService, siteService) {
 
         $rootScope.addNewsUrl = "/api/admin/news/add";
+        $rootScope.addProblemUrl = "/api/admin/problem/add"
 
         this.Post = function(_url, _callback, _data) {
             networkService.handleRepData('post', _url, _data, null, null)
