@@ -15,6 +15,14 @@ angular
                 });
         };
 
+        this.Get = function(_url, _callback) {
+            networkService.handleRepData('get', _url, null, null, null)
+                .then(function (response) {
+                    _callback(response.data);
+                });
+
+        };
+
         this.getNews = function (call_back, _news_id) {
             networkService.handleRepData('get', $rootScope.newsUrl + _news_id, null, null, null)
                 .then(function (response) {
@@ -24,7 +32,18 @@ angular
                     }
                     call_back(response.data);
                 })
-        }
+        };
+
+        this.getProblem = function(_callback, problemId, _contest_id) {
+            var url;
+            if (_contest_id) {
+                url = String.Format($rootScope.contestProblemUrl, _contest_id, problemId);
+            }
+            else {
+                url = $rootScope.problemUrl + problemId;
+            }
+            this.Get(url, _callback)
+        };
 
         this.addNews = function(_callback, _data) {
             this.Post($rootScope.addNewsUrl, _callback, _data);

@@ -1,0 +1,186 @@
+<link rel="stylesheet" href="simditor/styles/simditor.css" />
+<link rel="stylesheet" href="simditor/styles/font-awesome.css" />
+<link rel="stylesheet" href="css/admin/editProblem.css">
+
+<div ng-controller="editProblemCtrl" class="container">
+
+    <div class="container-sm">
+
+        <div class="page-header">
+            <h2>Edit problem</h2>
+        </div>
+
+        <form class="form-horizontal submit-form">
+
+            <div class="form-group" ng-show="news_id">
+                <label for="inputId" class="col-sm-8 control-label">Problem id</label>
+                <div class="col-sm-40">
+                    <input ng-model="problem_id"
+                           type="text"
+                           class="form-control submit-id-input"
+                           id="inputId"
+                    >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputTitle" class="col-sm-8 control-label">Problem title</label>
+                <div class="col-sm-40">
+                    <input ng-model="problem_title"
+                           type="text"
+                           class="form-control submit-id-input"
+                           id="inputTitle"
+                    >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputTimeLimit" class="col-sm-8 control-label">Time limit (ms)</label>
+                <div class="col-sm-40">
+                    <input ng-model="time_limit"
+                           type="text"
+                           class="form-control submit-id-input"
+                           id="inputTimeLimit"
+                    >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputMemoryLimit" class="col-sm-8 control-label">Memory limit (bytes)</label>
+                <div class="col-sm-40">
+                    <input ng-model="memory_limit"
+                           type="text"
+                           class="form-control submit-id-input"
+                           id="inputMemoryLimit"
+                    >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputAuthor" class="col-sm-8 control-label">Author</label>
+                <div class="col-sm-40">
+                    <input ng-model="author"
+                           type="text"
+                           class="form-control submit-id-input"
+                           id="inputAuthor"
+                    >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputSource" class="col-sm-8 control-label">Source</label>
+                <div class="col-sm-40">
+                    <input ng-model="source"
+                           type="text"
+                           class="form-control submit-id-input"
+                           id="inputSource"
+                    >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputInputMethod" class="col-sm-8 control-label">Input method</label>
+                <div class="col-sm-40">
+                    <input ng-model="input_method"
+                           type="text"
+                           class="form-control submit-id-input"
+                           id="inputInputMethod"
+                    >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputOutputMethod" class="col-sm-8 control-label">Output method</label>
+                <div class="col-sm-40">
+                    <input ng-model="output_method"
+                           type="text"
+                           class="form-control submit-id-input"
+                               id="inputOutputMethod"
+                    >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-8 control-label">Public</label>
+                <div class="col-sm-40">
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios0" value="0">
+                            Yes
+                        </label>
+                    </div>
+
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" checked>
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-8 control-label">Description</label>
+                <div class="col-sm-48 submit-area">
+                    <div simditor ng-model='description'></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-8 control-label">Input description</label>
+                <div class="col-sm-48 submit-area">
+                    <div simditor ng-model='input_description'></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-8 control-label">Output description</label>
+                <div class="col-sm-48 submit-area">
+                    <div simditor ng-model='output_description'></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-8 control-label">Input sample</label>
+                <div class="col-sm-48 submit-area">
+                    <textarea ng-model='input_sample'></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-8 control-label">Output sample</label>
+                <div class="col-sm-48 submit-area">
+                    <textarea ng-model='output_sample'></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-8 control-label">Hint</label>
+                <div class="col-sm-48 submit-area">
+                    <div simditor ng-model='hint'></div>
+                </div>
+            </div>
+        </form>
+
+        <div class="submit-btn">
+
+            <svg  ng-click="Fire()" width="50px" height="50px" viewBox="487 475 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                    <circle id="path-1" cx="25" cy="25" r="25"></circle>
+                    <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="50" height="50" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                </defs>
+                <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(487.000000, 475.000000)">
+                    <use id="Oval" stroke="#FAA634" mask="url(#mask-2)" stroke-width="6" fill="#FFFAF0" xlink:href="#path-1"></use>
+                    <circle id="Oval-2" fill="#FAA634" cx="25.5" cy="25.5" r="12.5"></circle>
+                </g>
+            </svg>
+
+        </div>
+
+
+
+    </div>
+
+</div>
