@@ -5,6 +5,10 @@ angular
     .module('ustc-oj')
     .controller("profileCtrl", function($scope, $routeParams, $window, $location, profileService, userService, siteService){
 
+
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
         var profileUsername = $routeParams.user_name;
         $scope.userDetail = {};
         $scope.finishLoading = false;
@@ -106,7 +110,7 @@ angular
                 }
 
 
-                console.log($scope.userDetail);
+                 // console.log($scope.userDetail);
                 $scope.finishLoading = true;
             }, profileUsername);
         }

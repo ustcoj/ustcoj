@@ -1,3 +1,7 @@
+.news-header > h2 {
+    text-align: center;
+}
+
 .news-list-one {
     padding: 12px 24px;
     border-bottom: 1px solid #c8c8c8;

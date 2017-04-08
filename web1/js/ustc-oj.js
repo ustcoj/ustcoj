@@ -96,7 +96,9 @@ angular
                 else precision = 0;
             }
             var ret = millis.toFixed(precision);
-            return ret +  ' ' + units[i];
+            var retString =  ret +  ' ' + units[i];
+            if (i >= 4 && ret > 1) retString += 's';
+            return retString;
         }
     });
 
@@ -222,7 +224,7 @@ angular
             "411" : "Invalid username or wrong password",
             "412" : "Your email address has already been verified",
             "413" : "Login required",
-            "414" : "Verification failed. Go to your profile page to resend a token",
+            "414" : "Verification code expired. Please resend an email",
             "415" : "Failed to submit: ",
             "416" : "No such user",
             "417" : "Cannot fetch job from redis queue",
@@ -240,7 +242,8 @@ angular
             "429" : "Contest has ended",
             "430" : "Authentication failed. Please log out and log in again",
             "431" : "Please wait a while to resend another email",
-            "432" : "News not found"
+            "432" : "News not found",
+            "433" : "Incorrect code. Please try again"
         };
 
         this.reload = function () {
@@ -528,8 +531,12 @@ angular
         };
 
 
-        this.getUserList = function (showUserList) {
-            networkService.handleRepData('get', $rootScope.siteRankUrl, null, null, null)
+        this.getUserList = function (showUserList, _page, _per_page) {
+            param = {
+                "page" : _page,
+                "per_page" : _per_page
+            };
+            networkService.handleRepData('get', $rootScope.siteRankUrl, null, {params: param}, null)
                 .then(function (response) {
                     showUserList(response);
                 })
@@ -577,7 +584,7 @@ angular
         this.verifyEmail = function (after_sending) {
             networkService.handleRepData('get', $rootScope.verifyEmailUrl, null, null, null)
                 .then(function (response) {
-                    siteService.showAlert("An verification email has been sent. Please check your inbox.");
+                    siteService.showAlert("An verification email has been sent. Please check your spam box.");
                     after_sending(response);
                 })
         };
@@ -599,9 +606,9 @@ angular
                 });
         };
 
-        this.getRegisteredList = function (showRegisteredContest, _username) {
+        this.getRegisteredList = function (showRegisteredContest, _username, no_warning) {
             if (userService.isLoggedIn()) {
-                networkService.handleRepData('get', $rootScope.registeredContestListUrl, null, null, null)
+                networkService.handleRepData('get', $rootScope.registeredContestListUrl, null, null, null, no_warning)
                     .then(function (response) {
                         showRegisteredContest(response.data);
                     });

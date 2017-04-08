@@ -2,6 +2,9 @@ angular
     .module('ustc-oj')
     .controller("navbarCtrl", function($routeParams, $scope, $rootScope, $location, $window, $log, problemService, siteService, userService){
 
+        $('.navbar-collapse a').click(function(){
+            $(".navbar-collapse").collapse('hide');
+        });
         $scope.isLoggedIn = userService.isLoggedIn();
 
         $scope.dealWithRoute = function () {

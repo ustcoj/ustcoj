@@ -82,17 +82,22 @@
     float: right;
 }
 
+.profile-verify-email {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .profile-verify-email-form {
-    width: 280px;
+    width: 260px;
     margin: 12px auto;
 }
 
 .profile-verify-email-form > #numberField {
-    width: 200px;
+    width: 180px;
     outline: none;
     text-align: center;
     font-size: 24px;
-    letter-spacing: 0.6em;
+    letter-spacing: 0.5em;
     border: none;
     background-color: transparent;
     border-bottom: 2px solid #67c761;
@@ -100,9 +105,13 @@
 }
 
 .profile-verify-email-form > #numberField {
-    padding-left: 18px;
+    padding-left: 6px;
 }
 
 .profile-verify-email-form > button {
     float: right;
+}
+
+.profile-resend-email {
+    font-weight: 600;
 }

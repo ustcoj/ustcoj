@@ -1,21 +1,21 @@
 <link rel="stylesheet" href="css/showNews.css">
 <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-<div ng-controller="showNewsCtrl" class="container">
+<div ng-controller="showNewsCtrl" class="container no-gutter">
 
-    <div class="col-md-48">
-    <div class="col-md-32" ng-show="finishLoading">
+    <div class="col-sm-9"></div>
+    <div class="col-sm-30" ng-show="finishLoading">
 
             <div class="news-title">
                 <h2>{{newsInfo.news_title}}</h2>
-                <h5>{{newsInfo.push_time | date:fullTime}} <span>{{newsInfo.user.username}}</span></h5>
+                <h5>{{newsInfo.push_time | date:fullTime}}</h5>
             </div>
 
             <div class="news-content" ng-bind-html="newsInfo.news_content">
             </div>
     </div>
 
-    <div ng-show="!finishLoading">
+    <div class="col-md-32" ng-show="!finishLoading">
         <div class="waiting-orange"></div>
     </div>
 

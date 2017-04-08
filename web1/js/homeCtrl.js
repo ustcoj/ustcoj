@@ -31,7 +31,7 @@ angular
             response.contest_list.forEach(function (item) {
                 $scope.registeredContest[item] = true;
             });
-        }, userService.getUsername());
+        }, userService.getUsername(), true);
     }
     
     $scope.getTimeInterval = function (contest) {

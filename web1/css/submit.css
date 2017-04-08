@@ -3,6 +3,10 @@
     margin: 0 auto;
 }
 
+.submit-form {
+    padding: 0 25px;
+}
+
 .submit-form .control-label {
     color: #8e8e8e;
     font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;

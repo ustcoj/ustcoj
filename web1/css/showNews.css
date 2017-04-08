@@ -1,0 +1,17 @@
+.news-title > h2 {
+    font-weight: 600;
+}
+
+.news-title > h5 {
+    color: #888888;
+}
+
+.news-title {
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .news-title {
+        margin-top: 40px;
+    }
+}

@@ -19,7 +19,7 @@ angular
                     registered.forEach(function (item) {
                         $scope.registeredContest[item] = true;
                     })
-                }, null)
+                }, null, true)
             }
         };
 
