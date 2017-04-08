@@ -55,7 +55,7 @@
 <script src="js/admin/admin.js" charset="UTF-8"></script>
 <script src="js/admin/editNewsCtrl.js" charset="UTF-8"></script>
 <script src="js/admin/editProblemCtrl.js" charset="UTF-8"></script>
-
+<script src="js/admin/editContestCtrl.js" charset="UTF-8"></script>
 <div ng-view></div>
 
 <script>
@@ -65,6 +65,13 @@
             $routeProvider
                 .when('/',{templateUrl:'home.html'})
                 .when('/login/',{templateUrl:'login.html'})
+                .when('/news/',{templateUrl:'newsList.html'})
+                .when('/news/:news_ID/',{
+                    templateUrl:'showNews.html',
+                    controller: ['$routeParams', function($routeParams) {
+                    }],
+                    controllerAs: 'ctrl'
+                })
                 .when('/problems/',{templateUrl:'problemList.html'})
                 .when('/problems/:problem_ID/',{
                     templateUrl:'showProblem.html',
@@ -166,6 +173,18 @@
                 })
                 .when('/problem/edit/:problem_ID/',{
                     templateUrl:'admin/editProblem.html',
+                    controller: ['$routeParams', function($routeParams) {
+                    }],
+                    controllerAs: 'ctrl'
+                })
+                .when('/contest/edit/',{
+                    templateUrl:'admin/editContest.html',
+                    controller: ['$routeParams', function($routeParams) {
+                    }],
+                    controllerAs: 'ctrl'
+                })
+                .when('/contest/edit/:contest_ID/',{
+                    templateUrl:'admin/editContest.html',
                     controller: ['$routeParams', function($routeParams) {
                     }],
                     controllerAs: 'ctrl'

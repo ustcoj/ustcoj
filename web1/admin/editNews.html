@@ -12,38 +12,10 @@
 
         <form class="form-horizontal submit-form">
 
-            <div class="form-group" ng-show="news_id">
-                <label for="inputNewsId" class="col-sm-8 control-label">News id</label>
-                <div class="col-sm-40">
-                    <input ng-model="news_id"
-                           type="text"
-                           class="form-control submit-id-input"
-                           id="inputNewsId"
-                    >
-                </div>
-            </div>
 
-            <div class="form-group">
-                <label for="inputNewsTitle" class="col-sm-8 control-label">News title</label>
-                <div class="col-sm-40">
-                    <input ng-model="news_title"
-                           type="text"
-                           class="form-control submit-id-input"
-                           id="inputNewsTitle"
-                    >
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="inputNewsIndex" class="col-sm-8 control-label">News index</label>
-                <div class="col-sm-40">
-                    <input ng-model="news_index"
-                           type="text"
-                           class="form-control submit-id-input"
-                           id="inputNewsIndex"
-                    >
-                </div>
-            </div>
+            <div input-text title="News id" value="news_id" ng-show="news_id" disable="true"></div>
+            <div input-text title="News title" value="news_title"></div>
+            <div input-text title="News index" value="news_index"></div>
 
             <div class="form-group">
                 <label class="col-sm-8 control-label">Public</label>
@@ -64,19 +36,10 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                <label class="col-sm-8 control-label">News excerpt</label>
-                <div class="col-sm-48 submit-area">
-                    <div simditor ng-model='excerpt_editor'></div>
-                </div>
-            </div>
 
-            <div class="form-group">
-                <label class="col-sm-8 control-label">News content</label>
-                <div class="col-sm-48 submit-area">
-                    <div simditor ng-model='content_editor'></div>
-                </div>
-            </div>
+            <div input-editor title="News excerpt" value="excerpt_editor"></div>
+            <div input-editor title="News content" value="content_editor"></div>
+
         </form>
 
         <div class="submit-btn">

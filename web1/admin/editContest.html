@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="simditor/styles/simditor.css" />
+<link rel="stylesheet" href="simditor/styles/font-awesome.css" />
+<link rel="stylesheet" href="css/admin/editNews.css">
+
+<div ng-controller="editContestCtrl" class="container">
+
+    <div class="container-sm">
+
+        <div class="page-header">
+            <h2 ng-show="!contest_id">Add contest</h2>
+            <h2 ng-show="contest_id">Edit contest</h2>
+        </div>
+
+        <form class="form-horizontal submit-form">
+
+
+            <div input-text title="Contest id" value="contest_id" ng-show="contest_id" disable="true"></div>
+            <div input-text title="Contest title" value="contest_title"></div>
+            <div input-text title="Contest type" value="contest_type"></div>
+            <div input-text title="Author" value="author"></div>
+            <div input-text title="Start time" value="start_time"></div>
+            <div input-text title="End time" value="end_time"></div>
+
+            <div input-editor title="Description" value="description"></div>
+
+        </form>
+
+        <div input-button title="submit" click="Fire"></div>
+
+
+
+    </div>
+
+</div>

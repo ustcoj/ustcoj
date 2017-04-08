@@ -1,0 +1,31 @@
+.container-sm {
+    width: 768px;
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+.submit-form .control-label {
+    color: #8e8e8e;
+    font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.submit-area {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.submit-area textarea{
+    font-family: monospace;
+    padding: 5px;
+    resize: none;
+}
+
+.submit-btn {
+    width: 50px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.simditor-toolbar {
+    width: 100% !important;
+}
