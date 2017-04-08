@@ -28,7 +28,7 @@
 
 .prob-desc > h4 {
     font-weight: bold;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.1em;
     font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
@@ -43,12 +43,6 @@
     display: block; /* makes it have a width */
     content: ""; /* clears default height */
     margin-top: 18px;
-}
-
-.prob-desc a {
-    color: #faa634;
-    text-decoration: none;
-    font-weight: bold;
 }
 
 .prob-desc table {

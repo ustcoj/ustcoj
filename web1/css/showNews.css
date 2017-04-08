@@ -15,3 +15,35 @@
         margin-top: 40px;
     }
 }
+
+.news-content {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.news-content * {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.news-content > h4 {
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.news-content p {
+    margin-bottom: 16px;
+    margin-top: 8px;
+}
+
+.news-content br{
+    display: block; /* makes it have a width */
+    content: ""; /* clears default height */
+    margin-top: 18px;
+}
+
+.news-content table {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
