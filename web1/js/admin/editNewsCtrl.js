@@ -21,10 +21,11 @@ angular
             adminService.getNews(function(data){
                 var news = data.news;
                 console.log(news)
-                $scope.news_id = $scope.news_id
+                $scope.news_id = news.news_id
                 $scope.excerpt_editor = news.news_excerpt;
                 $scope.content_editor = news.news_content
                 $scope.news_title = news.news_title;
+                $scope.news_index = news.news_index;
                 $scope.finishLoading = true;
             }, $scope.news_id);
         }
@@ -33,7 +34,8 @@ angular
             var newsData = {
                 news_title: $scope.news_title,
                 news_excerpt: $scope.excerpt_editor,
-                news_content: $scope.content_editor
+                news_content: $scope.content_editor,
+                news_index: $scope.news_index
             };
             if ($scope.news_id)
                 newsData["news_id"] = $scope.news_id
