@@ -218,6 +218,7 @@
 }
 
 .home-info-table {
-    /*margin-bottom: -4px;*/
+    margin-bottom: -4px;
+    overflow: hidden;
 }
 

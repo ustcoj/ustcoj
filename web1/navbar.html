@@ -93,9 +93,9 @@
                         </ul>
                     </li>
 
-                    <li class="visible-xs" ng-show="!isContest"><a ng-click="toProfile()">Profile</a></li>
-                    <li class="visible-xs" ng-show="!isContest" role="separator" class="divider"></li>
-                    <li class="visible-xs" ng-show="!isContest || !isLoggedIn"><a ng-click="logOut()">Log Out</a></li>
+                    <li class="visible-xs" ng-show="!isContest && isLoggedIn"><a ng-click="toProfile()">Profile</a></li>
+                    <li class="visible-xs" ng-show="!isContest && isLoggedIn" role="separator" class="divider"></li>
+                    <li class="visible-xs" ng-show="!isContest && isLoggedIn"><a ng-click="logOut()">Log Out</a></li>
 
                 </ul>
             </div><!--/.nav-collapse -->

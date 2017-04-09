@@ -22,13 +22,13 @@
 }
 
 .prob-desc {
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 30px;
 }
 
 .prob-desc > h4 {
     font-weight: bold;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.03em;
     font-family: "Quicksand", "HiraginoSansGB-W3", "SourceHanSansSC-Regular", "SourceHanSansCN-Regular", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
