@@ -6,9 +6,10 @@ angular
     .controller("editNewsCtrl", function ($routeParams, $scope, $http, $rootScope, $window,
                                       networkService, problemService, adminService) {
         $scope.news_id = null;
-        $scope.newsTitle = null;
-        $scope.newsExcerpt = null;
-        $scope.newsContent = null;
+        $scope.news_title = null;
+        $scope.news_index = 0;
+        $scope.news_excerpt = null;
+        $scope.news_content = null;
         $scope.author = null;
         $scope.problemEdit = null;
         $scope.finishLoading = false;
