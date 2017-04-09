@@ -3,7 +3,7 @@
  */
 angular
     .module('ustc-oj')
-    .controller("showSubmissionCtrl", function($scope, $http, $rootScope, $routeParams, problemService){
+    .controller("showSubmissionCtrl", function($scope, $http, $rootScope, $routeParams, $window, problemService){
 
         $scope.finishLoading = false;
         $scope.titleChanged = false;
@@ -36,6 +36,7 @@ angular
                 $scope.submissionTitle = response.problem.problem_title;
                 $scope.submissionLang = response.language;
                 if ($scope.isContest) {
+                    $scope.submissionContestId = response.contest_id;
                     $scope.submissionSortIdx = response.problem.sort_index;
                 }
                 var codetext = $('<div>').text($scope.submissionCode).html();
@@ -51,4 +52,13 @@ angular
                 return "Unexpected Error";
             else return problemService.resultList[_resultid];
         };
+
+        $scope.showProblem = function () {
+            if ($scope.isContest) {
+                $window.location.href = String.Format(siteService.contestProblemLink, $scope.submissionContestId, $scope.submissionSortIdx);
+            }
+            else {
+                $window.location.href = '#/problems/' + $scope.submissionProbId;
+            }
+        }
     });

@@ -136,4 +136,13 @@ angular
                 $window.location.href = '#/status/' + _submission_id;
             }
         }
+
+        $scope.showProblem = function (_problem) {
+            if ($scope.isContest) {
+                $window.location.href = String.Format(siteService.contestProblemLink, $scope.contestId, _problem.sort_index);
+            }
+            else {
+                $window.location.href = '#/problems/' + _problem.problem_id;
+            }
+        }
 });

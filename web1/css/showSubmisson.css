@@ -27,3 +27,7 @@
     overflow: auto;
     padding: 5px 10px;
 }
+
+.jump-link {
+    cursor: pointer;
+}
