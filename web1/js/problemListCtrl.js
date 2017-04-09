@@ -4,7 +4,7 @@ angular
 
         $scope.myTrying = {};
         $scope.mySolved = {};
-        $scope.perpage = 5;
+        $scope.perpage = 10;
         $scope.pageNow = 1;
         $scope.catchEnter = function(_event) {
             if (_event.which === 13) {

@@ -9,7 +9,13 @@ angular
     $scope.descObj = $(".prob-title-inf")[0];
     $scope.isContest = false;
 
-
+    $(window).load(function() {
+        $('img').each(function() {
+            if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+                this.src = "http://acm.ustc.edu.cn/ustcoj/" + this.getAttribute('src');
+            }
+        });
+    });
 
     $scope.$watch(function(){
         MathJax.Hub.Config({
