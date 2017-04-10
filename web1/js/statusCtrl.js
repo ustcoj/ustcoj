@@ -23,6 +23,8 @@ angular
             problemService.getContestStatus(function (response) {
                 $scope.contestStatus = response;
                 console.log(response);
+                $scope.submissionNum = response.submission_cnt;
+                $scope.pageSum = Math.ceil($scope.submissionNum / $scope.perpage);
             }, $scope.contestId);
         }
         else {
