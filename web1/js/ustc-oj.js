@@ -240,7 +240,7 @@ angular
             "427" : "Seems that you have already registered",
             "428" : "Contest has not begun yet",
             "429" : "Contest has ended",
-            "430" : "Authentication failed. Please log out and log in again",
+            "430" : "Authentication failed, please try again. If this keeps happening, log out and log in again to fix the problem",
             "431" : "Please wait a while to resend another email",
             "432" : "News not found",
             "433" : "Incorrect code. Please try again"

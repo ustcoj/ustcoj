@@ -19,7 +19,7 @@
             </tr>
 
               <tr ng-repeat="x in userList.user_list" class="bar-content rank-bar">
-                  <td class="col-center"><div class="bardiv1"><div class="bardiv2">{{$index + 1}}</div></div></td>
+                  <td class="col-center"><div class="bardiv1"><div class="bardiv2">{{$index + 1 + (pageNow - 1) * perpage}}</div></div></td>
                   <td class="col-center"><div class="bardiv1"><div class="bardiv2">{{x.user_id}}</div></div></td>
                   <td class="col-center"><div class="bardiv1"><div class="bardiv2">{{x.username}}</div></div></td>
                   <td class="col-center">{{x.solved_cnt}}</td>
