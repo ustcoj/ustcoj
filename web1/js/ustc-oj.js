@@ -295,7 +295,10 @@ angular
         };
 
         this.getTime = function () {
-            return $filter('date')(new Date(), 'yyyyMMddHHmmss');
+            var utc = new Date();
+            var offset = utc.getTimezoneOffset();
+            var utc8 = new Date(utc + (offset + 480) * 60000);
+            return $filter('date')(utc8, 'yyyyMMddHHmmss');
         };
 
         this.checkErrorCode = function (code) {

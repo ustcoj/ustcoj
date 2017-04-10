@@ -21,7 +21,7 @@ angular
             }
         };
 
-        $scope.refreshPage = function () { 
+        $scope.refreshPage = function () {
             problemService.getProblemList(function(data){
                 $scope.problemList = data;
                 $scope.problemOnPage = $scope.problemList.problem_list.length;
