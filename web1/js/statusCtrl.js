@@ -7,14 +7,14 @@ angular
 
         $scope.statusTrying = {};
         $scope.statusSolved = {};
-        $scope.perpage = 20;
+        $scope.perpage = 25;
         $scope.pageNow = 1;
         $scope.isContest = false;
         $scope.contestId = null;
 
         if ($routeParams.contest_ID) {
             $scope.isContest = true;
-            $scope.perpage = 200;
+            $scope.perpage = 25;
             $scope.pageNow = 1;
             $scope.contestId = $routeParams.contest_ID;
         }

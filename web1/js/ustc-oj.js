@@ -58,6 +58,7 @@ angular
         $rootScope.verifyEmailUrl = '/api/user/verify_email';
         $rootScope.newsUrl = '/api/news/';
         $rootScope.myContestStatusUrl = $rootScope.contestUrl + "{0}" + "/submission";
+        $rootScope.getServerTime = "/api/server/time";
 
         $rootScope.fullTime = 'yyyy-MM-dd HH:mm:ss';
         $rootScope.articleDate = 'yyyy - MM - dd';
