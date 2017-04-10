@@ -17,6 +17,13 @@ angular
             $scope.perpage = 25;
             $scope.pageNow = 1;
             $scope.contestId = $routeParams.contest_ID;
+            problemService.getContestInfo(function (response) {
+                $scope.contestInfo = response;
+            }, $scope.contestId);
+            problemService.getContestStatus(function (response) {
+                $scope.contestStatus = response;
+                console.log(response);
+            }, $scope.contestId);
         }
         else {
             problemService.getSiteInfo(function (response) {
@@ -33,7 +40,7 @@ angular
         $scope.pageOffset = function (_offset) {
             $scope.pageNow = Number($scope.pageNow);
             if ($scope.pageNow) {
-                if (_offset + $scope.pageNow >= 1 && _offset + $scope.pageNow <= $scope.pageSum) {
+                if (_offset + $scope.pageNow >= 1 && _offset + $scope.pageNow <= $scope.pageSum || !$scope.pageSum) {
                     $scope.pageNow += _offset;
                 }
                 $scope.refreshPage();
@@ -41,7 +48,6 @@ angular
         };
 
         $scope.refreshPage = function () {
-            if (!$scope.isContest) {
                 problemService.getStatusList(function(response) {
 
                     $scope.statusList = response;
@@ -55,24 +61,7 @@ angular
                         }
                     });
                     $scope.finishLoading = true;
-                }, $scope.pageNow, $scope.perpage);
-            }
-            else {
-                problemService.getMyContestStatus(function(response) {
-
-                    $scope.statusList = response;
-                    $scope.statusList.data.submission_list.forEach(function (item) {
-                        var result = $scope.getResult(item.result);
-                        if (result == "Accepted") {
-                            $scope.statusSolved[item.submission_id] = true;
-                        }
-                        else if ($scope.checkWA(result)) {
-                            $scope.statusTrying[item.submission_id] = true;
-                        }
-                    });
-                    $scope.finishLoading = true;
-                }, $scope.contestId, $scope.pageNow, $scope.perpage);
-            }
+                }, $scope.pageNow, $scope.perpage, $scope.isContest ? $scope.contestId : null);
 
         };
 
@@ -135,7 +124,7 @@ angular
             else {
                 $window.location.href = '#/status/' + _submission_id;
             }
-        }
+        };
 
         $scope.showProblem = function (_problem) {
             if ($scope.isContest) {

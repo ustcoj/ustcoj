@@ -44,6 +44,7 @@ angular
         $rootScope.problemUrl = "/api/problem/";
         $rootScope.contestListUrl = "/api/contest/";
         $rootScope.contestUrl = "/api/contest/";
+        $rootScope.contestStatusUrl = "/api/contest/{0}/status";
         $rootScope.contestBoardUrl = $rootScope.contestUrl + "{0}" + "/board";
         $rootScope.contestProblemUrl = $rootScope.contestUrl + "{0}" + "/problem/" + "{1}";
         $rootScope.contestSingleUrl = $rootScope.contestUrl + "{0}" + "/player/" + "{1}";
@@ -136,6 +137,7 @@ angular
             }
             if (userid && token) {
                 var tmp = url + time + userid.toString() + token;
+                // console.log(tmp);
                 header['Sign'] = MD5(window.btoa(tmp));
             }
         };
@@ -461,6 +463,14 @@ angular
 
         };
 
+        this.getContestStatus = function(call_back, _contest_id) {
+            networkService.handleRepData('get', String.Format($rootScope.contestStatusUrl, _contest_id), null, null, null)
+                .then(function (response) {
+                    call_back(response.data);
+                });
+
+        };
+
         this.registerContest = function (updateRegisterStatus, contestId) {
             networkService.handleRepData('get', String.Format($rootScope.registerContestUrl, contestId), null, null, null)
                 .then(function (response) {
@@ -505,29 +515,24 @@ angular
                 });
         };
 
-        this.getStatusList = function(show_statusList, _page, _per_page) {
+        this.getStatusList = function(show_statusList, _page, _per_page, _contestId) {
 
             param = {
                 page: _page,
                 per_page: _per_page
             };
-            networkService.handleRepData('get', $rootScope.statusUrl, null, {params: param}, null)
+            var url;
+            if (_contestId) {
+                url = String.Format($rootScope.myContestStatusUrl, _contestId);
+            }
+            else {
+                url =  $rootScope.statusUrl;
+            }
+            networkService.handleRepData('get',url, null, {params: param}, null)
                 .then(function (response) {
-
                         show_statusList(response);
                 });
 
-        };
-
-        this.getMyContestStatus = function(show_contestStatus, _contestId, _page, _per_page) {
-            param = {
-                page: _page,
-                per_page: _per_page
-            };
-            networkService.handleRepData('get', String.Format($rootScope.myContestStatusUrl, _contestId), null, {params: param}, null)
-                .then(function (response) {
-                    show_contestStatus(response);
-                });
         };
 
         this.getContestSingleStatus = function(show_contestStatus, _contestId, _username) {
