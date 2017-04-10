@@ -7,8 +7,9 @@ angular
     .service('adminService', function($rootScope, $sce, userService, networkService, siteService) {
 
         $rootScope.addNewsUrl = "/api/admin/news/add";
-        $rootScope.addProblemUrl = "/api/admin/problem/add"
-        $rootScope.addContestUrl = "/api/admin/contest/add"
+        $rootScope.addProblemUrl = "/api/admin/problem/add";
+        $rootScope.addContestProblemUrl = "/api/admin/contest_problem/add";
+        $rootScope.addContestUrl = "/api/admin/contest/add";
 
         this.Post = function(_url, _callback, _data) {
             networkService.handleRepData('post', _url, _data, null, null)
@@ -43,6 +44,9 @@ angular
                 }
                 _dest[_name + "-" + i] = _source[_x]
                 i++;
+            }
+            if (_source == null || _source == []) {
+                _dest[_name + "-" + '0'] = ""
             }
         };
 
@@ -80,6 +84,10 @@ angular
 
         this.addProblem = function (_callback, _data) {
             this.Post($rootScope.addProblemUrl, _callback, _data);
+        }
+
+        this.addContestProblem = function (_callback, _data) {
+            this.Post($rootScope.addContestProblemUrl, _callback, _data);
         }
 
         this.addContest = function (_callback, _data) {
