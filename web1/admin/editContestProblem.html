@@ -1,18 +1,19 @@
 <link rel="stylesheet" href="simditor/styles/simditor.css" />
 <link rel="stylesheet" href="simditor/styles/font-awesome.css" />
-<link rel="stylesheet" href="css/admin/editProblem.css">
+<link rel="stylesheet" href="css/admin/editContestProblem.css">
 
-<div ng-controller="editProblemCtrl" class="container">
+<div ng-controller="editContestProblemCtrl" class="container">
 
     <div class="container-sm">
 
         <div class="page-header">
-            <h2 ng-show="!problem_id">Add problem</h2>
-            <h2 ng-show="problem_id">Edit problem</h2>
+            <h2 ng-show="!sort_index">Add contest problem</h2>
+            <h2 ng-show="sort_index">Edit contest problem</h2>
         </div>
 
         <form class="form-horizontal submit-form">
-            <div input-text title="Problem id"              value="problem_id" ng-show="problem_id" disable="true"></div>
+            <div input-text title="Contest id"              value="contest_id" disable="true"></div>
+            <div input-text title="Sort index"              value="sort_index"></div>
             <div input-text title="Problem title"           value="problem_title"></div>
             <div input-text title="Time limit (ms)"         value="time_limit"></div>
             <div input-text title="Memory limit (bytes)"    value="memory_limit"></div>
@@ -20,6 +21,7 @@
             <div input-text title="Source"                  value="source"></div>
             <div input-text title="Input method"            value="input_method"></div>
             <div input-text title="Output method"           value="output_method"></div>
+            <div input-text title="Data dir"                value="data_dir"></div>
 
             <div input-switch title="Public" on="No" off="Yes" value="forbidden_status"></div>
 

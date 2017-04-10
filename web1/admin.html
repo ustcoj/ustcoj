@@ -56,6 +56,7 @@
 <script src="js/admin/editNewsCtrl.js" charset="UTF-8"></script>
 <script src="js/admin/editProblemCtrl.js" charset="UTF-8"></script>
 <script src="js/admin/editContestCtrl.js" charset="UTF-8"></script>
+<script src="js/admin/editContestProblemCtrl.js" charset="UTF-8"></script>
 <div ng-view></div>
 
 <script>
@@ -185,6 +186,24 @@
                 })
                 .when('/admin/contest/edit/:contest_ID/',{
                     templateUrl:'admin/editContest.html',
+                    controller: ['$routeParams', function($routeParams) {
+                    }],
+                    controllerAs: 'ctrl'
+                })
+                .when('/admin/contest_problem/edit/:contest_ID/:sortIndex/',{
+                    templateUrl:'admin/editContestProblem.html',
+                    controller: ['$routeParams', function($routeParams) {
+                    }],
+                    controllerAs: 'ctrl'
+                })
+                .when('/admin/contest_problem/edit/:contest_ID/',{
+                    templateUrl:'admin/editContestProblem.html',
+                    controller: ['$routeParams', function($routeParams) {
+                    }],
+                    controllerAs: 'ctrl'
+                })
+                .when('/admin/contest_problem/edit/:contest_ID/:sortIndex/',{
+                    templateUrl:'admin/editContestProblem.html',
                     controller: ['$routeParams', function($routeParams) {
                     }],
                     controllerAs: 'ctrl'
