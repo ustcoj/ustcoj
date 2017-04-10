@@ -297,7 +297,9 @@ angular
         this.getTime = function () {
             var utc = new Date();
             var offset = utc.getTimezoneOffset();
-            var utc8 = new Date(utc + (offset + 480) * 60000);
+            var utc8 = utc;
+            var minute = 480 + offset + utc8.getMinutes();
+            utc8.setMinutes(minute);
             return $filter('date')(utc8, 'yyyyMMddHHmmss');
         };
 
