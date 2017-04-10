@@ -4,7 +4,11 @@ angular
 
         $scope.myTrying = {};
         $scope.mySolved = {};
+<<<<<<< Updated upstream
+        $scope.perpage = 10;
+=======
         $scope.perpage = 25;
+>>>>>>> Stashed changes
         $scope.pageNow = 1;
         $scope.catchEnter = function(_event) {
             if (_event.which === 13) {
