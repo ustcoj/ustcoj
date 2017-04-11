@@ -417,8 +417,8 @@ angular
             //str = str.replace(/(?:\r\n|\r|\n)/g, '<br />');
             var len = data.problem.input_sample.length;
             for (i = 0; i < len; i++) {
-                if (data.problem.input_sample[i]) data.problem.input_sample[i] = $sce.trustAsHtml(data.problem.input_sample[i].replace(/(?:\r\n|\r|\n)/g, '<br />'));
-                if (data.problem.output_sample[i]) data.problem.output_sample[i] = $sce.trustAsHtml(data.problem.output_sample[i].replace(/(?:\r\n|\r|\n)/g, '<br />'));
+                //if (data.problem.input_sample[i]) data.problem.input_sample[i] = $sce.trustAsHtml(data.problem.input_sample[i].replace(/(?:\r\n|\r|\n)/g, '<br />'));
+                //if (data.problem.output_sample[i]) data.problem.output_sample[i] = $sce.trustAsHtml(data.problem.output_sample[i].replace(/(?:\r\n|\r|\n)/g, '<br />'));
             }
             return data;
 
