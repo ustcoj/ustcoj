@@ -21,14 +21,14 @@ angular
     }
     
     $scope.confirmBind = function () {
-        var ticket = $location.search("ticket");
-        console.log(ticket);
+        var ticket = $location.search()["ticket"];
+        //console.log(ticket);
         if (ticket) {
             $scope.finishConfirm = true;
-            // profileService.bindId(function (response) {
-            //     siteService.showAlert("Bound successful", "success");
-            //     $window.location.href = siteService.profileLink;
-            // }, ticket);
+            profileService.bindId(function (response) {
+                siteService.showAlert("Bound successful", "success");
+                $window.location.href = siteService.profileLink;
+            }, ticket);
         }
         else {
             siteService.showAlert("Failed to bind. Please try again");
