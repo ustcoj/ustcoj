@@ -31,7 +31,9 @@
                     <div class="profile-content">{{userDetail.email}}<span ng-show="hasVerifiedEmail&&myProfile"> (Verified)</span></div>
                 </section>
                 <section>
-                    <header class="profile-header">USTC ID<a ng-show="!hasBindId&&myProfile" class="profile-bind-id small-title-font" data-toggle="tooltip" title="施工中">BIND</a></header>
+                    <header class="profile-header">USTC ID<span class="profile-bind-id bind-icon" ng-click="bindUSTCId()" ng-show="!hasBindId&&myProfile">
+                    </span></header>
+
 
                     <div class="profile-content">{{userDetail.ustcid || "---"}}</div>
                 </section>

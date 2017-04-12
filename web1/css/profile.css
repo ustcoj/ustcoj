@@ -3,9 +3,12 @@
     margin-bottom: 5%;
 }
 
+.profile-bubble .bubble {
+    margin-bottom: 6px;
+}
 
 .role-bubble div:first-child {
-    margin-left: 0px;
+    margin-left: 0;
 }
 
 .profile-tables table > tbody > tr > th {
@@ -21,7 +24,7 @@
 }
 
 .profile-header {
-    float: none;
+    clear: both;
     font-size: 18px;
     color: #8e8e8e;
     font-weight: bold;
@@ -35,6 +38,7 @@
     baseline-shift: sub;
     font-size: 12px;
     color: #faa634;
+    cursor: pointer;
 }
 
 .profile-info-detail section {
@@ -115,3 +119,4 @@
 .profile-resend-email {
     font-weight: 600;
 }
+

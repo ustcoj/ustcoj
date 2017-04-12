@@ -77,7 +77,6 @@ angular
             }
         };
 
-
         if (profileUsername == null) {
             var tname = userService.getUsername();
             if (tname) {

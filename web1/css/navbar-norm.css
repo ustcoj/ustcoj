@@ -9,7 +9,7 @@
 
 @supports not (-webkit-backdrop-filter: blur()) {
     .navbar-fixed-top{
-        background-color: rgba(255, 255, 255, 0.95);
+        background-color: rgba(255, 255, 255, 0.98);
     }
 }
 

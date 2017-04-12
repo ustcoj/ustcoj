@@ -187,6 +187,10 @@ span {
     content: url("../resource/copy.svg");
 }
 
+.bind-icon {
+    content: url("../resource/bind-20px.svg")
+}
+
 @media (min-width: 992px) {
     .footer .bottom-block {
         width: 160px;
