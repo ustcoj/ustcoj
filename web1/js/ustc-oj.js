@@ -32,7 +32,7 @@ angular
 angular
     .module('ustc-oj')
     .run(function ($rootScope, $window) {
-        $rootScope.tabShow = "showProblem";
+        $rootScope.ustcSuffix = ".ustc.edu.cn";
         var apiHostBody = "ustcoj.applinzi.com";
         //$rootScope.apiHost = "http://106.14.46.189";
         $rootScope.apiHost = ('https:' == document.location.protocol ? 'https://' : 'http://') + apiHostBody;
@@ -60,6 +60,7 @@ angular
         $rootScope.newsUrl = '/api/news/';
         $rootScope.myContestStatusUrl = $rootScope.contestUrl + "{0}" + "/submission";
         $rootScope.getServerTime = "/api/server/time";
+        $rootScope.bindIdUrl = "/api/user/bind_id/";
 
         $rootScope.fullTime = 'yyyy-MM-dd HH:mm:ss';
         $rootScope.articleDate = 'yyyy - MM - dd';
@@ -223,6 +224,7 @@ angular
         this.contestProblemLink = '#/contests/{0}/problems/{1}';
         this.editLink = '#/edit/';
         this.newsLink = '#/news/';
+        this.bindIdLink = '#/bind/';
         this.errorMsg = {
             "411" : "Invalid username or wrong password",
             "412" : "Your email address has already been verified",
@@ -252,6 +254,12 @@ angular
 
         this.reload = function () {
             $route.reload();
+        };
+
+        this.atUSTC = function () {
+            var host = $location.host();
+            var pos = host.indexOf($rootScope.ustcSuffix);
+            return (pos !== -1 && pos + $rootScope.ustcSuffix.length === host.length);
         };
 
         this.languageCode = ["gcc -DONLINE_JUDGE -O2 -w -fmax-errors=3 -std=c99 {src_path} -lm -o {exe_path}",
@@ -623,6 +631,18 @@ angular
                 networkService.handleRepData('get', $rootScope.registeredContestListUrl, null, null, null, no_warning)
                     .then(function (response) {
                         showRegisteredContest(response.data);
+                    });
+            }
+        };
+
+        this.bindId = function(callback, _ticket) {
+            data = {
+                "ticket" : _ticket
+            };
+            if (userService.isLoggedIn()) {
+                networkService.handleRepData('post', $rootScope.bindIdUrl, data, null, null)
+                    .then(function (response) {
+                        callback(response.data);
                     });
             }
         };

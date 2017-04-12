@@ -384,6 +384,6 @@ span {
 }
 
 .inf-board-info {
-    border: none;
+    border: 1px solid #faa634;
     background-color: #fffaf0;
 }

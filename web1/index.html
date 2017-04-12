@@ -35,6 +35,7 @@
     <script src="js/ustc-oj.js" charset="utf-8"></script>
     <script src="js/navbarCtrl.js" charset="utf-8"></script>
     <script src="js/indexCtrl.js" charset="utf-8"></script>
+    <script src="js/bindCtrl.js" charset="utf-8"></script>
     <script src="js/homeCtrl.js" charset="utf-8"></script>
     <script src="js/showNewsCtrl.js" charset="utf-8"></script>
     <script src="js/newsListCtrl.js" charset="utf-8"></script>
@@ -143,6 +144,12 @@
                     })
                     .when('/validate/:user_name/:token/', {
                         templateUrl:'profile.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
+                    .when('/bind/', {
+                        templateUrl:'bind.html',
                         controller: ['$routeParams', function($routeParams) {
                         }],
                         controllerAs: 'ctrl'

@@ -49,7 +49,7 @@ angular
         };
         $scope.findPri = function(index) {
             for (var x in $scope.privilege_code) {
-                if ($scope.privilege_code[x] == index) {
+                if ($scope.privilege_code[x] === index) {
                     return x;
                 }
             }
@@ -68,6 +68,16 @@ angular
             });
         };
 
+        $scope.bindUSTCId = function () {
+            if (userService.isLoggedIn() && siteService.atUSTC() && !$scope.userDetail.hasBindId) {
+                var des = $location.protocol() + "://" + location.host + "/" + siteService.bindIdLink;
+                des = encodeURIComponent(des);
+                var url = "https://passport.ustc.edu.cn/login?&service=" + des;
+                window.location.replace(des);
+            }
+        };
+
+
         if (profileUsername == null) {
             var tname = userService.getUsername();
             if (tname) {
@@ -80,7 +90,7 @@ angular
             }
         }
 
-        if (profileUsername == userService.getUsername()) {
+        if (profileUsername === userService.getUsername()) {
             $scope.myProfile = true;
         }
 
@@ -98,7 +108,7 @@ angular
                     "ustcid" : response.data.ustc_id || null
                 };
                 var vEmail = $scope.userDetail.privilege.indexOf(1);
-                if ($scope.userDetail.privilege.indexOf(1) == -1) {
+                if ($scope.userDetail.privilege.indexOf(1) === -1) {
                     $scope.hasVerifiedEmail = false;
                 }
                 else {
@@ -109,10 +119,7 @@ angular
                     $scope.hasBindId = false;
                 }
 
-
-                 // console.log($scope.userDetail);
                 $scope.finishLoading = true;
-            }, profileUsername);
+            }, profileUsername)
         }
-
     });

@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="css/bind.css">
+<div ng-controller="bindCtrl" class="container">
+
+    <div class="inf-board inf-board-info">
+        <div class="inf-board-title small-title-font">Bind Student ID</div>
+        <div class="inf-board-content bind-board" ng-show="finishLoadingUser">
+            <p class="col-center">Are you sure to bind your USTC ID to this account?</p>
+            <p class="col-center">You can only do this <b>once</b> and it cannot be undone.</p>
+            <div class="btn-group-n" ng-show="!finishConfirm">
+                <button class="btn btn-default btn-yes" ng-click="confirmBind()">Yes</button>
+                <button class="btn btn-alert" ng-click="doNotBind()">No</button>
+            </div>
+            <div class="waiting-orange-small-super" ng-show="finishConfirm"></div>
+
+        </div>
+        <div class="inf-board-content" ng-show="!finishLoadingUser">
+            <div class="waiting-orange-small-super"></div>
+        </div>
+    </div>
+
+</div>
