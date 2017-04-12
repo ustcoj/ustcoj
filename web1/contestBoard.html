@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="css/bar.css">
 <link rel="stylesheet" href="css/contestBoard.css">
 
 <div ng-controller="contestBoardCtrl" class="container" role="main">
@@ -8,33 +7,31 @@
         <h2>Board</h2>
     </div>
 
-    <div class="board-content">
-        <div class="table-responsive">
-            <table class="board-table">
-                <tr class="board-head">
-                    <th class="board-col-rank">Rank</th>
-                    <th class="board-col-user">User</th>
-                    <th class="board-col-solved">Solved</th>
-                    <th class="board-col-penalty">{{contestSortIndex}}</th>
-                    <th class="board-col-prob"
-                        ng-repeat="x in contestInfo.problem_list"><a ng-click="gotoContestProblem(contestId, x.sort_index)">{{x.sort_index}}</a></th>
-                </tr>
+    <div class="table-responsive">
+        <table class="board-table">
+            <tr class="board-head">
+                <th class="board-col-rank">Rank</th>
+                <th class="board-col-user">User</th>
+                <th class="board-col-solved">Solved</th>
+                <th class="board-col-penalty">{{contestSortIndex}}</th>
+                <th class="board-col-prob"
+                    ng-repeat="x in contestInfo.problem_list"><a ng-click="gotoContestProblem(contestId, x.sort_index)">{{x.sort_index}}</a></th>
+            </tr>
 
-                <tr ng-repeat="x in board.contest_player_list" class="board-content">
-                    <td>{{$index + 1}}</td>
-                    <td>{{x.user.username}}</td>
-                    <td>{{x.solved_cnt}}</td>
-                    <td>{{x.penalty | contest_sort:contestType}}</td>
-                    <td ng-repeat="y in contestInfo.problem_list"
-                        ng-class="getStatus(x, y.sort_index)"
-                        class="board-single-content">
-                        <div class="board-submit-cnt" ng-show="x.info[y.sort_index]">{{x.info[y.sort_index].submit_cnt}}</div>
-                        <div class="board-submit-time" ng-show="x.info[y.sort_index]">{{x.info[y.sort_index].ac_time | contest_sort:contestType}}</div>
-                    </td>
-                </tr>
+            <tr ng-repeat="x in board.contest_player_list" class="board-content">
+                <td>{{$index + 1}}</td>
+                <td>{{x.user.username}}</td>
+                <td>{{x.solved_cnt}}</td>
+                <td>{{x.penalty | contest_sort:contestType}}</td>
+                <td ng-repeat="y in contestInfo.problem_list"
+                    ng-class="getStatus(x, y.sort_index)"
+                    class="board-single-content">
+                    <div class="board-submit-cnt" ng-show="x.info[y.sort_index]">{{x.info[y.sort_index].submit_cnt}}</div>
+                    <div class="board-submit-time" ng-show="x.info[y.sort_index]">{{x.info[y.sort_index].ac_time | contest_sort:contestType}}</div>
+                </td>
+            </tr>
 
-            </table>
-        </div>
+        </table>
     </div>
 
 </div>
