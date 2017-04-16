@@ -69,7 +69,11 @@ angular
         };
 
         $scope.bindUSTCId = function () {
-            if (userService.isLoggedIn() && siteService.atUSTC() && !$scope.userDetail.hasBindId) {
+            if (!siteService.atUSTC()) {
+                siteService.showAlert("ID binding is only available in oj.ustc.edu.cn");
+                return;
+            }
+            if (userService.isLoggedIn() && !$scope.userDetail.hasBindId) {
                 var des = $location.protocol() + "://" + location.host + "/" + siteService.bindIdLink;
                 des = encodeURIComponent(des);
                 var url = "https://passport.ustc.edu.cn/login?&service=" + des;
