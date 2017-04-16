@@ -225,6 +225,7 @@ angular
         this.editLink = '#/edit/';
         this.newsLink = '#/news/';
         this.bindIdLink = '#/bind/';
+        this.bindDestination = encodeURIComponent($location.protocol() + "://" + location.host + "/" + siteService.bindIdLink);
         this.errorMsg = {
             "411" : "Invalid username or wrong password",
             "412" : "Your email address has already been verified",
@@ -635,9 +636,10 @@ angular
             }
         };
 
-        this.bindId = function(callback, _ticket) {
+        this.bindId = function(callback, _ticket, _service_url) {
             data = {
-                "ticket" : _ticket
+                "ticket" : _ticket,
+                "service": _service_url
             };
             if (userService.isLoggedIn()) {
                 networkService.handleRepData('post', $rootScope.bindIdUrl, data, null, null)

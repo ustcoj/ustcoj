@@ -74,8 +74,7 @@ angular
                 return;
             }
             if (userService.isLoggedIn() && !$scope.userDetail.hasBindId) {
-                var des = $location.protocol() + "://" + location.host + "/" + siteService.bindIdLink;
-                des = encodeURIComponent(des);
+                var des = siteService.bindDestination;
                 var url = "https://passport.ustc.edu.cn/login?&service=" + des;
                 window.location.replace(url);
             }
