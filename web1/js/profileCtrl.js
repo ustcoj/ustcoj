@@ -102,12 +102,12 @@ angular
                     "email" : response.data.email || null,
                     "last_login" : response.data.login_time,
                     "register_time" : response.data.push_time,
-                    "privilege" : response.data.roles || null,
-                    "solved" : response.data.solved_problem,
-                    "trying" : response.data.trying_problem,
+                    "privilege" : response.data.roles || [],
+                    "solved" : response.data.solved_problem || [],
+                    "trying" : response.data.trying_problem || [],
                     "userId" : response.data.user_id,
                     "username" : response.data.username,
-                    "ustcid" : response.data.ustc_id || null
+                    "ustcid" : response.data.student_id || null
                 };
                 var vEmail = $scope.userDetail.privilege.indexOf(1);
                 if ($scope.userDetail.privilege.indexOf(1) === -1) {
