@@ -10,6 +10,10 @@ angular
 
         $scope.registerFire = function (username, pass, passagain, email) {
 
+            if () {
+
+            }
+
             if (pass == passagain) {
 
                 userService.register(function(result) {

@@ -28,7 +28,7 @@ angular
             profileService.bindId(function (response) {
                 siteService.showAlert("Bound successful", "success");
                 $window.location.href = siteService.profileLink;
-            }, ticket);
+            }, ticket, siteService.bindDestination);
         }
         else {
             siteService.showAlert("Failed to bind. Please try again");
