@@ -19,6 +19,8 @@ angular
         siteService.showAlert("Login required. Please try again");
         $window.location.href = "#/login/";
     }
+
+    // console.log(siteService.bindDestination);
     
     $scope.confirmBind = function () {
         var ticket = $location.search()["ticket"];
