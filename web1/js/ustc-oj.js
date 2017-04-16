@@ -225,7 +225,7 @@ angular
         this.editLink = '#/edit/';
         this.newsLink = '#/news/';
         this.bindIdLink = '#/bind/';
-        this.bindDestination = encodeURIComponent($location.protocol() + "://" + location.host + "/" + siteService.bindIdLink);
+        this.bindDestination = encodeURIComponent($location.protocol() + "://" + location.host + "/" + this.bindIdLink);
         this.errorMsg = {
             "411" : "Invalid username or wrong password",
             "412" : "Your email address has already been verified",
