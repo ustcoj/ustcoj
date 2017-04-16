@@ -60,7 +60,7 @@ angular
         $rootScope.newsUrl = '/api/news/';
         $rootScope.myContestStatusUrl = $rootScope.contestUrl + "{0}" + "/submission";
         $rootScope.getServerTime = "/api/server/time";
-        $rootScope.bindIdUrl = "/api/user/bind_id/";
+        $rootScope.bindIdUrl = "/api/user/bind_id";
 
         $rootScope.fullTime = 'yyyy-MM-dd HH:mm:ss';
         $rootScope.articleDate = 'yyyy - MM - dd';
