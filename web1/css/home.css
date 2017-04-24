@@ -205,6 +205,9 @@
     float: left;
     width: 50%;
     line-height: 24px;
+    height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: #4a4a4a;
 }
 

@@ -2,6 +2,20 @@
 
 <div ng-controller="homeCtrl" class="container home-container" role="main">
 
+	<div modal-dialog show='modalShown' title="Register Contest">
+		<p ng-hide="registerNeedPassword">Please confirm your registration:</p>
+		<p ng-show="registerNeedPassword">Please enter the password for <b>{{registerContestTitle}}</b>:</p>
+		<h3 class="col-center" ng-hide="registerNeedPassword"><b>{{registerContestTitle}}</b></h3>
+		<br>
+		<form ng-submit="confirmRegister(registerContestId, registerContestPassword)" class="modal-form" ng-show="registerNeedPassword">
+			<input class="modal-password-field" type="text" ng-model="registerContestPassword" required />
+		</form>
+		<div class="btn-group-n">
+			<button class="btn btn-default btn-yes" ng-click="confirmRegister(registerContestId, registerContestPassword)">{{registerNeedPassword ? "Done" : "Yes"}}</button>
+			<button class="btn btn-alert" ng-click="toggleModal()" ng-hide="registerNeedPassword">No</button>
+		</div>
+	</div>
+
 	<div class="home-main-content col-md-38">
 		<div class="home-section">
 			<div class="home-section-title">
@@ -72,7 +86,7 @@
 
 						<button class="btn btn-default btn-thin col-center"
 								ng-show="isLoggedIn && (!registeredContest[x.contest_id])"
-								ng-click="registerContest(x.contest_id)">Register</button>
+								ng-click="registerContest(x.contest_id, x.contest_title, x.need_password)">Register</button>
 						<button class="btn btn-default btn-thin col-center"
 								ng-show="!isLoggedIn || registeredContest[x.contest_id]"
 								ng-click="showContest(x.contest_id)">View</button>

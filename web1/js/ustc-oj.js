@@ -31,6 +31,41 @@ angular
 
 angular
     .module('ustc-oj')
+    .directive('modalDialog', function() {
+        return {
+            restrict: 'A',
+            scope: {
+                show: '=',
+                title: '@'
+            },
+            replace: true, // Replace with the template below
+            transclude: true, // we want to insert custom content inside the directive
+            link: function(scope, element, attrs) {
+                scope.dialogStyle = {};
+                if (attrs.width)
+                    scope.dialogStyle.width = attrs.width;
+                if (attrs.height)
+                    scope.dialogStyle.height = attrs.height;
+                if (attrs.title)
+                    scope.title = attrs.height;
+                scope.hideModal = function() {
+                    scope.show = false;
+                };
+            },
+            template: "<div class='ng-modal' ng-show='show'>\
+            <div class='ng-modal-overlay' ng-click='hideModal()'></div>\
+            <div class='ng-modal-dialog' ng-style='dialogStyle'>\
+                <div class='inf-board inf-board-info'>\
+                    <div class='inf-board-title small-title-font'>{{title}}</div>\
+                    <div class='inf-board-content' ng-transclude></div>\
+                </div>\
+            </div>\
+            </div>"
+        };
+    });
+
+angular
+    .module('ustc-oj')
     .run(function ($rootScope, $window) {
         $rootScope.ustcSuffix = ".ustc.edu.cn";
         var apiHostBody = "ustcoj.applinzi.com";
@@ -144,7 +179,7 @@ angular
         };
 
         this.handleRepData = function(method, url, data, config, extraHeader, error_callback) {
-            console.log(error_callback);
+            // console.log(error_callback);
             if (error_callback == true) error_callback = function (res) { return true; };
             else if ((typeof error_callback) != "function") error_callback = function(res) { return false; };
 
@@ -286,7 +321,7 @@ angular
             if ($("#alerts-container").length == 0) {
                 // alerts-container does not exist, create it
                 $("body")
-                    .append($("<div id=\"alerts-container\" style=\"position: fixed;width: 50%; left: 25%; bottom: 10%;\">"));
+                    .append($("<div id=\"alerts-container\" style=\"position: fixed;width: 50%; left: 25%; bottom: 10%;z-index: 100001\">"));
             }
 
             // default to alert-info; other options include success, warning, danger
@@ -487,8 +522,11 @@ angular
 
         };
 
-        this.registerContest = function (updateRegisterStatus, contestId) {
-            networkService.handleRepData('get', String.Format($rootScope.registerContestUrl, contestId), null, null, null)
+        this.registerContest = function (updateRegisterStatus, contestId, _password, error_callback) {
+            payload = {
+                "password" : _password || ""
+            };
+            networkService.handleRepData('post', String.Format($rootScope.registerContestUrl, contestId), payload, null, null, error_callback)
                 .then(function (response) {
                     updateRegisterStatus(response);
                 })

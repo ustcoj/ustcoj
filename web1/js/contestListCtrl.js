@@ -12,6 +12,11 @@ angular
         $scope.pending = {};
         $scope.registeredContest = {};
 
+        $scope.modalShown = false;
+        $scope.toggleModal = function() {
+            $scope.modalShown = !$scope.modalShown;
+        };
+
         $scope.updateUserData = function () {
             if (userService.isLoggedIn()) {
                 profileService.getRegisteredList(function (response) {
@@ -62,11 +67,30 @@ angular
             $window.location.href = siteService.contestLink + contestId;
         };
 
-        $scope.registerContest = function(contestId) {
+        $scope.registerContest = function(contestId, contestTitle, needPassword) {
+            if (userService.isLoggedIn()) {
+                $scope.toggleModal();
+                $scope.registerContestId = contestId;
+                $scope.registerContestTitle = contestTitle;
+                $scope.registerNeedPassword = needPassword;
+            }
+            else {
+                siteService.showAlert("Please log in first")
+            }
+        };
+
+        $scope.confirmRegister = function (contestId, password) {
             problemService.registerContest(function(response) {
+                $scope.toggleModal();
                 siteService.showAlert("Register Success");
                 $scope.updateUserData();
-            }, contestId);
+            }, contestId, password, function (response) {
+                if (response.status.code == "434") {
+                    console.log("1!!!!");
+                    return false;
+                }
+                return false;
+            });
         };
 
         $scope.getContestType = function (_contest_type) {

@@ -2,9 +2,22 @@
 <link rel="stylesheet" href="css/contestList.css">
 <div ng-controller="contestListCtrl" class="container" role="main">
 
-
     <div class="page-header">
         <h2>Contest List</h2>
+    </div>
+
+    <div modal-dialog show='modalShown' title="Register Contest">
+        <p ng-hide="registerNeedPassword">Please confirm your registration:</p>
+        <p ng-show="registerNeedPassword">Please enter the password for <b>{{registerContestTitle}}</b>:</p>
+        <h3 class="col-center" ng-hide="registerNeedPassword"><b>{{registerContestTitle}}</b></h3>
+        <br ng-hide="registerNeedPassword">
+        <form ng-submit="confirmRegister(registerContestId, registerContestPassword)" class="modal-form" ng-show="registerNeedPassword">
+            <input class="modal-password-field" type="text" autocomplete="off" ng-model="registerContestPassword" required />
+        </form>
+        <div class="btn-group-n">
+            <button class="btn btn-default btn-yes" ng-click="confirmRegister(registerContestId, registerContestPassword)">{{registerNeedPassword ? "Done" : "Yes"}}</button>
+            <button class="btn btn-alert" ng-click="toggleModal()" ng-hide="registerNeedPassword">No</button>
+        </div>
     </div>
 
 
@@ -44,7 +57,7 @@
                                     </button>
                                     <button class="contest-button btn btn-default btn-thin"
                                             ng-show="!registeredContest[x.contest_id]"
-                                            ng-click="registerContest(x.contest_id)">
+                                            ng-click="registerContest(x.contest_id, x.contest_title, x.need_password)">
                                         Register
                                     </button>
                                 </div>

@@ -116,6 +116,27 @@ span {
     padding: 0 12px;
 }
 
+.btn-group-n {
+    height: 35px;
+    margin: 12px auto 0 auto;
+    text-align: center;
+
+}
+
+.btn-group-n .btn {
+    display: inline-block;
+    margin: 0 12px;
+}
+
+.btn-group-n > .btn {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.btn-yes {
+    background-color: white;
+}
+
 .alert-warning {
     border-radius: 8px;
     border: 1px solid #faa634;
@@ -184,11 +205,25 @@ span {
 }
 
 .copy-icon {
-    content: url("../resource/copy.svg");
+    height: 14px;
+    width: 13px;
+    background-image: url("../resource/copy.svg")
 }
 
 .bind-icon {
-    content: url("../resource/bind-20px.svg")
+    height: 9px;
+    width: 24px;
+    background-image: url("../resource/bind-20px.svg")
+}
+
+.lock-icon {
+    height: 12px;
+    width: 10px;
+    background-image: url("../resource/lock-12px.svg")
+}
+
+.lock-icon:hover {
+    background-color: inherit !important;
 }
 
 @media (min-width: 992px) {
@@ -200,7 +235,7 @@ span {
         position: fixed;
         top: calc(100% - 4px);
         left: calc(50% - 80px);
-        z-index: 999999;
+        z-index: 10000;
     }
 }
 
@@ -337,7 +372,7 @@ span {
 
 .inf-board-content {
     font-size: 14px;
-    padding: 8px;
+    padding: 18px;
 }
 
 .inf-board-title {
