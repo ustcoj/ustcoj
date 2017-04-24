@@ -143,8 +143,11 @@ angular
             }
         };
 
-        this.handleRepData = function(method, url, data, config, extraHeader, no_warning) {
-            no_warning = no_warning || false;
+        this.handleRepData = function(method, url, data, config, extraHeader, error_callback) {
+            console.log(error_callback);
+            if (error_callback == true) error_callback = function (res) { return true; };
+            else if ((typeof error_callback) != "function") error_callback = function(res) { return false; };
+
             var promise;
             var defer = $q.defer();
             if (config == null) {
@@ -192,7 +195,7 @@ angular
 
             promise.then(function(rep) {
 
-                if (siteService.checkResponse(rep, no_warning)) {
+                if (siteService.checkResponse(rep, error_callback)) {
                     defer.resolve(rep.data);
                 }
 
@@ -320,9 +323,13 @@ angular
             }
         };
 
-        this.checkResponse = function (response, no_warning) {
+        this.checkResponse = function (response, error_callback) {
             //console.log(response);
             response = response.data;
+            if (error_callback == true) error_callback = function (res) { return true; };
+            else if ((typeof error_callback) != "function") error_callback = function(res) { return false; };
+
+            var no_warning = error_callback(response)
 
             if (response == null) {
                 if (!no_warning) this.showAlert("No response, the server might be down.");
