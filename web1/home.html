@@ -6,7 +6,7 @@
 		<p ng-hide="registerNeedPassword">Please confirm your registration:</p>
 		<p ng-show="registerNeedPassword">Please enter the password for <b>{{registerContestTitle}}</b>:</p>
 		<h3 class="col-center" ng-hide="registerNeedPassword"><b>{{registerContestTitle}}</b></h3>
-		<br>
+		<br ng-hide="registerNeedPassword">
 		<form ng-submit="confirmRegister(registerContestId, registerContestPassword)" class="modal-form" ng-show="registerNeedPassword">
 			<input class="modal-password-field" type="text" ng-model="registerContestPassword" required />
 		</form>
