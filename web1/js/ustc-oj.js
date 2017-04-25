@@ -359,6 +359,7 @@ angular
                         var offset = utc.getTimezoneOffset() + utc.getMinutes();
                         serverTime.setMinutes(offset);
                         cookieSaving("time_offset", this.getTime(true) - serverTime);
+                        //console.log(offset, utc, this.getTime(true));
                     }
 
                 }).bind(this));
