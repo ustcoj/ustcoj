@@ -9,8 +9,7 @@
     <div modal-dialog show='modalShown' title="Register Contest">
         <p ng-hide="registerNeedPassword">Please confirm your registration:</p>
         <p ng-show="registerNeedPassword">Please enter the password for <b>{{registerContestTitle}}</b>:</p>
-        <h3 class="col-center" ng-hide="registerNeedPassword"><b>{{registerContestTitle}}</b></h3>
-        <br ng-hide="registerNeedPassword">
+        <div class="col-center register-confirm-title" ng-hide="registerNeedPassword"><b>{{registerContestTitle}}</b></div>
         <form ng-submit="confirmRegister(registerContestId, registerContestPassword)" class="modal-form" ng-show="registerNeedPassword">
             <input class="modal-password-field" type="text" autocomplete="off" ng-model="registerContestPassword" required />
         </form>

@@ -61,3 +61,14 @@
     border-bottom: 2px solid #faa634;
     border-radius: 0;
 }
+
+.ng-modal-dialog > .inf-board-info > .inf-board-content {
+    padding: 18px;
+}
+
+.register-confirm-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
