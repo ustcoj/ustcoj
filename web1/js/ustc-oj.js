@@ -94,13 +94,20 @@ angular
         $rootScope.verifyEmailUrl = '/api/user/verify_email';
         $rootScope.newsUrl = '/api/news/';
         $rootScope.myContestStatusUrl = $rootScope.contestUrl + "{0}" + "/submission";
-        $rootScope.getServerTime = "/api/server/time";
+        $rootScope.getServerTimeUrl = "/api/server/time";
         $rootScope.bindIdUrl = "/api/user/bind_id";
 
         $rootScope.fullTime = 'yyyy-MM-dd HH:mm:ss';
         $rootScope.articleDate = 'yyyy - MM - dd';
         $rootScope.hourAndMinute = 'HH : mm';
+        $rootScope.serverTimezone = 8;
+        $rootScope.autoAdjustTime = true;
 
+        $rootScope.tempConfig = {
+            headers : {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+            }
+        };
     });
 
 angular
@@ -245,7 +252,7 @@ angular
 
 angular
     .module('ustc-oj')
-    .service('siteService', function($rootScope, $routeParams, $filter, $location, $window, $route) {
+    .service('siteService', function($rootScope, $routeParams, $filter, $location, $window, $route, $cookies, $http) {
 
         this.homeLink = '#/';
         this.loginLink = '#/login/';
@@ -343,18 +350,42 @@ angular
                 window.setTimeout(function() { alert.alert("close") }, closeDelay);
         };
 
-        this.getTime = function () {
+        this.adjustTime = function () {
+            response = $http.get($rootScope.apiHost + $rootScope.getServerTimeUrl, $rootScope.tempConfig)
+                .then((function (response) {
+                    if (this.checkResponse(response)) {
+                        serverTime = new Date(response.data.data.time);
+                        var utc = new Date();
+                        var offset = utc.getTimezoneOffset() + utc.getMinutes();
+                        serverTime.setMinutes(offset);
+                        cookieSaving("time_offset", this.getTime(true) - serverTime);
+                    }
+
+                }).bind(this));
+        };
+
+        this.getTime = function (pure) {
+            pure = pure | false;
+            var offsetWithServer = $cookies.get("time_offset") || 0;
             var utc = new Date();
+            if (!pure) {
+                utc.setMilliseconds(-offsetWithServer);
+            }
             var offset = utc.getTimezoneOffset();
             var utc8 = utc;
-            var minute = 480 + offset + utc8.getMinutes();
+            var minute = 60 * $rootScope.serverTimezone + offset + utc8.getMinutes();
             utc8.setMinutes(minute);
-            return $filter('date')(utc8, 'yyyyMMddHHmmss');
+            if (!pure)
+                return $filter('date')(utc8, 'yyyyMMddHHmmss');
+            else return utc8;
         };
 
         this.checkErrorCode = function (code) {
             if (code == 413) {
                 $window.location.href = this.loginLink;
+            }
+            if (code == 430) {
+                this.adjustTime();
             }
         };
 
@@ -700,12 +731,6 @@ angular
     .module('ustc-oj')
     .service('userService', function($rootScope, $cookies, $http, $window, siteService) {
 
-        var tempConfig = {
-            headers : {
-                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-            }
-        };
-
         this.login = function (showLoginResult, username, password) {
 
             var data = {
@@ -714,13 +739,14 @@ angular
             };
             //console.log(data);
 
-            response = $http.post($rootScope.apiHost + $rootScope.loginUrl, $.param(data), tempConfig)
+            response = $http.post($rootScope.apiHost + $rootScope.loginUrl, $.param(data), $rootScope.tempConfig)
                 .then(function (response) {
                     if (siteService.checkResponse(response)) {
                         cookieSaving("userId", response.data.data.user.user_id);
                         cookieSaving("token", response.data.data.token);
                         cookieSaving("username", response.data.data.user.username);
                         showLoginResult(true);
+                        if ($rootScope.autoAdjustTime) siteService.adjustTime();
                     }
                 });
 
@@ -735,7 +761,7 @@ angular
             };
 
             //response = networkService.post($rootScope.registerUrl, data);
-            response = $http.post($rootScope.apiHost + $rootScope.registerUrl, $.param(data), tempConfig)
+            response = $http.post($rootScope.apiHost + $rootScope.registerUrl, $.param(data), $rootScope.tempConfig)
                 .then(function (response) {
                     if (siteService.checkResponse(response)) {
                         showRegisterResult(response);
@@ -815,6 +841,7 @@ angular
                 $cookies.remove(k);
             });
         };
+
 
     });
 
