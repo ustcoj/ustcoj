@@ -144,7 +144,7 @@ angular
     .module('ustc-oj')
     .filter('contest_sort', function() {
         return function(seconds, contest_type) {
-            if (contest_type != 0) return seconds;
+            // if (contest_type != 0) return seconds;
             if (isNaN(parseFloat(seconds)) || !isFinite(seconds) || seconds == -1) return '-';
             if (typeof precision === 'undefined') precision = 0;
             return Math.floor(seconds / 60);
