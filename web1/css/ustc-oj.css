@@ -205,21 +205,17 @@ span {
 }
 
 .copy-icon {
-    height: 14px;
-    width: 13px;
-    background-image: url("../resource/copy.svg")
+    margin: 0 5px;
 }
-
+.copy-icon > img {
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
 .bind-icon {
-    height: 9px;
-    width: 24px;
-    background-image: url("../resource/bind-20px.svg")
 }
-
-.lock-icon {
-    height: 12px;
-    width: 10px;
-    background-image: url("../resource/lock-12px.svg")
+.bind-icon > img {
+    vertical-align: sub;
+    margin-bottom: 3px;
 }
 
 .lock-icon:hover {

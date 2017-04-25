@@ -31,8 +31,9 @@
                     <div class="profile-content">{{userDetail.email}}<span ng-show="hasVerifiedEmail&&myProfile"> (Verified)</span></div>
                 </section>
                 <section>
-                    <header class="profile-header">USTC ID<span class="profile-bind-id bind-icon" ng-click="bindUSTCId()" ng-show="!hasBindId&&myProfile">
-                    </span></header>
+                    <header class="profile-header">USTC ID
+                        <span class="profile-bind-id bind-icon" ng-click="bindUSTCId()" ng-show="!hasBindId&&myProfile"><img src="resource/bind-20px.svg"></span>
+                    </header>
 
 
                     <div class="profile-content">{{userDetail.ustcid || "---"}}</div>

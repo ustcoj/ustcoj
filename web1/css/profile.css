@@ -34,10 +34,7 @@
 }
 
 .profile-bind-id {
-    padding-left: 5px;
-    baseline-shift: sub;
-    font-size: 12px;
-    color: #faa634;
+    padding-left: 1px;
     cursor: pointer;
 }
 
