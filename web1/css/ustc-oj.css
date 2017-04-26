@@ -422,3 +422,8 @@ span {
     border: 1px solid #faa634;
     background-color: #fffaf0;
 }
+
+.inf-board-no-border {
+    border: none !important;
+}
+

@@ -4,7 +4,7 @@
 }
 
 .submit-form {
-    padding: 0 25px;
+    padding: 0 15px;
 }
 
 .submit-form .control-label {
@@ -18,14 +18,35 @@
     margin-bottom: 20px;
 }
 
-.submit-area textarea{
+.submit-area > textarea{
     font-family: monospace;
     padding: 5px;
+    height: 240px;
     resize: none;
+}
+
+.submit-area > div{
+    padding: 5px;
+    border-radius: 6px;
+    border: 1px solid #faa634;
+    height: 240px;
+    width: 100%;
+    font-size: 18px;
+    vertical-align: middle;
+    text-align: center;
+    color: #a8a8a8;
+    line-height: 200px;
 }
 
 .submit-btn {
     width: 50px;
     margin: 0 auto;
     cursor: pointer;
+}
+
+.submit-upload {
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+    letter-spacing: 0.04em;
 }

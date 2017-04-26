@@ -55,7 +55,7 @@ angular
             template: "<div class='ng-modal' ng-show='show'>\
             <div class='ng-modal-overlay' ng-click='hideModal()'></div>\
             <div class='ng-modal-dialog' ng-style='dialogStyle'>\
-                <div class='inf-board inf-board-info'>\
+                <div class='inf-board inf-board-info inf-board-no-border'>\
                     <div class='inf-board-title small-title-font'>{{title}}</div>\
                     <div class='inf-board-content' ng-transclude></div>\
                 </div>\
@@ -63,6 +63,35 @@ angular
             </div>"
         };
     });
+
+angular
+    .module('ustc-oj')
+    .directive('focusOnShow', function($timeout) {
+    return {
+        restrict: 'A',
+        link: function($scope, $element, $attr) {
+            if ($attr.ngShow){
+                $scope.$watch($attr.ngShow, function(newValue){
+                    if(newValue){
+                        $timeout(function(){
+                            $element[0].focus();
+                        }, 0);
+                    }
+                })
+            }
+            if ($attr.ngHide){
+                $scope.$watch($attr.ngHide, function(newValue){
+                    if(!newValue){
+                        $timeout(function(){
+                            $element[0].focus();
+                        }, 0);
+                    }
+                })
+            }
+
+        }
+    };
+});
 
 angular
     .module('ustc-oj')

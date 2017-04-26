@@ -73,7 +73,22 @@
 
             <div class="form-group">
                 <div class="col-sm-48 submit-area">
-                    <textarea ng-model="submitSource" id="codeTextarea" class="form-control" rows="10"></textarea>
+                    <textarea ng-model="submitSource"
+                              id="codeTextArea"
+                              class="form-control"
+                              ng-show="showCodeArea"
+                              ng-blur="codeAreaBlur()"
+                              focus-on-show
+                    >
+                    </textarea>
+                    <div class="submit-file-area" ng-hide="showCodeArea" ng-click="clickOnFileArea()">
+                        <div ng-hide="fileSelected">
+                            Paste here or <span class="submit-upload small-title-font" ng-click="selectFile(); $event.stopPropagation();">UPLOAD</span>
+                        </div>
+                        <div ng-show="fileSelected" class="small-title-font">
+
+                        </div>
+                    </div>
                 </div>
             </div>
 
