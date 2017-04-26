@@ -27,6 +27,13 @@
     white-space: nowrap;
 }
 
+@media (max-width: 767px) {
+    .navbar-brand-text {
+        max-width: 240px;
+        margin: 0 0 !important;
+    }
+}
+
 .navbar-brand-text:hover {
     color: #fff;
 }
