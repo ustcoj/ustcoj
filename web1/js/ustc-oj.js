@@ -457,9 +457,11 @@ angular
             "0" : "C",
             "1" : "C++",
             "2" : "Python 2.7",
-            "3" : "Python 3.5",
-            "4" : "Java"
+            "3" : "Python 3.4",
+            "4" : "Java",
+            "5" : "Haskell"
         };
+
         this.resultList = {
             "0": "Accepted",
             "-1": "Wrong Answer",
