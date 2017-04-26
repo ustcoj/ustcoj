@@ -35,6 +35,9 @@ angular
                 $scope.submissionProbId = response.problem_id;
                 $scope.submissionTitle = response.problem.problem_title;
                 $scope.submissionLang = response.language;
+                $scope.submissionTime = response.push_time;
+                $scope.submissionUser = response.user.username;
+                $scope.submissionLength = response.code.length;
                 if ($scope.isContest) {
                     $scope.submissionContestId = response.contest_id;
                     $scope.submissionSortIdx = response.problem.sort_index;

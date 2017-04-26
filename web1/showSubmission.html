@@ -27,8 +27,20 @@
                 </td>
             </tr>
             <tr>
+                <td>User</td>
+                <td ng-bind="submissionUser"></td>
+            </tr>
+            <tr>
+                <td>Time</td>
+                <td ng-bind="submissionTime | date:fullTime"></td>
+            </tr>
+            <tr>
                 <td>Language</td>
                 <td ng-bind="languageList[submissionLang]"></td>
+            </tr>
+            <tr>
+                <td>Code Length</td>
+                <td ng-bind="submissionLength"></td>
             </tr>
             <tr>
                 <td>Status</td>
