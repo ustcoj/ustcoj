@@ -5,10 +5,6 @@ angular
     .module('ustc-oj')
     .controller("profileCtrl", function($scope, $routeParams, $window, $location, profileService, userService, siteService){
 
-
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();
-        });
         var profileUsername = $routeParams.user_name;
         $scope.userDetail = {};
         $scope.finishLoading = false;
@@ -110,7 +106,7 @@ angular
                     "ustcid" : response.data.student_id || null
                 };
                 var vEmail = $scope.userDetail.privilege.indexOf(1);
-                if ($scope.userDetail.privilege.indexOf(1) === -1) {
+                if ($scope.userDetail.privilege.indexOf(1) === -1 && $scope.userDetail.email) {
                     $scope.hasVerifiedEmail = false;
                 }
                 else {
