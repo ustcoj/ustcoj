@@ -182,15 +182,17 @@ span {
     margin: 150px auto;
 }
 
-.no-margin-bottom {
-    margin-bottom: 0;
-}
-
-.rotate-center {
+#Orange-big {
     -webkit-animation: rotate-center 2s linear infinite both;
     -moz-animation: rotate-center 2s linear infinite both;
     animation: rotate-center 2s linear infinite both;
 }
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+
 
 .waiting-orange-small {
     content: url("../resource/wait.svg");
@@ -422,3 +424,8 @@ span {
     border: 1px solid #faa634;
     background-color: #fffaf0;
 }
+
+.inf-board-no-border {
+    border: none !important;
+}
+
