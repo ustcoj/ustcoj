@@ -353,7 +353,11 @@ angular
             "431" : "Please wait a while to resend another email",
             "432" : "News not found",
             "433" : "Incorrect code. Please try again",
-            "434" : "Wrong contest password"
+            "434" : "Wrong contest password",
+            "435" : "Seems that you have already bound a USTC ID",
+            "436" : "Failed to bind with this ID",
+            "437" : "This ID has already been bound to an account",
+            "438" : "This language cannot be used at this time"
         };
 
         this.reload = function () {
@@ -517,7 +521,8 @@ angular
             "2" : "Python 2.7",
             "3" : "Python 3.4",
             "4" : "Java",
-            "5" : "Haskell"
+            "5" : "Haskell",
+            "6" : "JavaScript"
         };
 
         this.resultList = {
