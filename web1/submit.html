@@ -71,6 +71,17 @@
                 </div>
             </div>
 
+            <div class="form-group" ng-hide="true">
+                <label class="col-sm-8 control-label">File Upload</label>
+                <div class="col-sm-40">
+                    <input ng-model="submitFile"
+                           type="file"
+                           class="submit-file-button"
+                           id="inputFile"
+                           onchange="angular.element(this).scope().fileChanged(this)">
+                </div>
+            </div>
+
             <div class="form-group">
                 <div class="col-sm-48 submit-area">
                     <textarea ng-model="submitSource"
@@ -81,13 +92,27 @@
                               focus-on-show
                     >
                     </textarea>
-                    <div class="submit-file-area" ng-hide="showCodeArea" ng-click="clickOnFileArea()">
-                        <div ng-hide="fileSelected">
-                            Paste here or <span class="submit-upload small-title-font" ng-click="selectFile(); $event.stopPropagation();">UPLOAD</span>
+                    <div class="submit-file-area"
+                         ng-hide="showCodeArea"
+                         ng-click="clickOnFileArea()"
+                         ng-class="{'submit-area-selected' : fileSelected}"
+                    >
+                        <div class="submit-file-text" ng-hide="fileSelected">
+                            Paste here or
+                            <span class="submit-upload small-title-font" ng-click="selectFile(); $event.stopPropagation();">UPLOAD</span>
                         </div>
-                        <div ng-show="fileSelected" class="small-title-font">
+                        <div ng-show="fileSelected && !fileWaiting" class="submit-file-show small-title-font">
+                            <img src="resource/cross-21px.svg" class="submit-file-cancel" ng-click="clearFile(); $event.stopPropagation();">
+                            <img src="resource/file-icon-112px.svg" height="96px">
+                            <p class="submit-file-name">{{submitFileName}}</p>
+                            <p class="submit-file-size">{{submitFileSize | bytes}}</p>
+                        </div>
+                        <div ng-show="fileWaiting" class="submit-file-show small-title-font">
+                            <div class="waiting-orange-small"></div>
+                            <p class="submit-file-size" ng-show="!fileSelected">LOADING FILE</p>
+                            <p class="submit-file-size" ng-show="fileSelected">UPLOADING</p>
+                        </div>
 
-                        </div>
                     </div>
                 </div>
             </div>

@@ -15,6 +15,13 @@ angular
         $scope.languageList = problemService.languageList;
         $scope.submitTitle = " --- ";
         $scope.showCodeArea = false;
+        $scope.fileWaiting = false;
+        var reader = new FileReader();
+        reader.onload = function () {
+            $scope.fileWaiting = false;
+            $scope.fileSelected = true;
+            $scope.$apply();
+        };
         // console.log($scope.submitLang);
 
         if ($routeParams.contest_ID == null) {
@@ -39,8 +46,20 @@ angular
 
         $scope.submitFire = function () {
 
+            if ($scope.fileSelected && $scope.fileWaiting) {
+                return;
+            }
+
+            var realSource = $scope.submitSource;
+            console.log($scope.submitFile);
+            if (!realSource && $scope.fileSelected && $scope.submitFile) {
+                realSource = reader.result;
+                $scope.fileWaiting = true;
+                //console.log(reader.result);
+            }
+
             var submissionData = {
-                code: $scope.submitSource,
+                code: realSource,
                 language: $scope.submitLang
             };
             if ($scope.isContest) {
@@ -77,7 +96,7 @@ angular
         $scope.getProblemTitle();
 
         $scope.clickOnFileArea = function () {
-            if (!$scope.file) {
+            if (!$scope.fileSelected) {
                 $scope.showCodeArea = true;
             }
         };
@@ -101,13 +120,34 @@ angular
         };
 
         $scope.selectFile = function(){
-            // var f = document.getElementById('file').files[0],
-            //     r = new FileReader();
-            // r.onloadend = function(e){
-            //     var data = e.target.result;
-            //     //send your binary data via $http or $resource or do anything else with it
-            // };
-            // r.readAsBinaryString(f);
+            setTimeout(function() {
+                $('#inputFile').click();
+            }, 0);
+        };
+        
+        $scope.clearFile = function () {
+            $('#inputFile').val('');
+            $scope.fileSelected = false;
+        };
+
+        $scope.fileChanged = function (element) {
+
+            setTimeout(function () {
+                $scope.$apply(function () {
+                    if (element.files.length > 0) {
+                        $scope.submitFile = element.files[0];
+                        $scope.fileWaiting = true;
+                        reader.readAsText($scope.submitFile);
+                        $scope.submitFileName = element.files[0].name;
+                        $scope.submitFileSize = element.files[0].size;
+                    }
+                    else {
+                        $scope.fileSelected = false;
+                        $scope.submitFile = null;
+                    }
+                });
+            }, 0);
+
         }
 
 });

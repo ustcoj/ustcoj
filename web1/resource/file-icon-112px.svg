@@ -1,0 +1,33 @@
+
+<svg width="83px" height="112px" viewBox="0 0 83 112" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="83" height="112" rx="4"></rect>
+        <path d="M61,0 L4.00326252,0 C1.79131815,0 0,1.79204057 0,4.00263463 L0,107.997365 C0,110.218134 1.79232168,112 4.00326252,112 L78.9967375,112 C81.2086818,112 83,110.207959 83,107.997365 L83,22 L65.0032625,22 C62.7923217,22 61,20.2181337 61,17.9973654 L61,-2.66453526e-15 Z" id="path-3"></path>
+    </defs>
+    <g id="Register" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-460.000000, -623.000000)">
+            <g id="Group-4" transform="translate(460.000000, 623.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Rectangle-5"></g>
+                <polygon id="Triangle-2" fill="#FFFFFF" mask="url(#mask-2)" transform="translate(65.682427, 17.227476) rotate(225.000000) translate(-65.682427, -17.227476) " points="65.6824269 9.83470869 80.4679608 24.6202426 50.896893 24.6202426"></polygon>
+                <g id="Combined-Shape" mask="url(#mask-2)">
+                    <use fill="#FFFAF0" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    <path stroke="#FAA634" stroke-width="2" d="M60,1 L60,17.9973654 C60,20.7673335 62.2369444,23 65.0032625,23 L82,23 L82,107.997365 C82,109.656025 80.6560469,111 78.9967375,111 L4.00326252,111 C2.34065775,111 1,109.661906 1,107.997365 L1,4.00263463 C1,2.34397507 2.34395314,1 4.00326252,1 L60,1 Z"></path>
+                </g>
+                <path d="M60.15,0.5 L82.5,22.95" id="Line" stroke="#FAA634" stroke-width="2" stroke-linecap="square" mask="url(#mask-2)"></path>
+                <g id="Group-5" mask="url(#mask-2)" stroke="#B8B8B8" stroke-linecap="square">
+                    <g transform="translate(14.000000, 31.000000)">
+                        <path d="M0.585106383,1.6 L39.2021277,1.6" id="Line"></path>
+                        <path d="M0.585106383,11.2 L54.4148936,11.2" id="Line-Copy"></path>
+                        <path d="M0.585106383,20.8 L54.4148936,20.8" id="Line-Copy-2"></path>
+                        <path d="M0.585106383,30.4 L54.4148936,30.4" id="Line-Copy-3"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

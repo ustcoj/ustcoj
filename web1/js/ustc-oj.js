@@ -46,8 +46,6 @@ angular
                     scope.dialogStyle.width = attrs.width;
                 if (attrs.height)
                     scope.dialogStyle.height = attrs.height;
-                if (attrs.title)
-                    scope.title = attrs.height;
                 scope.hideModal = function() {
                     scope.show = false;
                 };
@@ -89,6 +87,35 @@ angular
                 })
             }
 
+        }
+    };
+});
+
+angular
+    .module('ustc-oj')
+    .directive('upload', ['$http', function($http) {
+    return {
+        restrict: 'A',
+        replace: true,
+        scope: {},
+        require: '?ngModel',
+        template: '<div class="asset-upload">Drag here to upload</div>',
+        link: function(scope, element, attrs, ngModel) {
+
+            // Code goes here
+
+        }
+    };
+}]);
+
+angular
+    .module('ustc-oj')
+    .directive('customOnChange', function() {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+            var onChangeFunc = scope.$eval(attrs.customOnChange);
+            element.bind('change', onChangeFunc);
         }
     };
 });
