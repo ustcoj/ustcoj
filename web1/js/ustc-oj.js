@@ -62,6 +62,8 @@ angular
         };
     });
 
+
+
 angular
     .module('ustc-oj')
     .directive('focusOnShow', function($timeout) {
