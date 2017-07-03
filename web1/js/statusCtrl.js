@@ -3,7 +3,7 @@
  */
 angular
     .module('ustc-oj')
-    .controller("statusCtrl", function($routeParams, $scope, $http, $rootScope, $window, $location, problemService, siteService){
+    .controller("statusCtrl", function($routeParams, $scope, $http, $rootScope, $window, $location, problemService, siteService, userService){
 
         $scope.statusTrying = {};
         $scope.statusSolved = {};
@@ -14,6 +14,7 @@ angular
         $scope.filterUserId = $location.search()["user"] | null;
         $scope.filterProblemId = $location.search()["problem"] | null;
         $scope.filterResultId = $location.search()["result"] | null;
+
 
         if ($routeParams.contest_ID) {
             $scope.isContest = true;
@@ -67,7 +68,11 @@ angular
                     }
                 });
                 $scope.finishLoading = true;
-            }, $scope.pageNow, $scope.perpage, $scope.isContest ? $scope.contestId : null);
+            }, $scope.pageNow, $scope.perpage, $scope.isContest ? $scope.contestId : null, {
+                "user": $scope.filterUserId,
+                "problem": $scope.filterProblemId,
+                "result": $scope.filterResultId
+            });
 
         };
 
@@ -75,7 +80,34 @@ angular
             return (result != "Compile Error" && result != "System Error" && result != "Pending" && result != "Judge Failed")
         };
 
+        $scope.userFilterTarget = function () {
+            var userId = userService.getUserid();
+            if (userId && ($scope.filterUserId == userId)) {
+                return "Me";
+            }
+            else if ($scope.filterUserId) {
+                    return "ID: " + String($scope.filterUserId);
+            }
+            else return "User";
 
+        };
+
+        $scope.userFilter = function () {
+            if ($scope.filterUserId) {
+                $location.search('user', null);
+                $scope.filterUserId = null;
+                $scope.pageNow = 1;
+            }
+            else {
+                var userId = userService.getUserid();
+                if (userId) {
+                    $location.search('user', userId);
+                    $scope.filterUserId = userId;
+                    $scope.pageNow = 1;
+                }
+            }
+            $scope.refreshPage();
+        };
 
 
         $scope.refreshPage();

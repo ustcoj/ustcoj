@@ -23,14 +23,16 @@
 
             <table class="status-table bar-table col-md-48">
                 <tr class="bar-head status-bar">
-                    <th class="col-md-3 col-center">ID</th>
-                    <th class="col-md-7 col-center">Time</th>
-                    <th class="col-md-10">Title</th>
-                    <th class="col-md-6">User</th>
-                    <th class="col-md-8 col-center">Status</th>
-                    <th class="col-md-5 col-center">Run Time</th>
-                    <th class="col-md-5 col-center">Language</th>
-                    <th class="col-md-4 col-center">Memory</th>
+                    <th class="col-md-3 col-center"><div class="status-title">ID</div></th>
+                    <th class="col-md-7 col-center"><div class="status-title">Time</div></th>
+                    <th class="col-md-10 col-center"><div class="status-title">Title</div></th>
+                    <th class="col-md-6 col-center" ng-class="{'status-title-toggle': true}">
+                        <div class="status-title" ng-click="userFilter()">{{userFilterTarget()}}</div>
+                    </th>
+                    <th class="col-md-8 col-center"><div class="status-title">Status</div></th>
+                    <th class="col-md-5 col-center"><div class="status-title">Run Time</div></th>
+                    <th class="col-md-5 col-center"><div class="status-title">Language</div></th>
+                    <th class="col-md-4 col-center"><div class="status-title">Memory</div></th>
                 </tr>
 
                 <tr ng-repeat="x in statusList.data.submission_list"

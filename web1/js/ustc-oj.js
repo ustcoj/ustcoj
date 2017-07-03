@@ -666,12 +666,15 @@ angular
                 });
         };
 
-        this.getStatusList = function(show_statusList, _page, _per_page, _contestId) {
+        this.getStatusList = function(show_statusList, _page, _per_page, _contestId, _filter) {
 
             param = {
                 page: _page,
                 per_page: _per_page
             };
+            if (_filter["user"]) {
+                param["user_id"] = _filter["user"];
+            }
             var url;
             if (_contestId) {
                 url = String.Format($rootScope.myContestStatusUrl, _contestId);
