@@ -3,19 +3,20 @@
  */
 angular
     .module('ustc-oj')
-    .controller("statusCtrl", function($routeParams, $scope, $http, $rootScope, $window, problemService, siteService){
+    .controller("statusCtrl", function($routeParams, $scope, $http, $rootScope, $window, $location, problemService, siteService){
 
         $scope.statusTrying = {};
         $scope.statusSolved = {};
         $scope.perpage = 25;
-        $scope.pageNow = 1;
+        $scope.pageNow = $location.search()["page"] | 1;
         $scope.isContest = false;
         $scope.contestId = null;
+        $scope.filterUserId = $location.search()["user"] | null;
+        $scope.filterProblemId = $location.search()["problem"] | null;
+        $scope.filterResultId = $location.search()["result"] | null;
 
         if ($routeParams.contest_ID) {
             $scope.isContest = true;
-            $scope.perpage = 25;
-            $scope.pageNow = 1;
             $scope.contestId = $routeParams.contest_ID;
             problemService.getContestInfo(function (response) {
                 $scope.contestInfo = response;
@@ -50,20 +51,23 @@ angular
         };
 
         $scope.refreshPage = function () {
-                problemService.getStatusList(function(response) {
 
-                    $scope.statusList = response;
-                    $scope.statusList.data.submission_list.forEach(function (item) {
-                        var result = $scope.getResult(item.result);
-                        if (result == "Accepted") {
-                            $scope.statusSolved[item.submission_id] = true;
-                        }
-                        else if ($scope.checkWA(result)) {
-                            $scope.statusTrying[item.submission_id] = true;
-                        }
-                    });
-                    $scope.finishLoading = true;
-                }, $scope.pageNow, $scope.perpage, $scope.isContest ? $scope.contestId : null);
+            $location.search("page", $scope.pageNow)
+
+            problemService.getStatusList(function(response) {
+
+                $scope.statusList = response;
+                $scope.statusList.data.submission_list.forEach(function (item) {
+                    var result = $scope.getResult(item.result);
+                    if (result == "Accepted") {
+                        $scope.statusSolved[item.submission_id] = true;
+                    }
+                    else if ($scope.checkWA(result)) {
+                        $scope.statusTrying[item.submission_id] = true;
+                    }
+                });
+                $scope.finishLoading = true;
+            }, $scope.pageNow, $scope.perpage, $scope.isContest ? $scope.contestId : null);
 
         };
 

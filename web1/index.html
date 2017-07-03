@@ -107,7 +107,8 @@
                         templateUrl:'status.html',
                         controller: ['$routeParams', function($routeParams) {
                         }],
-                        controllerAs: 'ctrl'
+                        controllerAs: 'ctrl',
+                        reloadOnSearch: false
                     })
                     .when('/contests/:contest_ID/status/:submission_ID/',{
                         templateUrl:'showSubmission.html',
@@ -128,7 +129,10 @@
                         }],
                         controllerAs: 'ctrl'
                     })
-                    .when('/status/',{templateUrl:'status.html'})
+                    .when('/status/',{
+                        templateUrl:'status.html',
+                        reloadOnSearch: false
+                    })
                     .when('/status/:submission_ID/',{
                         templateUrl:'showSubmission.html',
                         controller: ['$routeParams', function($routeParams) {
