@@ -839,6 +839,25 @@ angular
                 });
         };
 
+        this.setFilter = function (_filter) {
+            cookieSaving("filter", JSON.stringify(_filter));
+        };
+
+        this.getFilter = function () {
+            var ret = $cookies.get("filter");
+            if (!ret) {
+                ret = {
+                    user: null,
+                    problem: null,
+                    result: null
+                }
+            }
+            else {
+                ret = JSON.parse(ret);
+            }
+            return ret;
+        };
+
         this.getToken = function () {
             return $cookies.get("token");
         };

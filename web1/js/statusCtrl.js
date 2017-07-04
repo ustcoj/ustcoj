@@ -11,7 +11,30 @@ angular
         $scope.pageNow = $location.search()["page"] | 1;
         $scope.isContest = false;
         $scope.contestId = null;
+        var filter = userService.getFilter();
+        if (!$scope.isContest) {
+            $scope.filterUserId = filter["user"] | null;
+            if ($scope.filterUserId === 0) {
+                // TODO: WTF??
+                $scope.filterUserId = null;
+            }
+            $location.search("user", $scope.filterUserId);
+            console.log($scope.filterUserId);
+        }
+
         $scope.filterUserId = $location.search()["user"] | null;
+
+        $scope.setFilterUserId = function (val) {
+
+            $scope.filterUserId = val;
+            if (!$scope.isContest) {
+                filter["user"] = val;
+                userService.setFilter(filter);
+            }
+
+        };
+
+
         $scope.filterProblemId = $location.search()["problem"] | null;
         $scope.filterResultId = $location.search()["result"] | null;
 
@@ -95,14 +118,14 @@ angular
         $scope.userFilter = function () {
             if ($scope.filterUserId) {
                 $location.search('user', null);
-                $scope.filterUserId = null;
+                $scope.setFilterUserId(null);
                 $scope.pageNow = 1;
             }
             else {
                 var userId = userService.getUserid();
                 if (userId) {
                     $location.search('user', userId);
-                    $scope.filterUserId = userId;
+                    $scope.setFilterUserId(userId);
                     $scope.pageNow = 1;
                 }
             }
