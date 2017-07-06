@@ -8,35 +8,26 @@ angular
         $scope.statusTrying = {};
         $scope.statusSolved = {};
         $scope.perpage = 25;
-        $scope.pageNow = $location.search()["page"] | 1;
+        $scope.pageNow = $location.search()["page"] || 1;
         $scope.isContest = false;
         $scope.contestId = null;
         var filter = userService.getFilter();
-        if (!$scope.isContest) {
-            $scope.filterUserId = filter["user"] | null;
-            if ($scope.filterUserId === 0) {
-                // TODO: WTF??
-                $scope.filterUserId = null;
-            }
-            $location.search("user", $scope.filterUserId);
-            console.log($scope.filterUserId);
-        }
+        $scope.filterUserId = filter["user"] || null;
+        $location.search("user", $scope.filterUserId);
 
-        $scope.filterUserId = $location.search()["user"] | null;
+        $scope.filterUserId = $location.search()["user"] || null;
 
         $scope.setFilterUserId = function (val) {
 
             $scope.filterUserId = val;
-            if (!$scope.isContest) {
-                filter["user"] = val;
-                userService.setFilter(filter);
-            }
+            filter["user"] = val;
+            userService.setFilter(filter);
 
         };
 
 
-        $scope.filterProblemId = $location.search()["problem"] | null;
-        $scope.filterResultId = $location.search()["result"] | null;
+        $scope.filterProblemId = $location.search()["problem"] || null;
+        $scope.filterResultId = $location.search()["result"] || null;
 
 
         if ($routeParams.contest_ID) {
