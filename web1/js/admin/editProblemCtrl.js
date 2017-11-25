@@ -16,8 +16,8 @@ angular
         $scope.description = null;
         $scope.input_description = null;
         $scope.output_description = null;
-        $scope.input_sample = null;
-        $scope.output_sample = null;
+        $scope.input_sample = [];
+        $scope.output_sample = [];
         $scope.hint = null;
         $scope.finishLoading = false;
 
