@@ -31,7 +31,7 @@ angular
 
 angular
     .module('ustc-oj')
-    .directive('modalDialog', function() {
+    .directive('modalDialog', function () {
         return {
             restrict: 'A',
             scope: {
@@ -40,13 +40,13 @@ angular
             },
             replace: true, // Replace with the template below
             transclude: true, // we want to insert custom content inside the directive
-            link: function(scope, element, attrs) {
+            link: function (scope, element, attrs) {
                 scope.dialogStyle = {};
                 if (attrs.width)
                     scope.dialogStyle.width = attrs.width;
                 if (attrs.height)
                     scope.dialogStyle.height = attrs.height;
-                scope.hideModal = function() {
+                scope.hideModal = function () {
                     scope.show = false;
                 };
             },
@@ -63,64 +63,63 @@ angular
     });
 
 
-
 angular
     .module('ustc-oj')
-    .directive('focusOnShow', function($timeout) {
-    return {
-        restrict: 'A',
-        link: function($scope, $element, $attr) {
-            if ($attr.ngShow){
-                $scope.$watch($attr.ngShow, function(newValue){
-                    if(newValue){
-                        $timeout(function(){
-                            $element[0].focus();
-                        }, 0);
-                    }
-                })
+    .directive('focusOnShow', function ($timeout) {
+        return {
+            restrict: 'A',
+            link: function ($scope, $element, $attr) {
+                if ($attr.ngShow) {
+                    $scope.$watch($attr.ngShow, function (newValue) {
+                        if (newValue) {
+                            $timeout(function () {
+                                $element[0].focus();
+                            }, 0);
+                        }
+                    })
+                }
+                if ($attr.ngHide) {
+                    $scope.$watch($attr.ngHide, function (newValue) {
+                        if (!newValue) {
+                            $timeout(function () {
+                                $element[0].focus();
+                            }, 0);
+                        }
+                    })
+                }
+
             }
-            if ($attr.ngHide){
-                $scope.$watch($attr.ngHide, function(newValue){
-                    if(!newValue){
-                        $timeout(function(){
-                            $element[0].focus();
-                        }, 0);
-                    }
-                })
+        };
+    });
+
+angular
+    .module('ustc-oj')
+    .directive('upload', ['$http', function ($http) {
+        return {
+            restrict: 'A',
+            replace: true,
+            scope: {},
+            require: '?ngModel',
+            template: '<div class="asset-upload">Drag here to upload</div>',
+            link: function (scope, element, attrs, ngModel) {
+
+                // Code goes here
+
             }
-
-        }
-    };
-});
+        };
+    }]);
 
 angular
     .module('ustc-oj')
-    .directive('upload', ['$http', function($http) {
-    return {
-        restrict: 'A',
-        replace: true,
-        scope: {},
-        require: '?ngModel',
-        template: '<div class="asset-upload">Drag here to upload</div>',
-        link: function(scope, element, attrs, ngModel) {
-
-            // Code goes here
-
-        }
-    };
-}]);
-
-angular
-    .module('ustc-oj')
-    .directive('customOnChange', function() {
-    return {
-        restrict: 'A',
-        link: function (scope, element, attrs) {
-            var onChangeFunc = scope.$eval(attrs.customOnChange);
-            element.bind('change', onChangeFunc);
-        }
-    };
-});
+    .directive('customOnChange', function () {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attrs) {
+                var onChangeFunc = scope.$eval(attrs.customOnChange);
+                element.bind('change', onChangeFunc);
+            }
+        };
+    });
 
 angular
     .module('ustc-oj')
@@ -155,6 +154,10 @@ angular
         $rootScope.getServerTimeUrl = "/api/server/time";
         $rootScope.bindIdUrl = "/api/user/bind_id";
 
+        // sourcetag
+        $rootScope.sourcetagTaskUrl = "/api/sourcetag/";
+
+
         $rootScope.fullTime = 'yyyy-MM-dd HH:mm:ss';
         $rootScope.articleDate = 'yyyy - MM - dd';
         $rootScope.hourAndMinute = 'HH : mm';
@@ -162,7 +165,7 @@ angular
         $rootScope.autoAdjustTime = true;
 
         $rootScope.tempConfig = {
-            headers : {
+            headers: {
                 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
             }
         };
@@ -170,20 +173,20 @@ angular
 
 angular
     .module('ustc-oj')
-    .filter('bytes', function() {
-        return function(bytes, precision) {
+    .filter('bytes', function () {
+        return function (bytes, precision) {
             if (isNaN(parseFloat(bytes)) || !isFinite(bytes)) return '-';
             if (typeof precision === 'undefined') precision = 0;
             var units = ['bytes', 'kB', 'MB', 'GB', 'TB', 'PB'],
                 number = Math.floor(Math.log(bytes) / Math.log(1024));
-            return (bytes / Math.pow(1024, Math.floor(number))).toFixed(precision) +  ' ' + units[number];
-    }
-});
+            return (bytes / Math.pow(1024, Math.floor(number))).toFixed(precision) + ' ' + units[number];
+        }
+    });
 
 angular
     .module('ustc-oj')
-    .filter('time_interval', function() {
-        return function(millis, precision) {
+    .filter('time_interval', function () {
+        return function (millis, precision) {
             if (isNaN(parseFloat(millis)) || !isFinite(millis)) return '-';
             var units = ['ms', 's', 'min', 'h', 'day', 'month', 'year'];
             var t = [1000, 60, 60, 24, 30, 12, 10000000];
@@ -199,7 +202,7 @@ angular
                 else precision = 0;
             }
             var ret = millis.toFixed(precision);
-            var retString =  ret +  ' ' + units[i];
+            var retString = ret + ' ' + units[i];
             if (i >= 4 && ret > 1) retString += 's';
             return retString;
         }
@@ -207,8 +210,8 @@ angular
 
 angular
     .module('ustc-oj')
-    .filter('contest_sort', function() {
-        return function(seconds, contest_type) {
+    .filter('contest_sort', function () {
+        return function (seconds, contest_type) {
             if (isNaN(parseFloat(seconds)) || !isFinite(seconds) || seconds == -1) return '-';
             if (contest_type != 0) return seconds;
             if (typeof precision === 'undefined') precision = 0;
@@ -219,9 +222,9 @@ angular
 
 angular
     .module('ustc-oj')
-    .service('networkService', function($rootScope, $http, $q, userService, $filter, siteService) {
+    .service('networkService', function ($rootScope, $http, $q, userService, $filter, siteService) {
 
-        var addDefaultHeader = function(header) {
+        var addDefaultHeader = function (header) {
             header['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8;';
             return header;
         };
@@ -243,10 +246,14 @@ angular
             }
         };
 
-        this.handleRepData = function(method, url, data, config, extraHeader, error_callback) {
+        this.handleRepData = function (method, url, data, config, extraHeader, error_callback) {
             // console.log(error_callback);
-            if (error_callback == true) error_callback = function (res) { return true; };
-            else if ((typeof error_callback) != "function") error_callback = function(res) { return false; };
+            if (error_callback == true) error_callback = function (res) {
+                return true;
+            };
+            else if ((typeof error_callback) != "function") error_callback = function (res) {
+                return false;
+            };
 
             var promise;
             var defer = $q.defer();
@@ -261,7 +268,7 @@ angular
                 config.params["ut"] = siteService.getTime();
             }
             else {
-                config["params"] = {"ut" : siteService.getTime()}
+                config["params"] = {"ut": siteService.getTime()}
             }
             switch (method) {
                 case 'get':
@@ -293,13 +300,13 @@ angular
                     promise = $http.delete(url, config)
             }
 
-            promise.then(function(rep) {
+            promise.then(function (rep) {
 
                 if (siteService.checkResponse(rep, error_callback)) {
                     defer.resolve(rep.data);
                 }
 
-            }, function() {
+            }, function () {
                 defer.reject('HTTP request failed. Please try again.');
             });
 
@@ -310,7 +317,7 @@ angular
 
 angular
     .module('ustc-oj')
-    .service('siteService', function($rootScope, $routeParams, $filter, $location, $window, $route, $cookies, $http) {
+    .service('siteService', function ($rootScope, $routeParams, $filter, $location, $window, $route, $cookies, $http) {
 
         this.homeLink = '#/';
         this.loginLink = '#/login/';
@@ -328,36 +335,37 @@ angular
         this.editLink = '#/edit/';
         this.newsLink = '#/news/';
         this.bindIdLink = '#/bind/';
+        this.sourcetagTaskLink = "#/sourcetag/";
         this.bindDestination = encodeURIComponent($location.protocol() + "://" + location.host + "/" + this.bindIdLink);
         this.errorMsg = {
-            "411" : "Invalid username or wrong password",
-            "412" : "Your email address has already been verified",
-            "413" : "Login required",
-            "414" : "Verification code expired. Please resend an email",
-            "415" : "Failed to submit: ",
-            "416" : "No such user",
-            "417" : "Cannot fetch job from redis queue",
-            "418" : "Failed to load this problem",
-            "419" : "Failed to load this submission",
-            "420" : "Sorry, cannot access this submission",
-            "421" : "Failed to load this contest",
-            "422" : "Calm down~ You are submitting too fast",
-            "423" : "To submit a new problem, please contact us",
-            "424" : "Please verify your email address",
-            "425" : "Privilege required",
-            "426" : "Please register to this contest first",
-            "427" : "Seems that you have already registered",
-            "428" : "Contest has not begun yet",
-            "429" : "Contest has ended",
-            "430" : "Authentication failed. Re-login may solve this problem",
-            "431" : "Please wait a while to resend another email",
-            "432" : "News not found",
-            "433" : "Incorrect code. Please try again",
-            "434" : "Wrong contest password",
-            "435" : "Seems that you have already bound a USTC ID",
-            "436" : "Failed to bind with this ID",
-            "437" : "This ID has already been bound to an account",
-            "438" : "This language cannot be used at this time"
+            "411": "Invalid username or wrong password",
+            "412": "Your email address has already been verified",
+            "413": "Login required",
+            "414": "Verification code expired. Please resend an email",
+            "415": "Failed to submit: ",
+            "416": "No such user",
+            "417": "Cannot fetch job from redis queue",
+            "418": "Failed to load this problem",
+            "419": "Failed to load this submission",
+            "420": "Sorry, cannot access this submission",
+            "421": "Failed to load this contest",
+            "422": "Calm down~ You are submitting too fast",
+            "423": "To submit a new problem, please contact us",
+            "424": "Please verify your email address",
+            "425": "Privilege required",
+            "426": "Please register to this contest first",
+            "427": "Seems that you have already registered",
+            "428": "Contest has not begun yet",
+            "429": "Contest has ended",
+            "430": "Authentication failed. Re-login may solve this problem",
+            "431": "Please wait a while to resend another email",
+            "432": "News not found",
+            "433": "Incorrect code. Please try again",
+            "434": "Wrong contest password",
+            "435": "Seems that you have already bound a USTC ID",
+            "436": "Failed to bind with this ID",
+            "437": "This ID has already been bound to an account",
+            "438": "This language cannot be used at this time"
         };
 
         this.reload = function () {
@@ -383,7 +391,7 @@ angular
             $window.location.href = '#' + nowUrl;
         };
 
-        this.showAlert = function(message, type, closeDelay) {
+        this.showAlert = function (message, type, closeDelay) {
 
             closeDelay = closeDelay || 8000;
 
@@ -409,7 +417,9 @@ angular
 
             // if closeDelay was passed - set a timeout to close the alert
             if (closeDelay)
-                window.setTimeout(function() { alert.alert("close") }, closeDelay);
+                window.setTimeout(function () {
+                    alert.alert("close")
+                }, closeDelay);
         };
 
         this.adjustTime = function () {
@@ -455,8 +465,12 @@ angular
         this.checkResponse = function (response, error_callback) {
             //console.log(response);
             response = response.data;
-            if (error_callback == true) error_callback = function (res) { return true; };
-            else if ((typeof error_callback) != "function") error_callback = function(res) { return false; };
+            if (error_callback == true) error_callback = function (res) {
+                return true;
+            };
+            else if ((typeof error_callback) != "function") error_callback = function (res) {
+                return false;
+            };
 
             var no_warning = error_callback(response)
 
@@ -486,18 +500,18 @@ angular
 
 angular
     .module('ustc-oj')
-    .service('problemService', function($rootScope, $sce, userService, networkService, siteService) {
+    .service('problemService', function ($rootScope, $sce, userService, networkService, siteService) {
 
-        this.getSiteInfo = function(save_siteInfo) {
+        this.getSiteInfo = function (save_siteInfo) {
 
             networkService.handleRepData('get', $rootScope.siteInfoUrl, null, null, null)
                 .then(function (response) {
-                        save_siteInfo(response.data);
+                    save_siteInfo(response.data);
                 });
 
         };
 
-        this.getProblemData = function(show_problemData, problemId, _contest_id) {
+        this.getProblemData = function (show_problemData, problemId, _contest_id) {
 
             var url;
             if (_contest_id) {
@@ -509,20 +523,20 @@ angular
 
             networkService.handleRepData('get', url, null, null, null)
                 .then(function (response) {
-                        show_problemData(resolveProblemData(response.data));
+                    show_problemData(resolveProblemData(response.data));
                 });
 
         };
 
         // this.languageList = ["GCC", "G++", "Python 2.7", "Python 3.5", "Java"];
         this.languageList = {
-            "0" : "C",
-            "1" : "C++",
-            "2" : "Python 2.7",
-            "3" : "Python 3.4",
-            "4" : "Java",
-            "5" : "Haskell",
-            "6" : "JavaScript"
+            "0": "C",
+            "1": "C++",
+            "2": "Python 2.7",
+            "3": "Python 3.4",
+            "4": "Java",
+            "5": "Haskell",
+            "6": "JavaScript"
         };
 
         this.resultList = {
@@ -538,10 +552,10 @@ angular
             "8": "Judge Failed"
         };
         this.contestType = {
-            "0" : "ACM Contest",
-            "5" : "Speed First"
+            "0": "ACM Contest",
+            "5": "Speed First"
         };
-        this.checkValidProblemId = function(content) {
+        this.checkValidProblemId = function (content) {
             return (
                 Number(content).toString() === content
                 && Number(content) >= 1000
@@ -551,16 +565,16 @@ angular
 
         resolveProblemData = function (data) {
 
-             console.log(data);
+            console.log(data);
 
-             data.problem.description =
-             $sce.trustAsHtml(data.problem.description);
-             data.problem.input_description =
-             $sce.trustAsHtml(data.problem.input_description);
-             data.problem.output_description =
-             $sce.trustAsHtml(data.problem.output_description);
-             data.problem.hint =
-             $sce.trustAsHtml(data.problem.hint);
+            data.problem.description =
+                $sce.trustAsHtml(data.problem.description);
+            data.problem.input_description =
+                $sce.trustAsHtml(data.problem.input_description);
+            data.problem.output_description =
+                $sce.trustAsHtml(data.problem.output_description);
+            data.problem.hint =
+                $sce.trustAsHtml(data.problem.hint);
 
             //str = str.replace(/(?:\r\n|\r|\n)/g, '<br />');
             var len = data.problem.input_sample.length;
@@ -572,7 +586,7 @@ angular
 
         };
 
-        this.getProblemList = function(show_problemList, _page, _per_page) {
+        this.getProblemList = function (show_problemList, _page, _per_page) {
 
             param = {
                 page: _page,
@@ -581,23 +595,23 @@ angular
             networkService.handleRepData('get', $rootScope.problemListUrl, null, {params: param}, null)
                 .then(function (response) {
 
-                        show_problemList(response.data);
+                    show_problemList(response.data);
                 });
 
         };
 
-        this.getSimpleProblem = function(show_simpleProblem, _problem_id) {
+        this.getSimpleProblem = function (show_simpleProblem, _problem_id) {
 
             networkService.handleRepData('get', String.Format($rootScope.problemSimpleUrl, _problem_id)
                 , null, null, null, true)
                 .then(function (response) {
 
-                        show_simpleProblem(response.data);
+                    show_simpleProblem(response.data);
                 });
 
         };
 
-        this.getContestList = function(show_contestList, _page, _per_page) {
+        this.getContestList = function (show_contestList, _page, _per_page) {
 
             param = {
                 page: _page,
@@ -606,12 +620,12 @@ angular
             networkService.handleRepData('get', $rootScope.contestListUrl, null, {params: param}, null)
                 .then(function (response) {
 
-                        show_contestList(response.data);
+                    show_contestList(response.data);
                 });
 
         };
 
-        this.getContestStatus = function(call_back, _contest_id) {
+        this.getContestStatus = function (call_back, _contest_id) {
             networkService.handleRepData('get', String.Format($rootScope.contestStatusUrl, _contest_id), null, null, null)
                 .then(function (response) {
                     call_back(response.data);
@@ -621,7 +635,7 @@ angular
 
         this.registerContest = function (updateRegisterStatus, contestId, _password, error_callback) {
             payload = {
-                "password" : _password || ""
+                "password": _password || ""
             };
             networkService.handleRepData('post', String.Format($rootScope.registerContestUrl, contestId), payload, null, null, error_callback)
                 .then(function (response) {
@@ -629,7 +643,7 @@ angular
                 })
         };
 
-        this.getContestInfo = function(show_contestInfo, _contestid, doNotBroadCast) {
+        this.getContestInfo = function (show_contestInfo, _contestid, doNotBroadCast) {
 
             doNotBroadCast = doNotBroadCast || false;
             networkService.handleRepData('get', $rootScope.contestListUrl + _contestid, null, null, null)
@@ -644,29 +658,29 @@ angular
 
         };
 
-        this.submitCode = function(submit_complete, _submission_data) {
+        this.submitCode = function (submit_complete, _submission_data) {
             networkService.handleRepData('post', $rootScope.submitUrl, _submission_data, null, null)
                 .then(function (response) {
                     submit_complete(response.data);
                 });
         };
 
-        this.getSubmissonInfo = function(show_submissionInfo, _submissoinid) {
+        this.getSubmissonInfo = function (show_submissionInfo, _submissoinid) {
             networkService.handleRepData('get', $rootScope.statusUrl + _submissoinid, null, null, null)
                 .then(function (response) {
 
-                        if (response.data.hasOwnProperty("info")) {
-                            if (typeof response.data.info.data === "string" || response.data.info.data instanceof String) {
-                                // response.data.info.data = $sce.trustAsHtml(response.data.info.data.replace(/(?:\r\n|\r|\n)/g, '<br />'))
-                            }
+                    if (response.data.hasOwnProperty("info")) {
+                        if (typeof response.data.info.data === "string" || response.data.info.data instanceof String) {
+                            // response.data.info.data = $sce.trustAsHtml(response.data.info.data.replace(/(?:\r\n|\r|\n)/g, '<br />'))
                         }
+                    }
 
-                        show_submissionInfo(response.data);
+                    show_submissionInfo(response.data);
 
                 });
         };
 
-        this.getStatusList = function(show_statusList, _page, _per_page, _contestId, _filter) {
+        this.getStatusList = function (show_statusList, _page, _per_page, _contestId, _filter) {
 
             param = {
                 page: _page,
@@ -680,16 +694,16 @@ angular
                 url = String.Format($rootScope.myContestStatusUrl, _contestId);
             }
             else {
-                url =  $rootScope.statusUrl;
+                url = $rootScope.statusUrl;
             }
-            networkService.handleRepData('get',url, null, {params: param}, null)
+            networkService.handleRepData('get', url, null, {params: param}, null)
                 .then(function (response) {
-                        show_statusList(response);
+                    show_statusList(response);
                 });
 
         };
 
-        this.getContestSingleStatus = function(show_contestStatus, _contestId, _username) {
+        this.getContestSingleStatus = function (show_contestStatus, _contestId, _username) {
             networkService.handleRepData('get', String.Format($rootScope.contestSingleUrl, _contestId, _username), null, null, null)
                 .then(function (response) {
                     show_contestStatus(response.data);
@@ -699,15 +713,15 @@ angular
 
         this.getUserList = function (showUserList, _page, _per_page) {
             param = {
-                "page" : _page,
-                "per_page" : _per_page
+                "page": _page,
+                "per_page": _per_page
             };
             networkService.handleRepData('get', $rootScope.siteRankUrl, null, {params: param}, null)
                 .then(function (response) {
                     showUserList(response);
                 })
         };
-        
+
         this.getContestBoard = function (show_contestBoard, _contestId) {
             var url = String.Format($rootScope.contestBoardUrl, _contestId);
             networkService.handleRepData('get', url, null, null, null)
@@ -718,8 +732,8 @@ angular
 
         this.getNewsList = function (show_news, _page, _per_page) {
             param = {
-                "page" : _page,
-                "per_page" : _per_page
+                "page": _page,
+                "per_page": _per_page
             };
             networkService.handleRepData('get', $rootScope.newsUrl, null, {params: param}, null)
                 .then(function (response) {
@@ -745,7 +759,7 @@ angular
 
 angular
     .module('ustc-oj')
-    .service('profileService', function($rootScope, userService, networkService, siteService) {
+    .service('profileService', function ($rootScope, userService, networkService, siteService) {
 
         this.verifyEmail = function (after_sending) {
             networkService.handleRepData('get', $rootScope.verifyEmailUrl, null, null, null)
@@ -757,7 +771,7 @@ angular
 
         this.verifyCode = function (show_verifyResult, _token) {
             data = {
-                "token" : _token
+                "token": _token
             };
             networkService.handleRepData('post', $rootScope.verifyEmailUrl, data, null, null)
                 .then(function (result) {
@@ -781,9 +795,9 @@ angular
             }
         };
 
-        this.bindId = function(callback, _ticket, _service_url) {
+        this.bindId = function (callback, _ticket, _service_url) {
             data = {
-                "ticket" : _ticket,
+                "ticket": _ticket,
                 "service": _service_url
             };
             if (userService.isLoggedIn()) {
@@ -798,7 +812,7 @@ angular
 
 angular
     .module('ustc-oj')
-    .service('userService', function($rootScope, $cookies, $http, $window, siteService) {
+    .service('userService', function ($rootScope, $cookies, $http, $window, siteService) {
 
         this.login = function (showLoginResult, username, password) {
 
@@ -862,7 +876,7 @@ angular
             return $cookies.get("token");
         };
 
-        this.getUserid = function() {
+        this.getUserid = function () {
             var tmpId = $cookies.get("userId");
             if (tmpId) {
                 return tmpId;
@@ -872,7 +886,7 @@ angular
             }
         };
 
-        this.getUsername = function() {
+        this.getUsername = function () {
             var tmpName = $cookies.get("username");
             if (tmpName) {
                 return tmpName;
@@ -886,7 +900,7 @@ angular
             return $cookies.get("userId") != null;
         };
 
-        this.getUserAvatar = function() {
+        this.getUserAvatar = function () {
             return $rootScope.avatarUrl + "user_head.png";
         };
 
@@ -931,6 +945,54 @@ angular
         };
 
 
+    });
+
+angular
+    .module('ustc-oj')
+    .service('sourcetagService', function ($rootScope, $sce, userService, networkService, siteService) {
+
+        this.getTaskList = function (_callback, _page, _per_page) {
+
+            param = {
+                page: _page,
+                per_page: _per_page
+            };
+
+            networkService.handleRepData('get', $rootScope.sourcetagTaskUrl, null, {params: param}, null)
+                .then(function (response) {
+                    _callback(response.data);
+                });
+
+        };
+
+        this.getSourceList = function(_callback, task_id) {
+            networkService.handleRepData('get', $rootScope.sourcetagTaskUrl + task_id + '/', null, null, null)
+                .then(function (response) {
+                    _callback(response.data);
+                });
+
+        };
+
+        this.getSource = function(_callback, task_id, source_id) {
+            networkService.handleRepData('get', $rootScope.sourcetagTaskUrl + task_id + '/' + source_id + '/', null, null, null)
+                .then(function (response) {
+                    _callback(response.data);
+                });
+        }
+
+        this.submitTag = function(_callback, task_id, source_id, opt0, opt1, opt2, opt3, opt4) {
+            var data = {
+                'opt0': opt0,
+                'opt1': opt1,
+                'opt2': opt2,
+                'opt3': opt3,
+                'opt4': opt4
+            };
+            networkService.handleRepData('post', $rootScope.sourcetagTaskUrl + task_id + '/' + source_id + '/', data, null, null)
+                .then(function (response) {
+                    _callback(response.data);
+                });
+        }
     });
 
 var MD5 = function (s) {

@@ -1,0 +1,200 @@
+<link rel="stylesheet" href="css/showSubmisson.css">
+<link rel="stylesheet" href="plugins/prism.css">
+<script src="plugins/prism.js" charset="utf-8"></script>
+<div ng-controller="sourcetagSourceCtrl" class="container">
+
+    <div class="page-header">
+        <h2>Source</h2>
+    </div>
+
+
+    <div class="submission-list" ng-show="finishLoading">
+        <table class="submission-table">
+            <tr>
+                <th class="col-md-6"></th>
+                <th class="col-md-42"></th>
+            </tr>
+
+            <tr>
+                <td>Task ID</td>
+                <td ng-bind="source.task_id"></td>
+            </tr>
+            <tr>
+                <td>Source ID</td>
+                <td ng-bind="source.source_id"></td>
+            </tr>
+            <!--<tr>-->
+            <!--<td>Problem</td>-->
+            <!--<td ng-click="showProblem()" class="jump-link">-->
+            <!--<span ng-show="isContest">{{submissionSortIdx}}</span>-->
+            <!--<span ng-show="!isContest">{{submissionProbId}}</span>-->
+            <!-- - {{submissionTitle}}-->
+            <!--</td>-->
+            <!--</tr>-->
+        </table>
+
+        <!--<div ng-show="submissionErrorMsg">-->
+        <!--<div>-->
+        <!--<pre ng-bind="submissionErrorMsg" id="submission-error-detail"></pre>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <div class="submission-code" ng-show="!source.source">
+            No code available.
+        </div>
+
+        <pre ng-show="source.source"><code class="language-c++ line-numbers" id="code-area">
+        </code></pre>
+
+        <div class="sourcetag-options">
+            <div class="form-group">
+                <label for="opt0" class="col-sm-8 control-label">算法</label>
+                <div class="col-sm-40">
+                    <select class="form-control" id="opt0"
+                            ng-model="source.selected_opt[0]"
+                            ng-options="algo.id as algo.name for algo in source.algos">
+                    </select>
+                </div>
+            </div>
+
+            <br>
+            <div class="form-group">
+                <label class="col-sm-8 control-label">排版格式是否规范</label>
+                <div class="col-sm-40">
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" name="opt1" ng-model="source.selected_opt[1]" value="1">
+                            规范
+                        </label>
+                    </div>
+
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" name="opt1" ng-model="source.selected_opt[1]" value="2">
+                            相对规范
+                        </label>
+                    </div>
+
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" name="opt1" ng-model="source.selected_opt[1]" value="3">
+                            随意
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label class="col-sm-8 control-label">变量名格式是否规范</label>
+                <div class="col-sm-40">
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" name="opt2" ng-model="source.selected_opt[2]" value="1">
+                            规范
+                        </label>
+                    </div>
+
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" name="opt2" ng-model="source.selected_opt[2]" value="2">
+                            相对规范
+                        </label>
+                    </div>
+
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" name="opt2" ng-model="source.selected_opt[2]" value="3">
+                            随意
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label class="col-sm-8 control-label">变量名命名是否准确</label>
+                <div class="col-sm-40">
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" name="opt3" ng-model="source.selected_opt[3]" value="1">
+                            准确
+                        </label>
+                    </div>
+
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" name="opt3" ng-model="source.selected_opt[3]" value="2">
+                            相对准确
+                        </label>
+                    </div>
+
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" name="opt3" ng-model="source.selected_opt[3]" value="3">
+                            随意
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label class="col-sm-8 control-label">编写逻辑是否清晰</label>
+                <div class="col-sm-40">
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" name="opt4" ng-model="source.selected_opt[4]" value="1">
+                            清晰
+                        </label>
+                    </div>
+
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" name="opt4" ng-model="source.selected_opt[4]" value="2">
+                            相对清晰
+                        </label>
+                    </div>
+
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" name="opt4" ng-model="source.selected_opt[4]" value="3">
+                            随意
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="submit-btn" style="text-align: center ">
+
+            <button class="btn btn-default btn-thin" ng-click="submitTag()">提交</button>
+
+        </div>
+
+        <!--<div class="submission-list" ng-show="submissionCaseDetail">-->
+
+        <!--<div class="table-responsive">-->
+        <!--<table class="status-table bar-table col-md-24">-->
+        <!--<tr class="bar-head status-bar" ng-init="f='test_case'">-->
+        <!--<th class="col-md-4 col-center jump-link" ng-click="f='test_case'; rev=!rev">Testcase</th>-->
+        <!--<th class="col-md-10 col-center jump-link" ng-click="f='result'; rev=!rev">Result</th>-->
+        <!--<th class="col-md-5 col-right jump-link" ng-click="f='cpu_time'; rev=!rev">Run Time</th>-->
+        <!--<th class="col-md-5 col-right jump-link" ng-click="f='memory'; rev=!rev" >Memory</th>-->
+        <!--</tr>-->
+
+        <!--<tr ng-repeat="x in submissionCaseDetail | orderBy: f : rev"-->
+        <!--class="bar-content status-bar">-->
+        <!--<td class="col-center">{{x.test_case}}</td>-->
+        <!--<td class="col-center">-->
+        <!--<div class="bardiv1"><div class="bardiv2">{{getResult(x.result)}}</div></div>-->
+        <!--</td>-->
+        <!--<td class="col-right"><div class="bardiv1"><div class="bardiv2">{{x.cpu_time}} ms</div></div></td>-->
+        <!--<td class="col-right"><div class="bardiv1"><div class="bardiv2">{{x.memory | bytes}}</div></div></td>-->
+        <!--</tr>-->
+        <!--</table>-->
+        <!--</div>-->
+        <!--</div>-->
+
+    </div>
+
+    <div class="waiting-orange" ng-show="!finishLoading"></div>
+
+</div>

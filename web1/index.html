@@ -51,6 +51,9 @@
     <script src="js/showSubmissionCtrl.js" charset="utf-8"></script>
     <script src="js/rankCtrl.js" charset="utf-8"></script>
     <script src="js/contestBoardCtrl.js" charset="utf-8"></script>
+    <script src="js/sourcetagListCtrl.js" charset="utf-8"></script>
+    <script src="js/sourcetagTaskCtrl.js" charset="utf-8"></script>
+    <script src="js/sourcetagSourceCtrl.js" charset="utf-8"></script>
 
     <div ng-view></div>
 
@@ -155,6 +158,24 @@
                     })
                     .when('/bind/', {
                         templateUrl:'bind.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
+                    .when('/sourcetag/', {
+                        templateUrl:'sourcetagList.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
+                    .when('/sourcetag/:task_id/', {
+                        templateUrl:'sourcetagTask.html',
+                        controller: ['$routeParams', function($routeParams) {
+                        }],
+                        controllerAs: 'ctrl'
+                    })
+                    .when('/sourcetag/:task_id/:source_id/', {
+                        templateUrl:'sourcetagSource.html',
                         controller: ['$routeParams', function($routeParams) {
                         }],
                         controllerAs: 'ctrl'

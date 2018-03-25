@@ -1,0 +1,104 @@
+<link rel="stylesheet" href="css/bar.css">
+<link rel="stylesheet" href="css/contestList.css">
+
+<div ng-controller="sourcetagListCtrl" class="container" role="main">
+
+    <div class="page-header">
+        <h2>Task List</h2>
+    </div>
+
+    <div class="contest-list-content row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-38">
+            <div ng-show="finishLoading">
+
+                <div class="table-responsive">
+
+                    <table class="contest-table bar-table col-md-48">
+
+                        <tr class="bar-head contest-bar">
+
+                            <th class="col-sm-36 contest-bar-left-part"></th>
+                            <th class="col-sm-12 contest-bar-right-part"></th>
+
+                        </tr>
+
+                        <tr class="contest-bar" ng-repeat="x in taskList"
+                            ng-class="{'contest-bar-ongoing': ongoing[x.task_id], 'contest-bar-pending': pending[x.task_id]}">
+
+                            <td class="contest-bar-left">
+
+                                <div class="contest-title">{{x.task_title}}</div>
+                                <div class="contest-buttons">
+                                    <!--<div class="contest-button contest-board-icon">-->
+                                    <!--<img src="./resource/people-12px-grey.svg" height="14px"/>-->
+                                    <!--<b>×</b> {{x.player_cnt}}-->
+                                    <!--</div>-->
+                                    <button class="contest-button btn btn-default btn-thin"
+                                            ng-click="showTask(x.task_id)">
+                                        View
+                                    </button>
+                                </div>
+
+                            </td>
+                            <td class="contest-bar-right">
+
+                                <div class="contest-time">
+                                    <h5 class="small-title-font">Start</h5>
+                                    <p>{{x.start_time | date:fullTime}}</p>
+                                </div>
+                                <div class="contest-time">
+                                    <h5 class="small-title-font">End</h5>
+                                    <p>{{x.end_time | date:fullTime}}</p>
+                                </div>
+
+
+                            </td>
+
+                        </tr>
+
+
+                    </table>
+                </div>
+                <div class="page-switch-container">
+                    <div class="pages-switch pages-switch-problem">
+                        <svg ng-click="pageOffset(-1)"
+                             class="pages-switch-button" width="14px" height="23px" viewBox="422 692 14 23"
+                             version="1.1" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+                            <desc>Created with Sketch.</desc>
+                            <defs></defs>
+                            <polygon id="Triangle" stroke="none" fill="#D8D8D8" fill-rule="evenodd"
+                                     transform="translate(429.000000, 703.500000) rotate(-90.000000) translate(-429.000000, -703.500000) "
+                                     points="429 696.5 440.5 710.5 417.5 710.5"></polygon>
+                        </svg>
+                        <div class="pages-switch-number">
+                            <input placeholder=" " class="pages-switch-number-choose" ng-model="pageNow"
+                                   ng-keypress="catchEnter($event)"/>
+                            <div class="pages-switch-number-slash">/</div>
+                            <div class="pages-switch-number-sum" ng-bind="pageSum">..</div>
+                        </div>
+                        <svg ng-click="pageOffset(+1)"
+                             class="pages-switch-button" width="14px" height="23px" viewBox="422 692 14 23"
+                             version="1.1" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+                            <desc>Created with Sketch.</desc>
+                            <defs></defs>
+                            <polygon id="Triangle" stroke="none" fill="#D8D8D8" fill-rule="evenodd"
+                                     transform="translate(429.000000, 703.500000) rotate(90.000000) translate(-429.000000, -703.500000) "
+                                     points="429 696.5 440.5 710.5 417.5 710.5"></polygon>
+                        </svg>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="waiting-orange" ng-show="!finishLoading"></div>
+        </div>
+
+
+    </div>
+</div>

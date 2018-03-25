@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="css/bar.css">
+<link rel="stylesheet" href="css/showContest.css">
+<div ng-controller="sourcetagTaskCtrl" class="container">
+
+
+    <div class="page-header">
+        <h2>Sources</h2>
+    </div>
+
+
+    <div class="contest-content row" ng-show="finishLoading">
+
+        <div class="col-md-36">
+
+            <div class="table-responsive">
+
+                <table class="contest-problem-table bar-table col-md-48">
+
+                    <tr class="bar-head contest-problem-bar">
+
+                        <th class="col-sm-5 col-center">ID</th>
+                        <th class="col-sm-24 contest-problem-bar-title">Title</th>
+
+                        <th class="col-md-5 col-center"></th>
+
+                    </tr>
+
+                    <!-- add ng-class -->
+                    <tr class="bar-content contest-problem-bar" ng-click="showSource(x.source_id)" ng-repeat="x in sourceList"
+                        ng-class="{'contest-problem-bar-solved': x.tagged}"
+                    >
+
+                        <td class="col-center">
+                            <div class="bardiv1">
+                                <div class="bardiv2">{{x.source_id}}</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="bardiv1">
+                                <div class="bardiv2">{{x.title}}</div>
+                            </div>
+                        </td>
+                        <td class="col-center">
+                            <div class="bardiv1">
+                                <div class="bardiv2" ng-show="x.tagged">&#x263A</div>
+                            </div>
+                        </td>
+
+                    </tr>
+
+
+                </table>
+
+            </div>
+
+            <div class="contest-desc" ng-bind-html="contestInfo.description"></div>
+
+        </div>
+
+        <div class="col-md-12 side-bar">
+            <div class="inf-board inf-board-side inf-board-thin" id="side-submit">
+                <div class="inf-board-title small-title-font">
+                    Source Tag
+                </div>
+                <div class="inf-board-content">
+                    根据程序源代码选择合适的选项。
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="contest-content waiting-orange" ng-show="!finishLoading">
+
+    </div>
+</div>
