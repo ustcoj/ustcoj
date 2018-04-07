@@ -365,7 +365,7 @@ angular
             "435": "Seems that you have already bound a USTC ID",
             "436": "Failed to bind with this ID",
             "437": "This ID has already been bound to an account",
-            "438": "This language cannot be used at this time"
+            "438": "This language cannot be used at this time",
             "450": "Bind your school ID first."
         };
 
