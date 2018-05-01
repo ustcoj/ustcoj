@@ -97,51 +97,55 @@
 		</div>
 	</div>
 
-	<div class="side-bar col-md-10">
+	<div class="side-bar col-md-7">
+		<h5 class="small-title-font tools-list-title">TOOLS</h5>
+		<ul class="tools-list">
+			<li><a href="#/sourcetag">Source Tag</a></li>
+		</ul>
 		<!--<div class="inf-board inf-board-side inf-board-thin" ng-show="isLoggedIn" ng-hide>-->
 			<!--<div class="inf-board-title small-title-font">User</div>-->
 			<!--<div class="inf-board-content">{{username}}</div>-->
 		<!--</div>-->
-		<div class="inf-board inf-board-side inf-board-thin">
-			<div class="inf-board-title small-title-font">Site Statistics</div>
-			<div class="inf-board-content" ng-show="siteInfoLoaded">
-				<div class="table-responsive">
-					<table class="table home-info-table">
-						<tr>
-							<th>Result</th>
-							<th>Number</th>
-						</tr>
-						<tr>
-							<td>Accepted</td>
-							<td>{{siteInfo.ac_number}}</td>
-						</tr>
-						<tr>
-							<td>Wrong Answer</td>
-							<td>{{siteInfo.wa_number}}</td>
-						</tr>
-						<tr>
-							<td>Compile Error</td>
-							<td>{{siteInfo.ce_number}}</td>
-						</tr>
-						<tr>
-							<td>Runtime Error</td>
-							<td>{{siteInfo.re_number}}</td>
-						</tr>
-						<tr>
-							<td>Time Limit Exceeded</td>
-							<td>{{siteInfo.tle_number}}</td>
-						</tr>
-						<tr>
-							<td>Mem Limit Exceeded</td>
-							<td>{{siteInfo.mle_number}}</td>
-						</tr>
-					</table>
-				</div>
-			</div>
-			<div class="inf-board-content" ng-show="!siteInfoLoaded">
-				<div class="waiting-orange-small-super"></div>
-			</div>
-		</div>
+		<!--<div class="inf-board inf-board-side inf-board-thin">-->
+			<!--<div class="inf-board-title small-title-font">Source Tag</div>-->
+			<!--<div class="inf-board-content" ng-show="siteInfoLoaded">-->
+				<!--<div class="table-responsive">-->
+					<!--<table class="table home-info-table">-->
+						<!--<tr>-->
+							<!--<th>Result</th>-->
+							<!--<th>Number</th>-->
+						<!--</tr>-->
+						<!--<tr>-->
+							<!--<td>Accepted</td>-->
+							<!--<td>{{siteInfo.ac_number}}</td>-->
+						<!--</tr>-->
+						<!--<tr>-->
+							<!--<td>Wrong Answer</td>-->
+							<!--<td>{{siteInfo.wa_number}}</td>-->
+						<!--</tr>-->
+						<!--<tr>-->
+							<!--<td>Compile Error</td>-->
+							<!--<td>{{siteInfo.ce_number}}</td>-->
+						<!--</tr>-->
+						<!--<tr>-->
+							<!--<td>Runtime Error</td>-->
+							<!--<td>{{siteInfo.re_number}}</td>-->
+						<!--</tr>-->
+						<!--<tr>-->
+							<!--<td>Time Limit Exceeded</td>-->
+							<!--<td>{{siteInfo.tle_number}}</td>-->
+						<!--</tr>-->
+						<!--<tr>-->
+							<!--<td>Mem Limit Exceeded</td>-->
+							<!--<td>{{siteInfo.mle_number}}</td>-->
+						<!--</tr>-->
+					<!--</table>-->
+				<!--</div>-->
+			<!--</div>-->
+			<!--<div class="inf-board-content" ng-show="!siteInfoLoaded">-->
+				<!--<div class="waiting-orange-small-super"></div>-->
+			<!--</div>-->
+		<!--</div>-->
 	</div>
 
 

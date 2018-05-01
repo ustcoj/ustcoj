@@ -93,6 +93,18 @@
     .news-board-big .news-board-title {
         min-height: 80px;
     }
+}
+
+@media (min-width: 992px) {
+
+    /*.tools-list > li {*/
+        /*text-align: right;*/
+    /*}*/
+
+    /*.tools-list-title {*/
+        /*text-align: right;*/
+    /*}*/
+
 
 }
 
@@ -223,4 +235,26 @@
 .home-info-table {
     overflow: hidden;
 }
+
+.tools-list > li {
+     list-style: none;
+     text-decoration: none;
+     font-size: 14px;
+ }
+
+.tools-list > li > a {
+    color: #999999;
+    font-weight: normal;
+    transition: color 0.5s;
+}
+
+.tools-list > li > a:hover {
+    color: #faa634;
+    transition: color 0.5s;
+}
+
+.tools-list-title {
+    font-weight: 700;
+}
+
 
