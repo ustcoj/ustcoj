@@ -23,6 +23,10 @@
                 <td>Source ID</td>
                 <td ng-bind="source.source_id"></td>
             </tr>
+            <tr>
+                <td>Problem Title</td>
+                <td ng-bind="source.problem.title"></td>
+            </tr>
             <!--<tr>-->
             <!--<td>Problem</td>-->
             <!--<td ng-click="showProblem()" class="jump-link">-->
@@ -32,6 +36,8 @@
             <!--</td>-->
             <!--</tr>-->
         </table>
+
+        <div ng-bind="source.problem.description"></div>
 
         <!--<div ng-show="submissionErrorMsg">-->
         <!--<div>-->
