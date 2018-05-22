@@ -977,6 +977,7 @@ angular
         this.getSource = function(_callback, task_id, source_id) {
             networkService.handleRepData('get', $rootScope.sourcetagTaskUrl + task_id + '/' + source_id + '/', null, null, null)
                 .then(function (response) {
+                    response.data.problem.description =  $sce.trustAsHtml(response.data.problem.description);
                     _callback(response.data);
                 });
         }
